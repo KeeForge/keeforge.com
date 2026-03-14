@@ -1,0 +1,104 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Privacy Policy — KeeForge" description="KeeForge does not collect any data. Period.">
+    <div class="privacy">
+        <a href="/" class="back-link">&larr; Back to KeeForge</a>
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: March 2026</p>
+
+        <div class="content">
+            <p class="lead">KeeForge does not collect any data. Period.</p>
+
+            <h2>No Analytics</h2>
+            <p>KeeForge contains no analytics frameworks, no crash reporting SDKs, and no usage tracking of any kind.</p>
+
+            <h2>No Telemetry</h2>
+            <p>KeeForge makes no network requests except to the cloud storage providers you explicitly configure (iCloud Drive, Dropbox, OneDrive, etc.) to sync your database files.</p>
+
+            <h2>No Accounts</h2>
+            <p>KeeForge does not require or offer account creation. There are no servers. There is nothing to sign up for.</p>
+
+            <h2>Your Data</h2>
+            <p>Your passwords stay on your device and in your own cloud storage. KeeForge has no ability to read, access, or transmit your data to anyone. The app operates entirely offline except for the file syncing you choose to enable.</p>
+
+            <h2>Open Source</h2>
+            <p>Don't take our word for it. KeeForge is open source under the GPLv3 license. You can <a href="https://github.com/crazytan/KeeForge">audit the code yourself</a>.</p>
+
+            <h2>Contact</h2>
+            <p>If you have questions about this policy, open an issue on <a href="https://github.com/crazytan/KeeForge">GitHub</a>.</p>
+        </div>
+    </div>
+</Base>
+
+<style>
+    .privacy {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 60px 24px 80px;
+    }
+
+    .back-link {
+        display: inline-block;
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        margin-bottom: 40px;
+        transition: color 0.2s;
+    }
+
+    .back-link:hover {
+        color: var(--text);
+    }
+
+    h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin-bottom: 8px;
+        background: none;
+        -webkit-text-fill-color: var(--text);
+    }
+
+    .updated {
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        margin-bottom: 40px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .lead {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--green);
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: -16px;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--text-dim);
+    }
+
+    @media (max-width: 480px) {
+        .privacy {
+            padding: 40px 20px 60px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+    }
+</style>
