@@ -144,17 +144,18 @@ import Base from '../layouts/Base.astro';
         text-align: center;
         position: relative;
         overflow: hidden;
+        background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 100%);
     }
 
     .hero::before {
         content: '';
         position: absolute;
-        top: -40%;
+        top: -20%;
         left: 50%;
         transform: translateX(-50%);
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 70%);
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.05) 40%, transparent 70%);
         pointer-events: none;
     }
 
@@ -248,6 +249,7 @@ import Base from '../layouts/Base.astro';
     /* Features */
     .features {
         padding: 80px 0;
+        background: #f0f4f8;
     }
 
     .features h2 {
@@ -292,10 +294,18 @@ import Base from '../layouts/Base.astro';
     .feature-icon {
         color: var(--accent);
         margin-bottom: 16px;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(59, 130, 246, 0.08);
+        border-radius: 10px;
     }
 
     .feature-icon.green {
         color: var(--green);
+        background: rgba(22, 163, 74, 0.08);
     }
 
     .feature-card h3 {
@@ -316,11 +326,35 @@ import Base from '../layouts/Base.astro';
     }
 
     .oss-card {
-        background: var(--surface);
-        border: 1px solid var(--border);
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        border: none;
         border-radius: 16px;
         padding: 48px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .oss-content h2,
+    .oss-content > p,
+    .oss-stat-label {
+        color: #e2e8f0;
+    }
+
+    .oss-content > p {
+        color: #94a3b8 !important;
+    }
+
+    .oss-stat .mono {
+        color: #60a5fa !important;
+    }
+
+    .oss-link {
+        color: #e2e8f0 !important;
+        border-color: #334155 !important;
+    }
+
+    .oss-link:hover {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-color: #475569 !important;
     }
 
     .oss-content h2 {
