@@ -2,14 +2,14 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="Privacy Policy — KeeForge" description="KeeForge does not collect your vault data. The only information we ever see is what you choose to send us through the in-app feedback form.">
+<Base title="Privacy Policy — KeeForge" description="KeeForge does not collect your vault data. The optional in-app feedback form only sends the message you choose to submit, plus visible error details when reporting a database-open failure.">
     <div class="privacy">
         <a href="/" class="back-link">&larr; Back to KeeForge</a>
         <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: April 2026</p>
+        <p class="updated">Last updated: April 22, 2026</p>
 
         <div class="content">
-            <p class="lead">KeeForge does not collect your vault data. The only information we ever see is what you choose to send us through the in-app feedback form.</p>
+            <p class="lead">KeeForge does not collect your vault data. The optional in-app feedback form only sends the message you choose to submit, plus visible error details when reporting a database-open failure.</p>
 
             <h2>No Analytics</h2>
             <p>KeeForge contains no analytics frameworks, no crash reporting SDKs, and no usage tracking of any kind.</p>
@@ -27,12 +27,11 @@ import Base from '../layouts/Base.astro';
             <p>KeeForge includes an in-app feedback form (available from Settings and from certain error screens). The form is entirely optional &mdash; the app's features and services do not depend on using it. When, and only when, you tap &ldquo;Send,&rdquo; the app submits the following information to our feedback endpoint at <code>https://feedback.keeforge.com/api/feedback</code> over HTTPS:</p>
             <ul>
                 <li>The free-text message you typed.</li>
-                <li>If you were sending feedback from an error screen: the error code, error category, and a short technical description of the error. These contain no entries, passwords, file contents, or file paths from your vault.</li>
-                <li>Basic diagnostic information about your device and app build: the app version, build number, iOS version, and device model (for example, <code>iPhone16,2</code>).</li>
-                <li>Whether you opted in to follow-up contact, and, <em>only if you opted in</em>, the contact address (typically an email) you entered. If you do not tick the follow-up box, no contact information is transmitted.</li>
+                <li>If you were sending feedback from a database-open error screen: the visible error details shown in the app, such as the error category, error code, title, summary, and technical details. These contain no entries, passwords, key files, raw vault files, or other vault contents.</li>
             </ul>
-            <p>We use this information solely to read and respond to your feedback and to diagnose bugs. We do not use it for advertising, profiling, or analytics, and we do not sell it. Submissions are stored on infrastructure operated on our behalf by our hosting provider; any such provider is contractually required to protect the data to the same standard described in this policy and to process it only on our instructions.</p>
-            <p>We retain feedback submissions for up to 24 months so we can follow up on related reports, and then delete them. You can withdraw consent for follow-up, or request deletion of a feedback submission and any associated contact information, at any time by emailing <a href="mailto:support@keeforge.com">support@keeforge.com</a> from the address you submitted, or by opening an issue on <a href="https://github.com/crazytan/KeeForge">GitHub</a>. You can also simply decline to use the feedback form &mdash; if you never tap &ldquo;Send,&rdquo; nothing is transmitted.</p>
+            <p>The app does not automatically attach app version, build number, iOS version, device model, or separate follow-up contact fields. If you choose to type personal information into the message itself, that text is sent because you included it manually.</p>
+            <p>We use this information solely to read your feedback and diagnose bugs. We do not use it for advertising, profiling, or analytics, and we do not sell it. Submissions are stored on infrastructure operated on our behalf by our hosting provider; any such provider is contractually required to protect the data to the same standard described in this policy and to process it only on our instructions.</p>
+            <p>We retain feedback submissions for up to 24 months so we can review related reports, and then delete them. You can request deletion of a feedback submission at any time by emailing <a href="mailto:support@keeforge.com">support@keeforge.com</a> or by opening an issue on <a href="https://github.com/crazytan/KeeForge">GitHub</a>. You can also simply decline to use the feedback form &mdash; if you never tap &ldquo;Send,&rdquo; nothing is transmitted.</p>
 
             <h2>Children</h2>
             <p>KeeForge is not directed at children, and we do not knowingly collect information from children through the feedback form.</p>
