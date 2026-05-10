@@ -1,0 +1,119 @@
+---
+import Page from '../layouts/Page.astro';
+import { Content as Changelog } from '../content/CHANGELOG.md';
+
+const title = 'KeeForge Changelog — Release Notes for Every Version';
+const description = 'Every release of KeeForge for iOS — what changed, what was added, what was fixed, and security updates by version.';
+---
+
+<Page
+    title={title}
+    description={description}
+    eyebrow="Releases"
+    heading="Changelog"
+    lead="Every release since v1.0.0 — features, fixes, security improvements, and changes. The same notes appear in the App Store version history; this page collects them in one place."
+>
+    <article class="changelog">
+        <Changelog />
+    </article>
+</Page>
+
+<style>
+    .changelog {
+        max-width: 720px;
+    }
+
+    /* Top-level "# Changelog" — hide because the page already has the heading */
+    .changelog :global(> h1:first-child) {
+        display: none;
+    }
+
+    /* Version headings (## v1.x.x) */
+    .changelog :global(h2) {
+        font-size: 1.15rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: var(--text);
+        margin-top: 40px;
+        margin-bottom: 14px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .changelog :global(h2:first-of-type) {
+        margin-top: 0;
+    }
+
+    /* Hide an empty "Unreleased" section heading so it doesn't clutter the page */
+    .changelog :global(h2:has(+ h2)) {
+        display: none;
+    }
+
+    /* Subsection headings (### New Features / Fixes / Security) */
+    .changelog :global(h3) {
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--accent-dim);
+        margin-top: 22px;
+        margin-bottom: 10px;
+    }
+
+    .changelog :global(h3:first-of-type) {
+        margin-top: 14px;
+    }
+
+    .changelog :global(p) {
+        font-size: 0.95rem;
+        line-height: 1.65;
+        color: var(--text-dim);
+        margin-bottom: 12px;
+    }
+
+    .changelog :global(ul) {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 14px;
+    }
+
+    .changelog :global(li) {
+        position: relative;
+        padding-left: 18px;
+        font-size: 0.92rem;
+        line-height: 1.65;
+        color: var(--text-dim);
+        margin-bottom: 8px;
+    }
+
+    .changelog :global(li::before) {
+        content: '';
+        position: absolute;
+        left: 4px;
+        top: 11px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--text-dim);
+        opacity: 0.6;
+    }
+
+    .changelog :global(li code),
+    .changelog :global(p code) {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.85rem;
+        background: rgba(15, 23, 42, 0.05);
+        padding: 1px 5px;
+        border-radius: 4px;
+        color: var(--text);
+    }
+
+    .changelog :global(strong) {
+        color: var(--text);
+        font-weight: 600;
+    }
+
+    .changelog :global(a) {
+        color: var(--accent);
+    }
+</style>

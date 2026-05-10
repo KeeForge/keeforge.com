@@ -22,6 +22,18 @@ import Base from '../layouts/Base.astro';
         </div>
     </section>
 
+    <!-- Screenshots -->
+    <section class="screenshots" aria-label="App screenshots">
+        <div class="section-container">
+            <div class="screenshots-grid">
+                <img src="/screenshots/database-list.png" alt="KeeForge database list showing local and Dropbox-backed vaults" loading="lazy" width="1290" height="2796" />
+                <img src="/screenshots/entry-edit.png" alt="Editing a password entry inside KeeForge with an autosaved draft" loading="lazy" width="1290" height="2796" />
+                <img src="/screenshots/search.png" alt="Searching the KeeForge vault — results appear instantly as you type" loading="lazy" width="1290" height="2796" />
+                <img src="/screenshots/entry-detail.png" alt="Entry detail view with username, password, URL, and one-tap copy" loading="lazy" width="1290" height="2796" />
+            </div>
+        </div>
+    </section>
+
     <!-- Features -->
     <section class="features">
         <div class="section-container">
@@ -60,7 +72,7 @@ import Base from '../layouts/Base.astro';
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                     </div>
                     <h3>Open Source</h3>
-                    <p>GPLv3 licensed. Every line of code is public. Independently audited. Zero tracking, zero telemetry.</p>
+                    <p>GPLv3 licensed. Every line of code is public and auditable on GitHub. Zero tracking, zero telemetry.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-card-highlight"></div>
@@ -74,13 +86,84 @@ import Base from '../layouts/Base.astro';
         </div>
     </section>
 
+    <!-- Compare -->
+    <section class="compare" id="compare">
+        <div class="section-container">
+            <h2>How KeeForge compares</h2>
+            <p class="section-lead">Already using a password manager? Here's where KeeForge fits.</p>
+            <div class="compare-grid">
+                <div class="compare-card">
+                    <h3>vs iCloud Keychain</h3>
+                    <ul>
+                        <li>KeePass <code class="mono">.kdbx</code> vaults work with desktop tools (KeePassXC, KeePass 2.x) and across non-Apple devices.</li>
+                        <li>Your encrypted database is portable — back it up locally, sync via Dropbox or OneDrive, or store offline.</li>
+                        <li>Open source code you can audit, with no telemetry of any kind.</li>
+                    </ul>
+                </div>
+                <div class="compare-card">
+                    <h3>vs 1Password &amp; Bitwarden</h3>
+                    <ul>
+                        <li>No subscription, no account, no vendor lock-in. Your vault is a file on your device or your own cloud.</li>
+                        <li>Compatible with the open KeePass ecosystem — KeePassXC, Strongbox, KeePassium, Keepass2Android.</li>
+                        <li>GPLv3 open source. Every line is auditable, with zero analytics or telemetry.</li>
+                    </ul>
+                </div>
+                <div class="compare-card">
+                    <h3>vs other iOS KeePass clients</h3>
+                    <ul>
+                        <li>Native Swift, built for iOS 17+ with current platform features (passkeys, TOTP AutoFill, Files integration).</li>
+                        <li>Free forever, all features included — no premium tier, no in-app paywalls (just an optional tip jar).</li>
+                        <li>Saves are conflict-detected and auto-backed-up; AutoFill works offline for cloud-backed vaults.</li>
+                    </ul>
+                    <div class="compare-card-links">
+                        <a href="/vs/keepassium">vs KeePassium →</a>
+                        <a href="/vs/strongbox">vs Strongbox →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="section-container">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>Does KeeForge work on Mac and iPad?</summary>
+                    <p>Yes. The same app runs natively on iPhone, iPad, and Apple Silicon Mac. iOS 17 / iPadOS 17 / macOS 14 or later required.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Where do my passwords actually live?</summary>
+                    <p>In a <code class="mono">.kdbx</code> file on your device, your iCloud Drive, your Dropbox, your OneDrive, or any other Files-app provider you choose. KeeForge has no servers and never sees your vault.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How is this different from iCloud Keychain?</summary>
+                    <p>iCloud Keychain stores credentials in Apple's proprietary format and syncs only between Apple devices. KeeForge uses the open KeePass <code class="mono">.kdbx</code> format, which is readable by KeePassXC on Mac/Windows/Linux, KeePass 2.x on Windows, and Keepass2Android on Android. Your vault is portable and you control where it lives.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Can I import from 1Password, Bitwarden, or LastPass?</summary>
+                    <p>KeeForge opens any standard <code class="mono">.kdbx</code> file. The simplest path is to export from your current manager and use <a href="https://keepassxc.org/" rel="noopener">KeePassXC</a> on the desktop to convert it into a KeePass database, then open that database in KeeForge. Direct in-app importers are not currently available.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Is it really free, no asterisks?</summary>
+                    <p>Yes. No subscription, no premium tier, no paywall, no ads, no upsell. There's an optional tip jar inside the app if you'd like to support development.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Is the source really available?</summary>
+                    <p>Full source on GitHub under GPLv3 — <a href="https://github.com/crazytan/KeeForge" rel="noopener">github.com/crazytan/KeeForge</a>. Build it yourself, audit the code, contribute, fork.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- Open Source / Security -->
     <section class="oss">
         <div class="section-container">
             <div class="oss-card">
                 <div class="oss-content">
                     <h2>Security you can verify</h2>
-                    <p>KeeForge is fully open source under the GPLv3 license. The code has been independently audited. There are no analytics, no background telemetry, and no network calls except to your own cloud storage &mdash; plus the optional in-app feedback form, which only sends the message you type and visible error details when you tap Send. Your passwords never leave your control.</p>
+                    <p>KeeForge is fully open source under the GPLv3 license — every line is public and auditable on GitHub. There are no analytics, no background telemetry, and no network calls except to your own cloud storage &mdash; plus the optional in-app feedback form, which only sends the message you type and visible error details when you tap Send. Your passwords never leave your control.</p>
                     <div class="oss-stats">
                         <div class="oss-stat">
                             <span class="mono">GPLv3</span>
@@ -91,8 +174,8 @@ import Base from '../layouts/Base.astro';
                             <span class="oss-stat-label">Tracking</span>
                         </div>
                         <div class="oss-stat">
-                            <span class="mono">Audited</span>
-                            <span class="oss-stat-label">Security</span>
+                            <span class="mono">Auditable</span>
+                            <span class="oss-stat-label">Open Source</span>
                         </div>
                     </div>
                     <a href="https://github.com/crazytan/KeeForge" class="oss-link">
@@ -115,6 +198,8 @@ import Base from '../layouts/Base.astro';
                 <div class="footer-links">
                     <a href="https://apps.apple.com/us/app/keeforge/id6759309295">App Store</a>
                     <a href="https://github.com/crazytan/KeeForge">GitHub</a>
+                    <a href="/changelog">Changelog</a>
+                    <a href="#faq">FAQ</a>
                     <a href="mailto:support@keeforge.com">Support</a>
                     <a href="/privacy">Privacy Policy</a>
                 </div>
@@ -236,6 +321,34 @@ import Base from '../layouts/Base.astro';
         padding: 0 24px;
     }
 
+    .section-lead {
+        text-align: center;
+        color: var(--text-dim);
+        font-size: 1rem;
+        margin: 8px 0 40px;
+    }
+
+    /* Screenshots */
+    .screenshots {
+        padding: 16px 0 48px;
+        background: linear-gradient(180deg, var(--bg) 0%, #f0f4f8 100%);
+    }
+
+    .screenshots-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        align-items: start;
+    }
+
+    .screenshots-grid img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+    }
+
     /* Features */
     .features {
         padding: 64px 0;
@@ -308,6 +421,172 @@ import Base from '../layouts/Base.astro';
         font-size: 0.875rem;
         line-height: 1.6;
         color: var(--text-dim);
+    }
+
+    /* Compare */
+    .compare {
+        padding: 64px 0 32px;
+    }
+
+    .compare h2 {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 0;
+    }
+
+    .compare-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    .compare-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 28px 24px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .compare-card h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 14px;
+        color: var(--text);
+    }
+
+    .compare-card ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .compare-card li {
+        position: relative;
+        padding-left: 18px;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        color: var(--text-dim);
+        margin-bottom: 12px;
+    }
+
+    .compare-card li:last-child {
+        margin-bottom: 0;
+    }
+
+    .compare-card li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--green);
+    }
+
+    .compare-card code.mono {
+        font-size: 0.8rem;
+        background: rgba(15, 23, 42, 0.05);
+        padding: 1px 4px;
+        border-radius: 4px;
+    }
+
+    .compare-card-links {
+        display: flex;
+        gap: 14px;
+        margin-top: 14px;
+        padding-top: 14px;
+        border-top: 1px solid var(--border);
+        flex-wrap: wrap;
+    }
+
+    .compare-card-links a {
+        font-size: 0.8rem;
+        color: var(--accent);
+        font-weight: 500;
+    }
+
+    /* FAQ */
+    .faq {
+        padding: 32px 0 64px;
+    }
+
+    .faq h2 {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 32px;
+    }
+
+    .faq-list {
+        max-width: 720px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .faq-item {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 0;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .faq-item[open] {
+        border-color: #cbd5e1;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .faq-item summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 18px 22px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--text);
+        position: relative;
+        padding-right: 48px;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .faq-item summary::after {
+        content: '';
+        position: absolute;
+        right: 22px;
+        top: 50%;
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid var(--text-dim);
+        border-bottom: 2px solid var(--text-dim);
+        transform: translateY(-70%) rotate(45deg);
+        transition: transform 0.2s;
+    }
+
+    .faq-item[open] summary::after {
+        transform: translateY(-30%) rotate(-135deg);
+    }
+
+    .faq-item p {
+        padding: 0 22px 18px;
+        font-size: 0.9rem;
+        line-height: 1.65;
+        color: var(--text-dim);
+    }
+
+    .faq-item code.mono {
+        font-size: 0.8rem;
+        background: rgba(15, 23, 42, 0.05);
+        padding: 1px 4px;
+        border-radius: 4px;
     }
 
     /* Open Source section */
@@ -467,8 +746,17 @@ import Base from '../layouts/Base.astro';
             font-size: 0.95rem;
         }
 
+        .screenshots-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
         .features-grid {
             grid-template-columns: repeat(2, 1fr);
+        }
+
+        .compare-grid {
+            grid-template-columns: 1fr;
         }
 
         .oss-card {

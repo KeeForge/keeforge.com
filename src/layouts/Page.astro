@@ -1,0 +1,204 @@
+---
+import Base from './Base.astro';
+
+interface Props {
+    title?: string;
+    description?: string;
+    eyebrow?: string;
+    heading: string;
+    lead?: string;
+}
+
+const { title, description, eyebrow, heading, lead } = Astro.props;
+---
+
+<Base title={title} description={description}>
+    <header class="page-header">
+        <div class="page-header-inner">
+            <a href="/" class="brand-link">
+                <span class="brand-name mono">KeeForge</span>
+            </a>
+            <nav class="page-nav">
+                <a href="/#compare">Compare</a>
+                <a href="/changelog">Changelog</a>
+                <a href="/#faq">FAQ</a>
+                <a href="https://github.com/crazytan/KeeForge" rel="noopener">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="page-container">
+            {eyebrow && <p class="eyebrow mono">{eyebrow}</p>}
+            <h1>{heading}</h1>
+            {lead && <p class="page-lead">{lead}</p>}
+        </div>
+    </section>
+
+    <main class="page-main">
+        <div class="page-container">
+            <slot />
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="page-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-name mono">KeeForge</span>
+                    <span class="footer-copy">Free, open-source KeePass for iOS</span>
+                </div>
+                <div class="footer-links">
+                    <a href="/">Home</a>
+                    <a href="https://apps.apple.com/us/app/keeforge/id6759309295">App Store</a>
+                    <a href="https://github.com/crazytan/KeeForge">GitHub</a>
+                    <a href="/changelog">Changelog</a>
+                    <a href="/privacy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</Base>
+
+<style>
+    .page-header {
+        border-bottom: 1px solid var(--border);
+        background: var(--bg);
+    }
+
+    .page-header-inner {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .brand-link {
+        color: var(--text);
+    }
+
+    .brand-name {
+        font-size: 0.95rem;
+        font-weight: 700;
+    }
+
+    .page-nav {
+        display: flex;
+        gap: 20px;
+    }
+
+    .page-nav a {
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        transition: color 0.2s;
+    }
+
+    .page-nav a:hover {
+        color: var(--text);
+    }
+
+    .page-hero {
+        padding: 56px 0 32px;
+        background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 100%);
+    }
+
+    .page-container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .eyebrow {
+        font-size: 0.75rem;
+        color: var(--accent-dim);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 10px;
+    }
+
+    .page-hero h1 {
+        font-size: 2.6rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+        margin-bottom: 14px;
+        color: var(--text);
+    }
+
+    .page-lead {
+        font-size: 1.05rem;
+        line-height: 1.65;
+        color: var(--text-dim);
+        max-width: 640px;
+    }
+
+    .page-main {
+        padding: 40px 0 64px;
+    }
+
+    /* Footer (shared) */
+    .footer {
+        border-top: 1px solid var(--border);
+        padding: 32px 0;
+    }
+
+    .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .footer-name {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--text);
+    }
+
+    .footer-copy {
+        font-size: 0.75rem;
+        color: var(--text-dim);
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .footer-links a {
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+        color: var(--text);
+    }
+
+    @media (max-width: 640px) {
+        .page-hero h1 {
+            font-size: 2rem;
+        }
+
+        .page-nav {
+            gap: 14px;
+        }
+
+        .footer-content {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+</style>
