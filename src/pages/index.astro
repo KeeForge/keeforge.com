@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 
 const trustPills = [
     { k: '01', t: 'Open source', d: 'GPL 3.0. Audit every line.' },
-    { k: '02', t: 'KeePass compatible', d: 'Reads & writes standard .kdbx files.' },
+    { k: '02', t: 'KeePass compatible', d: 'KDBX 4.x read/write. KDBX 3.1 read-only.' },
     { k: '03', t: 'Free, forever', d: 'No subscription, no ads, no upsells.' },
     { k: '04', t: 'Face ID + AutoFill', d: 'Fills credentials across every app.' },
 ];
@@ -12,11 +12,11 @@ const features = [
     {
         eyebrow: 'MANY VAULTS',
         title: 'One home screen for every database you have.',
-        body: 'Drop your .kdbx files in from Files, Dropbox, or iCloud Drive. KeeForge keeps them side by side so switching between Personal, Work, and Shared takes a single tap.',
+        body: 'Add .kdbx files from Files or iCloud Drive, connect Dropbox or OneDrive, or use your own WebDAV server. KeeForge keeps Personal, Work, and Shared vaults together on one home screen.',
         points: [
             'Open as many databases as you like, locally or from the cloud',
-            'Each vault remembers its own unlock state and key file',
-            'Tap-to-switch — no closing one to open another',
+            'Each vault remembers its nickname, key file, and preferences',
+            'Native Dropbox, OneDrive, and WebDAV browsing and sync',
         ],
         screen: 'screen-01-database-list.png',
         reverse: false,
@@ -24,23 +24,23 @@ const features = [
     {
         eyebrow: 'ORGANIZE & FIND',
         title: 'Groups, search, and the entry detail you’d expect.',
-        body: 'Browse by folder the way you set up your vault on the desktop. Search every field across every group. Open an entry to copy, reveal, or jump to the URL.',
+        body: 'Browse by folder the way you set up your vault on the desktop. Search titles, usernames, URLs, and notes across every group. Open an entry to copy, reveal, or jump to the URL.',
         points: [
             'Hierarchical groups, just like KeePassXC',
-            'Full-text search with results count and instant filtering',
-            'Reveal passwords with a tap, copy with another',
+            'Create groups or move entries and groups to the Recycle Bin',
+            'Preview and share entry attachments without exporting your vault',
         ],
         screen: 'screen-03-vault-groups.png',
         reverse: true,
     },
     {
         eyebrow: 'EDIT ON DEVICE',
-        title: 'Create and edit entries without leaving your phone.',
-        body: 'The full edit sheet: title, username, password, URL, tags, and notes. Generate a strong password with one tap. Save back to the .kdbx, encrypted, the moment you hit done.',
+        title: 'Create and edit entries without leaving your device.',
+        body: 'Edit titles, usernames, passwords, URLs, tags, and notes. Generate a strong password with one tap, then save encrypted changes directly back to the source .kdbx file.',
         points: [
-            'Built-in generator, configurable like the desktop client',
-            'Edits write back to the source file — nothing forked or proxied',
-            'Read-only mode per database when you want it safe',
+            'Create new KDBX 4.x vaults locally or in connected cloud folders',
+            'Conflict checks and timestamped backups protect every save',
+            'Read-only mode per database when you do not want changes',
         ],
         screen: 'screen-07-entry-edit.png',
         reverse: false,
@@ -52,7 +52,7 @@ const compareCards = [
         title: 'vs iCloud Keychain',
         bullets: [
             'KeePass <code class="mono">.kdbx</code> vaults work with desktop tools (KeePassXC, KeePass 2.x) and across non-Apple devices.',
-            'Your encrypted database is portable — back it up locally, sync via Dropbox or OneDrive, or store offline.',
+            'Your encrypted database is portable — back it up locally, sync via Dropbox, OneDrive, or WebDAV, or store it offline.',
             'Open source code you can audit, with no telemetry of any kind.',
         ],
     },
@@ -76,8 +76,8 @@ const compareCards = [
 
 const faqItems = [
     { q: 'Is KeeForge really free?', a: 'Yes — free on the App Store, no subscriptions, no ads, no premium tier. If you’d like to support development, star the repo or buy me a coffee.' },
-    { q: 'Does it work with my existing KeePass database?', a: 'Any .kdbx file from KeePass 2.x, KeePassXC, or any other compatible client opens directly. Read and write are both supported.' },
-    { q: 'Where are my passwords stored?', a: 'On your device. KeeForge has no server. Sync is your choice: iCloud Drive, Dropbox, or anything you can put a file into.' },
+    { q: 'Does it work with my existing KeePass database?', a: 'KeeForge reads and writes KDBX 4.x databases using AES-256 or ChaCha20 with AES-KDF or Argon2. Password-only KDBX 3.1 databases open in read-only mode.' },
+    { q: 'Where are my passwords stored?', a: 'In your encrypted database on your device or in storage you choose, such as iCloud Drive, Dropbox, OneDrive, WebDAV, or another Files provider. KeeForge does not host your vault.' },
     { q: 'How does AutoFill work?', a: 'KeeForge registers as an iOS Credential Provider. Tap a login field anywhere, choose KeeForge, authenticate with Face ID, and your credentials are filled.' },
     { q: 'Can I trust it?', a: 'Read the code. Build it yourself. Or trust the App Store review process plus a public commit history — that’s more than most password managers offer.' },
 ];
@@ -144,7 +144,7 @@ const faqItems = [
                         <span class="kf-dot"></span>
                         <span>iPhone &amp; iPad</span>
                         <span class="kf-dot"></span>
-                        <span>KDBX 3.1 / 4.0</span>
+                        <span>KDBX 3.1 / 4.x</span>
                         <span class="kf-dot"></span>
                         <span>No tracking, ever</span>
                     </div>
@@ -263,12 +263,12 @@ const faqItems = [
                         ["h", "# KeeForge"],
                         ["b", " "],
                         ["t", "A native iOS client for KeePass"],
-                        ["t", "databases. SwiftUI, no servers,"],
+                        ["t", "databases. SwiftUI, no hosted vaults,"],
                         ["t", "no telemetry."],
                         ["b", " "],
                         ["h", "## Features"],
                         ["t", "- Open .kdbx files locally"],
-                        ["t", "- Sync via Dropbox or Files"],
+                        ["t", "- Dropbox, OneDrive & WebDAV"],
                         ["t", "- Face ID / Touch ID unlock"],
                         ["t", "- iOS AutoFill provider"],
                         ["b", " "],

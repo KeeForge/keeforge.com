@@ -6,7 +6,7 @@ import Base from '../layouts/Base.astro';
     <div class="privacy">
         <a href="/" class="back-link">&larr; Back to KeeForge</a>
         <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: April 22, 2026</p>
+        <p class="updated">Last updated: July 9, 2026</p>
 
         <div class="content">
             <p class="lead">KeeForge does not collect your vault data. The optional in-app feedback form only sends the message you choose to submit, plus visible error details when reporting a database-open failure.</p>
@@ -15,21 +15,22 @@ import Base from '../layouts/Base.astro';
             <p>KeeForge contains no analytics frameworks, no crash reporting SDKs, and no usage tracking of any kind.</p>
 
             <h2>No Telemetry</h2>
-            <p>KeeForge does not make background network requests. The only outbound connections the app ever makes are: (1) to the cloud storage providers you explicitly configure (iCloud Drive, Dropbox, OneDrive, etc.) to sync your database files, and (2) a single request to our feedback endpoint when <em>you</em> tap &ldquo;Send&rdquo; in the in-app feedback form (see below).</p>
+            <p>KeeForge does not send analytics, usage telemetry, or crash reports. Network activity is limited to features you choose to use: syncing databases with configured cloud providers such as Dropbox, OneDrive, and WebDAV; optionally downloading website favicons from DuckDuckGo; loading or completing optional tips through Apple&rsquo;s StoreKit services; opening support links such as Buy Me a Coffee in your browser; and submitting the in-app feedback form when you explicitly tap &ldquo;Send.&rdquo;</p>
 
             <h2>No Accounts</h2>
             <p>KeeForge does not require or offer account creation. There is nothing to sign up for.</p>
 
             <h2>Your Vault Data</h2>
-            <p>Your passwords, entries, attachments, and master password stay on your device and in your own cloud storage. KeeForge has no ability to read, access, or transmit your vault data to anyone. The app operates entirely offline except for the file syncing you choose to enable and the opt-in feedback submissions described below.</p>
+            <p>Your passwords, entries, attachments, and master password are processed locally and remain on your device and in the storage locations you choose. The KeeForge developer and feedback service do not receive your vault, master password, key files, or decrypted entry contents. The app can operate offline except when you choose a network-backed feature described above.</p>
 
             <h2>Feedback Submissions</h2>
             <p>KeeForge includes an in-app feedback form (available from Settings and from certain error screens). The form is entirely optional &mdash; the app's features and services do not depend on using it. When, and only when, you tap &ldquo;Send,&rdquo; the app submits the following information to our feedback endpoint at <code>https://feedback.keeforge.com/api/feedback</code> over HTTPS:</p>
             <ul>
                 <li>The free-text message you typed.</li>
-                <li>If you were sending feedback from a database-open error screen: the visible error details shown in the app, such as the error category, error code, title, summary, and technical details. These contain no entries, passwords, key files, raw vault files, or other vault contents.</li>
+                <li>If you are sending feedback from a database-open error screen: the visible error details shown in the app, including the error category, error code, title, summary, technical details, and the diagnostics described below.</li>
             </ul>
-            <p>The app does not automatically attach app version, build number, iOS version, device model, or separate follow-up contact fields. If you choose to type personal information into the message itself, that text is sent because you included it manually.</p>
+            <p>Database-open diagnostics can include the unlock method; whether a password or key file was supplied; failed-attempt count; local or cloud source; read-only state; cloud provider and sync status; short remote revision, content-hash, and encrypted-file hash prefixes; encrypted file size; a summary of the KDBX header; app version and build; OS version; and device model. These details are displayed in the feedback form before you send them. They never include entries, passwords, key files, raw database files, or decrypted vault contents.</p>
+            <p>The app does not provide separate follow-up contact fields. If you choose to type personal information into the message itself, that text is sent because you included it manually.</p>
             <p>We use this information solely to read your feedback and diagnose bugs. We do not use it for advertising, profiling, or analytics, and we do not sell it. Submissions are stored on infrastructure operated on our behalf by our hosting provider; any such provider is contractually required to protect the data to the same standard described in this policy and to process it only on our instructions.</p>
             <p>We retain feedback submissions for up to 24 months so we can review related reports, and then delete them. You can request deletion of a feedback submission at any time by emailing <a href="mailto:support@keeforge.com">support@keeforge.com</a> or by opening an issue on <a href="https://github.com/crazytan/KeeForge">GitHub</a>. You can also simply decline to use the feedback form &mdash; if you never tap &ldquo;Send,&rdquo; nothing is transmitted.</p>
 
