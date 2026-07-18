@@ -2,9 +2,12 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="Privacy Policy — KeeForge" description="KeeForge does not collect your vault data. The optional in-app feedback form only sends the message you choose to submit, plus visible error details when reporting a database-open failure.">
+<Base title="Privacy Policy — KeeForge" description="KeeForge does not collect your vault data. The optional in-app feedback form only sends the message you choose to submit, plus visible error details when reporting a database-open failure." lang="en" enPath="/privacy" dePath="/de/privacy">
     <div class="privacy">
-        <a href="/" class="back-link">&larr; Back to KeeForge</a>
+        <div class="top-links">
+            <a href="/" class="back-link">&larr; Back to KeeForge</a>
+            <a href="/de/privacy" hreflang="de" class="back-link">Deutsch</a>
+        </div>
         <h1>Privacy Policy</h1>
         <p class="updated">Last updated: July 9, 2026</p>
 
@@ -54,6 +57,12 @@ import Base from '../layouts/Base.astro';
         max-width: 640px;
         margin: 0 auto;
         padding: 60px 24px 80px;
+    }
+
+    .top-links {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
     }
 
     .back-link {

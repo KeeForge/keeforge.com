@@ -2,13 +2,19 @@
 interface Props {
   title?: string;
   description?: string;
+  lang?: string;
+  // Paths of the English/German versions of this page, e.g. '/' and '/de/'.
+  // When both are set, hreflang alternate links are emitted for SEO.
+  enPath?: string;
+  dePath?: string;
 }
 
-const { title = 'KeeForge — Free, Open-Source KeePass for iOS', description = 'KeeForge is a free, open-source KeePass password manager for iPhone and iPad with AutoFill, passkeys, TOTP, Dropbox, OneDrive and WebDAV sync, and no subscription.' } = Astro.props;
+const SITE = 'https://keeforge.com';
+const { title = 'KeeForge — Free, Open-Source KeePass for iOS', description = 'KeeForge is a free, open-source KeePass password manager for iPhone and iPad with AutoFill, passkeys, TOTP, Dropbox, OneDrive and WebDAV sync, and no subscription.', lang = 'en', enPath, dePath } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +23,13 @@ const { title = 'KeeForge — Free, Open-Source KeePass for iOS', description = 
     <meta property="og:title" content={title}>
     <meta property="og:description" content={description}>
     <meta property="og:type" content="website">
+    {enPath && dePath && (
+        <>
+            <link rel="alternate" hreflang="en" href={`${SITE}${enPath}`}>
+            <link rel="alternate" hreflang="de" href={`${SITE}${dePath}`}>
+            <link rel="alternate" hreflang="x-default" href={`${SITE}${enPath}`}>
+        </>
+    )}
     <link rel="icon" type="image/png" sizes="512x512" href="/app-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">

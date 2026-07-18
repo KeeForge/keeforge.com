@@ -7,22 +7,59 @@ interface Props {
     eyebrow?: string;
     heading: string;
     lead?: string;
+    lang?: 'en' | 'de';
+    // Paths of the English/German versions of this page, for the language
+    // switcher and hreflang alternates. Omit while no translation exists.
+    enPath?: string;
+    dePath?: string;
 }
 
-const { title, description, eyebrow, heading, lead } = Astro.props;
+const { title, description, eyebrow, heading, lead, lang = 'en', enPath, dePath } = Astro.props;
+
+const strings = {
+    en: {
+        home: '/',
+        compare: 'Compare',
+        changelog: 'Changelog',
+        faq: 'FAQ',
+        homeLabel: 'Home',
+        tagline: 'Free, open-source KeePass for iOS',
+        privacy: 'Privacy Policy',
+        privacyHref: '/privacy',
+        switcherLabel: 'Deutsch',
+        switcherHref: dePath,
+        switcherHrefLang: 'de',
+    },
+    de: {
+        home: '/de/',
+        compare: 'Vergleich',
+        changelog: 'Changelog',
+        faq: 'FAQ',
+        homeLabel: 'Startseite',
+        tagline: 'Kostenloser Open-Source-KeePass für iOS',
+        privacy: 'Datenschutz',
+        privacyHref: '/de/privacy',
+        switcherLabel: 'English',
+        switcherHref: enPath,
+        switcherHrefLang: 'en',
+    },
+}[lang];
 ---
 
-<Base title={title} description={description}>
+<Base title={title} description={description} lang={lang} enPath={enPath} dePath={dePath}>
     <header class="page-header">
         <div class="page-header-inner">
-            <a href="/" class="brand-link">
+            <a href={strings.home} class="brand-link">
                 <span class="brand-name mono">KeeForge</span>
             </a>
             <nav class="page-nav">
-                <a href="/#compare">Compare</a>
-                <a href="https://github.com/crazytan/KeeForge/blob/main/CHANGELOG.md" rel="noopener">Changelog</a>
-                <a href="/#faq">FAQ</a>
+                <a href={`${strings.home}#compare`}>{strings.compare}</a>
+                <a href="https://github.com/crazytan/KeeForge/blob/main/CHANGELOG.md" rel="noopener">{strings.changelog}</a>
+                <a href={`${strings.home}#faq`}>{strings.faq}</a>
                 <a href="https://github.com/crazytan/KeeForge" rel="noopener">GitHub</a>
+                {strings.switcherHref && (
+                    <a href={strings.switcherHref} hreflang={strings.switcherHrefLang}>{strings.switcherLabel}</a>
+                )}
             </nav>
         </div>
     </header>
@@ -46,14 +83,17 @@ const { title, description, eyebrow, heading, lead } = Astro.props;
             <div class="footer-content">
                 <div class="footer-brand">
                     <span class="footer-name mono">KeeForge</span>
-                    <span class="footer-copy">Free, open-source KeePass for iOS</span>
+                    <span class="footer-copy">{strings.tagline}</span>
                 </div>
                 <div class="footer-links">
-                    <a href="/">Home</a>
+                    <a href={strings.home}>{strings.homeLabel}</a>
                     <a href="https://apps.apple.com/us/app/keeforge/id6759309295">App Store</a>
                     <a href="https://github.com/crazytan/KeeForge">GitHub</a>
-                    <a href="https://github.com/crazytan/KeeForge/blob/main/CHANGELOG.md" rel="noopener">Changelog</a>
-                    <a href="/privacy">Privacy Policy</a>
+                    <a href="https://github.com/crazytan/KeeForge/blob/main/CHANGELOG.md" rel="noopener">{strings.changelog}</a>
+                    <a href={strings.privacyHref}>{strings.privacy}</a>
+                    {strings.switcherHref && (
+                        <a href={strings.switcherHref} hreflang={strings.switcherHrefLang}>{strings.switcherLabel}</a>
+                    )}
                 </div>
             </div>
         </div>

@@ -1,36 +1,36 @@
 ---
-import Page from '../../layouts/Page.astro';
+import Page from '../../../layouts/Page.astro';
 
-const title = 'KeeForge vs Strongbox — How the Two iOS KeePass Clients Compare';
-const description = 'A fair comparison between KeeForge and Strongbox for iOS — features, pricing, open-source posture, and when each is the right choice.';
+const title = 'KeeForge vs. Strongbox — die beiden KeePass-Clients für iOS im Vergleich';
+const description = 'Ein fairer Vergleich zwischen KeeForge und Strongbox für iOS — Funktionen, Preise, Open-Source-Ansatz und wann welche App die richtige Wahl ist.';
 ---
 
 <Page
     title={title}
     description={description}
-    eyebrow="Comparison"
-    heading="KeeForge vs Strongbox"
-    lead="Strongbox is a feature-rich iOS and macOS password manager that supports KeePass and Password Safe formats. KeeForge is a focused, fully-free KeePass client for iOS. Here's an honest comparison to help you pick."
-    lang="en"
+    eyebrow="Vergleich"
+    heading="KeeForge vs. Strongbox"
+    lead="Strongbox ist ein funktionsreicher Passwort-Manager für iOS und macOS, der die Formate KeePass und Password Safe unterstützt. KeeForge ist ein fokussierter, komplett kostenloser KeePass-Client für iOS. Hier ist ein ehrlicher Vergleich, der dir bei der Wahl hilft."
+    lang="de"
     enPath="/vs/strongbox"
     dePath="/de/vs/strongbox"
 >
     <section class="vs-section">
-        <h2>The short version</h2>
+        <h2>Die Kurzfassung</h2>
         <p>
-            Strongbox is a long-running, deeply-featured password manager with strong support for both KeePass and Password Safe vaults. Its Pro tier adds advanced workflows: hardware key support, browser integrations, advanced auto-type, and more. It is one of the most capable native KeePass clients available on Apple platforms.
+            Strongbox ist ein etablierter, funktionsstarker Passwort-Manager mit solider Unterstützung sowohl für KeePass- als auch für Password-Safe-Tresore. Die Pro-Stufe ergänzt fortgeschrittene Workflows: Hardware-Key-Unterstützung, Browser-Integrationen, erweitertes Auto-Type und mehr. Es ist einer der leistungsfähigsten nativen KeePass-Clients auf Apple-Plattformen.
         </p>
         <p>
-            KeeForge is narrower in scope by design — it focuses on KeePass <code class="mono">.kdbx</code> with a minimal, modern iOS experience. Every feature is in the free, fully open-source app. There is no Pro tier or subscription.
+            KeeForge ist bewusst enger gefasst — es konzentriert sich auf KeePass <code class="mono">.kdbx</code> mit einem minimalistischen, modernen iOS-Erlebnis. Jede Funktion steckt in der kostenlosen, vollständig quelloffenen App. Es gibt keine Pro-Stufe und kein Abo.
         </p>
         <p>
-            Both apps read standard <code class="mono">.kdbx</code> files, so you can try them side-by-side against the same vault.
+            Beide Apps lesen Standard-<code class="mono">.kdbx</code>-Dateien, du kannst sie also mit demselben Tresor nebeneinander ausprobieren.
         </p>
     </section>
 
     <section class="vs-section">
-        <h2>Feature comparison</h2>
-        <p class="vs-table-note">As of writing. Features change — check both vendors' release notes for the latest.</p>
+        <h2>Funktionsvergleich</h2>
+        <p class="vs-table-note">Stand zum Zeitpunkt der Erstellung. Funktionen ändern sich — sieh dir für den aktuellen Stand die Release Notes beider Anbieter an.</p>
         <div class="vs-table-wrap">
             <table class="vs-table">
                 <thead>
@@ -42,59 +42,59 @@ const description = 'A fair comparison between KeeForge and Strongbox for iOS �
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Open KeePass <code class="mono">.kdbx</code> databases</td>
-                        <td>Yes</td>
-                        <td>Yes</td>
+                        <td>KeePass-<code class="mono">.kdbx</code>-Datenbanken öffnen</td>
+                        <td>Ja</td>
+                        <td>Ja</td>
                     </tr>
                     <tr>
-                        <td>Password Safe (<code class="mono">.psafe3</code>) support</td>
-                        <td>No</td>
-                        <td>Yes</td>
+                        <td>Password-Safe-Unterstützung (<code class="mono">.psafe3</code>)</td>
+                        <td>Nein</td>
+                        <td>Ja</td>
                     </tr>
                     <tr>
-                        <td>Edit, create, and delete entries</td>
-                        <td>Yes</td>
-                        <td>Yes (Pro for full editing in some workflows)</td>
+                        <td>Einträge bearbeiten, erstellen und löschen</td>
+                        <td>Ja</td>
+                        <td>Ja (Pro für vollständiges Bearbeiten in manchen Workflows)</td>
                     </tr>
                     <tr>
-                        <td>AutoFill (passwords + passkeys + TOTP)</td>
-                        <td>Yes</td>
-                        <td>Yes</td>
+                        <td>AutoFill (Passwörter + Passkeys + TOTP)</td>
+                        <td>Ja</td>
+                        <td>Ja</td>
                     </tr>
                     <tr>
-                        <td>Face ID / Touch ID unlock</td>
-                        <td>Yes</td>
-                        <td>Yes</td>
+                        <td>Entsperren mit Face ID / Touch ID</td>
+                        <td>Ja</td>
+                        <td>Ja</td>
                     </tr>
                     <tr>
-                        <td>Cloud sync (iCloud, Dropbox, OneDrive, WebDAV, Files)</td>
-                        <td>Yes</td>
-                        <td>Yes (more providers in Pro)</td>
+                        <td>Cloud-Sync (iCloud, Dropbox, OneDrive, WebDAV, Dateien)</td>
+                        <td>Ja</td>
+                        <td>Ja (mehr Anbieter in Pro)</td>
                     </tr>
                     <tr>
-                        <td>YubiKey / hardware key support</td>
-                        <td>Not yet</td>
-                        <td>Yes (Pro)</td>
+                        <td>YubiKey- / Hardware-Key-Unterstützung</td>
+                        <td>Noch nicht</td>
+                        <td>Ja (Pro)</td>
                     </tr>
                     <tr>
-                        <td>Subscription / paid tier</td>
-                        <td>None — optional tip jar only</td>
-                        <td>Free + Pro (subscription or lifetime)</td>
+                        <td>Abo / Bezahlstufe</td>
+                        <td>Keine — nur ein optionales Trinkgeld</td>
+                        <td>Free + Pro (Abo oder Lifetime)</td>
                     </tr>
                     <tr>
-                        <td>Open source</td>
-                        <td>GPLv3 (full app)</td>
-                        <td>Open source with commercial components</td>
+                        <td>Open Source</td>
+                        <td>GPLv3 (gesamte App)</td>
+                        <td>Open Source mit kommerziellen Komponenten</td>
                     </tr>
                     <tr>
-                        <td>Platforms</td>
-                        <td>iOS and iPadOS</td>
+                        <td>Plattformen</td>
+                        <td>iOS und iPadOS</td>
                         <td>iOS, iPadOS, macOS</td>
                     </tr>
                     <tr>
-                        <td>Minimum iOS version</td>
+                        <td>Mindest-iOS-Version</td>
                         <td>iOS 17</td>
-                        <td>Lower (supports older devices)</td>
+                        <td>Niedriger (unterstützt ältere Geräte)</td>
                     </tr>
                 </tbody>
             </table>
@@ -104,62 +104,62 @@ const description = 'A fair comparison between KeeForge and Strongbox for iOS �
     <section class="vs-section">
         <div class="two-col">
             <div class="col-card">
-                <h3>What Strongbox does well</h3>
+                <h3>Was Strongbox gut macht</h3>
                 <ul>
-                    <li>Support for both KeePass and Password Safe formats — useful if you have legacy <code class="mono">.psafe3</code> vaults.</li>
-                    <li>Pro tier offers YubiKey support, broader cloud-storage integrations, and advanced auto-type workflows.</li>
-                    <li>Long track record of active development and a deep feature set for power users.</li>
-                    <li>Mature macOS app alongside the iOS app for users who want a desktop client from the same vendor.</li>
+                    <li>Unterstützung sowohl für KeePass- als auch für Password-Safe-Formate — praktisch, wenn du alte <code class="mono">.psafe3</code>-Tresore hast.</li>
+                    <li>Die Pro-Stufe bietet YubiKey-Unterstützung, breitere Cloud-Speicher-Integrationen und fortgeschrittene Auto-Type-Workflows.</li>
+                    <li>Lange Historie aktiver Entwicklung und ein tiefer Funktionsumfang für Power-User.</li>
+                    <li>Ausgereifte macOS-App neben der iOS-App — für alle, die einen Desktop-Client vom selben Anbieter wollen.</li>
                 </ul>
             </div>
             <div class="col-card">
-                <h3>Where KeeForge differs</h3>
+                <h3>Wo KeeForge sich unterscheidet</h3>
                 <ul>
-                    <li>Completely free. No Pro tier, no subscription, no in-app purchases beyond a voluntary tip jar.</li>
-                    <li>Every feature is open-source under GPLv3 — there's no paid tier with closed components.</li>
-                    <li>Built natively for iOS 17+ with current platform features (TOTP AutoFill, passkey AutoFill, Files-app integration) as first-class concerns.</li>
-                    <li>Smaller, more focused feature surface — easier to learn, faster to start using.</li>
+                    <li>Komplett kostenlos. Keine Pro-Stufe, kein Abo, keine In-App-Käufe außer einem freiwilligen Trinkgeld.</li>
+                    <li>Jede Funktion ist Open Source unter GPLv3 — es gibt keine Bezahlstufe mit geschlossenen Komponenten.</li>
+                    <li>Nativ für iOS 17+ gebaut, mit aktuellen Plattformfunktionen (TOTP-AutoFill, Passkey-AutoFill, Integration in die Dateien-App) als festem Bestandteil.</li>
+                    <li>Kleinere, fokussiertere Funktionsoberfläche — leichter zu lernen, schneller im Einsatz.</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section class="vs-section">
-        <h2>When to choose each</h2>
+        <h2>Wann du welche App wählen solltest</h2>
         <div class="two-col">
             <div class="choice-card">
-                <h3>Choose KeeForge if&hellip;</h3>
+                <h3>Wähle KeeForge, wenn&hellip;</h3>
                 <ul>
-                    <li>You only use KeePass <code class="mono">.kdbx</code> vaults.</li>
-                    <li>You don't want a subscription or Pro tier.</li>
-                    <li>You don't need YubiKey hardware key support (yet).</li>
-                    <li>You prefer a fully open-source app where every feature is in the public source.</li>
-                    <li>You're on iOS 17 or later.</li>
+                    <li>du ausschließlich KeePass-<code class="mono">.kdbx</code>-Tresore nutzt.</li>
+                    <li>du kein Abo und keine Pro-Stufe willst.</li>
+                    <li>du (noch) keine YubiKey-Hardware-Key-Unterstützung brauchst.</li>
+                    <li>du eine vollständig quelloffene App bevorzugst, bei der jede Funktion im öffentlichen Quellcode steht.</li>
+                    <li>du iOS 17 oder neuer nutzt.</li>
                 </ul>
             </div>
             <div class="choice-card">
-                <h3>Choose Strongbox if&hellip;</h3>
+                <h3>Wähle Strongbox, wenn&hellip;</h3>
                 <ul>
-                    <li>You have <code class="mono">.psafe3</code> Password Safe vaults you need to open.</li>
-                    <li>You need YubiKey or other hardware key support.</li>
-                    <li>You want advanced auto-type workflows on macOS.</li>
-                    <li>You're on an older iOS device (pre-iOS 17).</li>
+                    <li>du <code class="mono">.psafe3</code>-Password-Safe-Tresore öffnen musst.</li>
+                    <li>du YubiKey- oder andere Hardware-Key-Unterstützung brauchst.</li>
+                    <li>du fortgeschrittene Auto-Type-Workflows auf macOS willst.</li>
+                    <li>du ein älteres iOS-Gerät (vor iOS 17) nutzt.</li>
                 </ul>
             </div>
         </div>
         <p class="closing-note">
-            Many KeePass users keep more than one client installed and pointed at the same vault. Because <code class="mono">.kdbx</code> is a portable format, switching costs are low — try both and see which fits your day.
+            Viele KeePass-Nutzer haben mehr als einen Client installiert und auf denselben Tresor zeigen lassen. Weil <code class="mono">.kdbx</code> ein portables Format ist, sind die Wechselkosten gering — probier beide aus und schau, welche besser zu deinem Alltag passt.
         </p>
     </section>
 
     <section class="vs-cta">
-        <h2>Try KeeForge</h2>
-        <p>Free, open-source, no accounts.</p>
+        <h2>Probier KeeForge aus</h2>
+        <p>Kostenlos, Open Source, ohne Konten.</p>
         <div class="cta-row">
-            <a href="https://apps.apple.com/us/app/keeforge/id6759309295" class="app-store-badge" aria-label="Download on the App Store">
-                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" height="52">
+            <a href="https://apps.apple.com/us/app/keeforge/id6759309295" class="app-store-badge" aria-label="Im App Store laden">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Im App Store laden" height="52">
             </a>
-            <a href="/" class="ghost-link">Back to homepage</a>
+            <a href="/de/" class="ghost-link">Zurück zur Startseite</a>
         </div>
     </section>
 </Page>

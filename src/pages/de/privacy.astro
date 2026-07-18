@@ -1,0 +1,136 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="Datenschutzerklärung — KeeForge" description="KeeForge sammelt deine Tresordaten nicht. Das optionale In-App-Feedback-Formular sendet nur die Nachricht, die du absendest, plus sichtbare Fehlerdetails beim Melden eines Datenbank-Öffnungsfehlers." lang="de" enPath="/privacy" dePath="/de/privacy">
+    <div class="privacy">
+        <div class="top-links">
+            <a href="/de/" class="back-link">&larr; Zurück zu KeeForge</a>
+            <a href="/privacy" hreflang="en" class="back-link">English</a>
+        </div>
+        <h1>Datenschutzerklärung</h1>
+        <p class="updated">Zuletzt aktualisiert: 9. Juli 2026</p>
+
+        <div class="content">
+            <p class="lead">KeeForge sammelt deine Tresordaten nicht. Das optionale In-App-Feedback-Formular sendet nur die Nachricht, die du selbst absendest, plus die sichtbaren Fehlerdetails, wenn du einen Datenbank-Öffnungsfehler meldest.</p>
+
+            <p class="note">Diese Übersetzung dient der Verständlichkeit. Im Zweifel ist die <a href="/privacy">englische Fassung</a> maßgeblich.</p>
+
+            <h2>Keine Analytik</h2>
+            <p>KeeForge enthält keine Analyse-Frameworks, keine Crash-Reporting-SDKs und keinerlei Nutzungs-Tracking.</p>
+
+            <h2>Keine Telemetrie</h2>
+            <p>KeeForge sendet keine Analytik, keine Nutzungstelemetrie und keine Absturzberichte. Netzwerkaktivität beschränkt sich auf Funktionen, die du selbst nutzt: das Synchronisieren von Datenbanken mit konfigurierten Cloud-Anbietern wie Dropbox, OneDrive und WebDAV; das optionale Laden von Website-Favicons über DuckDuckGo; das Laden oder Abschließen optionaler Trinkgelder über Apples StoreKit-Dienste; das Öffnen von Support-Links wie Buy Me a Coffee in deinem Browser; und das Absenden des In-App-Feedback-Formulars, wenn du explizit auf &bdquo;Senden&ldquo; tippst.</p>
+
+            <h2>Keine Konten</h2>
+            <p>KeeForge erfordert keine Kontoerstellung und bietet auch keine an. Es gibt nichts, wofür du dich registrieren müsstest.</p>
+
+            <h2>Deine Tresordaten</h2>
+            <p>Deine Passwörter, Einträge, Anhänge und dein Master-Passwort werden lokal verarbeitet und verbleiben auf deinem Gerät und an den von dir gewählten Speicherorten. Der KeeForge-Entwickler und der Feedback-Dienst erhalten weder deinen Tresor noch dein Master-Passwort, deine Schlüsseldateien oder entschlüsselte Eintragsinhalte. Die App funktioniert offline, außer wenn du eine der oben beschriebenen netzwerkgestützten Funktionen nutzt.</p>
+
+            <h2>Feedback-Übermittlungen</h2>
+            <p>KeeForge enthält ein In-App-Feedback-Formular (erreichbar über die Einstellungen und bestimmte Fehlerbildschirme). Das Formular ist vollständig optional &mdash; die Funktionen und Dienste der App hängen nicht von seiner Nutzung ab. Nur wenn du auf &bdquo;Senden&ldquo; tippst, übermittelt die App die folgenden Informationen per HTTPS an unseren Feedback-Endpunkt unter <code>https://feedback.keeforge.com/api/feedback</code>:</p>
+            <ul>
+                <li>Die Freitextnachricht, die du eingegeben hast.</li>
+                <li>Wenn du Feedback von einem Datenbank-Öffnungsfehler-Bildschirm sendest: die in der App sichtbaren Fehlerdetails, einschließlich Fehlerkategorie, Fehlercode, Titel, Zusammenfassung, technischer Details und der unten beschriebenen Diagnosedaten.</li>
+            </ul>
+            <p>Diagnosedaten beim Öffnen einer Datenbank können umfassen: die Entsperrmethode; ob ein Passwort oder eine Schlüsseldatei angegeben wurde; die Zahl fehlgeschlagener Versuche; lokale oder Cloud-Quelle; Nur-Lese-Status; Cloud-Anbieter und Sync-Status; kurze Präfixe der Remote-Revision, des Inhalts-Hashes und des Hashes der verschlüsselten Datei; die Größe der verschlüsselten Datei; eine Zusammenfassung des KDBX-Headers; App-Version und Build; OS-Version; und Gerätemodell. Diese Details werden dir im Feedback-Formular angezeigt, bevor du sie absendest. Sie enthalten niemals Einträge, Passwörter, Schlüsseldateien, rohe Datenbankdateien oder entschlüsselte Tresorinhalte.</p>
+            <p>Die App bietet keine separaten Felder für Rückfrage-Kontaktdaten. Wenn du persönliche Informationen in die Nachricht selbst schreibst, wird dieser Text gesendet, weil du ihn manuell eingefügt hast.</p>
+            <p>Wir verwenden diese Informationen ausschließlich, um dein Feedback zu lesen und Fehler zu diagnostizieren. Wir nutzen sie nicht für Werbung, Profilbildung oder Analytik, und wir verkaufen sie nicht. Übermittlungen werden auf Infrastruktur gespeichert, die unser Hosting-Anbieter in unserem Auftrag betreibt; jeder solche Anbieter ist vertraglich verpflichtet, die Daten nach dem in dieser Erklärung beschriebenen Standard zu schützen und sie nur auf unsere Weisung zu verarbeiten.</p>
+            <p>Wir bewahren Feedback-Übermittlungen bis zu 24 Monate auf, damit wir zusammenhängende Meldungen prüfen können, und löschen sie danach. Du kannst jederzeit die Löschung einer Feedback-Übermittlung verlangen, per E-Mail an <a href="mailto:support@keeforge.com">support@keeforge.com</a> oder über ein Issue auf <a href="https://github.com/crazytan/KeeForge">GitHub</a>. Du kannst das Feedback-Formular auch einfach nicht verwenden &mdash; wenn du nie auf &bdquo;Senden&ldquo; tippst, wird nichts übertragen.</p>
+
+            <h2>Kinder</h2>
+            <p>KeeForge richtet sich nicht an Kinder, und wir sammeln über das Feedback-Formular wissentlich keine Informationen von Kindern.</p>
+
+            <h2>Open Source</h2>
+            <p>Verlass dich nicht auf unser Wort. KeeForge ist Open Source unter der GPLv3-Lizenz. Du kannst <a href="https://github.com/crazytan/KeeForge">den Code selbst prüfen</a>, einschließlich der genauen Felder, die das Feedback-Formular sendet.</p>
+
+            <h2>Änderungen an dieser Erklärung</h2>
+            <p>Wenn sich ändert, was die App sammelt oder wie wir es verwenden, aktualisieren wir diese Seite und das Datum unter &bdquo;Zuletzt aktualisiert&ldquo;, bevor die Änderung in einem öffentlichen Build erscheint.</p>
+
+            <h2>Kontakt</h2>
+            <p>Bei Fragen zu dieser Erklärung schreibe an <a href="mailto:support@keeforge.com">support@keeforge.com</a> oder eröffne ein Issue auf <a href="https://github.com/crazytan/KeeForge">GitHub</a>.</p>
+        </div>
+    </div>
+</Base>
+
+<style>
+    .privacy {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 60px 24px 80px;
+    }
+
+    .top-links {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .back-link {
+        display: inline-block;
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        margin-bottom: 40px;
+        transition: color 0.2s;
+    }
+
+    .back-link:hover {
+        color: var(--text);
+    }
+
+    h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin-bottom: 8px;
+        background: none;
+        -webkit-text-fill-color: var(--text);
+    }
+
+    .updated {
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        margin-bottom: 40px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .lead {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--green);
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .note {
+        font-size: 0.85rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: -16px;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--text-dim);
+    }
+
+    @media (max-width: 480px) {
+        .privacy {
+            padding: 40px 20px 60px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+    }
+</style>
