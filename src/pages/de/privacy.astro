@@ -2,17 +2,17 @@
 import Base from '../../layouts/Base.astro';
 ---
 
-<Base title="Datenschutzerklärung — KeeForge" description="KeeForge sammelt deine Tresordaten nicht. Das optionale In-App-Feedback-Formular sendet nur die Nachricht, die du absendest, plus sichtbare Fehlerdetails beim Melden eines Datenbank-Öffnungsfehlers." lang="de" enPath="/privacy" dePath="/de/privacy">
+<Base title="Datenschutzerklärung — KeeForge" description="KeeForge sammelt deine Tresordaten nicht. Das optionale In-App-Feedback-Formular sendet nur, was du selbst auswählst: deine Nachricht, sichtbare Fehlerdetails beim Melden eines Datenbank-Öffnungsfehlers und, wenn du zustimmst, eine Rückfrage-E-Mail-Adresse und ein angehängtes Foto." lang="de" enPath="/privacy" dePath="/de/privacy">
     <div class="privacy">
         <div class="top-links">
             <a href="/de/" class="back-link">&larr; Zurück zu KeeForge</a>
             <a href="/privacy" hreflang="en" class="back-link">English</a>
         </div>
         <h1>Datenschutzerklärung</h1>
-        <p class="updated">Zuletzt aktualisiert: 9. Juli 2026</p>
+        <p class="updated">Zuletzt aktualisiert: 31. Juli 2026</p>
 
         <div class="content">
-            <p class="lead">KeeForge sammelt deine Tresordaten nicht. Das optionale In-App-Feedback-Formular sendet nur die Nachricht, die du selbst absendest, plus die sichtbaren Fehlerdetails, wenn du einen Datenbank-Öffnungsfehler meldest.</p>
+            <p class="lead">KeeForge sammelt deine Tresordaten nicht. Das optionale In-App-Feedback-Formular sendet nur, was du selbst auswählst: deine Nachricht, die sichtbaren Fehlerdetails, wenn du einen Datenbank-Öffnungsfehler meldest, und, wenn du zustimmst, eine Rückfrage-E-Mail-Adresse und ein angehängtes Foto.</p>
 
             <p class="note">Diese Übersetzung dient der Verständlichkeit. Im Zweifel ist die <a href="/privacy">englische Fassung</a> maßgeblich.</p>
 
@@ -33,11 +33,13 @@ import Base from '../../layouts/Base.astro';
             <ul>
                 <li>Die Freitextnachricht, die du eingegeben hast.</li>
                 <li>Wenn du Feedback von einem Datenbank-Öffnungsfehler-Bildschirm sendest: die in der App sichtbaren Fehlerdetails, einschließlich Fehlerkategorie, Fehlercode, Titel, Zusammenfassung, technischer Details und der unten beschriebenen Diagnosedaten.</li>
+                <li>Wenn du einer Rückmeldung zustimmst: die E-Mail-Adresse, die du eingibst, damit wir dir antworten können. Sie wird nur gesendet und gespeichert, wenn du ausdrücklich zustimmst.</li>
+                <li>Wenn du ein Foto anhängst: das Bild selbst. Die App verkleinert es auf deinem Gerät und kodiert es vor dem Senden neu als JPEG, wodurch EXIF- und GPS-Metadaten entfernt werden.</li>
             </ul>
             <p>Diagnosedaten beim Öffnen einer Datenbank können umfassen: die Entsperrmethode; ob ein Passwort oder eine Schlüsseldatei angegeben wurde; die Zahl fehlgeschlagener Versuche; lokale oder Cloud-Quelle; Nur-Lese-Status; Cloud-Anbieter und Sync-Status; kurze Präfixe der Remote-Revision, des Inhalts-Hashes und des Hashes der verschlüsselten Datei; die Größe der verschlüsselten Datei; eine Zusammenfassung des KDBX-Headers; App-Version und Build; OS-Version; und Gerätemodell. Diese Details werden dir im Feedback-Formular angezeigt, bevor du sie absendest. Sie enthalten niemals Einträge, Passwörter, Schlüsseldateien, rohe Datenbankdateien oder entschlüsselte Tresorinhalte.</p>
-            <p>Die App bietet keine separaten Felder für Rückfrage-Kontaktdaten. Wenn du persönliche Informationen in die Nachricht selbst schreibst, wird dieser Text gesendet, weil du ihn manuell eingefügt hast.</p>
+            <p>Die Rückfrage-E-Mail-Adresse und der Foto-Anhang sind beide optional und werden nur übermittelt, wenn du dich dafür entscheidest. Wenn du einer Rückmeldung nicht zustimmst, wird keine E-Mail-Adresse gesendet oder gespeichert; wenn du kein Foto anhängst, wird kein Bild gesendet. Wenn du persönliche Informationen in die Nachricht selbst schreibst, wird dieser Text gesendet, weil du ihn manuell eingefügt hast.</p>
             <p>Wir verwenden diese Informationen ausschließlich, um dein Feedback zu lesen und Fehler zu diagnostizieren. Wir nutzen sie nicht für Werbung, Profilbildung oder Analytik, und wir verkaufen sie nicht. Übermittlungen werden auf Infrastruktur gespeichert, die unser Hosting-Anbieter in unserem Auftrag betreibt; jeder solche Anbieter ist vertraglich verpflichtet, die Daten nach dem in dieser Erklärung beschriebenen Standard zu schützen und sie nur auf unsere Weisung zu verarbeiten.</p>
-            <p>Wir bewahren Feedback-Übermittlungen bis zu 24 Monate auf, damit wir zusammenhängende Meldungen prüfen können, und löschen sie danach. Du kannst jederzeit die Löschung einer Feedback-Übermittlung verlangen, per E-Mail an <a href="mailto:support@keeforge.com">support@keeforge.com</a> oder über ein Issue auf <a href="https://github.com/crazytan/KeeForge">GitHub</a>. Du kannst das Feedback-Formular auch einfach nicht verwenden &mdash; wenn du nie auf &bdquo;Senden&ldquo; tippst, wird nichts übertragen.</p>
+            <p>Wir bewahren Feedback-Übermittlungen, einschließlich eines angehängten Fotos, bis zu 24 Monate auf, damit wir zusammenhängende Meldungen prüfen können, und löschen sie danach. Du kannst jederzeit die Löschung einer Feedback-Übermittlung verlangen, per E-Mail an <a href="mailto:support@keeforge.com">support@keeforge.com</a> oder über ein Issue auf <a href="https://github.com/crazytan/KeeForge">GitHub</a>. Du kannst das Feedback-Formular auch einfach nicht verwenden &mdash; wenn du nie auf &bdquo;Senden&ldquo; tippst, wird nichts übertragen.</p>
 
             <h2>Kinder</h2>
             <p>KeeForge richtet sich nicht an Kinder, und wir sammeln über das Feedback-Formular wissentlich keine Informationen von Kindern.</p>

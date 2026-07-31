@@ -103,9 +103,10 @@ Submissions do not stop at D1, though. A separate maintainer-side tool polls the
 database and relays new submissions as a notification, so that feedback does not
 sit unread. That notification carries the message, the diagnostics, and the
 follow-up email address when one was given; it does not carry the attached
-photo. The recipients of a submission are therefore Cloudflare as the hosting
-provider, the notification service, and the maintainer. The [privacy
-policy](https://keeforge.com/privacy) is the authoritative statement of this.
+photo.
+
+See the [privacy policy](https://keeforge.com/privacy) for what the feedback
+form collects and how long submissions are kept.
 
 If the R2 binding is absent the submission is still stored, just without the
 attachment. Only a failed D1 insert fails the request.

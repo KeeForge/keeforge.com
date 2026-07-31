@@ -2,17 +2,17 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="Privacy Policy — KeeForge" description="KeeForge does not collect your vault data. The optional in-app feedback form only sends the message you choose to submit, plus visible error details when reporting a database-open failure." lang="en" enPath="/privacy" dePath="/de/privacy">
+<Base title="Privacy Policy — KeeForge" description="KeeForge does not collect your vault data. The optional in-app feedback form only sends what you choose: your message, visible error details when reporting a database-open failure, and, if you opt in, a follow-up email address and an attached photo." lang="en" enPath="/privacy" dePath="/de/privacy">
     <div class="privacy">
         <div class="top-links">
             <a href="/" class="back-link">&larr; Back to KeeForge</a>
             <a href="/de/privacy" hreflang="de" class="back-link">Deutsch</a>
         </div>
         <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: July 9, 2026</p>
+        <p class="updated">Last updated: July 31, 2026</p>
 
         <div class="content">
-            <p class="lead">KeeForge does not collect your vault data. The optional in-app feedback form only sends the message you choose to submit, plus visible error details when reporting a database-open failure.</p>
+            <p class="lead">KeeForge does not collect your vault data. The optional in-app feedback form only sends what you choose: your message, visible error details when reporting a database-open failure, and, if you opt in, a follow-up email address and an attached photo.</p>
 
             <h2>No Analytics</h2>
             <p>KeeForge contains no analytics frameworks, no crash reporting SDKs, and no usage tracking of any kind.</p>
@@ -31,11 +31,13 @@ import Base from '../layouts/Base.astro';
             <ul>
                 <li>The free-text message you typed.</li>
                 <li>If you are sending feedback from a database-open error screen: the visible error details shown in the app, including the error category, error code, title, summary, technical details, and the diagnostics described below.</li>
+                <li>If you opt in to a follow-up: the email address you enter, so we can reply to you. It is sent and stored only when you explicitly opt in.</li>
+                <li>If you attach a photo: the image itself. The app downscales it on your device and re-encodes it as JPEG before sending, which strips EXIF and GPS metadata.</li>
             </ul>
             <p>Database-open diagnostics can include the unlock method; whether a password or key file was supplied; failed-attempt count; local or cloud source; read-only state; cloud provider and sync status; short remote revision, content-hash, and encrypted-file hash prefixes; encrypted file size; a summary of the KDBX header; app version and build; OS version; and device model. These details are displayed in the feedback form before you send them. They never include entries, passwords, key files, raw database files, or decrypted vault contents.</p>
-            <p>The app does not provide separate follow-up contact fields. If you choose to type personal information into the message itself, that text is sent because you included it manually.</p>
+            <p>The follow-up email address and the photo attachment are both optional and off unless you choose them. If you do not opt in to a follow-up, no email address is sent or stored; if you do not attach a photo, no image is sent. If you choose to type personal information into the message itself, that text is sent because you included it manually.</p>
             <p>We use this information solely to read your feedback and diagnose bugs. We do not use it for advertising, profiling, or analytics, and we do not sell it. Submissions are stored on infrastructure operated on our behalf by our hosting provider; any such provider is contractually required to protect the data to the same standard described in this policy and to process it only on our instructions.</p>
-            <p>We retain feedback submissions for up to 24 months so we can review related reports, and then delete them. You can request deletion of a feedback submission at any time by emailing <a href="mailto:support@keeforge.com">support@keeforge.com</a> or by opening an issue on <a href="https://github.com/crazytan/KeeForge">GitHub</a>. You can also simply decline to use the feedback form &mdash; if you never tap &ldquo;Send,&rdquo; nothing is transmitted.</p>
+            <p>We retain feedback submissions, including any attached photo, for up to 24 months so we can review related reports, and then delete them. You can request deletion of a feedback submission at any time by emailing <a href="mailto:support@keeforge.com">support@keeforge.com</a> or by opening an issue on <a href="https://github.com/crazytan/KeeForge">GitHub</a>. You can also simply decline to use the feedback form &mdash; if you never tap &ldquo;Send,&rdquo; nothing is transmitted.</p>
 
             <h2>Children</h2>
             <p>KeeForge is not directed at children, and we do not knowingly collect information from children through the feedback form.</p>
