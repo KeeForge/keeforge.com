@@ -69,6 +69,27 @@ const en = {
             reverse: false,
         },
     ],
+    safety: {
+        eyebrow: 'DATA SAFETY',
+        h2: 'Tested so you never<br>lose <em>a single byte</em>.',
+        lead: 'A password manager must never corrupt your vault or silently lose any part of it. Before any change ships, automated tests verify:',
+        items: [
+            {
+                title: 'Nothing gets lost when you save.',
+                body: 'Every kind of edit is saved and read back piece by piece — passwords, notes, attachments, entry history, and even data from other KeePass apps that KeeForge doesn’t recognize must all come back exactly as they went in.',
+            },
+            {
+                title: 'Your file is protected before it’s touched.',
+                body: 'KeeForge refuses to overwrite changes made from elsewhere while you had the file open, writes a timestamped backup before every save, and rejects damaged databases outright instead of loading partial data.',
+            },
+            {
+                title: 'An independent program agrees.',
+                body: 'Every release must pass a gate where KeePassXC — a widely used KeePass app that shares no code with KeeForge — opens KeeForge-written databases, decrypts the passwords, and confirms attachments match bit for bit. Databases from other KeePass software must likewise open in KeeForge and stay readable elsewhere after KeeForge saves them.',
+            },
+        ],
+        linkLabel: 'Read how it’s tested',
+        linkHref: 'https://github.com/crazytan/KeeForge#data-safety',
+    },
     compare: {
         eyebrow: 'HOW IT COMPARES',
         h2: 'Already using a password manager? <em>Here’s where KeeForge fits.</em>',
@@ -201,6 +222,27 @@ const de: typeof en = {
             reverse: false,
         },
     ],
+    safety: {
+        eyebrow: 'DATENSICHERHEIT',
+        h2: 'Getestet, damit du<br><em>kein Byte</em> verlierst.',
+        lead: 'Ein Passwort-Manager darf deinen Tresor niemals beschädigen oder unbemerkt Daten verlieren. Bevor eine Änderung ausgeliefert wird, stellen automatisierte Tests sicher:',
+        items: [
+            {
+                title: 'Beim Speichern geht nichts verloren.',
+                body: 'Jede Art von Änderung wird gespeichert und Stück für Stück wieder eingelesen — Passwörter, Notizen, Anhänge, Eintragsverlauf und selbst Daten anderer KeePass-Apps, die KeeForge gar nicht kennt, müssen exakt so zurückkommen, wie sie hineingingen.',
+            },
+            {
+                title: 'Deine Datei ist geschützt, bevor sie angefasst wird.',
+                body: 'KeeForge weigert sich, Änderungen zu überschreiben, die anderswo gemacht wurden, während die Datei bei dir geöffnet war; es legt vor jedem Speichern ein zeitgestempeltes Backup an und lehnt beschädigte Datenbanken rundweg ab, statt unvollständige Daten zu laden.',
+            },
+            {
+                title: 'Ein unabhängiges Programm bestätigt das.',
+                body: 'Jede Version muss ein Prüf-Gate bestehen, in dem KeePassXC — eine weit verbreitete KeePass-App, die keinen Code mit KeeForge teilt — von KeeForge geschriebene Datenbanken öffnet, die Passwörter entschlüsselt und bestätigt, dass Anhänge Bit für Bit übereinstimmen. Umgekehrt müssen Datenbanken aus anderer KeePass-Software sich in KeeForge öffnen lassen und auch nach dem Speichern durch KeeForge anderswo lesbar bleiben.',
+            },
+        ],
+        linkLabel: 'Nachlesen, wie getestet wird',
+        linkHref: 'https://github.com/crazytan/KeeForge/blob/main/README.de.md#datensicherheit',
+    },
     compare: {
         eyebrow: 'DER VERGLEICH',
         h2: 'Du nutzt schon einen Passwortmanager? <em>Hier passt KeeForge hin.</em>',
