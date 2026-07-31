@@ -193,6 +193,28 @@ const t = home[lang];
             </div>
         </section>
 
+        <!-- Public beta -->
+        <section class="kf-beta" id="beta">
+            <div class="kf-beta-grid">
+                <div class="kf-beta-copy">
+                    <div class="kf-eyebrow mono" data-reveal>{t.beta.eyebrow}</div>
+                    <h2 data-reveal data-reveal-delay="80" set:html={t.beta.h2}></h2>
+                    <p data-reveal data-reveal-delay="140">{t.beta.body}</p>
+                    <div class="kf-beta-cta" data-reveal data-reveal-delay="200">
+                        <a href={t.beta.href} rel="noopener" class="kf-btn kf-btn-gold">
+                            {t.beta.cta}
+                            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                        </a>
+                    </div>
+                    <p class="kf-beta-availability" data-reveal data-reveal-delay="260">{t.beta.availability}</p>
+                </div>
+                <aside class="kf-beta-warn" role="note" data-reveal data-reveal-y="30" data-reveal-delay="120">
+                    <p class="kf-beta-warn-title">{t.beta.warningTitle}</p>
+                    <p class="kf-beta-warn-body">{t.beta.warningBody}</p>
+                </aside>
+            </div>
+        </section>
+
         <!-- FAQ -->
         <section class="kf-faq" id="faq">
             <div class="kf-faq-grid">
@@ -720,6 +742,71 @@ const t = home[lang];
         display: flex; gap: 12px; flex-wrap: wrap;
     }
 
+    /* ── Public beta ─────────────────────────────────────────────────── */
+    .kf-beta {
+        padding: 96px clamp(24px, 5vw, 56px);
+        background: var(--kf-bg-alt);
+        border-bottom: 1px solid var(--kf-rule);
+    }
+    .kf-beta-grid {
+        max-width: 1280px; margin: 0 auto;
+        display: grid; grid-template-columns: 1.05fr 0.95fr;
+        gap: 64px; align-items: center;
+    }
+    .kf-beta-copy h2 {
+        margin: 16px 0 0;
+        font-family: var(--kf-serif);
+        font-weight: 500;
+        font-size: clamp(34px, 3.9vw, 48px);
+        line-height: 1.06;
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+    }
+    .kf-beta-copy em {
+        font-style: italic;
+        color: var(--kf-accent);
+        font-family: var(--kf-serif);
+    }
+    .kf-beta-copy > p {
+        margin: 20px 0 0;
+        max-width: 480px;
+        font-size: 17px;
+        line-height: 1.55;
+        color: var(--kf-ink-soft);
+        text-wrap: pretty;
+    }
+    .kf-beta-cta { margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .kf-beta-availability {
+        margin: 20px 0 0;
+        max-width: 480px;
+        font-size: 14.5px;
+        line-height: 1.55;
+        color: var(--kf-ink-mute);
+        text-wrap: pretty;
+    }
+    .kf-beta-warn {
+        background: var(--kf-paper);
+        border: 1px solid var(--kf-rule);
+        border-left: 4px solid var(--kf-accent);
+        border-radius: 4px;
+        padding: 26px 28px;
+    }
+    .kf-beta-warn-title {
+        margin: 0;
+        font-size: 16.5px;
+        font-weight: 600;
+        line-height: 1.4;
+        color: var(--kf-accent-deep);
+        text-wrap: pretty;
+    }
+    .kf-beta-warn-body {
+        margin: 12px 0 0;
+        font-size: 15.5px;
+        line-height: 1.6;
+        color: var(--kf-ink-soft);
+        text-wrap: pretty;
+    }
+
     /* ── Typing README ───────────────────────────────────────────────── */
     .kf-readme {
         background: rgba(251, 245, 231, 0.04);
@@ -859,6 +946,7 @@ const t = home[lang];
         .kf-feature-grid,
         .kf-feature-reverse .kf-feature-grid,
         .kf-open-grid,
+        .kf-beta-grid,
         .kf-faq-grid {
             grid-template-columns: 1fr;
             gap: 56px;
@@ -878,7 +966,7 @@ const t = home[lang];
         .kf-compare-grid { grid-template-columns: 1fr; }
         .kf-flourish { font-size: 220px; right: 20px; top: 60px; }
         .kf-hero { padding: 56px clamp(20px, 5vw, 32px) 64px; }
-        .kf-feature, .kf-compare, .kf-open, .kf-faq { padding: 72px clamp(20px, 5vw, 32px); }
+        .kf-feature, .kf-compare, .kf-open, .kf-beta, .kf-faq { padding: 72px clamp(20px, 5vw, 32px); }
     }
     @media (max-width: 640px) {
         .kf-nav-cta .kf-nav-source span { display: none; }

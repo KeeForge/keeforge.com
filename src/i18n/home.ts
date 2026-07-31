@@ -104,6 +104,16 @@ const en = {
         h2: 'One developer.<br><em>Public</em> commit history.',
         body: 'KeeForge is built by one person, in the open, on GitHub. File an issue, send a pull request, or just read the code before you trust it with your secrets — that’s the whole point.',
     },
+    beta: {
+        eyebrow: 'PUBLIC BETA',
+        h2: 'Try the next version<br><em>before</em> it ships.',
+        body: 'New versions go out on TestFlight before they reach the App Store.',
+        cta: 'Join the beta on TestFlight',
+        href: 'https://testflight.apple.com/join/mPAT4f1a',
+        availability: 'The beta is not open continuously. Places are capped at 300 testers, and joining closes whenever the group is full or a new version is still going through Apple’s beta review. The link then says it isn’t accepting new testers — that is normal, and it reopens on its own.',
+        warningTitle: 'Test with a copy of your database, not your primary vault.',
+        warningBody: 'TestFlight builds are pre-release versions that have not been through App Store review, and they can carry bugs the released app does not. The beta installs under the same bundle identifier and app container as the App Store build, so it replaces that install and opens the same real .kdbx files, cloud connections, and saved keys. Duplicate a database first and point the beta at the copy. Keep your own backups either way.',
+    },
     faq: {
         eyebrow: 'FAQ',
         h2: 'Questions,<br>answered plainly.',
@@ -225,6 +235,16 @@ const de: typeof en = {
         eyebrow: 'OFFEN ENTWICKELT',
         h2: 'Ein Entwickler.<br><em>Öffentliche</em> Commit-Historie.',
         body: 'KeeForge wird von einer Person entwickelt — offen, auf GitHub. Eröffne ein Issue, schicke einen Pull Request oder lies einfach den Code, bevor du ihm deine Geheimnisse anvertraust. Genau darum geht es.',
+    },
+    beta: {
+        eyebrow: 'ÖFFENTLICHE BETA',
+        h2: 'Teste die nächste Version,<br><em>bevor</em> sie erscheint.',
+        body: 'Neue Versionen erscheinen über TestFlight, bevor sie in den App Store kommen.',
+        cta: 'Der Beta über TestFlight beitreten',
+        href: 'https://testflight.apple.com/join/mPAT4f1a',
+        availability: 'Die Beta ist nicht durchgehend geöffnet. Die Plätze sind auf 300 Tester begrenzt, und der Beitritt ist gesperrt, solange die Gruppe voll ist oder eine neue Version noch Apples Beta-Prüfung durchläuft. Der Link meldet dann, dass keine neuen Tester aufgenommen werden — das ist normal und löst sich von selbst.',
+        warningTitle: 'Teste mit einer Kopie deiner Datenbank, nicht mit deinem Haupttresor.',
+        warningBody: 'TestFlight-Builds sind Vorabversionen, die keine App-Store-Prüfung durchlaufen haben, und können Fehler enthalten, die es in der veröffentlichten App nicht gibt. Die Beta wird unter derselben Bundle-ID und im selben App-Container wie die App-Store-Version installiert, ersetzt diese Installation also und öffnet dieselben echten .kdbx-Dateien, Cloud-Verbindungen und gespeicherten Schlüssel. Dupliziere deine Datenbank vorher und öffne in der Beta nur die Kopie. Lege in jedem Fall eigene Backups an.',
     },
     faq: {
         eyebrow: 'FAQ',
