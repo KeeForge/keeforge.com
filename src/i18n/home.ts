@@ -9,7 +9,6 @@ const en = {
         'KeeForge is a free, open-source KeePass password manager for iPhone and iPad with AutoFill, passkeys, TOTP, Dropbox, OneDrive and WebDAV sync, and no subscription.',
     nav: {
         features: 'Features',
-        open: 'Open source',
         faq: 'FAQ',
         changelog: 'Changelog',
         source: 'Source',
@@ -120,11 +119,6 @@ const en = {
             },
         ],
     },
-    open: {
-        eyebrow: 'BUILT IN THE OPEN',
-        h2: 'One developer.<br><em>Public</em> commit history.',
-        body: 'KeeForge is built by one person, in the open, on GitHub. File an issue, send a pull request, or just read the code before you trust it with your secrets — that’s the whole point.',
-    },
     beta: {
         eyebrow: 'PUBLIC BETA',
         h2: 'Try the next version<br><em>before</em> it ships.',
@@ -162,7 +156,6 @@ const de: typeof en = {
         'KeeForge ist ein kostenloser, quelloffener KeePass-Passwortmanager für iPhone und iPad mit AutoFill, Passkeys, TOTP, Dropbox-, OneDrive- und WebDAV-Sync — ohne Abo.',
     nav: {
         features: 'Funktionen',
-        open: 'Open Source',
         faq: 'FAQ',
         changelog: 'Changelog',
         source: 'Quellcode',
@@ -272,11 +265,6 @@ const de: typeof en = {
                 ],
             },
         ],
-    },
-    open: {
-        eyebrow: 'OFFEN ENTWICKELT',
-        h2: 'Ein Entwickler.<br><em>Öffentliche</em> Commit-Historie.',
-        body: 'KeeForge wird von einer Person entwickelt — offen, auf GitHub. Eröffne ein Issue, schicke einen Pull Request oder lies einfach den Code, bevor du ihm deine Geheimnisse anvertraust. Genau darum geht es.',
     },
     beta: {
         eyebrow: 'ÖFFENTLICHE BETA',
