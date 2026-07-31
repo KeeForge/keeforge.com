@@ -5,8 +5,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "test:worker": "node --test worker/index.test.js",
-    "deploy:worker": "wrangler deploy"
+    "test:worker": "node --test worker/index.test.js"
   },
   "dependencies": {
     "astro": "^6.3.1"
