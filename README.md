@@ -11,7 +11,7 @@ Worker that receives in-app feedback.
 - `/vs/strongbox` — KeeForge vs Strongbox comparison
 - `/privacy` — privacy policy
 
-German and French translations of every page live under `/de/` and `/fr/`.
+German, French, and Spanish translations of every page live under `/de/`, `/fr/`, and `/es/`.
 
 ## Local development
 

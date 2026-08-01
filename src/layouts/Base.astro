@@ -3,20 +3,22 @@ interface Props {
   title?: string;
   description?: string;
   lang?: string;
-  // Paths of the English/German/French versions of this page, e.g. '/', '/de/', '/fr/'.
+  // Paths of the English/German/French/Spanish versions of this page, e.g. '/', '/de/', '/fr/', '/es/'.
   // Whichever are set are emitted as hreflang alternate links for SEO.
   enPath?: string;
   dePath?: string;
   frPath?: string;
+  esPath?: string;
 }
 
 const SITE = 'https://keeforge.com';
-const { title = 'KeeForge — Free, Open-Source KeePass for iOS', description = 'KeeForge is a free, open-source KeePass password manager for iPhone and iPad with AutoFill, passkeys, TOTP, Dropbox, OneDrive and WebDAV sync, and no subscription.', lang = 'en', enPath, dePath, frPath } = Astro.props;
+const { title = 'KeeForge — Free, Open-Source KeePass for iOS', description = 'KeeForge is a free, open-source KeePass password manager for iPhone and iPad with AutoFill, passkeys, TOTP, Dropbox, OneDrive and WebDAV sync, and no subscription.', lang = 'en', enPath, dePath, frPath, esPath } = Astro.props;
 
 const alternates = [
     ...(enPath ? [{ code: 'en', path: enPath }] : []),
     ...(dePath ? [{ code: 'de', path: dePath }] : []),
     ...(frPath ? [{ code: 'fr', path: frPath }] : []),
+    ...(esPath ? [{ code: 'es', path: esPath }] : []),
 ];
 ---
 

@@ -16,6 +16,7 @@ const en = {
     switchers: [
         { label: 'Deutsch', href: '/de/', hrefLang: 'de' },
         { label: 'Français', href: '/fr/', hrefLang: 'fr' },
+        { label: 'Español', href: '/es/', hrefLang: 'es' },
     ],
     hero: {
         h1: 'A KeePass app<br> that feels at <em>home</em> on&nbsp;iOS.',
@@ -166,6 +167,7 @@ const de: typeof en = {
     switchers: [
         { label: 'English', href: '/', hrefLang: 'en' },
         { label: 'Français', href: '/fr/', hrefLang: 'fr' },
+        { label: 'Español', href: '/es/', hrefLang: 'es' },
     ],
     hero: {
         h1: 'Eine KeePass-App,<br> die sich auf iOS <em>zu&nbsp;Hause</em> fühlt.',
@@ -316,6 +318,7 @@ const fr: typeof en = {
     switchers: [
         { label: 'English', href: '/', hrefLang: 'en' },
         { label: 'Deutsch', href: '/de/', hrefLang: 'de' },
+        { label: 'Español', href: '/es/', hrefLang: 'es' },
     ],
     hero: {
         h1: 'Une application KeePass<br> qui se sent <em>chez elle</em> sur&nbsp;iOS.',
@@ -451,4 +454,155 @@ const fr: typeof en = {
     },
 };
 
-export const home = { en, de, fr };
+const es: typeof en = {
+    lang: 'es',
+    path: '/es/',
+    title: 'KeeForge — KeePass gratuito y de código abierto para iOS',
+    description:
+        'KeeForge es un gestor de contraseñas KeePass gratuito y de código abierto para iPhone y iPad, con autorrelleno, llaves de acceso, TOTP, sincronización con Dropbox, OneDrive y WebDAV, y sin suscripción.',
+    nav: {
+        features: 'Funciones',
+        faq: 'Preguntas frecuentes',
+        changelog: 'Historial de cambios',
+        source: 'Código fuente',
+    },
+    switchers: [
+        { label: 'English', href: '/', hrefLang: 'en' },
+        { label: 'Deutsch', href: '/de/', hrefLang: 'de' },
+        { label: 'Français', href: '/fr/', hrefLang: 'fr' },
+    ],
+    hero: {
+        h1: 'Una app KeePass<br> que se siente como en <em>casa</em> en&nbsp;iOS.',
+        lead:
+            'KeeForge abre sus bóvedas <code class="mono">.kdbx</code> existentes con Face&nbsp;ID, rellena sus contraseñas en todas las apps, y nunca le pide una suscripción. Simplemente vive en su iPhone, tal como lo hacen las buenas herramientas.',
+        downloadTiny: 'Disponible en',
+        downloadBig: 'App Store',
+        readSource: 'Leer el código fuente',
+        screenshotAlt: 'Pantalla de la lista de bases de datos de KeeForge',
+        meta: ['iOS 17 +', 'iPhone &amp; iPad', 'KDBX 3.1 / 4.x', 'Ningún rastreo, jamás'],
+    },
+    trustPills: [
+        { k: '01', t: 'Código abierto', d: 'GPL 3.0. Audite cada línea.' },
+        { k: '02', t: 'Compatible con KeePass', d: 'Lectura/escritura de KDBX 4.x. KDBX 3.1 solo lectura.' },
+        { k: '03', t: 'Gratis, para siempre', d: 'Sin suscripción, sin anuncios, sin ventas adicionales.' },
+        { k: '04', t: 'Face ID + autorrelleno', d: 'Rellena credenciales en todas las apps.' },
+    ],
+    features: [
+        {
+            eyebrow: 'MUCHAS BÓVEDAS',
+            title: 'Una sola pantalla de inicio para todas sus bases de datos.',
+            body: 'Añada archivos .kdbx desde Archivos o iCloud Drive, conecte Dropbox u OneDrive, o use su propio servidor WebDAV. KeeForge mantiene sus bóvedas personales, de trabajo y compartidas juntas en una sola pantalla de inicio.',
+            points: [
+                'Abra tantas bases de datos como quiera, localmente o desde la nube',
+                'Cada bóveda recuerda su apodo, archivo de clave y preferencias',
+                'Exploración y sincronización nativas con Dropbox, OneDrive y WebDAV',
+            ],
+            screen: 'screen-01-database-list.png',
+            reverse: false,
+        },
+        {
+            eyebrow: 'ORGANIZAR Y ENCONTRAR',
+            title: 'Grupos, búsqueda y el detalle de entrada que esperaría.',
+            body: 'Navegue por carpetas tal como organizó su bóveda en el escritorio. Busque títulos, nombres de usuario, URL y notas en todos los grupos. Abra una entrada para copiar datos, revelarlos o ir a la URL.',
+            points: [
+                'Grupos jerárquicos, igual que en KeePassXC',
+                'Cree grupos o mueva entradas y grupos a la papelera',
+                'Vea previsualizaciones y comparta archivos adjuntos de una entrada sin exportar su bóveda',
+            ],
+            screen: 'screen-03-vault-groups.png',
+            reverse: true,
+        },
+        {
+            eyebrow: 'EDITAR EN EL DISPOSITIVO',
+            title: 'Cree y edite entradas sin salir de su dispositivo.',
+            body: 'Edite títulos, nombres de usuario, contraseñas, URL, etiquetas y notas. Genere una contraseña segura con un toque y luego guarde los cambios cifrados directamente en el archivo .kdbx de origen.',
+            points: [
+                'Cree nuevas bóvedas KDBX 4.x localmente o en carpetas conectadas en la nube',
+                'Comprobaciones de conflictos y copias de seguridad con marca de tiempo protegen cada guardado',
+                'Modo de solo lectura por base de datos cuando no quiera hacer cambios',
+            ],
+            screen: 'screen-07-entry-edit.png',
+            reverse: false,
+        },
+    ],
+    safety: {
+        eyebrow: 'SEGURIDAD DE LOS DATOS',
+        h2: 'Probado para que nunca<br>pierda <em>ni un solo byte</em>.',
+        lead: 'Un gestor de contraseñas nunca debe corromper su bóveda ni perder silenciosamente ninguna parte de ella. Antes de publicar cualquier cambio, pruebas automatizadas verifican:',
+        items: [
+            {
+                title: 'No se pierde nada al guardar.',
+                body: 'Cada tipo de edición se guarda y se vuelve a leer pieza por pieza — contraseñas, notas, archivos adjuntos, historial de entradas e incluso datos de otras apps de KeePass que KeeForge no reconoce deben volver exactamente como se introdujeron.',
+            },
+            {
+                title: 'Su archivo está protegido antes de tocarlo.',
+                body: 'KeeForge se niega a sobrescribir cambios hechos desde otro lugar mientras usted tenía el archivo abierto, escribe una copia de seguridad con marca de tiempo antes de cada guardado, y rechaza directamente las bases de datos dañadas en lugar de cargar datos parciales.',
+            },
+            {
+                title: 'Un programa independiente lo confirma.',
+                body: 'Cada versión debe superar una prueba de control en la que KeePassXC — una app de KeePass muy usada que no comparte código con KeeForge — abre las bases de datos escritas por KeeForge, descifra las contraseñas y confirma que los archivos adjuntos coinciden bit a bit. Las bases de datos creadas por otro software de KeePass deben, a su vez, abrirse en KeeForge y seguir siendo legibles en otros programas después de que KeeForge las guarde.',
+            },
+        ],
+        linkLabel: 'Lea cómo se prueba',
+        linkHref: 'https://github.com/crazytan/KeeForge/blob/main/README.es.md#seguridad-de-los-datos',
+    },
+    compare: {
+        eyebrow: 'CÓMO SE COMPARA',
+        h2: '¿Ya usa un gestor de contraseñas? <em>Aquí es donde encaja KeeForge.</em>',
+        cards: [
+            {
+                title: 'vs. Llavero de iCloud',
+                bullets: [
+                    'Las bóvedas KeePass <code class="mono">.kdbx</code> funcionan con herramientas de escritorio (KeePassXC, KeePass 2.x) y en dispositivos que no son de Apple.',
+                    'Su base de datos cifrada es portátil: haga una copia de seguridad local, sincronícela mediante Dropbox, OneDrive o WebDAV, o guárdela sin conexión.',
+                    'Código abierto que usted puede auditar, sin ningún tipo de telemetría.',
+                ],
+            },
+            {
+                title: 'vs. 1Password y Bitwarden',
+                bullets: [
+                    'Sin suscripción, sin cuenta, sin dependencia de un proveedor. Su bóveda es un archivo en su dispositivo o en su propia nube.',
+                    'Compatible con el ecosistema abierto de KeePass — KeePassXC, Strongbox, KeePassium, Keepass2Android.',
+                    'Código abierto bajo GPLv3. Cada línea es auditable, sin análisis ni telemetría de ningún tipo.',
+                ],
+            },
+            {
+                title: 'vs. otros clientes de KeePass para iOS',
+                bullets: [
+                    'Swift nativo, creado para iOS 17+ con las funciones actuales de la plataforma (llaves de acceso, autorrelleno de TOTP, integración con Archivos).',
+                    'Gratis para siempre, con todas las funciones incluidas — sin nivel premium, sin muros de pago dentro de la app (solo una propina opcional).',
+                    'Los guardados detectan conflictos y se respaldan automáticamente; el autorrelleno funciona sin conexión para bóvedas sincronizadas con la nube.',
+                ],
+            },
+        ],
+    },
+    beta: {
+        eyebrow: 'BETA PÚBLICA',
+        h2: 'Pruebe la próxima versión<br><em>antes</em> de que se publique.',
+        body: 'Las nuevas versiones se publican en TestFlight antes de llegar a la App Store.',
+        cta: 'Únase a la beta en TestFlight',
+        href: 'https://testflight.apple.com/join/mPAT4f1a',
+        availability: 'Las plazas están limitadas a 300 probadores, y la incorporación se pausa mientras una nueva versión está en revisión beta de Apple. Si el enlace indica que la beta no acepta más probadores, vuelva a comprobarlo más tarde.',
+        warningTitle: 'Pruebe con una copia de su base de datos, no con su bóveda principal.',
+        warningBody: 'Las compilaciones beta pueden tener errores que la app publicada no tiene — y sustituyen la instalación de la App Store, abriendo los mismos archivos .kdbx reales. Duplique primero una base de datos y apunte la beta a la copia.',
+    },
+    faq: {
+        eyebrow: 'PREGUNTAS FRECUENTES',
+        h2: 'Preguntas,<br>respondidas con claridad.',
+        items: [
+            { q: '¿KeeForge es realmente gratis?', a: 'Sí — gratis en la App Store, sin suscripciones, sin anuncios, sin nivel premium. Si desea apoyar el desarrollo, puede darle una estrella al repositorio o invitarme a un café.' },
+            { q: '¿Funciona con mi base de datos de KeePass existente?', a: 'KeeForge lee y escribe bases de datos KDBX 4.x con AES-256 o ChaCha20, junto con AES-KDF o Argon2. Las bases de datos KDBX 3.1 protegidas solo con contraseña se abren en modo de solo lectura.' },
+            { q: '¿Dónde se guardan mis contraseñas?', a: 'En su base de datos cifrada, en su dispositivo o en el almacenamiento que elija, como iCloud Drive, Dropbox, OneDrive, WebDAV u otro proveedor compatible con Archivos. KeeForge no aloja su bóveda.' },
+            { q: '¿Cómo funciona el autorrelleno?', a: 'KeeForge se registra como proveedor de credenciales de iOS. Toque un campo de inicio de sesión en cualquier lugar, elija KeeForge, autentíquese con Face ID, y sus credenciales se rellenan.' },
+            { q: '¿Puedo confiar en él?', a: 'Lea el código. Compílelo usted mismo. O confíe en el proceso de revisión de la App Store y en un historial de confirmaciones público — eso ya es más de lo que ofrecen la mayoría de los gestores de contraseñas.' },
+        ],
+    },
+    footer: {
+        copy: '© 2026 · GPL 3.0 · Hecho por una sola persona',
+        privacy: 'Privacidad',
+        privacyHref: '/es/privacy',
+        support: 'Soporte',
+    },
+};
+
+export const home = { en, de, fr, es };

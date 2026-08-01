@@ -7,15 +7,16 @@ interface Props {
     eyebrow?: string;
     heading: string;
     lead?: string;
-    lang?: 'en' | 'de' | 'fr';
-    // Paths of the English/German/French versions of this page, for the
+    lang?: 'en' | 'de' | 'fr' | 'es';
+    // Paths of the English/German/French/Spanish versions of this page, for the
     // language switcher and hreflang alternates. Omit while no translation exists.
     enPath?: string;
     dePath?: string;
     frPath?: string;
+    esPath?: string;
 }
 
-const { title, description, eyebrow, heading, lead, lang = 'en', enPath, dePath, frPath } = Astro.props;
+const { title, description, eyebrow, heading, lead, lang = 'en', enPath, dePath, frPath, esPath } = Astro.props;
 
 const strings = {
     en: {
@@ -30,6 +31,7 @@ const strings = {
         switchers: [
             ...(dePath ? [{ label: 'Deutsch', href: dePath, hrefLang: 'de' }] : []),
             ...(frPath ? [{ label: 'Français', href: frPath, hrefLang: 'fr' }] : []),
+            ...(esPath ? [{ label: 'Español', href: esPath, hrefLang: 'es' }] : []),
         ],
     },
     de: {
@@ -44,6 +46,7 @@ const strings = {
         switchers: [
             ...(enPath ? [{ label: 'English', href: enPath, hrefLang: 'en' }] : []),
             ...(frPath ? [{ label: 'Français', href: frPath, hrefLang: 'fr' }] : []),
+            ...(esPath ? [{ label: 'Español', href: esPath, hrefLang: 'es' }] : []),
         ],
     },
     fr: {
@@ -58,12 +61,28 @@ const strings = {
         switchers: [
             ...(enPath ? [{ label: 'English', href: enPath, hrefLang: 'en' }] : []),
             ...(dePath ? [{ label: 'Deutsch', href: dePath, hrefLang: 'de' }] : []),
+            ...(esPath ? [{ label: 'Español', href: esPath, hrefLang: 'es' }] : []),
+        ],
+    },
+    es: {
+        home: '/es/',
+        compare: 'Comparativa',
+        changelog: 'Historial de cambios',
+        faq: 'Preguntas frecuentes',
+        homeLabel: 'Inicio',
+        tagline: 'KeePass gratuito y de código abierto para iOS',
+        privacy: 'Política de privacidad',
+        privacyHref: '/es/privacy',
+        switchers: [
+            ...(enPath ? [{ label: 'English', href: enPath, hrefLang: 'en' }] : []),
+            ...(dePath ? [{ label: 'Deutsch', href: dePath, hrefLang: 'de' }] : []),
+            ...(frPath ? [{ label: 'Français', href: frPath, hrefLang: 'fr' }] : []),
         ],
     },
 }[lang];
 ---
 
-<Base title={title} description={description} lang={lang} enPath={enPath} dePath={dePath} frPath={frPath}>
+<Base title={title} description={description} lang={lang} enPath={enPath} dePath={dePath} frPath={frPath} esPath={esPath}>
     <header class="page-header">
         <div class="page-header-inner">
             <a href={strings.home} class="brand-link">

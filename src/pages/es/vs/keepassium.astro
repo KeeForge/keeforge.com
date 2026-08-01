@@ -1,38 +1,38 @@
 ---
 import Page from '../../../layouts/Page.astro';
 
-const title = 'KeeForge vs. KeePassium — zwei native KeePass-Clients für iOS im Vergleich';
-const description = 'Ein fairer Vergleich zwischen KeeForge und KeePassium für iOS — Funktionen, Preise, Open-Source-Ansatz und wann welche App die richtige Wahl ist.';
+const title = 'KeeForge vs KeePassium — dos clientes nativos de KeePass para iOS comparados';
+const description = 'Una comparación justa entre KeeForge y KeePassium para iOS — funciones, precios, postura de código abierto, y cuándo elegir cada uno.';
 ---
 
 <Page
-    lang="de"
+    lang="es"
     enPath="/vs/keepassium"
     dePath="/de/vs/keepassium"
     frPath="/fr/vs/keepassium"
     esPath="/es/vs/keepassium"
     title={title}
     description={description}
-    eyebrow="Vergleich"
-    heading="KeeForge vs. KeePassium"
-    lead="Beide sind native iOS-Apps zum Öffnen von KeePass-.kdbx-Datenbanken. Bei den Grundlagen überschneiden sie sich, in einigen wichtigen Punkten unterscheiden sie sich — Preis, Hardware-Key-Unterstützung und Funktionsumfang. Hier ist ein fairer Direktvergleich."
+    eyebrow="Comparación"
+    heading="KeeForge vs KeePassium"
+    lead="Ambas son apps nativas de iOS para abrir bases de datos KeePass .kdbx. Coinciden en lo básico y difieren en algunos puntos importantes: precio, compatibilidad con llaves de seguridad y alcance de funciones. Aquí tiene una comparación justa, lado a lado."
 >
     <section class="vs-section">
-        <h2>Die Kurzfassung</h2>
+        <h2>En resumen</h2>
         <p>
-            KeePassium ist ein ausgereifter, angesehener KeePass-Client für iOS mit einer starken kostenlosen Version und einem optionalen Premium-Upgrade, das erweiterte Funktionen freischaltet (insbesondere YubiKey-Hardware-Key-Unterstützung). Die App hat eine mehrjährige Erfolgsgeschichte und ein sorgfältiges, sicherheitsorientiertes Team dahinter.
+            KeePassium es un cliente de KeePass para iOS maduro y muy respetado, con un nivel gratuito sólido y una actualización Premium opcional que desbloquea funciones avanzadas (en particular, compatibilidad con llaves de seguridad YubiKey). Tiene un historial de varios años y un equipo cuidadoso, centrado en la seguridad.
         </p>
         <p>
-            KeeForge ist eine neuere, komplett kostenlose Alternative — jede Funktion ist gratis, der gesamte Code ist Open Source unter GPLv3, und es gibt keinen Premium-Tarif. Die App setzt iOS 17+ voraus und ist nativ für aktuelle Apple-Plattformfunktionen gebaut.
+            KeeForge es una alternativa más reciente y totalmente gratuita — todas las funciones están en el nivel gratuito, el código es completamente de código abierto bajo GPLv3, y no hay ningún plan premium. Está pensada para iOS 17+ y está creada de forma nativa para las funciones actuales de la plataforma de Apple.
         </p>
         <p>
-            Beide Apps lesen dasselbe <code class="mono">.kdbx</code>-Dateiformat — du kannst also denselben Tresor behalten und beide unverbindlich parallel ausprobieren.
+            Ambas apps leen el mismo formato de archivo <code class="mono">.kdbx</code>, así que puede mantener la misma bóveda y probarlas una junto a la otra sin comprometerse.
         </p>
     </section>
 
     <section class="vs-section">
-        <h2>Funktionsvergleich</h2>
-        <p class="vs-table-note">Stand zum Zeitpunkt der Veröffentlichung. Funktionen ändern sich — sieh dir für den aktuellen Stand die Release Notes beider Anbieter an.</p>
+        <h2>Comparación de funciones</h2>
+        <p class="vs-table-note">Al momento de escribir esto. Las funciones cambian — consulte las notas de la versión de ambos proveedores para la información más reciente.</p>
         <div class="vs-table-wrap">
             <table class="vs-table">
                 <thead>
@@ -44,54 +44,54 @@ const description = 'Ein fairer Vergleich zwischen KeeForge und KeePassium für 
                 </thead>
                 <tbody>
                     <tr>
-                        <td>KeePass-<code class="mono">.kdbx</code>-Datenbanken öffnen</td>
-                        <td>Ja</td>
-                        <td>Ja</td>
+                        <td>Abrir bases de datos KeePass <code class="mono">.kdbx</code></td>
+                        <td>Sí</td>
+                        <td>Sí</td>
                     </tr>
                     <tr>
-                        <td>Einträge bearbeiten, erstellen und löschen</td>
-                        <td>Ja</td>
-                        <td>Ja (unbegrenzt nur mit Premium; die Gratisversion hat Limits)</td>
+                        <td>Editar, crear y eliminar entradas</td>
+                        <td>Sí</td>
+                        <td>Sí (Premium para uso ilimitado; la versión gratuita tiene límites)</td>
                     </tr>
                     <tr>
-                        <td>AutoFill (Passwörter + Passkeys + TOTP)</td>
-                        <td>Ja</td>
-                        <td>Ja</td>
+                        <td>Autorrelleno (contraseñas + llaves de acceso + TOTP)</td>
+                        <td>Sí</td>
+                        <td>Sí</td>
                     </tr>
                     <tr>
-                        <td>Entsperren per Face ID / Touch ID</td>
-                        <td>Ja</td>
-                        <td>Ja</td>
+                        <td>Desbloqueo con Face ID / Touch ID</td>
+                        <td>Sí</td>
+                        <td>Sí</td>
                     </tr>
                     <tr>
-                        <td>Cloud-Sync (iCloud, Dropbox, OneDrive, WebDAV, Dateien-App)</td>
-                        <td>Ja</td>
-                        <td>Ja</td>
+                        <td>Sincronización en la nube (iCloud, Dropbox, OneDrive, WebDAV, Archivos)</td>
+                        <td>Sí</td>
+                        <td>Sí</td>
                     </tr>
                     <tr>
-                        <td>YubiKey- / Hardware-Key-Unterstützung</td>
-                        <td>Noch nicht</td>
-                        <td>Ja (Premium)</td>
+                        <td>Compatibilidad con YubiKey / llave de seguridad</td>
+                        <td>Todavía no</td>
+                        <td>Sí (Premium)</td>
                     </tr>
                     <tr>
-                        <td>Abo / Bezahlstufe</td>
-                        <td>Keine — nur eine freiwillige Trinkgeldkasse</td>
-                        <td>Gratis + Premium-Abo</td>
+                        <td>Suscripción / nivel de pago</td>
+                        <td>Ninguna — solo una propina opcional</td>
+                        <td>Gratis + suscripción Premium</td>
                     </tr>
                     <tr>
-                        <td>Open Source</td>
-                        <td>GPLv3 (gesamte App)</td>
-                        <td>GPLv3 (Gratisversion)</td>
+                        <td>Código abierto</td>
+                        <td>GPLv3 (app completa)</td>
+                        <td>GPLv3 (versión gratuita)</td>
                     </tr>
                     <tr>
-                        <td>Mindest-iOS-Version</td>
+                        <td>Versión mínima de iOS</td>
                         <td>iOS 17</td>
-                        <td>Niedriger (unterstützt ältere Geräte)</td>
+                        <td>Inferior (compatible con dispositivos más antiguos)</td>
                     </tr>
                     <tr>
-                        <td>Lokalisierung</td>
-                        <td>Englisch (weitere Sprachen auf der Roadmap)</td>
-                        <td>Über 20 Sprachen</td>
+                        <td>Localización</td>
+                        <td>Inglés, alemán, francés, español</td>
+                        <td>Más de 20 idiomas</td>
                     </tr>
                 </tbody>
             </table>
@@ -101,62 +101,62 @@ const description = 'Ein fairer Vergleich zwischen KeeForge und KeePassium für 
     <section class="vs-section">
         <div class="two-col">
             <div class="col-card">
-                <h3>Was KeePassium gut macht</h3>
+                <h3>Lo que KeePassium hace bien</h3>
                 <ul>
-                    <li>Mehrjährige Erfolgsgeschichte mit einem sorgfältigen, sicherheitsorientierten Team.</li>
-                    <li>Der Premium-Tarif bietet YubiKey-Hardware-Key-Unterstützung — praktisch, wenn dein Bedrohungsmodell einen physischen Schlüssel als zweiten Faktor vorsieht.</li>
-                    <li>In über 20 Sprachen lokalisiert.</li>
-                    <li>Unterstützt eine größere Bandbreite älterer iOS-Versionen.</li>
-                    <li>Starker Ruf und hohe Anerkennung in der Privacy-Community.</li>
+                    <li>Historial de varios años con un equipo cuidadoso, centrado en la seguridad.</li>
+                    <li>El nivel Premium ofrece compatibilidad con llaves de seguridad YubiKey — útil si su modelo de amenaza incluye un segundo factor con llave física.</li>
+                    <li>Localizada a más de 20 idiomas.</li>
+                    <li>Compatible con una gama más amplia de versiones antiguas de iOS.</li>
+                    <li>Buena reputación y reconocimiento en la comunidad centrada en la privacidad.</li>
                 </ul>
             </div>
             <div class="col-card">
-                <h3>Worin sich KeeForge unterscheidet</h3>
+                <h3>En qué se diferencia KeeForge</h3>
                 <ul>
-                    <li>Komplett kostenlos. Kein Abo, kein Premium-Tarif, keine In-App-Käufe außer einer freiwilligen Trinkgeldkasse.</li>
-                    <li>Jede Funktion ist Open Source unter GPLv3 — es gibt keine Bezahlstufe mit geschlossenen Komponenten.</li>
-                    <li>Nativ für iOS 17+ gebaut, mit aktuellen Plattformfunktionen (TOTP-AutoFill, Passkey-AutoFill, Integration in die Dateien-App) als erstklassigen Features.</li>
-                    <li>Kleinerer, fokussierterer Funktionsumfang — weniger Einstellungen zum Durchwühlen, schnellerer Start.</li>
+                    <li>Completamente gratis. Sin suscripción, sin nivel Premium, sin compras dentro de la app más allá de una propina voluntaria.</li>
+                    <li>Todas las funciones son de código abierto bajo GPLv3 — no hay un nivel de pago con componentes cerrados.</li>
+                    <li>Creada de forma nativa para iOS 17+ con las funciones actuales de la plataforma (autorrelleno de TOTP, autorrelleno de llaves de acceso, integración con la app Archivos) como prioridades de primer nivel.</li>
+                    <li>Un conjunto de funciones más pequeño y enfocado — menos ajustes que revisar, inicio más rápido.</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section class="vs-section">
-        <h2>Wann welche App die richtige ist</h2>
+        <h2>Cuándo elegir cada una</h2>
         <div class="two-col">
             <div class="choice-card">
-                <h3>Nimm KeeForge, wenn&hellip;</h3>
+                <h3>Elija KeeForge si&hellip;</h3>
                 <ul>
-                    <li>du niemals ein Abo willst.</li>
-                    <li>du (noch) keine YubiKey-Hardware-Key-Unterstützung brauchst.</li>
-                    <li>du eine vollständig quelloffene App willst — jede Funktion, nicht nur die Gratisversion.</li>
-                    <li>du iOS 17 oder neuer nutzt.</li>
+                    <li>No quiere una suscripción, nunca.</li>
+                    <li>No necesita (todavía) compatibilidad con llaves de seguridad YubiKey.</li>
+                    <li>Quiere una app totalmente de código abierto — todas las funciones, no solo el nivel gratuito.</li>
+                    <li>Usa iOS 17 o posterior.</li>
                 </ul>
             </div>
             <div class="choice-card">
-                <h3>Nimm KeePassium, wenn&hellip;</h3>
+                <h3>Elija KeePassium si&hellip;</h3>
                 <ul>
-                    <li>du einen YubiKey oder Hardware-Key als zweiten Faktor brauchst.</li>
-                    <li>du ein älteres iOS-Gerät hast (vor iOS 17).</li>
-                    <li>du die etablierteste Option mit der größten Nutzerbasis willst.</li>
-                    <li>du eine Oberfläche in einer anderen Sprache als Englisch brauchst.</li>
+                    <li>Necesita YubiKey o un segundo factor con llave de seguridad.</li>
+                    <li>Tiene un dispositivo iOS más antiguo (anterior a iOS 17).</li>
+                    <li>Quiere la opción más consolidada con la mayor base de usuarios.</li>
+                    <li>Necesita una interfaz en un idioma distinto del inglés, el alemán, el francés o el español.</li>
                 </ul>
             </div>
         </div>
         <p class="closing-note">
-            Du musst dich nicht für eine App entscheiden. Da beide Apps das Standardformat <code class="mono">.kdbx</code> lesen, kannst du beide installieren, auf denselben unterstützten Tresor-Speicherort zeigen lassen und schauen, welche besser zu deinem Alltag passt.
+            No tiene que elegir solo una. Como ambas apps leen archivos <code class="mono">.kdbx</code> estándar, puede instalar las dos, apuntarlas a la misma ubicación de bóveda compatible, y decidir cuál se ajusta mejor a su día a día.
         </p>
     </section>
 
     <section class="vs-cta">
-        <h2>Probier KeeForge aus</h2>
-        <p>Kostenlos, Open Source, ohne Konten.</p>
+        <h2>Pruebe KeeForge</h2>
+        <p>Gratis, de código abierto, sin cuentas.</p>
         <div class="cta-row">
-            <a href="https://apps.apple.com/us/app/keeforge/id6759309295" class="app-store-badge" aria-label="Laden im App Store">
-                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Laden im App Store" height="52">
+            <a href="https://apps.apple.com/us/app/keeforge/id6759309295" class="app-store-badge" aria-label="Descargar en App Store">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Descargar en App Store" height="52">
             </a>
-            <a href="/de/" class="ghost-link">Zurück zur Startseite</a>
+            <a href="/es/" class="ghost-link">Volver a la página de inicio</a>
         </div>
     </section>
 </Page>

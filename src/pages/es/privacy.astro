@@ -1,0 +1,147 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="Política de privacidad — KeeForge" description="KeeForge no recopila los datos de su bóveda. El formulario de comentarios opcional dentro de la app solo envía lo que usted elija: su mensaje, detalles de error visibles al informar de un fallo al abrir una base de datos y, si lo acepta, una dirección de correo electrónico de seguimiento y una foto adjunta." lang="es" enPath="/privacy" dePath="/de/privacy" frPath="/fr/privacy" esPath="/es/privacy">
+    <div class="privacy">
+        <div class="top-links">
+            <a href="/es/" class="back-link">&larr; Volver a KeeForge</a>
+            <div class="lang-links">
+                <a href="/privacy" hreflang="en" class="back-link">English</a>
+                <a href="/de/privacy" hreflang="de" class="back-link">Deutsch</a>
+                <a href="/fr/privacy" hreflang="fr" class="back-link">Français</a>
+            </div>
+        </div>
+        <h1>Política de privacidad</h1>
+        <p class="updated">Última actualización: 31 de julio de 2026</p>
+
+        <div class="content">
+            <p class="lead">KeeForge no recopila los datos de su bóveda. El formulario de comentarios opcional dentro de la app solo envía lo que usted elija: su mensaje, los detalles de error visibles al informar de un fallo al abrir una base de datos y, si lo acepta, una dirección de correo electrónico de seguimiento y una foto adjunta.</p>
+
+            <p class="note">Esta traducción se ofrece a título informativo. En caso de duda, prevalece la <a href="/privacy">versión en inglés</a>.</p>
+
+            <h2>Sin analítica</h2>
+            <p>KeeForge no contiene ningún framework de analítica, ningún SDK de informes de fallos, ni ningún tipo de seguimiento de uso.</p>
+
+            <h2>Sin telemetría</h2>
+            <p>KeeForge no envía analítica, telemetría de uso ni informes de fallos. La actividad de red se limita a las funciones que usted elige utilizar: la sincronización de bases de datos con proveedores de nube configurados como Dropbox, OneDrive y WebDAV; la descarga opcional de favicones de sitios web a través de DuckDuckGo; la carga o finalización de propinas opcionales mediante los servicios StoreKit de Apple; la apertura de enlaces de soporte como Buy Me a Coffee en su navegador; y el envío del formulario de comentarios integrado en la app cuando usted pulsa explícitamente «Enviar».</p>
+
+            <h2>Sin cuentas</h2>
+            <p>KeeForge no requiere ni ofrece la creación de cuentas. No hay nada a lo que registrarse.</p>
+
+            <h2>Los datos de su bóveda</h2>
+            <p>Sus contraseñas, entradas, archivos adjuntos y su contraseña maestra se procesan localmente y permanecen en su dispositivo y en las ubicaciones de almacenamiento que usted elija. El desarrollador de KeeForge y el servicio de comentarios no reciben su bóveda, su contraseña maestra, sus archivos de clave ni el contenido descifrado de sus entradas. La app puede funcionar sin conexión, salvo cuando usted elige usar alguna de las funciones basadas en red descritas anteriormente.</p>
+
+            <h2>Envíos de comentarios</h2>
+            <p>KeeForge incluye un formulario de comentarios integrado en la app (disponible desde Ajustes y desde ciertas pantallas de error). El formulario es totalmente opcional &mdash; las funciones y servicios de la app no dependen de su uso. Solo cuando, y únicamente cuando, pulsa «Enviar», la app envía la siguiente información a nuestro punto de conexión de comentarios en <code>https://feedback.keeforge.com/api/feedback</code> mediante HTTPS:</p>
+            <ul>
+                <li>El mensaje de texto libre que escribió.</li>
+                <li>Si envía comentarios desde una pantalla de error de apertura de base de datos: los detalles de error visibles en la app, incluyendo la categoría de error, el código de error, el título, el resumen, los detalles técnicos y los diagnósticos descritos a continuación.</li>
+                <li>Si acepta un seguimiento: la dirección de correo electrónico que introduzca, para que podamos responderle. Solo se envía y se almacena si usted lo acepta explícitamente.</li>
+                <li>Si adjunta una foto: la propia imagen. La app la reduce de tamaño en su dispositivo y la vuelve a codificar como JPEG antes de enviarla, lo que elimina los metadatos EXIF y GPS.</li>
+            </ul>
+            <p>Los diagnósticos de apertura de base de datos pueden incluir: el método de desbloqueo; si se proporcionó una contraseña o un archivo de clave; el número de intentos fallidos; el origen local o en la nube; el estado de solo lectura; el proveedor de nube y el estado de sincronización; prefijos cortos de la revisión remota, el hash de contenido y el hash del archivo cifrado; el tamaño del archivo cifrado; un resumen del encabezado KDBX; la versión y el build de la app; la versión del sistema operativo; y el modelo de dispositivo. Estos detalles se muestran en el formulario de comentarios antes de que los envíe. Nunca incluyen entradas, contraseñas, archivos de clave, archivos de base de datos sin procesar, ni contenido descifrado de la bóveda.</p>
+            <p>La dirección de correo electrónico de seguimiento y la foto adjunta son ambas opcionales y están desactivadas a menos que usted las active. Si no acepta un seguimiento, no se envía ni se almacena ninguna dirección de correo electrónico; si no adjunta una foto, no se envía ninguna imagen. Si decide escribir información personal en el propio mensaje, ese texto se envía porque usted lo incluyó manualmente.</p>
+            <p>Usamos esta información únicamente para leer sus comentarios y diagnosticar errores. No la usamos con fines publicitarios, de perfilado ni de analítica, y no la vendemos. Los envíos se almacenan en infraestructura operada en nuestro nombre por nuestro proveedor de alojamiento; dicho proveedor está contractualmente obligado a proteger los datos según el mismo estándar descrito en esta política y a procesarlos solo siguiendo nuestras instrucciones.</p>
+            <p>Conservamos los envíos de comentarios, incluida cualquier foto adjunta, durante un máximo de 24 meses para poder revisar informes relacionados, y luego los eliminamos. Puede solicitar la eliminación de un envío de comentarios en cualquier momento escribiendo a <a href="mailto:support@keeforge.com">support@keeforge.com</a> o abriendo un issue en <a href="https://github.com/crazytan/KeeForge">GitHub</a>. También puede simplemente no usar el formulario de comentarios &mdash; si nunca pulsa «Enviar», no se transmite nada.</p>
+
+            <h2>Menores</h2>
+            <p>KeeForge no está dirigido a menores, y no recopilamos a sabiendas información de menores a través del formulario de comentarios.</p>
+
+            <h2>Código abierto</h2>
+            <p>No confíe solo en nuestra palabra. KeeForge es de código abierto bajo la licencia GPLv3. Puede <a href="https://github.com/crazytan/KeeForge">auditar el código usted mismo</a>, incluidos los campos exactos que envía el formulario de comentarios.</p>
+
+            <h2>Cambios en esta política</h2>
+            <p>Si cambiamos lo que recopila la app o cómo lo usamos, actualizaremos esta página y la fecha de «Última actualización» indicada arriba antes de que el cambio se publique en una versión pública.</p>
+
+            <h2>Contacto</h2>
+            <p>Si tiene preguntas sobre esta política, escriba a <a href="mailto:support@keeforge.com">support@keeforge.com</a> o abra un issue en <a href="https://github.com/crazytan/KeeForge">GitHub</a>.</p>
+        </div>
+    </div>
+</Base>
+
+<style>
+    .privacy {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 60px 24px 80px;
+    }
+
+    .top-links {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .lang-links {
+        display: flex;
+        gap: 16px;
+    }
+
+    .back-link {
+        display: inline-block;
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        margin-bottom: 40px;
+        transition: color 0.2s;
+    }
+
+    .back-link:hover {
+        color: var(--text);
+    }
+
+    h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin-bottom: 8px;
+        background: none;
+        -webkit-text-fill-color: var(--text);
+    }
+
+    .updated {
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        margin-bottom: 40px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .lead {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--green);
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .note {
+        font-size: 0.85rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: -16px;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--text-dim);
+    }
+
+    @media (max-width: 480px) {
+        .privacy {
+            padding: 40px 20px 60px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+    }
+</style>

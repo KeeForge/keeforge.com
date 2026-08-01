@@ -3,14 +3,14 @@ import Base from '../layouts/Base.astro';
 import { home } from '../i18n/home';
 
 interface Props {
-    lang: 'en' | 'de' | 'fr';
+    lang: 'en' | 'de' | 'fr' | 'es';
 }
 
 const { lang } = Astro.props;
 const t = home[lang];
 ---
 
-<Base title={t.title} description={t.description} lang={lang} enPath={home.en.path} dePath={home.de.path} frPath={home.fr.path}>
+<Base title={t.title} description={t.description} lang={lang} enPath={home.en.path} dePath={home.de.path} frPath={home.fr.path} esPath={home.es.path}>
     <div class="kf-root">
         <!-- Nav -->
         <header class="kf-nav">
