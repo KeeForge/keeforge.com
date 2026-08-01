@@ -350,3 +350,44 @@ test("GET /api/feedback still returns method_not_allowed when no ASSETS binding 
   assert.equal(response.status, 405);
   assert.deepEqual(await response.json(), { ok: false, error: "method_not_allowed" });
 });
+
+test("unmatched site GETs proxy to the static origin when no ASSETS binding is configured", async () => {
+  const realFetch = globalThis.fetch;
+  let proxied;
+  globalThis.fetch = async (request) => {
+    proxied = request.url;
+    return new Response("origin page", { status: 200 });
+  };
+  try {
+    const response = await worker.fetch(
+      new Request("https://keeforge.com/vs/keepassium/", {
+        method: "GET",
+        headers: { "accept-language": "de" },
+      }),
+      {}
+    );
+    assert.equal(response.status, 200);
+    assert.equal(await response.text(), "origin page");
+    assert.equal(proxied, "https://keeforge.com/vs/keepassium/");
+  } finally {
+    globalThis.fetch = realFetch;
+  }
+});
+
+test("an English root visit proxies to the origin instead of 405ing", async () => {
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response("home", { status: 200 });
+  try {
+    const response = await worker.fetch(
+      new Request("https://keeforge.com/", {
+        method: "GET",
+        headers: { "accept-language": "en-US,en;q=0.9" },
+      }),
+      {}
+    );
+    assert.equal(response.status, 200);
+    assert.equal(await response.text(), "home");
+  } finally {
+    globalThis.fetch = realFetch;
+  }
+});

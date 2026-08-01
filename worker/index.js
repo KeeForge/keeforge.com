@@ -105,13 +105,12 @@ async function ensureSchema(db) {
 //
 // This Worker's own route is https://feedback.keeforge.com/api/feedback (see
 // README.md); the wrangler.toml that maps keeforge.com's paths to a Worker
-// lives in the private keeforge-infra repo, not here. This logic is written
-// so it works correctly if/when that routing binds an `ASSETS` binding and
-// fronts keeforge.com/* through this same fetch handler: GET requests fall
-// through to `env.ASSETS.fetch(request)` for normal static serving, and to
-// the pre-existing `method_not_allowed` response when no ASSETS binding is
-// configured (i.e. the current feedback-only deployment), so nothing here
-// changes behavior for the feedback endpoint.
+// lives in the private keeforge-infra repo, not here. When that routing also
+// points site paths at this Worker, unmatched GETs are served by the ASSETS
+// binding if one is configured, and otherwise proxied to the static origin
+// with fetch(request) — same-zone subrequests bypass Worker routes, so this
+// cannot loop. On the feedback host unmatched GETs keep returning 405, so
+// nothing here changes behavior for the feedback endpoint.
 const SUPPORTED_LOCALES = ["en", "de", "fr", "es"];
 const LOCALE_HOME_PATHS = { en: "/", de: "/de/", fr: "/fr/", es: "/es/" };
 const LANG_COOKIE_NAME = "kf_lang";
@@ -229,6 +228,7 @@ export default {
         const routed = routeLocale(request, url);
         if (routed) return routed;
         if (env.ASSETS) return env.ASSETS.fetch(request);
+        if (url.hostname !== "feedback.keeforge.com") return fetch(request);
         return json({ ok: false, error: "method_not_allowed" }, 405);
       }
 
