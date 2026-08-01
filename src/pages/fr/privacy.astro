@@ -1,0 +1,146 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="Politique de confidentialité — KeeForge" description="KeeForge ne collecte pas les données de votre coffre-fort. Le formulaire de retour optionnel dans l’application n’envoie que ce que vous choisissez : votre message, les détails d’erreur visibles lors du signalement d’un échec d’ouverture de base de données, et, si vous y consentez, une adresse e-mail de suivi et une photo jointe." lang="fr" enPath="/privacy" dePath="/de/privacy" frPath="/fr/privacy">
+    <div class="privacy">
+        <div class="top-links">
+            <a href="/fr/" class="back-link">&larr; Retour à KeeForge</a>
+            <div class="lang-links">
+                <a href="/privacy" hreflang="en" class="back-link">English</a>
+                <a href="/de/privacy" hreflang="de" class="back-link">Deutsch</a>
+            </div>
+        </div>
+        <h1>Politique de confidentialité</h1>
+        <p class="updated">Dernière mise à jour&nbsp;: 31 juillet 2026</p>
+
+        <div class="content">
+            <p class="lead">KeeForge ne collecte pas les données de votre coffre-fort. Le formulaire de retour optionnel dans l’application n’envoie que ce que vous choisissez&nbsp;: votre message, les détails d’erreur visibles lors du signalement d’un échec d’ouverture de base de données, et, si vous y consentez, une adresse e-mail de suivi et une photo jointe.</p>
+
+            <p class="note">Cette traduction est fournie à titre informatif. En cas de doute, la <a href="/privacy">version anglaise</a> fait foi.</p>
+
+            <h2>Aucune analyse</h2>
+            <p>KeeForge ne contient aucun framework d’analyse, aucun SDK de rapport de plantage, et aucun suivi d’utilisation, quel qu’il soit.</p>
+
+            <h2>Aucune télémétrie</h2>
+            <p>KeeForge n’envoie ni statistiques d’usage, ni télémétrie, ni rapports de plantage. L’activité réseau se limite aux fonctionnalités que vous choisissez d’utiliser&nbsp;: la synchronisation des bases de données avec les fournisseurs cloud configurés tels que Dropbox, OneDrive et WebDAV&nbsp;; le téléchargement optionnel des favicônes de sites via DuckDuckGo&nbsp;; le chargement ou la validation de pourboires optionnels via les services StoreKit d’Apple&nbsp;; l’ouverture de liens de support tels que Buy Me a Coffee dans votre navigateur&nbsp;; et l’envoi du formulaire de retour intégré à l’application lorsque vous appuyez explicitement sur «&nbsp;Envoyer&nbsp;».</p>
+
+            <h2>Aucun compte</h2>
+            <p>KeeForge n’exige ni ne propose la création de compte. Il n’y a rien à quoi vous inscrire.</p>
+
+            <h2>Les données de votre coffre-fort</h2>
+            <p>Vos mots de passe, entrées, pièces jointes et votre mot de passe principal sont traités localement et restent sur votre appareil et aux emplacements de stockage que vous choisissez. Le développeur de KeeForge et le service de retour ne reçoivent ni votre coffre-fort, ni votre mot de passe principal, ni vos fichiers de clé, ni le contenu déchiffré de vos entrées. L’application peut fonctionner hors ligne, sauf lorsque vous choisissez d’utiliser l’une des fonctionnalités réseau décrites ci-dessus.</p>
+
+            <h2>Envois de retours</h2>
+            <p>KeeForge inclut un formulaire de retour intégré (accessible depuis les réglages et depuis certains écrans d’erreur). Ce formulaire est entièrement optionnel &mdash; les fonctionnalités et services de l’application n’en dépendent pas. C’est seulement lorsque vous appuyez sur «&nbsp;Envoyer&nbsp;» que l’application transmet les informations suivantes à notre point de terminaison de retour, à l’adresse <code>https://feedback.keeforge.com/api/feedback</code>, via HTTPS&nbsp;:</p>
+            <ul>
+                <li>Le message en texte libre que vous avez saisi.</li>
+                <li>Si vous envoyez un retour depuis un écran d’erreur d’ouverture de base de données&nbsp;: les détails d’erreur visibles dans l’application, y compris la catégorie d’erreur, le code d’erreur, le titre, le résumé, les détails techniques et les diagnostics décrits ci-dessous.</li>
+                <li>Si vous acceptez d’être recontacté&nbsp;: l’adresse e-mail que vous saisissez, afin que nous puissions vous répondre. Elle n’est envoyée et conservée que si vous y consentez explicitement.</li>
+                <li>Si vous joignez une photo&nbsp;: l’image elle-même. L’application la redimensionne sur votre appareil et la ré-encode en JPEG avant l’envoi, ce qui supprime les métadonnées EXIF et GPS.</li>
+            </ul>
+            <p>Les diagnostics d’ouverture de base de données peuvent inclure&nbsp;: la méthode de déverrouillage&nbsp;; si un mot de passe ou un fichier de clé a été fourni&nbsp;; le nombre de tentatives échouées&nbsp;; la source locale ou cloud&nbsp;; l’état lecture seule&nbsp;; le fournisseur cloud et l’état de synchronisation&nbsp;; de courts préfixes de révision distante, de hachage de contenu et de hachage du fichier chiffré&nbsp;; la taille du fichier chiffré&nbsp;; un résumé de l’en-tête KDBX&nbsp;; la version et le build de l’application&nbsp;; la version du système&nbsp;; et le modèle d’appareil. Ces détails s’affichent dans le formulaire de retour avant que vous ne les envoyiez. Ils n’incluent jamais d’entrées, de mots de passe, de fichiers de clé, de fichiers de base de données bruts, ou de contenu de coffre-fort déchiffré.</p>
+            <p>L’adresse e-mail de suivi et la photo jointe sont toutes deux optionnelles et désactivées par défaut, sauf si vous les activez. Si vous n’acceptez pas d’être recontacté, aucune adresse e-mail n’est envoyée ni conservée&nbsp;; si vous ne joignez pas de photo, aucune image n’est envoyée. Si vous choisissez de saisir des informations personnelles dans le message lui-même, ce texte est envoyé parce que vous l’y avez inclus manuellement.</p>
+            <p>Nous utilisons ces informations uniquement pour lire votre retour et diagnostiquer des bugs. Nous ne les utilisons pas à des fins publicitaires, de profilage ou d’analyse, et nous ne les vendons pas. Les envois sont stockés sur une infrastructure exploitée pour notre compte par notre hébergeur&nbsp;; tout hébergeur de ce type est contractuellement tenu de protéger les données selon le même standard que celui décrit dans cette politique, et de ne les traiter que sur nos instructions.</p>
+            <p>Nous conservons les envois de retours, y compris toute photo jointe, pendant une durée maximale de 24 mois afin de pouvoir examiner les signalements associés, puis nous les supprimons. Vous pouvez demander la suppression d’un envoi de retour à tout moment en écrivant à <a href="mailto:support@keeforge.com">support@keeforge.com</a> ou en ouvrant une issue sur <a href="https://github.com/crazytan/KeeForge">GitHub</a>. Vous pouvez également simplement ne pas utiliser le formulaire de retour &mdash; si vous n’appuyez jamais sur «&nbsp;Envoyer&nbsp;», rien n’est transmis.</p>
+
+            <h2>Enfants</h2>
+            <p>KeeForge ne s’adresse pas aux enfants, et nous ne collectons sciemment aucune information auprès d’enfants via le formulaire de retour.</p>
+
+            <h2>Open source</h2>
+            <p>Ne vous fiez pas seulement à notre parole. KeeForge est open source sous licence GPLv3. Vous pouvez <a href="https://github.com/crazytan/KeeForge">auditer le code vous-même</a>, y compris les champs exacts envoyés par le formulaire de retour.</p>
+
+            <h2>Modifications de cette politique</h2>
+            <p>Si nous modifions ce que l’application collecte ou la façon dont nous l’utilisons, nous mettrons à jour cette page et la date «&nbsp;Dernière mise à jour&nbsp;» ci-dessus avant que le changement ne soit publié dans une version publique.</p>
+
+            <h2>Contact</h2>
+            <p>Si vous avez des questions concernant cette politique, écrivez à <a href="mailto:support@keeforge.com">support@keeforge.com</a> ou ouvrez une issue sur <a href="https://github.com/crazytan/KeeForge">GitHub</a>.</p>
+        </div>
+    </div>
+</Base>
+
+<style>
+    .privacy {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 60px 24px 80px;
+    }
+
+    .top-links {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .lang-links {
+        display: flex;
+        gap: 16px;
+    }
+
+    .back-link {
+        display: inline-block;
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        margin-bottom: 40px;
+        transition: color 0.2s;
+    }
+
+    .back-link:hover {
+        color: var(--text);
+    }
+
+    h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin-bottom: 8px;
+        background: none;
+        -webkit-text-fill-color: var(--text);
+    }
+
+    .updated {
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        margin-bottom: 40px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .lead {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--green);
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .note {
+        font-size: 0.85rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: -16px;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--text-dim);
+    }
+
+    @media (max-width: 480px) {
+        .privacy {
+            padding: 40px 20px 60px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+    }
+</style>

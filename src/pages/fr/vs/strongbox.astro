@@ -1,0 +1,392 @@
+---
+import Page from '../../../layouts/Page.astro';
+
+const title = 'KeeForge vs Strongbox — comment se comparent ces deux clients KeePass pour iOS';
+const description = 'Une comparaison équitable entre KeeForge et Strongbox pour iOS — fonctionnalités, tarifs, posture open source, et quand choisir l’une ou l’autre.';
+---
+
+<Page
+    title={title}
+    description={description}
+    eyebrow="Comparaison"
+    heading="KeeForge vs Strongbox"
+    lead="Strongbox est un gestionnaire de mots de passe riche en fonctionnalités pour iOS et macOS, qui prend en charge les formats KeePass et Password Safe. KeeForge est un client KeePass pour iOS, focalisé et entièrement gratuit. Voici une comparaison honnête pour vous aider à choisir."
+    lang="fr"
+    enPath="/vs/strongbox"
+    dePath="/de/vs/strongbox"
+    frPath="/fr/vs/strongbox"
+>
+    <section class="vs-section">
+        <h2>En bref</h2>
+        <p>
+            Strongbox est un gestionnaire de mots de passe établi de longue date et très complet, avec une solide prise en charge des coffres-forts KeePass et Password Safe. Son palier Pro ajoute des flux de travail avancés : prise en charge des clés matérielles, intégrations navigateur, saisie automatique avancée, et plus encore. C’est l’un des clients KeePass natifs les plus capables disponibles sur les plateformes Apple.
+        </p>
+        <p>
+            KeeForge a volontairement un périmètre plus restreint — elle se concentre sur KeePass <code class="mono">.kdbx</code> avec une expérience iOS minimaliste et moderne. Chaque fonctionnalité est dans l’application gratuite et entièrement open source. Il n’existe ni palier Pro ni abonnement.
+        </p>
+        <p>
+            Les deux applications lisent des fichiers <code class="mono">.kdbx</code> standard, vous pouvez donc les essayer côte à côte sur le même coffre-fort.
+        </p>
+    </section>
+
+    <section class="vs-section">
+        <h2>Comparaison des fonctionnalités</h2>
+        <p class="vs-table-note">Au moment de la rédaction. Les fonctionnalités évoluent — consultez les notes de version des deux éditeurs pour les informations les plus récentes.</p>
+        <div class="vs-table-wrap">
+            <table class="vs-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>KeeForge</th>
+                        <th>Strongbox</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ouvrir des bases de données KeePass <code class="mono">.kdbx</code></td>
+                        <td>Oui</td>
+                        <td>Oui</td>
+                    </tr>
+                    <tr>
+                        <td>Prise en charge de Password Safe (<code class="mono">.psafe3</code>)</td>
+                        <td>Non</td>
+                        <td>Oui</td>
+                    </tr>
+                    <tr>
+                        <td>Modifier, créer et supprimer des entrées</td>
+                        <td>Oui</td>
+                        <td>Oui (Pro pour l’édition complète dans certains flux)</td>
+                    </tr>
+                    <tr>
+                        <td>Remplissage automatique (mots de passe + clés d’accès + TOTP)</td>
+                        <td>Oui</td>
+                        <td>Oui</td>
+                    </tr>
+                    <tr>
+                        <td>Déverrouillage Face ID / Touch ID</td>
+                        <td>Oui</td>
+                        <td>Oui</td>
+                    </tr>
+                    <tr>
+                        <td>Synchronisation cloud (iCloud, Dropbox, OneDrive, WebDAV, Fichiers)</td>
+                        <td>Oui</td>
+                        <td>Oui (plus de fournisseurs en Pro)</td>
+                    </tr>
+                    <tr>
+                        <td>Prise en charge YubiKey / clé matérielle</td>
+                        <td>Pas encore</td>
+                        <td>Oui (Pro)</td>
+                    </tr>
+                    <tr>
+                        <td>Abonnement / palier payant</td>
+                        <td>Aucun — juste un pourboire optionnel</td>
+                        <td>Gratuit + Pro (abonnement ou licence à vie)</td>
+                    </tr>
+                    <tr>
+                        <td>Open source</td>
+                        <td>GPLv3 (application complète)</td>
+                        <td>Open source avec des composants commerciaux</td>
+                    </tr>
+                    <tr>
+                        <td>Plateformes</td>
+                        <td>iOS et iPadOS</td>
+                        <td>iOS, iPadOS, macOS</td>
+                    </tr>
+                    <tr>
+                        <td>Version iOS minimale</td>
+                        <td>iOS 17</td>
+                        <td>Inférieure (prend en charge des appareils plus anciens)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="vs-section">
+        <div class="two-col">
+            <div class="col-card">
+                <h3>Ce que Strongbox fait bien</h3>
+                <ul>
+                    <li>Prise en charge des formats KeePass et Password Safe — utile si vous avez des coffres-forts <code class="mono">.psafe3</code> hérités.</li>
+                    <li>Le palier Pro offre la prise en charge de YubiKey, des intégrations de stockage cloud plus larges et des flux de saisie automatique avancés.</li>
+                    <li>Longue histoire de développement actif et un ensemble de fonctionnalités riche pour les utilisateurs avancés.</li>
+                    <li>Application macOS mature aux côtés de l’application iOS, pour qui veut un client de bureau du même éditeur.</li>
+                </ul>
+            </div>
+            <div class="col-card">
+                <h3>Où KeeForge se distingue</h3>
+                <ul>
+                    <li>Entièrement gratuit. Pas de palier Pro, pas d’abonnement, aucun achat intégré au-delà d’un pourboire facultatif.</li>
+                    <li>Chaque fonctionnalité est open source sous licence GPLv3 — il n’existe pas de palier payant avec des composants fermés.</li>
+                    <li>Conçue nativement pour iOS 17+, avec les fonctionnalités actuelles de la plateforme (remplissage automatique TOTP, remplissage automatique des clés d’accès, intégration à l’app Fichiers) comme priorités de premier plan.</li>
+                    <li>Un périmètre fonctionnel plus restreint et plus ciblé — plus simple à apprendre, plus rapide à prendre en main.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="vs-section">
+        <h2>Quand choisir l’une ou l’autre</h2>
+        <div class="two-col">
+            <div class="choice-card">
+                <h3>Choisissez KeeForge si…</h3>
+                <ul>
+                    <li>Vous n’utilisez que des coffres-forts KeePass <code class="mono">.kdbx</code>.</li>
+                    <li>Vous ne voulez ni abonnement ni palier Pro.</li>
+                    <li>Vous n’avez pas (encore) besoin de la prise en charge des clés matérielles YubiKey.</li>
+                    <li>Vous préférez une application entièrement open source, où chaque fonctionnalité est dans le code source public.</li>
+                    <li>Vous êtes sur iOS 17 ou une version ultérieure.</li>
+                </ul>
+            </div>
+            <div class="choice-card">
+                <h3>Choisissez Strongbox si…</h3>
+                <ul>
+                    <li>Vous devez ouvrir des coffres-forts Password Safe <code class="mono">.psafe3</code>.</li>
+                    <li>Vous avez besoin de YubiKey ou d’une autre clé matérielle.</li>
+                    <li>Vous voulez des flux de saisie automatique avancés sur macOS.</li>
+                    <li>Vous êtes sur un appareil iOS plus ancien (antérieur à iOS 17).</li>
+                </ul>
+            </div>
+        </div>
+        <p class="closing-note">
+            Beaucoup d’utilisateurs de KeePass gardent plusieurs clients installés, pointés vers le même coffre-fort. Comme <code class="mono">.kdbx</code> est un format portable, le coût du changement est faible — essayez les deux et voyez ce qui convient le mieux à votre quotidien.
+        </p>
+    </section>
+
+    <section class="vs-cta">
+        <h2>Essayez KeeForge</h2>
+        <p>Gratuite, open source, sans compte.</p>
+        <div class="cta-row">
+            <a href="https://apps.apple.com/us/app/keeforge/id6759309295" class="app-store-badge" aria-label="Télécharger sur l’App Store">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Télécharger sur l’App Store" height="52">
+            </a>
+            <a href="/fr/" class="ghost-link">Retour à l’accueil</a>
+        </div>
+    </section>
+</Page>
+
+<style>
+    .vs-section {
+        margin-bottom: 56px;
+    }
+
+    .vs-section h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        margin-bottom: 16px;
+    }
+
+    .vs-section > p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--text-dim);
+        margin-bottom: 14px;
+        max-width: 720px;
+    }
+
+    .vs-section > p:last-child {
+        margin-bottom: 0;
+    }
+
+    .vs-section > p code.mono {
+        font-size: 0.85rem;
+        background: rgba(15, 23, 42, 0.05);
+        padding: 1px 4px;
+        border-radius: 4px;
+    }
+
+    .vs-table-note {
+        font-size: 0.8rem !important;
+        color: var(--text-dim);
+        margin-bottom: 16px !important;
+        font-style: italic;
+    }
+
+    .vs-table-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--surface);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .vs-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+    }
+
+    .vs-table thead th {
+        background: #f0f4f8;
+        text-align: left;
+        font-weight: 600;
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.85rem;
+    }
+
+    .vs-table tbody td {
+        padding: 14px 18px;
+        border-top: 1px solid var(--border);
+        line-height: 1.5;
+        color: var(--text-dim);
+    }
+
+    .vs-table tbody td:first-child {
+        color: var(--text);
+        font-weight: 500;
+    }
+
+    .vs-table code.mono {
+        font-size: 0.8rem;
+        background: rgba(15, 23, 42, 0.05);
+        padding: 1px 4px;
+        border-radius: 4px;
+    }
+
+    .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .col-card,
+    .choice-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .col-card h3,
+    .choice-card h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 14px;
+    }
+
+    .col-card ul,
+    .choice-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .col-card li,
+    .choice-card li {
+        position: relative;
+        padding-left: 18px;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--text-dim);
+        margin-bottom: 10px;
+    }
+
+    .col-card li:last-child,
+    .choice-card li:last-child {
+        margin-bottom: 0;
+    }
+
+    .col-card li::before,
+    .choice-card li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--green);
+    }
+
+    .col-card li code.mono,
+    .choice-card li code.mono {
+        font-size: 0.8rem;
+        background: rgba(15, 23, 42, 0.05);
+        padding: 1px 4px;
+        border-radius: 4px;
+    }
+
+    .closing-note {
+        margin-top: 24px;
+        font-size: 0.95rem !important;
+        line-height: 1.65;
+        color: var(--text-dim);
+    }
+
+    .closing-note code.mono {
+        font-size: 0.85rem;
+        background: rgba(15, 23, 42, 0.05);
+        padding: 1px 4px;
+        border-radius: 4px;
+    }
+
+    .vs-cta {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        border-radius: 16px;
+        padding: 40px 32px;
+        text-align: center;
+        color: #e2e8f0;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .vs-cta h2 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+        color: #e2e8f0;
+    }
+
+    .vs-cta p {
+        color: #94a3b8;
+        font-size: 0.95rem;
+        margin-bottom: 22px;
+    }
+
+    .cta-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    .app-store-badge {
+        transition: opacity 0.2s;
+    }
+
+    .app-store-badge:hover {
+        opacity: 0.85;
+    }
+
+    .ghost-link {
+        font-size: 0.9rem;
+        color: #cbd5e1 !important;
+        padding: 10px 18px;
+        border: 1px solid #334155;
+        border-radius: 8px;
+        transition: all 0.2s;
+    }
+
+    .ghost-link:hover {
+        border-color: #475569;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    @media (max-width: 640px) {
+        .two-col {
+            grid-template-columns: 1fr;
+        }
+
+        .vs-section {
+            margin-bottom: 40px;
+        }
+
+        .vs-cta {
+            padding: 32px 22px;
+        }
+    }
+</style>

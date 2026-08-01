@@ -13,7 +13,10 @@ const en = {
         changelog: 'Changelog',
         source: 'Source',
     },
-    switcher: { label: 'Deutsch', href: '/de/', hrefLang: 'de' },
+    switchers: [
+        { label: 'Deutsch', href: '/de/', hrefLang: 'de' },
+        { label: 'Français', href: '/fr/', hrefLang: 'fr' },
+    ],
     hero: {
         h1: 'A KeePass app<br> that feels at <em>home</em> on&nbsp;iOS.',
         lead:
@@ -160,7 +163,10 @@ const de: typeof en = {
         changelog: 'Changelog',
         source: 'Quellcode',
     },
-    switcher: { label: 'English', href: '/', hrefLang: 'en' },
+    switchers: [
+        { label: 'English', href: '/', hrefLang: 'en' },
+        { label: 'Français', href: '/fr/', hrefLang: 'fr' },
+    ],
     hero: {
         h1: 'Eine KeePass-App,<br> die sich auf iOS <em>zu&nbsp;Hause</em> fühlt.',
         lead:
@@ -295,4 +301,154 @@ const de: typeof en = {
     },
 };
 
-export const home = { en, de };
+const fr: typeof en = {
+    lang: 'fr',
+    path: '/fr/',
+    title: 'KeeForge — KeePass gratuit et open source pour iOS',
+    description:
+        'KeeForge est un gestionnaire de mots de passe KeePass gratuit et open source pour iPhone et iPad, avec remplissage automatique, clés d’accès, TOTP, synchronisation Dropbox, OneDrive et WebDAV, et sans abonnement.',
+    nav: {
+        features: 'Fonctionnalités',
+        faq: 'FAQ',
+        changelog: 'Journal des modifications',
+        source: 'Code source',
+    },
+    switchers: [
+        { label: 'English', href: '/', hrefLang: 'en' },
+        { label: 'Deutsch', href: '/de/', hrefLang: 'de' },
+    ],
+    hero: {
+        h1: 'Une application KeePass<br> qui se sent <em>chez elle</em> sur&nbsp;iOS.',
+        lead:
+            'KeeForge ouvre vos coffres-forts <code class="mono">.kdbx</code> existants avec Face&nbsp;ID, remplit vos mots de passe dans toutes les applications, et ne vous demande jamais d’abonnement. Elle vit tout simplement sur votre iPhone, comme les bons outils savent le faire.',
+        downloadTiny: 'Télécharger dans l’',
+        downloadBig: 'App Store',
+        readSource: 'Lire le code source',
+        screenshotAlt: 'Écran de la liste des bases de données KeeForge',
+        meta: ['iOS 17 +', 'iPhone &amp; iPad', 'KDBX 3.1 / 4.x', 'Aucun pistage, jamais'],
+    },
+    trustPills: [
+        { k: '01', t: 'Open source', d: 'GPL 3.0. Auditez chaque ligne.' },
+        { k: '02', t: 'Compatible KeePass', d: 'KDBX 4.x en lecture/écriture. KDBX 3.1 en lecture seule.' },
+        { k: '03', t: 'Gratuit, pour toujours', d: 'Pas d’abonnement, pas de publicité, pas de vente incitative.' },
+        { k: '04', t: 'Face ID + remplissage auto', d: 'Remplit vos identifiants dans toutes les applications.' },
+    ],
+    features: [
+        {
+            eyebrow: 'DE NOMBREUX COFFRES-FORTS',
+            title: 'Un seul écran d’accueil pour toutes vos bases de données.',
+            body: 'Ajoutez des fichiers .kdbx depuis Fichiers ou iCloud Drive, connectez Dropbox ou OneDrive, ou utilisez votre propre serveur WebDAV. KeeForge regroupe vos coffres-forts personnels, professionnels et partagés sur un seul écran d’accueil.',
+            points: [
+                'Ouvrez autant de bases de données que vous le souhaitez, en local ou dans le cloud',
+                'Chaque coffre-fort mémorise son surnom, son fichier de clé et ses préférences',
+                'Navigation et synchronisation natives avec Dropbox, OneDrive et WebDAV',
+            ],
+            screen: 'screen-01-database-list.png',
+            reverse: false,
+        },
+        {
+            eyebrow: 'ORGANISER & RETROUVER',
+            title: 'Groupes, recherche et une fiche d’entrée telle que vous l’attendez.',
+            body: 'Parcourez vos dossiers comme vous avez organisé votre coffre-fort sur ordinateur. Recherchez dans les titres, noms d’utilisateur, URL et notes de tous les groupes. Ouvrez une entrée pour copier, révéler un champ ou accéder à l’URL.',
+            points: [
+                'Groupes hiérarchiques, comme dans KeePassXC',
+                'Créez des groupes ou déplacez entrées et groupes vers la corbeille',
+                'Prévisualisez et partagez les pièces jointes d’une entrée sans exporter votre coffre-fort',
+            ],
+            screen: 'screen-03-vault-groups.png',
+            reverse: true,
+        },
+        {
+            eyebrow: 'MODIFIER SUR L’APPAREIL',
+            title: 'Créez et modifiez des entrées sans quitter votre appareil.',
+            body: 'Modifiez titres, noms d’utilisateur, mots de passe, URL, tags et notes. Générez un mot de passe robuste en un tap, puis enregistrez vos modifications chiffrées directement dans le fichier .kdbx source.',
+            points: [
+                'Créez de nouveaux coffres-forts KDBX 4.x en local ou dans des dossiers cloud connectés',
+                'Vérification des conflits et sauvegardes horodatées protègent chaque enregistrement',
+                'Mode lecture seule par base de données lorsque vous ne voulez pas de modifications',
+            ],
+            screen: 'screen-07-entry-edit.png',
+            reverse: false,
+        },
+    ],
+    safety: {
+        eyebrow: 'SÉCURITÉ DES DONNÉES',
+        h2: 'Testé pour que vous ne<br>perdiez jamais <em>un seul octet</em>.',
+        lead: 'Un gestionnaire de mots de passe ne doit jamais corrompre votre coffre-fort ni en perdre silencieusement une partie. Avant la publication de tout changement, des tests automatisés vérifient :',
+        items: [
+            {
+                title: 'Rien n’est perdu lors de l’enregistrement.',
+                body: 'Chaque type de modification est enregistré puis relu élément par élément — mots de passe, notes, pièces jointes, historique des entrées, et même les données d’autres applications KeePass que KeeForge ne reconnaît pas doivent toutes revenir exactement telles qu’elles ont été saisies.',
+            },
+            {
+                title: 'Votre fichier est protégé avant d’être touché.',
+                body: 'KeeForge refuse d’écraser des modifications faites ailleurs pendant que le fichier était ouvert chez vous, écrit une sauvegarde horodatée avant chaque enregistrement, et rejette purement et simplement les bases de données endommagées plutôt que de charger des données partielles.',
+            },
+            {
+                title: 'Un programme indépendant le confirme.',
+                body: 'Chaque version doit franchir une étape de vérification où KeePassXC — une application KeePass largement utilisée qui ne partage aucun code avec KeeForge — ouvre les bases de données écrites par KeeForge, déchiffre les mots de passe et confirme que les pièces jointes correspondent bit à bit. Les bases de données créées par d’autres logiciels KeePass doivent de même s’ouvrir dans KeeForge et rester lisibles ailleurs après avoir été enregistrées par KeeForge.',
+            },
+        ],
+        linkLabel: 'Découvrir comment c’est testé',
+        linkHref: 'https://github.com/crazytan/KeeForge/blob/main/README.fr.md#sécurité-des-données',
+    },
+    compare: {
+        eyebrow: 'LA COMPARAISON',
+        h2: 'Vous utilisez déjà un gestionnaire de mots de passe ? <em>Voici où KeeForge se situe.</em>',
+        cards: [
+            {
+                title: 'vs Trousseau iCloud',
+                bullets: [
+                    'Les coffres-forts KeePass <code class="mono">.kdbx</code> fonctionnent avec des outils de bureau (KeePassXC, KeePass 2.x) et sur des appareils non-Apple.',
+                    'Votre base de données chiffrée est portable — sauvegardez-la en local, synchronisez-la via Dropbox, OneDrive ou WebDAV, ou conservez-la hors ligne.',
+                    'Un code open source que vous pouvez auditer, sans aucune télémétrie.',
+                ],
+            },
+            {
+                title: 'vs 1Password & Bitwarden',
+                bullets: [
+                    'Pas d’abonnement, pas de compte, pas de dépendance à un fournisseur. Votre coffre-fort est un fichier sur votre appareil ou dans votre propre cloud.',
+                    'Compatible avec l’écosystème KeePass ouvert — KeePassXC, Strongbox, KeePassium, Keepass2Android.',
+                    'Open source sous licence GPLv3. Chaque ligne est auditable, sans aucune analyse ni télémétrie.',
+                ],
+            },
+            {
+                title: 'vs les autres clients KeePass pour iOS',
+                bullets: [
+                    'Swift natif, conçu pour iOS 17+ avec les fonctionnalités actuelles de la plateforme (clés d’accès, remplissage automatique TOTP, intégration à Fichiers).',
+                    'Gratuit pour toujours, toutes les fonctionnalités incluses — pas de palier premium, pas de paywall en application (juste un pourboire optionnel).',
+                    'Les enregistrements détectent les conflits et sont automatiquement sauvegardés ; le remplissage automatique fonctionne hors ligne pour les coffres-forts synchronisés dans le cloud.',
+                ],
+            },
+        ],
+    },
+    beta: {
+        eyebrow: 'BÊTA PUBLIQUE',
+        h2: 'Essayez la prochaine version<br><em>avant</em> sa sortie.',
+        body: 'Les nouvelles versions sont diffusées sur TestFlight avant d’arriver sur l’App Store.',
+        cta: 'Rejoindre la bêta sur TestFlight',
+        href: 'https://testflight.apple.com/join/mPAT4f1a',
+        availability: 'Le nombre de places est limité à 300 testeurs, et les inscriptions sont suspendues pendant qu’une nouvelle version est en cours de revue bêta chez Apple. Si le lien indique que la bêta n’accepte plus de testeurs, revenez plus tard.',
+        warningTitle: 'Testez avec une copie de votre base de données, pas avec votre coffre-fort principal.',
+        warningBody: 'Les versions bêta peuvent contenir des bugs absents de l’application publiée — et elles remplacent l’installation de l’App Store tout en ouvrant les mêmes fichiers .kdbx réels. Dupliquez d’abord une base de données, puis pointez la bêta vers la copie.',
+    },
+    faq: {
+        eyebrow: 'FAQ',
+        h2: 'Des questions,<br>des réponses claires.',
+        items: [
+            { q: 'KeeForge est-il vraiment gratuit ?', a: 'Oui — gratuite sur l’App Store, sans abonnement, sans publicité, sans palier premium. Si vous souhaitez soutenir le développement, mettez une étoile au dépôt ou offrez-moi un café.' },
+            { q: 'Fonctionne-t-elle avec ma base de données KeePass existante ?', a: 'KeeForge lit et écrit des bases de données KDBX 4.x avec AES-256 ou ChaCha20, associés à AES-KDF ou Argon2. Les bases de données KDBX 3.1 protégées uniquement par mot de passe s’ouvrent en lecture seule.' },
+            { q: 'Où mes mots de passe sont-ils stockés ?', a: 'Dans votre base de données chiffrée, sur votre appareil ou dans le stockage de votre choix, comme iCloud Drive, Dropbox, OneDrive, WebDAV ou un autre fournisseur compatible avec Fichiers. KeeForge n’héberge pas votre coffre-fort.' },
+            { q: 'Comment fonctionne le remplissage automatique ?', a: 'KeeForge s’enregistre comme fournisseur d’identifiants iOS. Touchez un champ de connexion n’importe où, choisissez KeeForge, authentifiez-vous avec Face ID, et vos identifiants sont remplis.' },
+            { q: 'Puis-je lui faire confiance ?', a: 'Lisez le code. Compilez-le vous-même. Ou faites confiance au processus de revue de l’App Store et à un historique de commits public — c’est déjà plus que ce que proposent la plupart des gestionnaires de mots de passe.' },
+        ],
+    },
+    footer: {
+        copy: '© 2026 · GPL 3.0 · Fait par une seule personne',
+        privacy: 'Confidentialité',
+        privacyHref: '/fr/privacy',
+        support: 'Support',
+    },
+};
+
+export const home = { en, de, fr };

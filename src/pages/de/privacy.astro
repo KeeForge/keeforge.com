@@ -2,11 +2,14 @@
 import Base from '../../layouts/Base.astro';
 ---
 
-<Base title="Datenschutzerklärung — KeeForge" description="KeeForge sammelt deine Tresordaten nicht. Das optionale In-App-Feedback-Formular sendet nur, was du selbst auswählst: deine Nachricht, sichtbare Fehlerdetails beim Melden eines Datenbank-Öffnungsfehlers und, wenn du zustimmst, eine Rückfrage-E-Mail-Adresse und ein angehängtes Foto." lang="de" enPath="/privacy" dePath="/de/privacy">
+<Base title="Datenschutzerklärung — KeeForge" description="KeeForge sammelt deine Tresordaten nicht. Das optionale In-App-Feedback-Formular sendet nur, was du selbst auswählst: deine Nachricht, sichtbare Fehlerdetails beim Melden eines Datenbank-Öffnungsfehlers und, wenn du zustimmst, eine Rückfrage-E-Mail-Adresse und ein angehängtes Foto." lang="de" enPath="/privacy" dePath="/de/privacy" frPath="/fr/privacy">
     <div class="privacy">
         <div class="top-links">
             <a href="/de/" class="back-link">&larr; Zurück zu KeeForge</a>
-            <a href="/privacy" hreflang="en" class="back-link">English</a>
+            <div class="lang-links">
+                <a href="/privacy" hreflang="en" class="back-link">English</a>
+                <a href="/fr/privacy" hreflang="fr" class="back-link">Français</a>
+            </div>
         </div>
         <h1>Datenschutzerklärung</h1>
         <p class="updated">Zuletzt aktualisiert: 31. Juli 2026</p>
@@ -66,6 +69,11 @@ import Base from '../../layouts/Base.astro';
     .top-links {
         display: flex;
         justify-content: space-between;
+        gap: 16px;
+    }
+
+    .lang-links {
+        display: flex;
         gap: 16px;
     }
 

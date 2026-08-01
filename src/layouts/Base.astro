@@ -3,14 +3,21 @@ interface Props {
   title?: string;
   description?: string;
   lang?: string;
-  // Paths of the English/German versions of this page, e.g. '/' and '/de/'.
-  // When both are set, hreflang alternate links are emitted for SEO.
+  // Paths of the English/German/French versions of this page, e.g. '/', '/de/', '/fr/'.
+  // Whichever are set are emitted as hreflang alternate links for SEO.
   enPath?: string;
   dePath?: string;
+  frPath?: string;
 }
 
 const SITE = 'https://keeforge.com';
-const { title = 'KeeForge — Free, Open-Source KeePass for iOS', description = 'KeeForge is a free, open-source KeePass password manager for iPhone and iPad with AutoFill, passkeys, TOTP, Dropbox, OneDrive and WebDAV sync, and no subscription.', lang = 'en', enPath, dePath } = Astro.props;
+const { title = 'KeeForge — Free, Open-Source KeePass for iOS', description = 'KeeForge is a free, open-source KeePass password manager for iPhone and iPad with AutoFill, passkeys, TOTP, Dropbox, OneDrive and WebDAV sync, and no subscription.', lang = 'en', enPath, dePath, frPath } = Astro.props;
+
+const alternates = [
+    ...(enPath ? [{ code: 'en', path: enPath }] : []),
+    ...(dePath ? [{ code: 'de', path: dePath }] : []),
+    ...(frPath ? [{ code: 'fr', path: frPath }] : []),
+];
 ---
 
 <!DOCTYPE html>
@@ -23,11 +30,12 @@ const { title = 'KeeForge — Free, Open-Source KeePass for iOS', description = 
     <meta property="og:title" content={title}>
     <meta property="og:description" content={description}>
     <meta property="og:type" content="website">
-    {enPath && dePath && (
+    {alternates.length > 1 && (
         <>
-            <link rel="alternate" hreflang="en" href={`${SITE}${enPath}`}>
-            <link rel="alternate" hreflang="de" href={`${SITE}${dePath}`}>
-            <link rel="alternate" hreflang="x-default" href={`${SITE}${enPath}`}>
+            {alternates.map((a) => (
+                <link rel="alternate" hreflang={a.code} href={`${SITE}${a.path}`}>
+            ))}
+            <link rel="alternate" hreflang="x-default" href={`${SITE}${enPath ?? alternates[0].path}`}>
         </>
     )}
     <link rel="icon" type="image/png" sizes="512x512" href="/app-icon.png">
