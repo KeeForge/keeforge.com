@@ -1,5 +1,6 @@
 ---
 import Base from './Base.astro';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 
 interface Props {
     title?: string;
@@ -18,6 +19,8 @@ interface Props {
 
 const { title, description, eyebrow, heading, lead, lang = 'en', enPath, dePath, frPath, esPath } = Astro.props;
 
+const langPaths = { en: enPath, de: dePath, fr: frPath, es: esPath };
+
 const strings = {
     en: {
         home: '/',
@@ -28,11 +31,6 @@ const strings = {
         tagline: 'Free, open-source KeePass for iOS',
         privacy: 'Privacy Policy',
         privacyHref: '/privacy',
-        switchers: [
-            ...(dePath ? [{ label: 'Deutsch', href: dePath, hrefLang: 'de' }] : []),
-            ...(frPath ? [{ label: 'Français', href: frPath, hrefLang: 'fr' }] : []),
-            ...(esPath ? [{ label: 'Español', href: esPath, hrefLang: 'es' }] : []),
-        ],
     },
     de: {
         home: '/de/',
@@ -43,11 +41,6 @@ const strings = {
         tagline: 'Kostenloser Open-Source-KeePass für iOS',
         privacy: 'Datenschutz',
         privacyHref: '/de/privacy',
-        switchers: [
-            ...(enPath ? [{ label: 'English', href: enPath, hrefLang: 'en' }] : []),
-            ...(frPath ? [{ label: 'Français', href: frPath, hrefLang: 'fr' }] : []),
-            ...(esPath ? [{ label: 'Español', href: esPath, hrefLang: 'es' }] : []),
-        ],
     },
     fr: {
         home: '/fr/',
@@ -58,11 +51,6 @@ const strings = {
         tagline: 'KeePass gratuit et open source pour iOS',
         privacy: 'Politique de confidentialité',
         privacyHref: '/fr/privacy',
-        switchers: [
-            ...(enPath ? [{ label: 'English', href: enPath, hrefLang: 'en' }] : []),
-            ...(dePath ? [{ label: 'Deutsch', href: dePath, hrefLang: 'de' }] : []),
-            ...(esPath ? [{ label: 'Español', href: esPath, hrefLang: 'es' }] : []),
-        ],
     },
     es: {
         home: '/es/',
@@ -73,11 +61,6 @@ const strings = {
         tagline: 'KeePass gratuito y de código abierto para iOS',
         privacy: 'Política de privacidad',
         privacyHref: '/es/privacy',
-        switchers: [
-            ...(enPath ? [{ label: 'English', href: enPath, hrefLang: 'en' }] : []),
-            ...(dePath ? [{ label: 'Deutsch', href: dePath, hrefLang: 'de' }] : []),
-            ...(frPath ? [{ label: 'Français', href: frPath, hrefLang: 'fr' }] : []),
-        ],
     },
 }[lang];
 ---
@@ -93,9 +76,7 @@ const strings = {
                 <a href="https://github.com/crazytan/KeeForge/blob/main/CHANGELOG.md" rel="noopener">{strings.changelog}</a>
                 <a href={`${strings.home}#faq`}>{strings.faq}</a>
                 <a href="https://github.com/crazytan/KeeForge" rel="noopener">GitHub</a>
-                {strings.switchers.map((s) => (
-                    <a href={s.href} hreflang={s.hrefLang}>{s.label}</a>
-                ))}
+                <LanguageSwitcher current={lang} paths={langPaths} variant="header" />
             </nav>
         </div>
     </header>
@@ -127,9 +108,7 @@ const strings = {
                     <a href="https://github.com/crazytan/KeeForge">GitHub</a>
                     <a href="https://github.com/crazytan/KeeForge/blob/main/CHANGELOG.md" rel="noopener">{strings.changelog}</a>
                     <a href={strings.privacyHref}>{strings.privacy}</a>
-                    {strings.switchers.map((s) => (
-                        <a href={s.href} hreflang={s.hrefLang}>{s.label}</a>
-                    ))}
+                    <LanguageSwitcher current={lang} paths={langPaths} variant="footer" />
                 </div>
             </div>
         </div>

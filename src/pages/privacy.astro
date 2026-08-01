@@ -1,16 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+
+const langPaths = { en: '/privacy', de: '/de/privacy', fr: '/fr/privacy', es: '/es/privacy' };
 ---
 
 <Base title="Privacy Policy — KeeForge" description="KeeForge does not collect your vault data. The optional in-app feedback form only sends what you choose: your message, visible error details when reporting a database-open failure, and, if you opt in, a follow-up email address and an attached photo." lang="en" enPath="/privacy" dePath="/de/privacy" frPath="/fr/privacy" esPath="/es/privacy">
     <div class="privacy">
         <div class="top-links">
             <a href="/" class="back-link">&larr; Back to KeeForge</a>
-            <div class="lang-links">
-                <a href="/de/privacy" hreflang="de" class="back-link">Deutsch</a>
-                <a href="/fr/privacy" hreflang="fr" class="back-link">Français</a>
-                <a href="/es/privacy" hreflang="es" class="back-link">Español</a>
-            </div>
+            <LanguageSwitcher current="en" paths={langPaths} variant="footer" />
         </div>
         <h1>Privacy Policy</h1>
         <p class="updated">Last updated: July 31, 2026</p>
@@ -68,11 +67,6 @@ import Base from '../layouts/Base.astro';
     .top-links {
         display: flex;
         justify-content: space-between;
-        gap: 16px;
-    }
-
-    .lang-links {
-        display: flex;
         gap: 16px;
     }
 

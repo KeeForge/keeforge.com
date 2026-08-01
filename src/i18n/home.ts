@@ -13,11 +13,6 @@ const en = {
         changelog: 'Changelog',
         source: 'Source',
     },
-    switchers: [
-        { label: 'Deutsch', href: '/de/', hrefLang: 'de' },
-        { label: 'Français', href: '/fr/', hrefLang: 'fr' },
-        { label: 'Español', href: '/es/', hrefLang: 'es' },
-    ],
     hero: {
         h1: 'A KeePass app<br> that feels at <em>home</em> on&nbsp;iOS.',
         lead:
@@ -164,11 +159,6 @@ const de: typeof en = {
         changelog: 'Changelog',
         source: 'Quellcode',
     },
-    switchers: [
-        { label: 'English', href: '/', hrefLang: 'en' },
-        { label: 'Français', href: '/fr/', hrefLang: 'fr' },
-        { label: 'Español', href: '/es/', hrefLang: 'es' },
-    ],
     hero: {
         h1: 'Eine KeePass-App,<br> die sich auf iOS <em>zu&nbsp;Hause</em> fühlt.',
         lead:
@@ -315,11 +305,6 @@ const fr: typeof en = {
         changelog: 'Journal des modifications',
         source: 'Code source',
     },
-    switchers: [
-        { label: 'English', href: '/', hrefLang: 'en' },
-        { label: 'Deutsch', href: '/de/', hrefLang: 'de' },
-        { label: 'Español', href: '/es/', hrefLang: 'es' },
-    ],
     hero: {
         h1: 'Une application KeePass<br> qui se sent <em>chez elle</em> sur&nbsp;iOS.',
         lead:
@@ -466,11 +451,6 @@ const es: typeof en = {
         changelog: 'Historial de cambios',
         source: 'Código fuente',
     },
-    switchers: [
-        { label: 'English', href: '/', hrefLang: 'en' },
-        { label: 'Deutsch', href: '/de/', hrefLang: 'de' },
-        { label: 'Français', href: '/fr/', hrefLang: 'fr' },
-    ],
     hero: {
         h1: 'Una app KeePass<br> que se siente como en <em>casa</em> en&nbsp;iOS.',
         lead:

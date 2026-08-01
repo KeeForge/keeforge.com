@@ -1,0 +1,153 @@
+---
+// Language switcher, shared by HomePage.astro, Page.astro, and the privacy pages.
+// Always lists all four locales, including the current one (marked active, not a link).
+//
+// variant="header": a no-JS <details> dropdown — globe icon + current language name as
+// the trigger, all locales in the popover. Used in page headers.
+// variant="footer": a flat inline row of endonyms. Used in footers and the privacy
+// pages' secondary link bar.
+import { locales, type LocaleCode } from '../i18n/locales';
+
+interface Props {
+    current: LocaleCode;
+    paths: Partial<Record<LocaleCode, string>>;
+    variant?: 'header' | 'footer';
+}
+
+const { current, paths, variant = 'header' } = Astro.props;
+const items = locales.filter((l) => paths[l.code]);
+const currentLabel = locales.find((l) => l.code === current)?.label ?? current;
+---
+
+{variant === 'header' ? (
+    <details class="lang-switch">
+        <summary class="lang-switch-trigger" aria-label={`Language: ${currentLabel}`}>
+            <svg class="lang-switch-globe" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M3 12h18"></path>
+                <path d="M12 3c2.8 2.6 4.2 5.8 4.2 9s-1.4 6.4-4.2 9c-2.8-2.6-4.2-5.8-4.2-9s1.4-6.4 4.2-9z"></path>
+            </svg>
+            <span class="lang-switch-current">{currentLabel}</span>
+        </summary>
+        <ul class="lang-switch-menu">
+            {items.map((l) => (
+                <li>
+                    {l.code === current ? (
+                        <span class="lang-switch-item is-active" aria-current="true" title={l.label}>{l.label}</span>
+                    ) : (
+                        <a class="lang-switch-item" href={paths[l.code]} hreflang={l.hrefLang} title={l.label} aria-label={l.label}>{l.label}</a>
+                    )}
+                </li>
+            ))}
+        </ul>
+    </details>
+) : (
+    <div class="lang-switch-footer" aria-label="Language">
+        {items.map((l) => (
+            l.code === current ? (
+                <span class="lang-switch-footer-item is-active" aria-current="true" title={l.label}>{l.label}</span>
+            ) : (
+                <a class="lang-switch-footer-item" href={paths[l.code]} hreflang={l.hrefLang} title={l.label} aria-label={l.label}>{l.label}</a>
+            )
+        ))}
+    </div>
+)}
+
+<style>
+    .lang-switch {
+        position: relative;
+    }
+
+    .lang-switch-trigger {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        list-style: none;
+        color: var(--kf-ink-soft, var(--text-dim, #6b7280));
+        font-size: inherit;
+        font-family: inherit;
+        transition: color 0.2s;
+    }
+
+    .lang-switch-trigger::-webkit-details-marker {
+        display: none;
+    }
+
+    .lang-switch-trigger:hover,
+    .lang-switch[open] .lang-switch-trigger {
+        color: var(--kf-ink, var(--text, #111827));
+    }
+
+    .lang-switch-globe {
+        flex-shrink: 0;
+    }
+
+    .lang-switch-menu {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 10px);
+        margin: 0;
+        padding: 6px;
+        min-width: 140px;
+        list-style: none;
+        background: var(--kf-paper, var(--surface, #ffffff));
+        border: 1px solid var(--kf-rule, var(--border, #e2e8f0));
+        border-radius: 10px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        z-index: 60;
+    }
+
+    .lang-switch-menu li + li {
+        margin-top: 2px;
+    }
+
+    .lang-switch-item {
+        display: block;
+        padding: 7px 10px;
+        border-radius: 6px;
+        font-size: 13.5px;
+        color: var(--kf-ink-soft, var(--text-dim, #6b7280));
+        text-decoration: none;
+        transition: background 0.15s, color 0.15s;
+    }
+
+    a.lang-switch-item:hover {
+        background: var(--kf-bg-alt, var(--bg, #f5f5f5));
+        color: var(--kf-ink, var(--text, #111827));
+    }
+
+    .lang-switch-item.is-active {
+        color: var(--kf-ink, var(--text, #111827));
+        font-weight: 600;
+    }
+
+    .lang-switch-footer {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        font-size: inherit;
+    }
+
+    .lang-switch-footer-item {
+        color: var(--kf-ink-mute, var(--text-dim, #6b7280));
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    a.lang-switch-footer-item:hover {
+        color: var(--kf-ink, var(--text, #111827));
+    }
+
+    .lang-switch-footer-item.is-active {
+        color: var(--kf-ink, var(--text, #111827));
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    @media (max-width: 480px) {
+        .lang-switch-current {
+            display: none;
+        }
+    }
+</style>
