@@ -17,6 +17,14 @@ interface Props {
 const { current, paths, variant = 'header' } = Astro.props;
 const items = locales.filter((l) => paths[l.code]);
 const currentLabel = locales.find((l) => l.code === current)?.label ?? current;
+
+// Picking a language here is a deliberate choice, so it should stick: the
+// worker (worker/index.js) recognizes `?setlang=1` on any localized path,
+// sets the `kf_lang` cookie for that path's locale, and redirects to the
+// clean URL. See worker/index.js's routeLocale for the matching logic.
+function withSetLang(path: string): string {
+    return path.includes('?') ? `${path}&setlang=1` : `${path}?setlang=1`;
+}
 ---
 
 {variant === 'header' ? (
@@ -35,7 +43,7 @@ const currentLabel = locales.find((l) => l.code === current)?.label ?? current;
                     {l.code === current ? (
                         <span class="lang-switch-item is-active" aria-current="true" title={l.label}>{l.label}</span>
                     ) : (
-                        <a class="lang-switch-item" href={paths[l.code]} hreflang={l.hrefLang} title={l.label} aria-label={l.label}>{l.label}</a>
+                        <a class="lang-switch-item" href={withSetLang(paths[l.code]!)} hreflang={l.hrefLang} title={l.label} aria-label={l.label}>{l.label}</a>
                     )}
                 </li>
             ))}
@@ -47,7 +55,7 @@ const currentLabel = locales.find((l) => l.code === current)?.label ?? current;
             l.code === current ? (
                 <span class="lang-switch-footer-item is-active" aria-current="true" title={l.label}>{l.label}</span>
             ) : (
-                <a class="lang-switch-footer-item" href={paths[l.code]} hreflang={l.hrefLang} title={l.label} aria-label={l.label}>{l.label}</a>
+                <a class="lang-switch-footer-item" href={withSetLang(paths[l.code]!)} hreflang={l.hrefLang} title={l.label} aria-label={l.label}>{l.label}</a>
             )
         ))}
     </div>

@@ -101,9 +101,137 @@ async function ensureSchema(db) {
   schemaEnsured = true;
 }
 
+// --- Browser-language auto-detection for the static site -----------------
+//
+// This Worker's own route is https://feedback.keeforge.com/api/feedback (see
+// README.md); the wrangler.toml that maps keeforge.com's paths to a Worker
+// lives in the private keeforge-infra repo, not here. This logic is written
+// so it works correctly if/when that routing binds an `ASSETS` binding and
+// fronts keeforge.com/* through this same fetch handler: GET requests fall
+// through to `env.ASSETS.fetch(request)` for normal static serving, and to
+// the pre-existing `method_not_allowed` response when no ASSETS binding is
+// configured (i.e. the current feedback-only deployment), so nothing here
+// changes behavior for the feedback endpoint.
+const SUPPORTED_LOCALES = ["en", "de", "fr", "es"];
+const LOCALE_HOME_PATHS = { en: "/", de: "/de/", fr: "/fr/", es: "/es/" };
+const LANG_COOKIE_NAME = "kf_lang";
+const LANG_COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
+
+// Parses an Accept-Language header (q-values respected, RFC 9110 syntax) and
+// returns the highest-priority language among SUPPORTED_LOCALES, or null if
+// the header is absent or names no language this site serves.
+function detectSupportedLocale(header) {
+  if (!header) return null;
+
+  const entries = header
+    .split(",")
+    .map((part) => {
+      const [tagRaw, ...params] = part.trim().split(";");
+      const tag = tagRaw.trim();
+      let q = 1;
+      for (const param of params) {
+        const [key, value] = param.trim().split("=");
+        if (key === "q") {
+          const parsed = Number.parseFloat(value);
+          if (!Number.isNaN(parsed)) q = parsed;
+        }
+      }
+      return { tag, q };
+    })
+    .filter((entry) => entry.tag && entry.q > 0);
+
+  // Array#sort is stable, so entries with equal q keep the header's order.
+  entries.sort((a, b) => b.q - a.q);
+
+  for (const entry of entries) {
+    const primary = entry.tag.split("-")[0].toLowerCase();
+    if (SUPPORTED_LOCALES.includes(primary)) return primary;
+  }
+  return null;
+}
+
+function readCookie(request, name) {
+  const header = request.headers.get("Cookie");
+  if (!header) return null;
+  for (const part of header.split(";")) {
+    const separatorIndex = part.indexOf("=");
+    if (separatorIndex === -1) continue;
+    if (part.slice(0, separatorIndex).trim() === name) {
+      return part.slice(separatorIndex + 1).trim();
+    }
+  }
+  return null;
+}
+
+// The locale a path belongs to, from its /de/, /fr/, /es/ prefix, else "en".
+function localePrefixFromPath(pathname) {
+  for (const code of ["de", "fr", "es"]) {
+    if (pathname === `/${code}` || pathname.startsWith(`/${code}/`)) return code;
+  }
+  return "en";
+}
+
+function redirectResponse(location, { setCookieLocale } = {}) {
+  const headers = new Headers({
+    Location: location,
+    // A language redirect is per-visitor (cookie- or header-driven); it must
+    // never be cached and served to a different visitor.
+    "Cache-Control": "no-store",
+    Vary: "Accept-Language, Cookie",
+  });
+  if (setCookieLocale) {
+    headers.append(
+      "Set-Cookie",
+      `${LANG_COOKIE_NAME}=${setCookieLocale}; Path=/; Max-Age=${LANG_COOKIE_MAX_AGE}; SameSite=Lax; Secure`
+    );
+  }
+  return new Response(null, { status: 302, headers });
+}
+
+// Returns a redirect Response for the language-detection/preference-cookie
+// behavior, or null when the request should fall through to normal static
+// serving (deep links are always left alone).
+function routeLocale(request, url) {
+  const { pathname, searchParams } = url;
+
+  // `?setlang=1` on any localized path is a deliberate choice: remember it
+  // and drop the marker, no matter which path it was made from.
+  if (searchParams.get("setlang") === "1") {
+    const locale = localePrefixFromPath(pathname);
+    const clean = new URL(url);
+    clean.searchParams.delete("setlang");
+    return redirectResponse(clean.pathname + clean.search, { setCookieLocale: locale });
+  }
+
+  // Detection/override only ever apply to the root; every other path
+  // (including /de/, /fr/, /es/ themselves) is a deep link and is untouched.
+  if (pathname !== "/") return null;
+
+  const cookieLocale = readCookie(request, LANG_COOKIE_NAME);
+  if (cookieLocale !== null && SUPPORTED_LOCALES.includes(cookieLocale)) {
+    if (cookieLocale === "en") return null;
+    return redirectResponse(LOCALE_HOME_PATHS[cookieLocale]);
+  }
+
+  const detected = detectSupportedLocale(request.headers.get("Accept-Language"));
+  if (detected && detected !== "en") {
+    return redirectResponse(LOCALE_HOME_PATHS[detected]);
+  }
+
+  return null;
+}
+
 export default {
   async fetch(request, env) {
     try {
+      if (request.method === "GET") {
+        const url = new URL(request.url);
+        const routed = routeLocale(request, url);
+        if (routed) return routed;
+        if (env.ASSETS) return env.ASSETS.fetch(request);
+        return json({ ok: false, error: "method_not_allowed" }, 405);
+      }
+
       if (request.method === "OPTIONS") return new Response(null, { status: 204 });
       if (request.method !== "POST") {
         return json({ ok: false, error: "method_not_allowed" }, 405);
@@ -196,4 +324,4 @@ export default {
   },
 };
 
-export { parsePhoto };
+export { parsePhoto, detectSupportedLocale };
