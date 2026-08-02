@@ -66,8 +66,11 @@ function withSetLang(path: string): string {
         position: relative;
     }
 
+    /* Block-level flex, not inline-flex: an inline-level summary sits on the
+       <details> line box's baseline, leaving descender space below it, which
+       makes the trigger text ride high against its neighbours in the nav. */
     .lang-switch-trigger {
-        display: inline-flex;
+        display: flex;
         align-items: center;
         gap: 6px;
         cursor: pointer;
