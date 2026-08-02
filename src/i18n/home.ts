@@ -11,6 +11,7 @@ const en = {
         features: 'Features',
         faq: 'FAQ',
         changelog: 'Changelog',
+        audit: 'Security audit',
         source: 'Source',
     },
     hero: {
@@ -157,6 +158,7 @@ const de: typeof en = {
         features: 'Funktionen',
         faq: 'FAQ',
         changelog: 'Changelog',
+        audit: 'Sicherheitsaudit',
         source: 'Quellcode',
     },
     hero: {
@@ -303,6 +305,7 @@ const fr: typeof en = {
         features: 'Fonctionnalités',
         faq: 'FAQ',
         changelog: 'Journal des modifications',
+        audit: 'Audit de sécurité',
         source: 'Code source',
     },
     hero: {
@@ -449,6 +452,7 @@ const es: typeof en = {
         features: 'Funciones',
         faq: 'Preguntas frecuentes',
         changelog: 'Historial de cambios',
+        audit: 'Auditoría de seguridad',
         source: 'Código fuente',
     },
     hero: {

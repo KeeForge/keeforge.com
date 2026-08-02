@@ -26,6 +26,7 @@ const strings = {
         home: '/',
         compare: 'Compare',
         changelog: 'Changelog',
+        audit: 'Security audit',
         faq: 'FAQ',
         homeLabel: 'Home',
         tagline: 'Free, open-source KeePass for iOS',
@@ -36,6 +37,7 @@ const strings = {
         home: '/de/',
         compare: 'Vergleich',
         changelog: 'Changelog',
+        audit: 'Sicherheitsaudit',
         faq: 'FAQ',
         homeLabel: 'Startseite',
         tagline: 'Kostenloser Open-Source-KeePass für iOS',
@@ -46,6 +48,7 @@ const strings = {
         home: '/fr/',
         compare: 'Comparaison',
         changelog: 'Journal des modifications',
+        audit: 'Audit de sécurité',
         faq: 'FAQ',
         homeLabel: 'Accueil',
         tagline: 'KeePass gratuit et open source pour iOS',
@@ -56,6 +59,7 @@ const strings = {
         home: '/es/',
         compare: 'Comparativa',
         changelog: 'Historial de cambios',
+        audit: 'Auditoría de seguridad',
         faq: 'Preguntas frecuentes',
         homeLabel: 'Inicio',
         tagline: 'KeePass gratuito y de código abierto para iOS',
@@ -74,6 +78,7 @@ const strings = {
             <nav class="page-nav">
                 <a href={`${strings.home}#compare`}>{strings.compare}</a>
                 <a href="https://github.com/crazytan/KeeForge/blob/main/CHANGELOG.md" rel="noopener">{strings.changelog}</a>
+                <a href="/security-audit/">{strings.audit}</a>
                 <a href={`${strings.home}#faq`}>{strings.faq}</a>
                 <a href="https://github.com/crazytan/KeeForge" rel="noopener">GitHub</a>
                 <LanguageSwitcher current={lang} paths={langPaths} variant="header" />
@@ -107,6 +112,7 @@ const strings = {
                     <a href="https://apps.apple.com/us/app/keeforge/id6759309295">App Store</a>
                     <a href="https://github.com/crazytan/KeeForge">GitHub</a>
                     <a href="https://github.com/crazytan/KeeForge/blob/main/CHANGELOG.md" rel="noopener">{strings.changelog}</a>
+                    <a href="/security-audit/">{strings.audit}</a>
                     <a href={strings.privacyHref}>{strings.privacy}</a>
                     <LanguageSwitcher current={lang} paths={langPaths} variant="footer" />
                 </div>
