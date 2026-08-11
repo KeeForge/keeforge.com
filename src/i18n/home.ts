@@ -589,4 +589,299 @@ const es: typeof en = {
     },
 };
 
-export const home = { en, de, fr, es };
+const zhHans: typeof en = {
+    lang: 'zh-hans',
+    path: '/zh-hans/',
+    title: 'KeeForge — 免费开源的 iOS KeePass 密码管理器',
+    description:
+        'KeeForge 是一款面向 iPhone 和 iPad 的免费开源 KeePass 密码管理器，支持自动填充、通行密钥、TOTP，以及 Dropbox、OneDrive 和 WebDAV 同步，无需订阅。',
+    nav: {
+        features: '功能',
+        faq: '常见问题',
+        changelog: '更新日志',
+        audit: '安全审计',
+        source: '源代码',
+    },
+    hero: {
+        h1: '一款真正<em>融入</em> iOS 的<br>KeePass 应用。',
+        lead:
+            'KeeForge 用 Face&nbsp;ID 打开你现有的 <code class="mono">.kdbx</code> 保险库，在每个应用中自动填充密码，而且从不要求订阅。它就安安静静地待在你的 iPhone 上——好工具本该如此。',
+        downloadTiny: '在 App Store 中',
+        downloadBig: '下载',
+        readSource: '阅读源代码',
+        screenshotAlt: 'KeeForge 数据库列表界面',
+        meta: ['iOS 17 +', 'iPhone 和 iPad', 'KDBX 3.1 / 4.x', '绝无跟踪'],
+    },
+    trustPills: [
+        { k: '01', t: '开源', d: 'GPL 3.0。每一行代码都可审计。' },
+        { k: '02', t: '兼容 KeePass', d: 'KDBX 4.x 可读写。KDBX 3.1 只读。' },
+        { k: '03', t: '永久免费', d: '无订阅、无广告、无付费升级。' },
+        { k: '04', t: 'Face ID + 自动填充', d: '在每个应用中填充登录凭证。' },
+    ],
+    features: [
+        {
+            eyebrow: '多个保险库',
+            title: '一个主屏幕，容纳你所有的数据库。',
+            body: '从“文件”App 或 iCloud 云盘添加 .kdbx 文件，连接 Dropbox 或 OneDrive，或使用你自己的 WebDAV 服务器。KeeForge 把个人、工作和共享保险库集中在同一个主屏幕上。',
+            points: [
+                '想打开多少个数据库都可以，本地或云端均可',
+                '每个保险库都会记住自己的昵称、密钥文件和偏好设置',
+                '原生支持 Dropbox、OneDrive 和 WebDAV 的浏览与同步',
+            ],
+            screen: 'screen-01-database-list.png',
+            reverse: false,
+        },
+        {
+            eyebrow: '整理与查找',
+            title: '群组、搜索，以及你期待的条目详情。',
+            body: '按照你在桌面端整理保险库的方式，逐个文件夹浏览。跨所有群组搜索标题、用户名、URL 和备注。打开条目即可拷贝、显示字段或跳转到 URL。',
+            points: [
+                '层级群组，与 KeePassXC 完全一致',
+                '创建群组，或将条目和群组移入回收站',
+                '无需导出保险库即可预览和分享条目附件',
+            ],
+            screen: 'screen-03-vault-groups.png',
+            reverse: true,
+        },
+        {
+            eyebrow: '在设备上编辑',
+            title: '创建和编辑条目，无需离开你的设备。',
+            body: '编辑标题、用户名、密码、URL、标签和备注。轻点一下即可生成强密码，然后将加密的更改直接保存回源 .kdbx 文件。',
+            points: [
+                '在本地或已连接的云文件夹中创建新的 KDBX 4.x 保险库',
+                '冲突检查和带时间戳的备份保护每一次保存',
+                '可为单个数据库开启只读模式，防止意外更改',
+            ],
+            screen: 'screen-07-entry-edit.png',
+            reverse: false,
+        },
+    ],
+    safety: {
+        eyebrow: '数据安全',
+        h2: '经过严格测试，<br><em>一个字节</em>都不丢失。',
+        lead: '密码管理器绝不能损坏你的保险库，也不能悄悄丢失其中的任何部分。每项更改发布之前，自动化测试都会验证：',
+        items: [
+            {
+                title: '保存时不丢失任何数据。',
+                body: '每一种编辑都会被保存并逐项读回——密码、备注、附件、条目历史记录，甚至其他 KeePass 应用写入的、KeeForge 并不认识的数据，都必须与写入时完全一致地读出。',
+            },
+            {
+                title: '你的文件在被写入之前就受到保护。',
+                body: 'KeeForge 拒绝覆盖你打开文件期间其他程序做出的更改，在每次保存前写入带时间戳的备份，并且会直接拒绝已损坏的数据库，而不是加载不完整的数据。',
+            },
+            {
+                title: '一个独立的程序予以确认。',
+                body: '每个版本都必须通过一道检验：KeePassXC——一款与 KeeForge 没有任何共享代码、被广泛使用的 KeePass 应用——打开 KeeForge 写入的数据库，解密其中的密码，并确认附件逐位一致。同样，来自其他 KeePass 软件的数据库必须能在 KeeForge 中打开，并在 KeeForge 保存后仍能被其他软件读取。',
+            },
+        ],
+        linkLabel: '了解测试方式',
+        linkHref: 'https://github.com/crazytan/KeeForge/blob/main/README.zh-Hans.md#数据安全',
+    },
+    compare: {
+        eyebrow: '横向对比',
+        h2: '已经在用密码管理器？<em>看看 KeeForge 的定位。</em>',
+        cards: [
+            {
+                title: 'vs iCloud 钥匙串',
+                bullets: [
+                    'KeePass <code class="mono">.kdbx</code> 保险库可与桌面工具（KeePassXC、KeePass 2.x）配合使用，也能在非 Apple 设备上使用。',
+                    '你的加密数据库是可移植的——可以本地备份，通过 Dropbox、OneDrive 或 WebDAV 同步，或完全离线存放。',
+                    '代码开源可审计，没有任何形式的遥测。',
+                ],
+            },
+            {
+                title: 'vs 1Password 和 Bitwarden',
+                bullets: [
+                    '无订阅、无账户、无供应商锁定。你的保险库就是一个文件，存放在你的设备或你自己的云端。',
+                    '兼容开放的 KeePass 生态——KeePassXC、Strongbox、KeePassium、Keepass2Android。',
+                    'GPLv3 开源。每一行代码都可审计，零分析、零遥测。',
+                ],
+            },
+            {
+                title: 'vs 其他 iOS KeePass 客户端',
+                bullets: [
+                    '原生 Swift 编写，面向 iOS 17+，支持最新平台功能（通行密钥、TOTP 自动填充、“文件”集成）。',
+                    '永久免费，功能齐全——没有高级版，没有应用内付费墙（只有可选的打赏）。',
+                    '保存带冲突检测并自动备份；云端保险库的自动填充可离线使用。',
+                ],
+            },
+        ],
+    },
+    beta: {
+        eyebrow: '公开测试版',
+        h2: '<em>抢先</em>试用<br>下一个版本。',
+        body: '新版本会先通过 TestFlight 发布，然后才登陆 App Store。',
+        cta: '通过 TestFlight 加入测试',
+        href: 'https://testflight.apple.com/join/mPAT4f1a',
+        availability: '测试名额上限为 300 人；当新版本正在 Apple 的 Beta 版审核中时，加入会暂停。如果链接提示测试版暂不接受新测试员，请稍后再试。',
+        warningTitle: '请用数据库的副本测试，不要使用你的主保险库。',
+        warningBody: '测试版可能带有正式版没有的问题——它会替换从 App Store 安装的版本，并打开同样的真实 .kdbx 文件。请先复制一份数据库，让测试版只打开副本。',
+    },
+    faq: {
+        eyebrow: '常见问题',
+        h2: '你的疑问，<br>直白作答。',
+        items: [
+            { q: 'KeeForge 真的免费吗？', a: '是的——App Store 免费下载，无订阅、无广告、无高级版。如果你想支持开发，可以给仓库加星，或请我喝杯咖啡。' },
+            { q: '它能用我现有的 KeePass 数据库吗？', a: 'KeeForge 可读写使用 AES-256 或 ChaCha20 搭配 AES-KDF 或 Argon2 的 KDBX 4.x 数据库。仅用密码保护的 KDBX 3.1 数据库以只读模式打开。' },
+            { q: '我的密码存储在哪里？', a: '存储在你的加密数据库中——在你的设备上，或你选择的存储位置，例如 iCloud 云盘、Dropbox、OneDrive、WebDAV 或其他“文件”提供方。KeeForge 不托管你的保险库。' },
+            { q: '自动填充如何工作？', a: 'KeeForge 会注册为 iOS 凭证提供程序。在任何地方轻点登录输入框，选择 KeeForge，用 Face ID 验证身份，登录凭证即会自动填入。' },
+            { q: '我可以信任它吗？', a: '读一读代码，或者自己编译。也可以信任 App Store 的审核流程加上公开的提交历史——这已经比大多数密码管理器给出的多。' },
+        ],
+    },
+    footer: {
+        copy: '© 2026 · GPL 3.0 · 一人开发',
+        privacy: '隐私',
+        privacyHref: '/zh-hans/privacy',
+        support: '支持',
+    },
+};
+
+const zhHant: typeof en = {
+    lang: 'zh-hant',
+    path: '/zh-hant/',
+    title: 'KeeForge — 免費、開源的 iOS 版 KeePass',
+    description:
+        'KeeForge 是一款免費、開源的 KeePass 密碼管理員，適用於 iPhone 和 iPad，支援自動填寫、通行金鑰、TOTP，以及 Dropbox、OneDrive 與 WebDAV 同步，而且無需訂閱。',
+    nav: {
+        features: '功能',
+        faq: '常見問題',
+        changelog: '更新記錄',
+        audit: '安全性稽核',
+        source: '原始碼',
+    },
+    hero: {
+        h1: '一款真正<em>融入</em> iOS 的<br>KeePass&nbsp;App。',
+        lead:
+            'KeeForge 以 Face&nbsp;ID 開啟你現有的 <code class="mono">.kdbx</code> 保險庫，在每個 App 中自動填寫密碼，而且永遠不會要求你訂閱。它就這樣安安靜靜地待在你的 iPhone 上——如同一件好工具該有的樣子。',
+        downloadTiny: '在 App Store',
+        downloadBig: '下載',
+        readSource: '閱讀原始碼',
+        screenshotAlt: 'KeeForge 資料庫列表畫面',
+        meta: ['iOS 17 +', 'iPhone 和 iPad', 'KDBX 3.1 / 4.x', '永遠零追蹤'],
+    },
+    trustPills: [
+        { k: '01', t: '開源', d: 'GPL 3.0。每一行程式碼皆可稽核。' },
+        { k: '02', t: '相容 KeePass', d: 'KDBX 4.x 可讀寫，KDBX 3.1 唯讀。' },
+        { k: '03', t: '永久免費', d: '無訂閱、無廣告、無加購。' },
+        { k: '04', t: 'Face ID + 自動填寫', d: '在每個 App 中填寫登入資訊。' },
+    ],
+    features: [
+        {
+            eyebrow: '多個保險庫',
+            title: '一個主畫面，收納你所有的資料庫。',
+            body: '從「檔案」或 iCloud 雲碟加入 .kdbx 檔案，連接 Dropbox 或 OneDrive，或使用你自己的 WebDAV 伺服器。KeeForge 將個人、工作與共用保險庫集中在同一個主畫面上。',
+            points: [
+                '想開啟多少個資料庫都可以，本機或雲端皆可',
+                '每個保險庫都會記住自己的暱稱、金鑰檔案與偏好設定',
+                '原生支援 Dropbox、OneDrive 與 WebDAV 的瀏覽與同步',
+            ],
+            screen: 'screen-01-database-list.png',
+            reverse: false,
+        },
+        {
+            eyebrow: '整理與搜尋',
+            title: '群組、搜尋，以及你所期待的項目詳細畫面。',
+            body: '依照你在桌面端整理保險庫的方式，逐層瀏覽資料夾。跨所有群組搜尋標題、使用者名稱、URL 與備註。打開項目即可拷貝、顯示欄位或前往 URL。',
+            points: [
+                '階層式群組，與 KeePassXC 如出一轍',
+                '建立群組，或將項目與群組移到資源回收筒',
+                '不必匯出保險庫，即可預覽並分享項目附件',
+            ],
+            screen: 'screen-03-vault-groups.png',
+            reverse: true,
+        },
+        {
+            eyebrow: '在裝置上編輯',
+            title: '不必離開裝置，就能建立與編輯項目。',
+            body: '編輯標題、使用者名稱、密碼、URL、標籤與備註。點一下即可產生高強度密碼，再將加密後的變更直接儲存回原始 .kdbx 檔案。',
+            points: [
+                '在本機或已連接的雲端資料夾中建立新的 KDBX 4.x 保險庫',
+                '衝突檢查與含時間戳記的備份，保護每一次儲存',
+                '不想改動時，可為個別資料庫開啟唯讀模式',
+            ],
+            screen: 'screen-07-entry-edit.png',
+            reverse: false,
+        },
+    ],
+    safety: {
+        eyebrow: '資料安全',
+        h2: '徹底測試，讓你<br>連<em>一個位元組</em>都不會遺失。',
+        lead: '密碼管理員絕不能損毀你的保險庫，也不能悄悄遺失其中任何一部分。每項變更在發佈前，都必須通過自動化測試驗證：',
+        items: [
+            {
+                title: '儲存時，什麼都不會遺失。',
+                body: '每一種編輯都會先儲存，再逐項讀回比對——密碼、備註、附件、項目歷史記錄，甚至是 KeeForge 無法辨識、來自其他 KeePass App 的資料，都必須與寫入時分毫不差。',
+            },
+            {
+                title: '在動到你的檔案之前，先保護好它。',
+                body: 'KeeForge 拒絕覆寫你開啟檔案期間由其他地方所做的變更，在每次儲存前寫入含時間戳記的備份，並直接拒絕已損毀的資料庫，而不是載入不完整的資料。',
+            },
+            {
+                title: '由獨立程式交叉驗證。',
+                body: '每個版本都必須通過一道關卡：由 KeePassXC——一款廣泛使用、與 KeeForge 不共用任何程式碼的 KeePass App——開啟 KeeForge 寫入的資料庫、解密其中的密碼，並確認附件逐位元一致。同樣地，其他 KeePass 軟體建立的資料庫必須能在 KeeForge 中開啟，且經 KeeForge 儲存後仍可在其他軟體中正常讀取。',
+            },
+        ],
+        linkLabel: '瞭解測試方式',
+        linkHref: 'https://github.com/crazytan/KeeForge/blob/main/README.zh-Hant.md#資料安全',
+    },
+    compare: {
+        eyebrow: '橫向比較',
+        h2: '已經在用密碼管理員？<em>看看 KeeForge 的定位。</em>',
+        cards: [
+            {
+                title: 'vs iCloud 鑰匙圈',
+                bullets: [
+                    'KeePass <code class="mono">.kdbx</code> 保險庫可搭配桌面工具（KeePassXC、KeePass 2.x），也能在非 Apple 裝置上使用。',
+                    '你的加密資料庫可以隨身帶著走——在本機備份、透過 Dropbox、OneDrive 或 WebDAV 同步，或離線保存。',
+                    '程式碼開源、可供稽核，而且完全沒有任何遙測。',
+                ],
+            },
+            {
+                title: 'vs 1Password 與 Bitwarden',
+                bullets: [
+                    '無訂閱、無帳號、不被廠商綁定。你的保險庫就是一個檔案，存放在你的裝置或你自己的雲端。',
+                    '相容開放的 KeePass 生態系——KeePassXC、Strongbox、KeePassium、Keepass2Android。',
+                    'GPLv3 開源。每一行程式碼皆可稽核，零分析、零遙測。',
+                ],
+            },
+            {
+                title: 'vs 其他 iOS KeePass 用戶端',
+                bullets: [
+                    '原生 Swift 打造，鎖定 iOS 17+，支援最新平台功能（通行金鑰、TOTP 自動填寫、「檔案」整合）。',
+                    '永久免費，功能全數開放——沒有進階版，App 內也沒有付費牆（只有可自由選擇的打賞）。',
+                    '儲存具備衝突偵測與自動備份；雲端保險庫離線時也能使用自動填寫。',
+                ],
+            },
+        ],
+    },
+    beta: {
+        eyebrow: '公開測試版',
+        h2: '在正式推出<em>之前</em>，<br>搶先試用下一個版本。',
+        body: '新版本會先在 TestFlight 上發佈，之後才會登上 App Store。',
+        cta: '透過 TestFlight 加入測試',
+        href: 'https://testflight.apple.com/join/mPAT4f1a',
+        availability: '測試名額上限為 300 位；當新版本正在 Apple 的 Beta 審查中時，會暫停接受加入。如果連結顯示測試版目前不接受新測試者，請稍後再試。',
+        warningTitle: '請用資料庫的複本測試，不要用你的主要保險庫。',
+        warningBody: '測試版可能帶有正式版沒有的錯誤——而且它會取代 App Store 安裝的版本，並開啟同樣真實的 .kdbx 檔案。請先複製一份資料庫，讓測試版只開啟複本。',
+    },
+    faq: {
+        eyebrow: '常見問題',
+        h2: '你的疑問，<br>直白解答。',
+        items: [
+            { q: 'KeeForge 真的免費嗎？', a: '是的——在 App Store 免費下載，無訂閱、無廣告、沒有進階付費版。如果你想支持開發，歡迎在 GitHub 上給儲存庫一顆星，或請我喝杯咖啡。' },
+            { q: '它能開啟我現有的 KeePass 資料庫嗎？', a: 'KeeForge 可讀寫採用 AES-256 或 ChaCha20 搭配 AES-KDF 或 Argon2 的 KDBX 4.x 資料庫。僅以密碼保護的 KDBX 3.1 資料庫會以唯讀模式開啟。' },
+            { q: '我的密碼儲存在哪裡？', a: '儲存在你的加密資料庫中——位於你的裝置，或你選擇的儲存位置，例如 iCloud 雲碟、Dropbox、OneDrive、WebDAV 或其他「檔案」提供者。KeeForge 不會代管你的保險庫。' },
+            { q: '自動填寫如何運作？', a: 'KeeForge 會註冊為 iOS 的憑證提供者。在任何地方點一下登入欄位，選擇 KeeForge，以 Face ID 驗證身分，你的登入資訊就會自動填入。' },
+            { q: '我可以信任它嗎？', a: '讀程式碼、自己編譯，或者相信 App Store 的審查流程加上公開的提交歷史——這已經比大多數密碼管理員能給的更多。' },
+        ],
+    },
+    footer: {
+        copy: '© 2026 · GPL 3.0 · 一人打造',
+        privacy: '隱私權',
+        privacyHref: '/zh-hant/privacy',
+        support: '支援',
+    },
+};
+
+export const home = { en, de, fr, es, 'zh-hans': zhHans, 'zh-hant': zhHant };
+

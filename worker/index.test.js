@@ -203,11 +203,25 @@ test("consent without a contact is rejected", async () => {
 test("detectSupportedLocale respects q-value ordering over header order", () => {
   assert.equal(detectSupportedLocale("en;q=0.5, fr;q=0.9"), "fr");
   assert.equal(detectSupportedLocale("de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7"), "de");
-  assert.equal(detectSupportedLocale("zh;q=0.9, fr;q=0.1"), "fr");
+  assert.equal(detectSupportedLocale("ja;q=0.9, fr;q=0.1"), "fr");
   assert.equal(detectSupportedLocale(null), null);
   assert.equal(detectSupportedLocale(""), null);
-  assert.equal(detectSupportedLocale("zh-CN,zh;q=0.9"), null);
+  assert.equal(detectSupportedLocale("ja,ko;q=0.9"), null);
   assert.equal(detectSupportedLocale("fr;q=0"), null);
+});
+
+test("detectSupportedLocale maps Chinese script and region subtags", () => {
+  assert.equal(detectSupportedLocale("zh"), "zh-hans");
+  assert.equal(detectSupportedLocale("zh-CN,zh;q=0.9"), "zh-hans");
+  assert.equal(detectSupportedLocale("zh-SG"), "zh-hans");
+  assert.equal(detectSupportedLocale("zh-Hans"), "zh-hans");
+  assert.equal(detectSupportedLocale("zh-Hans-CN"), "zh-hans");
+  assert.equal(detectSupportedLocale("zh-TW"), "zh-hant");
+  assert.equal(detectSupportedLocale("zh-HK"), "zh-hant");
+  assert.equal(detectSupportedLocale("zh-MO"), "zh-hant");
+  assert.equal(detectSupportedLocale("zh-Hant"), "zh-hant");
+  assert.equal(detectSupportedLocale("zh-Hant-TW"), "zh-hant");
+  assert.equal(detectSupportedLocale("zh-TW;q=0.4, en;q=0.9"), "en");
 });
 
 for (const locale of ["de", "fr", "es"]) {
@@ -222,6 +236,23 @@ for (const locale of ["de", "fr", "es"]) {
     assert.equal(response.headers.get("Cache-Control"), "no-store");
     assert.equal(response.headers.get("Vary"), "Accept-Language, Cookie");
     assert.equal(response.headers.get("Set-Cookie"), null);
+  });
+}
+
+for (const [header, home] of [
+  ["zh-CN,zh;q=0.9,en;q=0.8", "/zh-hans/"],
+  ["zh,en;q=0.8", "/zh-hans/"],
+  ["zh-TW,zh;q=0.9,en;q=0.8", "/zh-hant/"],
+  ["zh-Hant-HK,zh-HK;q=0.9", "/zh-hant/"],
+]) {
+  test(`GET / redirects to ${home} when Accept-Language is ${header}`, async () => {
+    const response = await worker.fetch(
+      siteRequest("/", { acceptLanguage: header }),
+      {}
+    );
+
+    assert.equal(response.status, 302);
+    assert.equal(response.headers.get("Location"), home);
   });
 }
 
@@ -244,7 +275,7 @@ test("GET / without an Accept-Language header is not redirected", async () => {
 
 test("GET / with an unsupported Accept-Language is not redirected", async () => {
   const response = await worker.fetch(
-    siteRequest("/", { acceptLanguage: "zh-CN,zh;q=0.9,ja;q=0.8" }),
+    siteRequest("/", { acceptLanguage: "ja,ko;q=0.9,th;q=0.8" }),
     {}
   );
 
@@ -260,6 +291,16 @@ test("a kf_lang cookie overrides Accept-Language detection", async () => {
 
   assert.equal(response.status, 302);
   assert.equal(response.headers.get("Location"), "/de/");
+});
+
+test("a kf_lang=zh-hant cookie overrides Simplified-Chinese detection", async () => {
+  const response = await worker.fetch(
+    siteRequest("/", { cookie: "kf_lang=zh-hant", acceptLanguage: "zh-CN,zh;q=0.9" }),
+    {}
+  );
+
+  assert.equal(response.status, 302);
+  assert.equal(response.headers.get("Location"), "/zh-hant/");
 });
 
 test("a kf_lang=en cookie suppresses detection", async () => {
@@ -307,7 +348,7 @@ test("?setlang=1 on the English root sets the cookie and cleans the URL", async 
   );
 });
 
-for (const locale of ["de", "fr", "es"]) {
+for (const locale of ["de", "fr", "es", "zh-hans", "zh-hant"]) {
   test(`?setlang=1 on /${locale}/ sets the ${locale} cookie and cleans the URL`, async () => {
     const response = await worker.fetch(siteRequest(`/${locale}/?setlang=1`), {});
 

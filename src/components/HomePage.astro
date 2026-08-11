@@ -4,14 +4,14 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
 import { home } from '../i18n/home';
 
 interface Props {
-    lang: 'en' | 'de' | 'fr' | 'es';
+    lang: 'en' | 'de' | 'fr' | 'es' | 'zh-hans' | 'zh-hant';
 }
 
 const { lang } = Astro.props;
 const t = home[lang];
 ---
 
-<Base title={t.title} description={t.description} lang={lang} enPath={home.en.path} dePath={home.de.path} frPath={home.fr.path} esPath={home.es.path}>
+<Base title={t.title} description={t.description} lang={lang} enPath={home.en.path} dePath={home.de.path} frPath={home.fr.path} esPath={home.es.path} zhHansPath={home['zh-hans'].path} zhHantPath={home['zh-hant'].path}>
     <div class="kf-root">
         <!-- Nav -->
         <header class="kf-nav">
@@ -29,7 +29,7 @@ const t = home[lang];
                 <div class="kf-nav-cta">
                     <LanguageSwitcher
                         current={lang}
-                        paths={{ en: home.en.path, de: home.de.path, fr: home.fr.path, es: home.es.path }}
+                        paths={{ en: home.en.path, de: home.de.path, fr: home.fr.path, es: home.es.path, 'zh-hans': home['zh-hans'].path, 'zh-hant': home['zh-hant'].path }}
                         variant="header"
                     />
                     <a href="https://github.com/crazytan/KeeForge" rel="noopener" class="kf-nav-source">
@@ -235,7 +235,7 @@ const t = home[lang];
                     <a href="mailto:support@keeforge.com">{t.footer.support}</a>
                     <LanguageSwitcher
                         current={lang}
-                        paths={{ en: home.en.path, de: home.de.path, fr: home.fr.path, es: home.es.path }}
+                        paths={{ en: home.en.path, de: home.de.path, fr: home.fr.path, es: home.es.path, 'zh-hans': home['zh-hans'].path, 'zh-hant': home['zh-hant'].path }}
                         variant="footer"
                     />
                 </div>

@@ -8,18 +8,20 @@ interface Props {
     eyebrow?: string;
     heading: string;
     lead?: string;
-    lang?: 'en' | 'de' | 'fr' | 'es';
-    // Paths of the English/German/French/Spanish versions of this page, for the
-    // language switcher and hreflang alternates. Omit while no translation exists.
+    lang?: 'en' | 'de' | 'fr' | 'es' | 'zh-hans' | 'zh-hant';
+    // Paths of the localized versions of this page, for the language switcher
+    // and hreflang alternates. Omit while no translation exists.
     enPath?: string;
     dePath?: string;
     frPath?: string;
     esPath?: string;
+    zhHansPath?: string;
+    zhHantPath?: string;
 }
 
-const { title, description, eyebrow, heading, lead, lang = 'en', enPath, dePath, frPath, esPath } = Astro.props;
+const { title, description, eyebrow, heading, lead, lang = 'en', enPath, dePath, frPath, esPath, zhHansPath, zhHantPath } = Astro.props;
 
-const langPaths = { en: enPath, de: dePath, fr: frPath, es: esPath };
+const langPaths = { en: enPath, de: dePath, fr: frPath, es: esPath, 'zh-hans': zhHansPath, 'zh-hant': zhHantPath };
 
 const strings = {
     en: {
@@ -66,10 +68,32 @@ const strings = {
         privacy: 'Política de privacidad',
         privacyHref: '/es/privacy',
     },
+    'zh-hans': {
+        home: '/zh-hans/',
+        compare: '对比',
+        changelog: '更新日志',
+        audit: '安全审计',
+        faq: '常见问题',
+        homeLabel: '首页',
+        tagline: '免费开源的 iOS KeePass',
+        privacy: '隐私政策',
+        privacyHref: '/zh-hans/privacy',
+    },
+    'zh-hant': {
+        home: '/zh-hant/',
+        compare: '比較',
+        changelog: '更新記錄',
+        audit: '安全性稽核',
+        faq: '常見問題',
+        homeLabel: '首頁',
+        tagline: '免費開源的 iOS 版 KeePass',
+        privacy: '隱私權政策',
+        privacyHref: '/zh-hant/privacy',
+    },
 }[lang];
 ---
 
-<Base title={title} description={description} lang={lang} enPath={enPath} dePath={dePath} frPath={frPath} esPath={esPath}>
+<Base title={title} description={description} lang={lang} enPath={enPath} dePath={dePath} frPath={frPath} esPath={esPath} zhHansPath={zhHansPath} zhHantPath={zhHantPath}>
     <header class="page-header">
         <div class="page-header-inner">
             <a href={strings.home} class="brand-link">

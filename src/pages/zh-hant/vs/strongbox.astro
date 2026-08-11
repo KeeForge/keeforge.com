@@ -1,17 +1,17 @@
 ---
 import Page from '../../../layouts/Page.astro';
 
-const title = 'KeeForge vs. Strongbox — die beiden KeePass-Clients für iOS im Vergleich';
-const description = 'Ein fairer Vergleich zwischen KeeForge und Strongbox für iOS — Funktionen, Preise, Open-Source-Ansatz und wann welche App die richtige Wahl ist.';
+const title = 'KeeForge vs Strongbox — 兩款 iOS KeePass 用戶端的比較';
+const description = '一份 KeeForge 與 Strongbox 在 iOS 上的公正比較——功能、價格、開源程度，以及各自適合的情況。';
 ---
 
 <Page
     title={title}
     description={description}
-    eyebrow="Vergleich"
-    heading="KeeForge vs. Strongbox"
-    lead="Strongbox ist ein funktionsreicher Passwort-Manager für iOS und macOS, der die Formate KeePass und Password Safe unterstützt. KeeForge ist ein fokussierter, komplett kostenloser KeePass-Client für iOS. Hier ist ein ehrlicher Vergleich, der dir bei der Wahl hilft."
-    lang="de"
+    eyebrow="比較"
+    heading="KeeForge vs Strongbox"
+    lead="Strongbox 是一款功能豐富的 iOS 與 macOS 密碼管理員，同時支援 KeePass 與 Password Safe 格式。KeeForge 則是一款專注、完全免費的 iOS KeePass 用戶端。以下是一份誠實的比較，幫你做出選擇。"
+    lang="zh-hant"
     enPath="/vs/strongbox/"
     dePath="/de/vs/strongbox/"
     frPath="/fr/vs/strongbox/"
@@ -20,21 +20,21 @@ const description = 'Ein fairer Vergleich zwischen KeeForge und Strongbox für i
     zhHantPath="/zh-hant/vs/strongbox/"
 >
     <section class="vs-section">
-        <h2>Die Kurzfassung</h2>
+        <h2>簡短版本</h2>
         <p>
-            Strongbox ist ein etablierter, funktionsstarker Passwort-Manager mit solider Unterstützung sowohl für KeePass- als auch für Password-Safe-Tresore. Die Pro-Stufe ergänzt fortgeschrittene Workflows: Hardware-Key-Unterstützung, Browser-Integrationen, erweitertes Auto-Type und mehr. Es ist einer der leistungsfähigsten nativen KeePass-Clients auf Apple-Plattformen.
+            Strongbox 是一款歷史悠久、功能深厚的密碼管理員，對 KeePass 和 Password Safe 兩種保險庫都有紮實的支援。其 Pro 層級加入了進階工作流程：硬體金鑰支援、瀏覽器整合、進階自動輸入等等。它是 Apple 平台上功能最強大的原生 KeePass 用戶端之一。
         </p>
         <p>
-            KeeForge ist bewusst enger gefasst — es konzentriert sich auf KeePass <code class="mono">.kdbx</code> mit einem minimalistischen, modernen iOS-Erlebnis. Jede Funktion steckt in der kostenlosen, vollständig quelloffenen App. Es gibt keine Pro-Stufe und kein Abo.
+            KeeForge 則刻意收窄範圍——專注於 KeePass <code class="mono">.kdbx</code>，帶來精簡、現代的 iOS 體驗。每項功能都在這款免費且完全開源的 App 中。沒有 Pro 層級，也沒有訂閱。
         </p>
         <p>
-            Beide Apps lesen Standard-<code class="mono">.kdbx</code>-Dateien, du kannst sie also mit demselben Tresor nebeneinander ausprobieren.
+            兩款 App 讀取的都是標準 <code class="mono">.kdbx</code> 檔案，你可以用同一個保險庫並行試用兩者。
         </p>
     </section>
 
     <section class="vs-section">
-        <h2>Funktionsvergleich</h2>
-        <p class="vs-table-note">Stand zum Zeitpunkt der Erstellung. Funktionen ändern sich — sieh dir für den aktuellen Stand die Release Notes beider Anbieter an.</p>
+        <h2>功能比較</h2>
+        <p class="vs-table-note">以撰寫當下為準。功能會不斷變化——最新狀態請查閱兩家的版本資訊。</p>
         <div class="vs-table-wrap">
             <table class="vs-table">
                 <thead>
@@ -46,59 +46,59 @@ const description = 'Ein fairer Vergleich zwischen KeeForge und Strongbox für i
                 </thead>
                 <tbody>
                     <tr>
-                        <td>KeePass-<code class="mono">.kdbx</code>-Datenbanken öffnen</td>
-                        <td>Ja</td>
-                        <td>Ja</td>
+                        <td>開啟 KeePass <code class="mono">.kdbx</code> 資料庫</td>
+                        <td>是</td>
+                        <td>是</td>
                     </tr>
                     <tr>
-                        <td>Password-Safe-Unterstützung (<code class="mono">.psafe3</code>)</td>
-                        <td>Nein</td>
-                        <td>Ja</td>
+                        <td>Password Safe（<code class="mono">.psafe3</code>）支援</td>
+                        <td>否</td>
+                        <td>是</td>
                     </tr>
                     <tr>
-                        <td>Einträge bearbeiten, erstellen und löschen</td>
-                        <td>Ja</td>
-                        <td>Ja (Pro für vollständiges Bearbeiten in manchen Workflows)</td>
+                        <td>編輯、建立與刪除項目</td>
+                        <td>是</td>
+                        <td>是（部分工作流程的完整編輯需 Pro）</td>
                     </tr>
                     <tr>
-                        <td>AutoFill (Passwörter + Passkeys + TOTP)</td>
-                        <td>Ja</td>
-                        <td>Ja</td>
+                        <td>自動填寫（密碼 + 通行金鑰 + TOTP）</td>
+                        <td>是</td>
+                        <td>是</td>
                     </tr>
                     <tr>
-                        <td>Entsperren mit Face ID / Touch ID</td>
-                        <td>Ja</td>
-                        <td>Ja</td>
+                        <td>以 Face ID / Touch ID 解鎖</td>
+                        <td>是</td>
+                        <td>是</td>
                     </tr>
                     <tr>
-                        <td>Cloud-Sync (iCloud, Dropbox, OneDrive, WebDAV, Dateien)</td>
-                        <td>Ja</td>
-                        <td>Ja (mehr Anbieter in Pro)</td>
+                        <td>雲端同步（iCloud、Dropbox、OneDrive、WebDAV、「檔案」）</td>
+                        <td>是</td>
+                        <td>是（Pro 提供更多服務商）</td>
                     </tr>
                     <tr>
-                        <td>YubiKey- / Hardware-Key-Unterstützung</td>
-                        <td>Noch nicht</td>
-                        <td>Ja (Pro)</td>
+                        <td>YubiKey / 硬體金鑰支援</td>
+                        <td>尚未提供</td>
+                        <td>是（Pro）</td>
                     </tr>
                     <tr>
-                        <td>Abo / Bezahlstufe</td>
-                        <td>Keine — nur ein optionales Trinkgeld</td>
-                        <td>Free + Pro (Abo oder Lifetime)</td>
+                        <td>訂閱 / 付費層級</td>
+                        <td>無——僅有自願性質的打賞</td>
+                        <td>Free + Pro（訂閱或買斷）</td>
                     </tr>
                     <tr>
-                        <td>Open Source</td>
-                        <td>GPLv3 (gesamte App)</td>
-                        <td>Open Source mit kommerziellen Komponenten</td>
+                        <td>開源</td>
+                        <td>GPLv3（整個 App）</td>
+                        <td>開源，含商業元件</td>
                     </tr>
                     <tr>
-                        <td>Plattformen</td>
-                        <td>iOS und iPadOS</td>
-                        <td>iOS, iPadOS, macOS</td>
+                        <td>平台</td>
+                        <td>iOS 和 iPadOS</td>
+                        <td>iOS、iPadOS、macOS</td>
                     </tr>
                     <tr>
-                        <td>Mindest-iOS-Version</td>
+                        <td>最低 iOS 版本</td>
                         <td>iOS 17</td>
-                        <td>Niedriger (unterstützt ältere Geräte)</td>
+                        <td>更低（支援較舊裝置）</td>
                     </tr>
                 </tbody>
             </table>
@@ -108,62 +108,62 @@ const description = 'Ein fairer Vergleich zwischen KeeForge und Strongbox für i
     <section class="vs-section">
         <div class="two-col">
             <div class="col-card">
-                <h3>Was Strongbox gut macht</h3>
+                <h3>Strongbox 的強項</h3>
                 <ul>
-                    <li>Unterstützung sowohl für KeePass- als auch für Password-Safe-Formate — praktisch, wenn du alte <code class="mono">.psafe3</code>-Tresore hast.</li>
-                    <li>Die Pro-Stufe bietet YubiKey-Unterstützung, breitere Cloud-Speicher-Integrationen und fortgeschrittene Auto-Type-Workflows.</li>
-                    <li>Lange Historie aktiver Entwicklung und ein tiefer Funktionsumfang für Power-User.</li>
-                    <li>Ausgereifte macOS-App neben der iOS-App — für alle, die einen Desktop-Client vom selben Anbieter wollen.</li>
+                    <li>同時支援 KeePass 與 Password Safe 格式——如果你有舊的 <code class="mono">.psafe3</code> 保險庫，這很實用。</li>
+                    <li>Pro 層級提供 YubiKey 支援、更廣泛的雲端儲存整合，以及進階自動輸入工作流程。</li>
+                    <li>長期活躍開發的紀錄，並為進階使用者提供深厚的功能集。</li>
+                    <li>除了 iOS App，還有成熟的 macOS App——適合想從同一家取得桌面用戶端的使用者。</li>
                 </ul>
             </div>
             <div class="col-card">
-                <h3>Wo KeeForge sich unterscheidet</h3>
+                <h3>KeeForge 的不同之處</h3>
                 <ul>
-                    <li>Komplett kostenlos. Keine Pro-Stufe, kein Abo, keine In-App-Käufe außer einem freiwilligen Trinkgeld.</li>
-                    <li>Jede Funktion ist Open Source unter GPLv3 — es gibt keine Bezahlstufe mit geschlossenen Komponenten.</li>
-                    <li>Nativ für iOS 17+ gebaut, mit aktuellen Plattformfunktionen (TOTP-AutoFill, Passkey-AutoFill, Integration in die Dateien-App) als festem Bestandteil.</li>
-                    <li>Kleinere, fokussiertere Funktionsoberfläche — leichter zu lernen, schneller im Einsatz.</li>
+                    <li>完全免費。無 Pro 層級、無訂閱，除了自願性質的打賞外沒有任何 App 內購買。</li>
+                    <li>每項功能都以 GPLv3 開源——不存在含封閉元件的付費層級。</li>
+                    <li>原生為 iOS 17+ 打造，把最新平台功能（TOTP 自動填寫、通行金鑰自動填寫、「檔案」App 整合）當作一等公民。</li>
+                    <li>功能範圍更小、更聚焦——更容易上手，更快投入使用。</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section class="vs-section">
-        <h2>Wann du welche App wählen solltest</h2>
+        <h2>該選哪一款</h2>
         <div class="two-col">
             <div class="choice-card">
-                <h3>Wähle KeeForge, wenn&hellip;</h3>
+                <h3>選 KeeForge，如果&hellip;</h3>
                 <ul>
-                    <li>du ausschließlich KeePass-<code class="mono">.kdbx</code>-Tresore nutzt.</li>
-                    <li>du kein Abo und keine Pro-Stufe willst.</li>
-                    <li>du (noch) keine YubiKey-Hardware-Key-Unterstützung brauchst.</li>
-                    <li>du eine vollständig quelloffene App bevorzugst, bei der jede Funktion im öffentlichen Quellcode steht.</li>
-                    <li>du iOS 17 oder neuer nutzt.</li>
+                    <li>你只使用 KeePass <code class="mono">.kdbx</code> 保險庫。</li>
+                    <li>你不想要訂閱或 Pro 層級。</li>
+                    <li>你（目前）不需要 YubiKey 硬體金鑰支援。</li>
+                    <li>你偏好完全開源的 App，每項功能都在公開的原始碼裡。</li>
+                    <li>你使用 iOS 17 或之後的版本。</li>
                 </ul>
             </div>
             <div class="choice-card">
-                <h3>Wähle Strongbox, wenn&hellip;</h3>
+                <h3>選 Strongbox，如果&hellip;</h3>
                 <ul>
-                    <li>du <code class="mono">.psafe3</code>-Password-Safe-Tresore öffnen musst.</li>
-                    <li>du YubiKey- oder andere Hardware-Key-Unterstützung brauchst.</li>
-                    <li>du fortgeschrittene Auto-Type-Workflows auf macOS willst.</li>
-                    <li>du ein älteres iOS-Gerät (vor iOS 17) nutzt.</li>
+                    <li>你需要開啟 <code class="mono">.psafe3</code> Password Safe 保險庫。</li>
+                    <li>你需要 YubiKey 或其他硬體金鑰支援。</li>
+                    <li>你想在 macOS 上使用進階自動輸入工作流程。</li>
+                    <li>你的裝置還在使用較舊的 iOS（iOS 17 之前）。</li>
                 </ul>
             </div>
         </div>
         <p class="closing-note">
-            Viele KeePass-Nutzer haben mehr als einen Client installiert und auf denselben Tresor zeigen lassen. Weil <code class="mono">.kdbx</code> ein portables Format ist, sind die Wechselkosten gering — probier beide aus und schau, welche besser zu deinem Alltag passt.
+            許多 KeePass 使用者會同時安裝多個用戶端，並指向同一個保險庫。由於 <code class="mono">.kdbx</code> 是可攜格式，切換成本很低——兩款都試試，看哪一款更適合你的日常。
         </p>
     </section>
 
     <section class="vs-cta">
-        <h2>Probier KeeForge aus</h2>
-        <p>Kostenlos, Open Source, ohne Konten.</p>
+        <h2>試試 KeeForge</h2>
+        <p>免費、開源、無需帳號。</p>
         <div class="cta-row">
-            <a href="https://apps.apple.com/us/app/keeforge/id6759309295" class="app-store-badge" aria-label="Im App Store laden">
-                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Im App Store laden" height="52">
+            <a href="https://apps.apple.com/us/app/keeforge/id6759309295" class="app-store-badge" aria-label="在 App Store 下載">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="在 App Store 下載" height="52">
             </a>
-            <a href="/de/" class="ghost-link">Zurück zur Startseite</a>
+            <a href="/zh-hant/" class="ghost-link">返回首頁</a>
         </div>
     </section>
 </Page>

@@ -111,8 +111,15 @@ async function ensureSchema(db) {
 // with fetch(request) — same-zone subrequests bypass Worker routes, so this
 // cannot loop. On the feedback host unmatched GETs keep returning 405, so
 // nothing here changes behavior for the feedback endpoint.
-const SUPPORTED_LOCALES = ["en", "de", "fr", "es"];
-const LOCALE_HOME_PATHS = { en: "/", de: "/de/", fr: "/fr/", es: "/es/" };
+const SUPPORTED_LOCALES = ["en", "de", "fr", "es", "zh-hans", "zh-hant"];
+const LOCALE_HOME_PATHS = {
+  en: "/",
+  de: "/de/",
+  fr: "/fr/",
+  es: "/es/",
+  "zh-hans": "/zh-hans/",
+  "zh-hant": "/zh-hant/",
+};
 const LANG_COOKIE_NAME = "kf_lang";
 const LANG_COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
 
@@ -143,10 +150,26 @@ function detectSupportedLocale(header) {
   entries.sort((a, b) => b.q - a.q);
 
   for (const entry of entries) {
-    const primary = entry.tag.split("-")[0].toLowerCase();
-    if (SUPPORTED_LOCALES.includes(primary)) return primary;
+    const locale = localeForLanguageTag(entry.tag);
+    if (locale) return locale;
   }
   return null;
+}
+
+// Maps one language tag to a locale this site serves, or null. Most locales
+// match on the primary subtag alone; Chinese needs the script/region subtags:
+// zh-Hant, zh-TW, zh-HK, and zh-MO are Traditional, while zh-Hans, zh-CN,
+// zh-SG, and bare zh are Simplified.
+function localeForLanguageTag(tag) {
+  const subtags = tag.toLowerCase().split("-");
+  const primary = subtags[0];
+  if (primary === "zh") {
+    const traditional = subtags.some((subtag) =>
+      ["hant", "tw", "hk", "mo"].includes(subtag)
+    );
+    return traditional ? "zh-hant" : "zh-hans";
+  }
+  return SUPPORTED_LOCALES.includes(primary) ? primary : null;
 }
 
 function readCookie(request, name) {
@@ -162,9 +185,10 @@ function readCookie(request, name) {
   return null;
 }
 
-// The locale a path belongs to, from its /de/, /fr/, /es/ prefix, else "en".
+// The locale a path belongs to, from its /de/, /fr/, /es/, /zh-hans/, or
+// /zh-hant/ prefix, else "en".
 function localePrefixFromPath(pathname) {
-  for (const code of ["de", "fr", "es"]) {
+  for (const code of ["de", "fr", "es", "zh-hans", "zh-hant"]) {
     if (pathname === `/${code}` || pathname.startsWith(`/${code}/`)) return code;
   }
   return "en";
@@ -203,7 +227,7 @@ function routeLocale(request, url) {
   }
 
   // Detection/override only ever apply to the root; every other path
-  // (including /de/, /fr/, /es/ themselves) is a deep link and is untouched.
+  // (including the locale homes themselves) is a deep link and is untouched.
   if (pathname !== "/") return null;
 
   const cookieLocale = readCookie(request, LANG_COOKIE_NAME);
