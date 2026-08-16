@@ -22,7 +22,7 @@ const en = {
         downloadBig: 'App Store',
         readSource: 'Read the source',
         screenshotAlt: 'KeeForge database list screen',
-        meta: ['iOS 17 +', 'iPhone &amp; iPad', 'KDBX 3.1 / 4.x', 'No tracking, ever'],
+        meta: ['iOS 18 +', 'iPhone &amp; iPad', 'KDBX 3.1 / 4.x', 'No tracking, ever'],
     },
     trustPills: [
         { k: '01', t: 'Open source', d: 'GPL 3.0. Audit every line.' },
@@ -83,11 +83,11 @@ const en = {
             },
             {
                 title: 'An independent program agrees.',
-                body: 'Every release must pass a gate where KeePassXC — a widely used KeePass app that shares no code with KeeForge — opens KeeForge-written databases, decrypts the passwords, and confirms attachments match bit for bit. Databases from other KeePass software must likewise open in KeeForge and stay readable elsewhere after KeeForge saves them.',
+                body: 'Every release must pass a gate where KeePassXC — a widely used KeePass app that shares no code with KeeForge — opens KeeForge-written databases, decrypts the passwords, and confirms attachments match bit for bit. Databases created by other KeePass software must likewise open in KeeForge and stay readable elsewhere after KeeForge saves them.',
             },
         ],
         linkLabel: 'Read how it’s tested',
-        linkHref: 'https://github.com/crazytan/KeeForge#data-safety',
+        linkHref: 'https://github.com/KeeForge/KeeForge#data-safety',
     },
     compare: {
         eyebrow: 'HOW IT COMPARES',
@@ -112,7 +112,7 @@ const en = {
             {
                 title: 'vs other iOS KeePass clients',
                 bullets: [
-                    'Native Swift, built for iOS 17+ with current platform features (passkeys, TOTP AutoFill, Files integration).',
+                    'Native Swift, built for iOS 18+ with current platform features (passkeys, TOTP AutoFill, Files integration).',
                     'Free forever, all features included — no premium tier, no in-app paywalls (just an optional tip jar).',
                     'Saves are conflict-detected and auto-backed-up; AutoFill works offline for cloud-backed vaults.',
                 ],
@@ -134,7 +134,7 @@ const en = {
         h2: 'Questions,<br>answered plainly.',
         items: [
             { q: 'Is KeeForge really free?', a: 'Yes — free on the App Store, no subscriptions, no ads, no premium tier. If you’d like to support development, star the repo or buy me a coffee.' },
-            { q: 'Does it work with my existing KeePass database?', a: 'KeeForge reads and writes KDBX 4.x databases using AES-256 or ChaCha20 with AES-KDF or Argon2. Password-only KDBX 3.1 databases open in read-only mode.' },
+            { q: 'Does it work with my existing KeePass database?', a: 'KeeForge reads and writes KDBX 4.x databases using AES-256, ChaCha20, or Twofish with AES-KDF or Argon2. KDBX 3.1 databases open in read-only mode.' },
             { q: 'Where are my passwords stored?', a: 'In your encrypted database on your device or in storage you choose, such as iCloud Drive, Dropbox, OneDrive, WebDAV, or another Files provider. KeeForge does not host your vault.' },
             { q: 'How does AutoFill work?', a: 'KeeForge registers as an iOS Credential Provider. Tap a login field anywhere, choose KeeForge, authenticate with Face ID, and your credentials are filled.' },
             { q: 'Can I trust it?', a: 'Read the code. Build it yourself. Or trust the App Store review process plus a public commit history — that’s more than most password managers offer.' },
@@ -169,7 +169,7 @@ const de: typeof en = {
         downloadBig: 'App Store',
         readSource: 'Quellcode lesen',
         screenshotAlt: 'KeeForge-Datenbankliste',
-        meta: ['iOS 17 +', 'iPhone &amp; iPad', 'KDBX 3.1 / 4.x', 'Kein Tracking, niemals'],
+        meta: ['iOS 18 +', 'iPhone &amp; iPad', 'KDBX 3.1 / 4.x', 'Kein Tracking, niemals'],
     },
     trustPills: [
         { k: '01', t: 'Open Source', d: 'GPL 3.0. Jede Zeile prüfbar.' },
@@ -230,11 +230,11 @@ const de: typeof en = {
             },
             {
                 title: 'Ein unabhängiges Programm bestätigt das.',
-                body: 'Jede Version muss ein Prüf-Gate bestehen, in dem KeePassXC — eine weit verbreitete KeePass-App, die keinen Code mit KeeForge teilt — von KeeForge geschriebene Datenbanken öffnet, die Passwörter entschlüsselt und bestätigt, dass Anhänge Bit für Bit übereinstimmen. Umgekehrt müssen Datenbanken aus anderer KeePass-Software sich in KeeForge öffnen lassen und auch nach dem Speichern durch KeeForge anderswo lesbar bleiben.',
+                body: 'Jede Version muss ein Prüf-Gate bestehen, in dem KeePassXC — eine weit verbreitete KeePass-App, die keinen Code mit KeeForge teilt — von KeeForge geschriebene Datenbanken öffnet, die Passwörter entschlüsselt und bestätigt, dass Anhänge Bit für Bit übereinstimmen. Umgekehrt müssen von anderer KeePass-Software erstellte Datenbanken sich in KeeForge öffnen lassen und auch nach dem Speichern durch KeeForge anderswo lesbar bleiben.',
             },
         ],
         linkLabel: 'Nachlesen, wie getestet wird',
-        linkHref: 'https://github.com/crazytan/KeeForge/blob/main/README.de.md#datensicherheit',
+        linkHref: 'https://github.com/KeeForge/KeeForge/blob/main/docs/i18n/README.de.md#datensicherheit',
     },
     compare: {
         eyebrow: 'DER VERGLEICH',
@@ -259,7 +259,7 @@ const de: typeof en = {
             {
                 title: 'vs. andere iOS-KeePass-Clients',
                 bullets: [
-                    'Natives Swift, gebaut für iOS 17+ mit aktuellen Plattformfunktionen (Passkeys, TOTP-AutoFill, Dateien-Integration).',
+                    'Natives Swift, gebaut für iOS 18+ mit aktuellen Plattformfunktionen (Passkeys, TOTP-AutoFill, Dateien-Integration).',
                     'Für immer kostenlos, alle Funktionen inklusive — keine Premium-Stufe, keine Paywalls (nur ein optionales Trinkgeld).',
                     'Speichern mit Konflikterkennung und automatischen Backups; AutoFill funktioniert für Cloud-Tresore auch offline.',
                 ],
@@ -281,7 +281,7 @@ const de: typeof en = {
         h2: 'Fragen,<br>klar beantwortet.',
         items: [
             { q: 'Ist KeeForge wirklich kostenlos?', a: 'Ja — kostenlos im App Store, ohne Abo, ohne Werbung, ohne Premium-Stufe. Wenn du die Entwicklung unterstützen möchtest, gib dem Repo einen Stern oder spendiere mir einen Kaffee.' },
-            { q: 'Funktioniert es mit meiner bestehenden KeePass-Datenbank?', a: 'KeeForge liest und schreibt KDBX-4.x-Datenbanken mit AES-256 oder ChaCha20 und AES-KDF oder Argon2. Nur mit Passwort geschützte KDBX-3.1-Datenbanken öffnen sich im Nur-Lese-Modus.' },
+            { q: 'Funktioniert es mit meiner bestehenden KeePass-Datenbank?', a: 'KeeForge liest und schreibt KDBX-4.x-Datenbanken mit AES-256, ChaCha20 oder Twofish und AES-KDF oder Argon2. KDBX-3.1-Datenbanken öffnen sich im Nur-Lese-Modus.' },
             { q: 'Wo werden meine Passwörter gespeichert?', a: 'In deiner verschlüsselten Datenbank auf deinem Gerät oder an einem Speicherort deiner Wahl, etwa iCloud Drive, Dropbox, OneDrive, WebDAV oder einem anderen Dateien-Anbieter. KeeForge hostet deinen Tresor nicht.' },
             { q: 'Wie funktioniert AutoFill?', a: 'KeeForge registriert sich als iOS-Credential-Provider. Tippe irgendwo auf ein Anmeldefeld, wähle KeeForge, authentifiziere dich mit Face ID — und deine Zugangsdaten werden eingefüllt.' },
             { q: 'Kann ich der App vertrauen?', a: 'Lies den Code. Baue die App selbst. Oder vertraue dem App-Store-Review plus einer öffentlichen Commit-Historie — das ist mehr, als die meisten Passwortmanager bieten.' },
@@ -316,7 +316,7 @@ const fr: typeof en = {
         downloadBig: 'App Store',
         readSource: 'Lire le code source',
         screenshotAlt: 'Écran de la liste des bases de données KeeForge',
-        meta: ['iOS 17 +', 'iPhone &amp; iPad', 'KDBX 3.1 / 4.x', 'Aucun pistage, jamais'],
+        meta: ['iOS 18 +', 'iPhone &amp; iPad', 'KDBX 3.1 / 4.x', 'Aucun pistage, jamais'],
     },
     trustPills: [
         { k: '01', t: 'Open source', d: 'GPL 3.0. Auditez chaque ligne.' },
@@ -381,7 +381,7 @@ const fr: typeof en = {
             },
         ],
         linkLabel: 'Découvrir comment c’est testé',
-        linkHref: 'https://github.com/crazytan/KeeForge/blob/main/README.fr.md#sécurité-des-données',
+        linkHref: 'https://github.com/KeeForge/KeeForge/blob/main/docs/i18n/README.fr.md#sécurité-des-données',
     },
     compare: {
         eyebrow: 'LA COMPARAISON',
@@ -406,7 +406,7 @@ const fr: typeof en = {
             {
                 title: 'vs les autres clients KeePass pour iOS',
                 bullets: [
-                    'Swift natif, conçu pour iOS 17+ avec les fonctionnalités actuelles de la plateforme (clés d’accès, remplissage automatique TOTP, intégration à Fichiers).',
+                    'Swift natif, conçu pour iOS 18+ avec les fonctionnalités actuelles de la plateforme (clés d’accès, remplissage automatique TOTP, intégration à Fichiers).',
                     'Gratuit pour toujours, toutes les fonctionnalités incluses — pas de palier premium, pas de paywall en application (juste un pourboire optionnel).',
                     'Les enregistrements détectent les conflits et sont automatiquement sauvegardés ; le remplissage automatique fonctionne hors ligne pour les coffres-forts synchronisés dans le cloud.',
                 ],
@@ -428,7 +428,7 @@ const fr: typeof en = {
         h2: 'Des questions,<br>des réponses claires.',
         items: [
             { q: 'KeeForge est-il vraiment gratuit ?', a: 'Oui — gratuite sur l’App Store, sans abonnement, sans publicité, sans palier premium. Si vous souhaitez soutenir le développement, mettez une étoile au dépôt ou offrez-moi un café.' },
-            { q: 'Fonctionne-t-elle avec ma base de données KeePass existante ?', a: 'KeeForge lit et écrit des bases de données KDBX 4.x avec AES-256 ou ChaCha20, associés à AES-KDF ou Argon2. Les bases de données KDBX 3.1 protégées uniquement par mot de passe s’ouvrent en lecture seule.' },
+            { q: 'Fonctionne-t-elle avec ma base de données KeePass existante ?', a: 'KeeForge lit et écrit des bases de données KDBX 4.x avec AES-256, ChaCha20 ou Twofish, associés à AES-KDF ou Argon2. Les bases de données KDBX 3.1 s’ouvrent en lecture seule.' },
             { q: 'Où mes mots de passe sont-ils stockés ?', a: 'Dans votre base de données chiffrée, sur votre appareil ou dans le stockage de votre choix, comme iCloud Drive, Dropbox, OneDrive, WebDAV ou un autre fournisseur compatible avec Fichiers. KeeForge n’héberge pas votre coffre-fort.' },
             { q: 'Comment fonctionne le remplissage automatique ?', a: 'KeeForge s’enregistre comme fournisseur d’identifiants iOS. Touchez un champ de connexion n’importe où, choisissez KeeForge, authentifiez-vous avec Face ID, et vos identifiants sont remplis.' },
             { q: 'Puis-je lui faire confiance ?', a: 'Lisez le code. Compilez-le vous-même. Ou faites confiance au processus de revue de l’App Store et à un historique de commits public — c’est déjà plus que ce que proposent la plupart des gestionnaires de mots de passe.' },
@@ -463,7 +463,7 @@ const es: typeof en = {
         downloadBig: 'App Store',
         readSource: 'Leer el código fuente',
         screenshotAlt: 'Pantalla de la lista de bases de datos de KeeForge',
-        meta: ['iOS 17 +', 'iPhone &amp; iPad', 'KDBX 3.1 / 4.x', 'Ningún rastreo, jamás'],
+        meta: ['iOS 18 +', 'iPhone &amp; iPad', 'KDBX 3.1 / 4.x', 'Ningún rastreo, jamás'],
     },
     trustPills: [
         { k: '01', t: 'Código abierto', d: 'GPL 3.0. Audite cada línea.' },
@@ -528,7 +528,7 @@ const es: typeof en = {
             },
         ],
         linkLabel: 'Lea cómo se prueba',
-        linkHref: 'https://github.com/crazytan/KeeForge/blob/main/README.es.md#seguridad-de-los-datos',
+        linkHref: 'https://github.com/KeeForge/KeeForge/blob/main/docs/i18n/README.es.md#seguridad-de-los-datos',
     },
     compare: {
         eyebrow: 'CÓMO SE COMPARA',
@@ -553,7 +553,7 @@ const es: typeof en = {
             {
                 title: 'vs. otros clientes de KeePass para iOS',
                 bullets: [
-                    'Swift nativo, creado para iOS 17+ con las funciones actuales de la plataforma (llaves de acceso, autorrelleno de TOTP, integración con Archivos).',
+                    'Swift nativo, creado para iOS 18+ con las funciones actuales de la plataforma (llaves de acceso, autorrelleno de TOTP, integración con Archivos).',
                     'Gratis para siempre, con todas las funciones incluidas — sin nivel premium, sin muros de pago dentro de la app (solo una propina opcional).',
                     'Los guardados detectan conflictos y se respaldan automáticamente; el autorrelleno funciona sin conexión para bóvedas sincronizadas con la nube.',
                 ],
@@ -575,7 +575,7 @@ const es: typeof en = {
         h2: 'Preguntas,<br>respondidas con claridad.',
         items: [
             { q: '¿KeeForge es realmente gratis?', a: 'Sí — gratis en la App Store, sin suscripciones, sin anuncios, sin nivel premium. Si desea apoyar el desarrollo, puede darle una estrella al repositorio o invitarme a un café.' },
-            { q: '¿Funciona con mi base de datos de KeePass existente?', a: 'KeeForge lee y escribe bases de datos KDBX 4.x con AES-256 o ChaCha20, junto con AES-KDF o Argon2. Las bases de datos KDBX 3.1 protegidas solo con contraseña se abren en modo de solo lectura.' },
+            { q: '¿Funciona con mi base de datos de KeePass existente?', a: 'KeeForge lee y escribe bases de datos KDBX 4.x con AES-256, ChaCha20 o Twofish, junto con AES-KDF o Argon2. Las bases de datos KDBX 3.1 se abren en modo de solo lectura.' },
             { q: '¿Dónde se guardan mis contraseñas?', a: 'En su base de datos cifrada, en su dispositivo o en el almacenamiento que elija, como iCloud Drive, Dropbox, OneDrive, WebDAV u otro proveedor compatible con Archivos. KeeForge no aloja su bóveda.' },
             { q: '¿Cómo funciona el autorrelleno?', a: 'KeeForge se registra como proveedor de credenciales de iOS. Toque un campo de inicio de sesión en cualquier lugar, elija KeeForge, autentíquese con Face ID, y sus credenciales se rellenan.' },
             { q: '¿Puedo confiar en él?', a: 'Lea el código. Compílelo usted mismo. O confíe en el proceso de revisión de la App Store y en un historial de confirmaciones público — eso ya es más de lo que ofrecen la mayoría de los gestores de contraseñas.' },
@@ -610,7 +610,7 @@ const zhHans: typeof en = {
         downloadBig: '下载',
         readSource: '阅读源代码',
         screenshotAlt: 'KeeForge 数据库列表界面',
-        meta: ['iOS 17 +', 'iPhone 和 iPad', 'KDBX 3.1 / 4.x', '绝无跟踪'],
+        meta: ['iOS 18 +', 'iPhone 和 iPad', 'KDBX 3.1 / 4.x', '绝无跟踪'],
     },
     trustPills: [
         { k: '01', t: '开源', d: 'GPL 3.0。每一行代码都可审计。' },
@@ -671,11 +671,11 @@ const zhHans: typeof en = {
             },
             {
                 title: '一个独立的程序予以确认。',
-                body: '每个版本都必须通过一道检验：KeePassXC——一款与 KeeForge 没有任何共享代码、被广泛使用的 KeePass 应用——打开 KeeForge 写入的数据库，解密其中的密码，并确认附件逐位一致。同样，来自其他 KeePass 软件的数据库必须能在 KeeForge 中打开，并在 KeeForge 保存后仍能被其他软件读取。',
+                body: '每个版本都必须通过一道检验：KeePassXC——一款与 KeeForge 没有任何共享代码、被广泛使用的 KeePass 应用——打开 KeeForge 写入的数据库，解密其中的密码，并确认附件逐位一致。同样，其他 KeePass 软件创建的数据库必须能在 KeeForge 中打开，并在 KeeForge 保存后仍能被其他软件读取。',
             },
         ],
         linkLabel: '了解测试方式',
-        linkHref: 'https://github.com/crazytan/KeeForge/blob/main/README.zh-Hans.md#数据安全',
+        linkHref: 'https://github.com/KeeForge/KeeForge/blob/main/docs/i18n/README.zh-Hans.md#数据安全',
     },
     compare: {
         eyebrow: '横向对比',
@@ -700,7 +700,7 @@ const zhHans: typeof en = {
             {
                 title: 'vs 其他 iOS KeePass 客户端',
                 bullets: [
-                    '原生 Swift 编写，面向 iOS 17+，支持最新平台功能（通行密钥、TOTP 自动填充、“文件”集成）。',
+                    '原生 Swift 编写，面向 iOS 18+，支持最新平台功能（通行密钥、TOTP 自动填充、“文件”集成）。',
                     '永久免费，功能齐全——没有高级版，没有应用内付费墙（只有可选的打赏）。',
                     '保存带冲突检测并自动备份；云端保险库的自动填充可离线使用。',
                 ],
@@ -722,7 +722,7 @@ const zhHans: typeof en = {
         h2: '你的疑问，<br>直白作答。',
         items: [
             { q: 'KeeForge 真的免费吗？', a: '是的——App Store 免费下载，无订阅、无广告、无高级版。如果你想支持开发，可以给仓库加星，或请我喝杯咖啡。' },
-            { q: '它能用我现有的 KeePass 数据库吗？', a: 'KeeForge 可读写使用 AES-256 或 ChaCha20 搭配 AES-KDF 或 Argon2 的 KDBX 4.x 数据库。仅用密码保护的 KDBX 3.1 数据库以只读模式打开。' },
+            { q: '它能用我现有的 KeePass 数据库吗？', a: 'KeeForge 可读写使用 AES-256、ChaCha20 或 Twofish 搭配 AES-KDF 或 Argon2 的 KDBX 4.x 数据库。KDBX 3.1 数据库以只读模式打开。' },
             { q: '我的密码存储在哪里？', a: '存储在你的加密数据库中——在你的设备上，或你选择的存储位置，例如 iCloud 云盘、Dropbox、OneDrive、WebDAV 或其他“文件”提供方。KeeForge 不托管你的保险库。' },
             { q: '自动填充如何工作？', a: 'KeeForge 会注册为 iOS 凭证提供程序。在任何地方轻点登录输入框，选择 KeeForge，用 Face ID 验证身份，登录凭证即会自动填入。' },
             { q: '我可以信任它吗？', a: '读一读代码，或者自己编译。也可以信任 App Store 的审核流程加上公开的提交历史——这已经比大多数密码管理器给出的多。' },
@@ -757,7 +757,7 @@ const zhHant: typeof en = {
         downloadBig: '下載',
         readSource: '閱讀原始碼',
         screenshotAlt: 'KeeForge 資料庫列表畫面',
-        meta: ['iOS 17 +', 'iPhone 和 iPad', 'KDBX 3.1 / 4.x', '永遠零追蹤'],
+        meta: ['iOS 18 +', 'iPhone 和 iPad', 'KDBX 3.1 / 4.x', '永遠零追蹤'],
     },
     trustPills: [
         { k: '01', t: '開源', d: 'GPL 3.0。每一行程式碼皆可稽核。' },
@@ -822,7 +822,7 @@ const zhHant: typeof en = {
             },
         ],
         linkLabel: '瞭解測試方式',
-        linkHref: 'https://github.com/crazytan/KeeForge/blob/main/README.zh-Hant.md#資料安全',
+        linkHref: 'https://github.com/KeeForge/KeeForge/blob/main/docs/i18n/README.zh-Hant.md#資料安全',
     },
     compare: {
         eyebrow: '橫向比較',
@@ -847,7 +847,7 @@ const zhHant: typeof en = {
             {
                 title: 'vs 其他 iOS KeePass 用戶端',
                 bullets: [
-                    '原生 Swift 打造，鎖定 iOS 17+，支援最新平台功能（通行金鑰、TOTP 自動填寫、「檔案」整合）。',
+                    '原生 Swift 打造，鎖定 iOS 18+，支援最新平台功能（通行金鑰、TOTP 自動填寫、「檔案」整合）。',
                     '永久免費，功能全數開放——沒有進階版，App 內也沒有付費牆（只有可自由選擇的打賞）。',
                     '儲存具備衝突偵測與自動備份；雲端保險庫離線時也能使用自動填寫。',
                 ],
@@ -869,7 +869,7 @@ const zhHant: typeof en = {
         h2: '你的疑問，<br>直白解答。',
         items: [
             { q: 'KeeForge 真的免費嗎？', a: '是的——在 App Store 免費下載，無訂閱、無廣告、沒有進階付費版。如果你想支持開發，歡迎在 GitHub 上給儲存庫一顆星，或請我喝杯咖啡。' },
-            { q: '它能開啟我現有的 KeePass 資料庫嗎？', a: 'KeeForge 可讀寫採用 AES-256 或 ChaCha20 搭配 AES-KDF 或 Argon2 的 KDBX 4.x 資料庫。僅以密碼保護的 KDBX 3.1 資料庫會以唯讀模式開啟。' },
+            { q: '它能開啟我現有的 KeePass 資料庫嗎？', a: 'KeeForge 可讀寫採用 AES-256、ChaCha20 或 Twofish 搭配 AES-KDF 或 Argon2 的 KDBX 4.x 資料庫。KDBX 3.1 資料庫會以唯讀模式開啟。' },
             { q: '我的密碼儲存在哪裡？', a: '儲存在你的加密資料庫中——位於你的裝置，或你選擇的儲存位置，例如 iCloud 雲碟、Dropbox、OneDrive、WebDAV 或其他「檔案」提供者。KeeForge 不會代管你的保險庫。' },
             { q: '自動填寫如何運作？', a: 'KeeForge 會註冊為 iOS 的憑證提供者。在任何地方點一下登入欄位，選擇 KeeForge，以 Face ID 驗證身分，你的登入資訊就會自動填入。' },
             { q: '我可以信任它嗎？', a: '讀程式碼、自己編譯，或者相信 App Store 的審查流程加上公開的提交歷史——這已經比大多數密碼管理員能給的更多。' },

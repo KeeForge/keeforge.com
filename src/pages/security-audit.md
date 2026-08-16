@@ -8,6 +8,8 @@ dateDisplay: "August 1, 2026"
 model: "Fable 5"
 ---
 
+Source of record: [`docs/audits/2026-08-01-security-audit.md`](https://github.com/KeeForge/KeeForge/blob/main/docs/audits/2026-08-01-security-audit.md) in the KeeForge repository; this page mirrors it.
+
 This document is a point-in-time archive of a repository-wide security review,
 its threat model, the findings that survived review, and the remediation completed
 immediately afterward. It describes the source at the revisions below; later code

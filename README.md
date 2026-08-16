@@ -10,8 +10,9 @@ Worker that receives in-app feedback.
 - `/vs/keepassium` — KeeForge vs KeePassium comparison
 - `/vs/strongbox` — KeeForge vs Strongbox comparison
 - `/privacy` — privacy policy
+- `/security-audit` — public security audit record (English only)
 
-German, French, Spanish, Simplified Chinese, and Traditional Chinese translations of every page live under `/de/`, `/fr/`, `/es/`, `/zh-hans/`, and `/zh-hant/`.
+German, French, Spanish, Simplified Chinese, and Traditional Chinese translations of every page except `/security-audit` live under `/de/`, `/fr/`, `/es/`, `/zh-hans/`, and `/zh-hant/`.
 
 ## Local development
 
@@ -30,8 +31,7 @@ posts in-app feedback to.
 
 The source is public on purpose. KeeForge's [privacy
 policy](https://keeforge.com/privacy) tells users they can audit the code that
-handles their data, and this is the code that receives it. Deployment
-configuration is not public — it lives in a separate private repo.
+handles their data, and this is the code that receives it.
 
 ```bash
 npm run test:worker
@@ -42,7 +42,7 @@ npm run test:worker
 | Request | Response |
 | --- | --- |
 | `POST /api/feedback` | `202` `{"ok":true,"id":"<uuid>"}` on success |
-| `GET /api/feedback` | `405` `{"ok":false,"error":"method_not_allowed"}` |
+| `GET /api/feedback` | `405` `{"ok":false,"error":"method_not_allowed"}` (on the feedback host, without an ASSETS binding) |
 | `OPTIONS /api/feedback` | `204`, no body |
 
 The app submits a narrow, sanitized payload:
@@ -91,13 +91,17 @@ entries, passwords, key files, raw database files, or unsanitized logs.
 | `internal_error` | 500 | unhandled failure |
 
 Field lengths are capped server-side; see `MAX_FIELD_LENGTHS` in
-`worker/index.js`.
+`worker/index.js`. `MAX_FIELD_LENGTHS` also caps six top-level fields
+(`errorCode`, `errorCategory`, `appVersion`, `buildNumber`, `osVersion`,
+`deviceModel`) that older app builds sent; the current app folds that
+information into `details` and never sends them, but the Worker still accepts
+and stores them.
 
 ### Behavior
 
 The Worker validates the payload, stores an attached photo in R2, and inserts
-one row per submission into D1. That is the entire request path — the Worker
-itself makes no outbound requests and has no third-party integrations.
+one row per submission into D1. That is the entire request path — the feedback
+path makes no outbound requests and has no third-party integrations.
 
 Submissions do not stop at D1, though. A separate maintainer-side tool polls the
 database and relays new submissions as a notification, so that feedback does not
@@ -111,8 +115,21 @@ form collects and how long submissions are kept.
 If the R2 binding is absent the submission is still stored, just without the
 attachment. Only a failed D1 insert fails the request.
 
-Retention and deletion of submissions are described in the [privacy
-policy](https://keeforge.com/privacy).
+### Site routing
+
+The same Worker also handles browser-language routing for keeforge.com when
+the private deployment config points site paths at it. On a `GET` it first
+runs the locale logic, then falls through to normal static serving:
+
+- `/` redirects (302, uncached) to `/<locale>/` based on the `kf_lang` cookie,
+  or failing that the `Accept-Language` header; English stays on `/`.
+- `?setlang=1` on any localized path records that choice in a one-year
+  `kf_lang` cookie and redirects to the same path without the marker.
+- Every other path is a deep link and is never redirected.
+- Anything not redirected is served from the `ASSETS` binding when one is
+  configured, and otherwise proxied to the static origin with
+  `fetch(request)`. On `feedback.keeforge.com` unmatched `GET`s still return
+  `405`.
 
 ## Deployment
 
