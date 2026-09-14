@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>KeeForge for Mac</title>
+    <link>https://keeforge.com</link>
+    <description>Direct-download updates for KeeForge for Mac.</description>
+    <language>en</language>
+    <atom:link href="https://keeforge.com/appcast.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

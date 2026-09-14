@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { Buffer } from "node:buffer";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import worker, { parsePhoto, detectSupportedLocale } from "./index.js";
@@ -431,4 +432,146 @@ test("an English root visit proxies to the origin instead of 405ing", async () =
   } finally {
     globalThis.fetch = realFetch;
   }
+});
+
+// --- Sparkle appcast --------------------------------------------------------
+
+function withOriginFetch(run) {
+  const realFetch = globalThis.fetch;
+  const proxied = [];
+  globalThis.fetch = async (request) => {
+    proxied.push({ method: request.method, url: request.url });
+    return new Response(request.method === "HEAD" ? null : "<rss/>", {
+      status: 200,
+      headers: {
+        "Content-Type": "application/xml; charset=utf-8",
+        "Cache-Control": "public, max-age=300",
+      },
+    });
+  };
+  return run(proxied).finally(() => {
+    globalThis.fetch = realFetch;
+  });
+}
+
+for (const method of ["GET", "HEAD"]) {
+  test(`${method} /appcast.xml proxies to the origin without a redirect or cookie`, () =>
+    withOriginFetch(async (proxied) => {
+      for (const path of ["/appcast.xml", "/appcast.xml?setlang=1"]) {
+        const response = await worker.fetch(
+          new Request(`https://keeforge.com${path}`, {
+            method,
+            headers: { "Accept-Language": "de-DE,de;q=0.9", Cookie: "kf_lang=zh-hant" },
+          }),
+          {}
+        );
+        assert.equal(response.status, 200);
+        assert.equal(response.headers.get("Location"), null);
+        assert.equal(response.headers.get("Set-Cookie"), null);
+        assert.equal(response.headers.get("Content-Type"), "application/xml; charset=utf-8");
+      }
+      assert.deepEqual(proxied, [
+        { method, url: "https://keeforge.com/appcast.xml" },
+        { method, url: "https://keeforge.com/appcast.xml?setlang=1" },
+      ]);
+    }));
+}
+
+test("HEAD on site paths is served like GET instead of 405ing", () =>
+  withOriginFetch(async (proxied) => {
+    const page = await worker.fetch(new Request("https://keeforge.com/privacy", { method: "HEAD" }), {});
+    assert.equal(page.status, 200);
+
+    const root = await worker.fetch(
+      new Request("https://keeforge.com/", { method: "HEAD", headers: { "Accept-Language": "fr" } }),
+      {}
+    );
+    assert.equal(root.status, 302);
+    assert.equal(root.headers.get("Location"), "/fr/");
+    assert.equal(proxied.length, 1);
+  }));
+
+test("HEAD and non-POST methods on the feedback host still return 405", async () => {
+  for (const method of ["HEAD", "PUT"]) {
+    const response = await worker.fetch(
+      new Request("https://feedback.keeforge.com/api/feedback", { method }),
+      {}
+    );
+    assert.equal(response.status, 405);
+  }
+});
+
+// Structural checks for the Sparkle feed. The format mirrors what the app
+// repo's ci_scripts/generate_appcast.py writes (ElementTree output), so this
+// must keep passing after publish-appcast replaces public/appcast.xml.
+function assertValidAppcast(feed) {
+  assert.match(feed, /^<\?xml version=["']1\.0["'] encoding=["']utf-8["']\?>\s*<rss /i);
+  assert.match(feed, /<rss [^>]*version="2\.0"/);
+  assert.match(feed, /<channel>[\s\S]*<title>KeeForge for Mac<\/title>[\s\S]*<\/channel>\s*<\/rss>\s*$/);
+  assert.equal((feed.match(/<channel>/g) ?? []).length, 1);
+
+  // Every item must point at its immutable, versioned GitHub Release ZIP and
+  // carry a real EdDSA signature and byte length.
+  const items = feed.match(/<item>[\s\S]*?<\/item>/g) ?? [];
+  assert.equal((feed.match(/<item[\s>]/g) ?? []).length, items.length);
+  if (items.length > 0) {
+    assert.match(feed, /xmlns:sparkle="http:\/\/www\.andymatuschak\.org\/xml-namespaces\/sparkle"/);
+  }
+  const seenVersions = new Set();
+  const seenBuilds = new Set();
+  for (const item of items) {
+    const version = item.match(/<sparkle:shortVersionString>([^<]+)</)?.[1];
+    const build = item.match(/<sparkle:version>([0-9]+)</)?.[1];
+    assert.ok(version && build, "item needs sparkle:shortVersionString and sparkle:version");
+    assert.ok(!seenVersions.has(version), `duplicate version ${version}`);
+    assert.ok(!seenBuilds.has(build), `duplicate build ${build}`);
+    seenVersions.add(version);
+    seenBuilds.add(build);
+
+    const enclosure = item.match(/<enclosure [^>]*>/)?.[0] ?? "";
+    assert.ok(
+      enclosure.includes(
+        `url="https://github.com/KeeForge/KeeForge/releases/download/v${version}/KeeForge-${version}-b${build}.zip"`
+      ),
+      `item ${version} enclosure must use its versioned release asset`
+    );
+    assert.match(enclosure, /sparkle:edSignature="[A-Za-z0-9+/]{86}=="/);
+    assert.match(enclosure, /\slength="[1-9][0-9]*"/);
+  }
+}
+
+test("public/appcast.xml is a valid Sparkle feed", () => {
+  assertValidAppcast(readFileSync(new URL("../public/appcast.xml", import.meta.url), "utf8"));
+});
+
+test("the appcast validator accepts generator output and rejects unpinned enclosures", () => {
+  const signature = "A".repeat(86) + "==";
+  const item = (url) =>
+    `<item><title>9.9.9</title><sparkle:version>999</sparkle:version>` +
+    `<sparkle:shortVersionString>9.9.9</sparkle:shortVersionString>` +
+    `<enclosure url="${url}" type="application/octet-stream" sparkle:edSignature="${signature}" length="153" /></item>`;
+  const feed = (body) =>
+    `<?xml version='1.0' encoding='utf-8'?>\n` +
+    `<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">\n` +
+    `  <channel>\n    <title>KeeForge for Mac</title>\n  ${body}</channel>\n</rss>`;
+
+  assertValidAppcast(
+    feed(item("https://github.com/KeeForge/KeeForge/releases/download/v9.9.9/KeeForge-9.9.9-b999.zip"))
+  );
+  assert.throws(() =>
+    assertValidAppcast(feed(item("https://github.com/KeeForge/KeeForge/releases/latest/download/KeeForge.zip")))
+  );
+  assert.throws(() =>
+    assertValidAppcast(
+      feed(item("https://github.com/KeeForge/KeeForge/releases/download/v9.9.9/KeeForge-9.9.9-b999.zip").replace(signature, "fixture"))
+    )
+  );
+});
+
+test("public/_headers serves the appcast as XML with a short cache", () => {
+  const headers = readFileSync(new URL("../public/_headers", import.meta.url), "utf8");
+  const block = headers.match(/^\/appcast\.xml\n((?:[ \t]+.+\n?)+)/m)?.[1] ?? "";
+
+  assert.match(block, /^\s+Content-Type: application\/xml; charset=utf-8$/m);
+  assert.match(block, /^\s+Cache-Control: public, max-age=300$/m);
 });

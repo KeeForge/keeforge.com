@@ -122,6 +122,10 @@ const LOCALE_HOME_PATHS = {
 };
 const LANG_COOKIE_NAME = "kf_lang";
 const LANG_COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
+// Machine-read files that must never be redirected or given a language cookie.
+// /appcast.xml is the Sparkle update feed the direct-download Mac app polls;
+// its content type and cache lifetime come from public/_headers.
+const LOCALE_EXEMPT_PATHS = new Set(["/appcast.xml"]);
 
 // Parses an Accept-Language header (q-values respected, RFC 9110 syntax) and
 // returns the highest-priority language among SUPPORTED_LOCALES, or null if
@@ -216,6 +220,7 @@ function redirectResponse(location, { setCookieLocale } = {}) {
 // serving (deep links are always left alone).
 function routeLocale(request, url) {
   const { pathname, searchParams } = url;
+  if (LOCALE_EXEMPT_PATHS.has(pathname)) return null;
 
   // `?setlang=1` on any localized path is a deliberate choice: remember it
   // and drop the marker, no matter which path it was made from.
@@ -247,7 +252,9 @@ function routeLocale(request, url) {
 export default {
   async fetch(request, env) {
     try {
-      if (request.method === "GET") {
+      // HEAD is served like GET so link checkers and update clients can probe
+      // site paths; the runtime drops the body.
+      if (request.method === "GET" || request.method === "HEAD") {
         const url = new URL(request.url);
         const routed = routeLocale(request, url);
         if (routed) return routed;

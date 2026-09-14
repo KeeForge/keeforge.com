@@ -1,0 +1,6 @@
+# Sparkle update feed for the direct-download Mac app. Short cache so a newly
+# published item reaches clients within minutes.
+/appcast.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=300
+  X-Content-Type-Options: nosniff

@@ -11,6 +11,8 @@ Worker that receives in-app feedback.
 - `/vs/strongbox` — KeeForge vs Strongbox comparison
 - `/privacy` — privacy policy
 - `/security-audit` — public security audit record (English only)
+- `/appcast.xml` — Sparkle update feed for the direct-download Mac app (see
+  [Sparkle appcast](#sparkle-appcast))
 
 German, French, Spanish, Simplified Chinese, and Traditional Chinese translations of every page except `/security-audit` live under `/de/`, `/fr/`, `/es/`, `/zh-hans/`, and `/zh-hant/`.
 
@@ -126,14 +128,57 @@ runs the locale logic, then falls through to normal static serving:
 - `?setlang=1` on any localized path records that choice in a one-year
   `kf_lang` cookie and redirects to the same path without the marker.
 - Every other path is a deep link and is never redirected.
+- `/appcast.xml` is exempt from all of the above: no redirect and no cookie,
+  even with `Accept-Language`, `kf_lang`, or `?setlang=1`.
+- `HEAD` is handled exactly like `GET`.
 - Anything not redirected is served from the `ASSETS` binding when one is
   configured, and otherwise proxied to the static origin with
   `fetch(request)`. On `feedback.keeforge.com` unmatched `GET`s still return
   `405`.
 
+## Sparkle appcast
+
+`public/appcast.xml` is the Sparkle feed polled by the direct-download (non-App
+Store) Mac app, which has `https://keeforge.com/appcast.xml` built in. It is
+served with `Content-Type: application/xml` and a 5-minute cache via
+`public/_headers`.
+
+The feed starts with channel metadata and **no items**, and stays that way until
+a release is approved for production. Never add placeholder, candidate, or
+hand-edited items.
+
+Update archives are hosted on immutable GitHub Releases in the app repo, never
+on this site:
+
+```
+https://github.com/KeeForge/KeeForge/releases/download/v{version}/KeeForge-{version}-b{repoBuild}.zip
+```
+
+Publishing an update (driven from the app repo's release tooling,
+`ci_scripts/release_direct_artifact.sh`):
+
+1. `handoff` builds the staged feed from the current `public/appcast.xml` plus
+   the new item. `sparkle:edSignature` and `length` come from the exact signed
+   ZIP; older items are kept, and duplicate versions or builds are refused.
+2. After production approval, the GitHub Release is published and the asset is
+   downloaded anonymously from the URL above. Its SHA-256 must match the staged
+   artifact.
+3. `publish-appcast --destination public/appcast.xml` replaces this file only if
+   it is unchanged since staging. Then run `npm run test:worker`, commit, and push.
+
+Rules:
+
+- Enclosures always use the versioned URL above, never `releases/latest/download`.
+- Never commit ZIPs, signing keys, or any other release artifact to this repo.
+- Never remove older items; Sparkle needs them for users on older builds.
+
 ## Deployment
 
-The site is built with Astro and served by Cloudflare.
+The site is built with Astro and deployed by Cloudflare Pages (project
+`keeforge`: `npm run build`, output `dist/`). Every push to `main` deploys
+automatically, and that includes changes to `public/appcast.xml`. Requests to
+`keeforge.com/*` pass through the Worker first, which handles locale routing
+and otherwise proxies to the Pages origin.
 
 The Worker's `wrangler.toml`, Cloudflare resource topology, rate-limiting
 configuration, and operational runbook live in the private `keeforge-infra`
