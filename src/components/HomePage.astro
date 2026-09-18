@@ -46,7 +46,6 @@ const t = home[lang];
 
         <!-- Hero -->
         <section class="kf-hero">
-            <div class="kf-flourish" data-parallax="0.04" aria-hidden="true">✱</div>
             <div class="kf-hero-grid">
                 <div class="kf-hero-copy">
                     <h1 data-reveal data-reveal-delay="80" set:html={t.hero.h1}></h1>
@@ -392,15 +391,6 @@ const t = home[lang];
         overflow: hidden;
         max-width: 1280px;
         margin: 0 auto;
-    }
-    .kf-flourish {
-        position: absolute; top: 30px; right: 60px;
-        font-family: var(--kf-serif); font-style: italic;
-        font-size: 340px; line-height: 1;
-        color: var(--kf-accent); opacity: 0.06;
-        pointer-events: none;
-        transition: transform 0.1s linear;
-        will-change: transform;
     }
     .kf-hero-grid {
         display: grid;
@@ -939,7 +929,6 @@ const t = home[lang];
         .kf-trust-cell:nth-child(odd) { padding-left: 0; }
         .kf-trust-cell:nth-child(even) { padding-right: 0; }
         .kf-compare-grid { grid-template-columns: 1fr; }
-        .kf-flourish { font-size: 220px; right: 20px; top: 60px; }
         .kf-hero { padding: 56px clamp(20px, 5vw, 32px) 64px; }
         .kf-feature, .kf-safety, .kf-compare, .kf-beta, .kf-faq { padding: 72px clamp(20px, 5vw, 32px); }
     }
