@@ -2,10 +2,10 @@
 import Base from '../../layouts/Base.astro';
 import LanguageSwitcher from '../../components/LanguageSwitcher.astro';
 
-const langPaths = { en: '/privacy/', de: '/de/privacy/', fr: '/fr/privacy/', es: '/es/privacy/', 'zh-hans': '/zh-hans/privacy/', 'zh-hant': '/zh-hant/privacy/' };
+const langPaths = { en: '/privacy/', de: '/de/privacy/', fr: '/fr/privacy/', es: '/es/privacy/', 'zh-hans': '/zh-hans/privacy/', 'zh-hant': '/zh-hant/privacy/', ja: '/ja/privacy/' };
 ---
 
-<Base title="隱私權政策 — KeeForge" description="KeeForge 不會收集你的保險庫資料。App 內建的選用意見回饋表單只會傳送你自行選擇的內容：你的訊息、回報資料庫開啟失敗時畫面上可見的錯誤詳細資訊，以及在你同意的情況下，一個用於後續聯絡的電子郵件地址和一張附加的照片。" lang="zh-hant" enPath="/privacy/" dePath="/de/privacy/" frPath="/fr/privacy/" esPath="/es/privacy/" zhHansPath="/zh-hans/privacy/" zhHantPath="/zh-hant/privacy/">
+<Base title="隱私權政策 — KeeForge" description="KeeForge 不會收集你的保險庫資料。App 內建的選用意見回饋表單只會傳送你自行選擇的內容：你的訊息、回報資料庫開啟失敗時畫面上可見的錯誤詳細資訊，以及在你同意的情況下，一個用於後續聯絡的電子郵件地址和一張附加的照片。" lang="zh-hant" enPath="/privacy/" dePath="/de/privacy/" frPath="/fr/privacy/" esPath="/es/privacy/" zhHansPath="/zh-hans/privacy/" zhHantPath="/zh-hant/privacy/" jaPath="/ja/privacy/">
     <div class="privacy">
         <div class="top-links">
             <a href="/zh-hant/" class="back-link">&larr; 返回 KeeForge</a>
@@ -69,6 +69,7 @@ const langPaths = { en: '/privacy/', de: '/de/privacy/', fr: '/fr/privacy/', es:
     .top-links {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         gap: 16px;
     }
 

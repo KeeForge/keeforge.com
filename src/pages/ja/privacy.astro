@@ -1,0 +1,142 @@
+---
+import Base from '../../layouts/Base.astro';
+import LanguageSwitcher from '../../components/LanguageSwitcher.astro';
+
+const langPaths = { en: '/privacy/', de: '/de/privacy/', fr: '/fr/privacy/', es: '/es/privacy/', 'zh-hans': '/zh-hans/privacy/', 'zh-hant': '/zh-hant/privacy/', ja: '/ja/privacy/' };
+---
+
+<Base title="プライバシーポリシー — KeeForge" description="KeeForge はあなたの保管庫データを収集しません。任意のアプリ内フィードバックフォームが送信するのは、あなたが選んだものだけです。あなたのメッセージ、データベースを開けなかったことを報告する際に画面に表示されるエラー詳細、そして同意した場合にかぎり、返信用のメールアドレスと添付した写真です。" lang="ja" enPath="/privacy/" dePath="/de/privacy/" frPath="/fr/privacy/" esPath="/es/privacy/" zhHansPath="/zh-hans/privacy/" zhHantPath="/zh-hant/privacy/" jaPath="/ja/privacy/">
+    <div class="privacy">
+        <div class="top-links">
+            <a href="/ja/" class="back-link">&larr; KeeForge に戻る</a>
+            <LanguageSwitcher current="ja" paths={langPaths} variant="footer" />
+        </div>
+        <h1>プライバシーポリシー</h1>
+        <p class="updated">最終更新: 2026年7月31日</p>
+
+        <div class="content">
+            <p class="lead">KeeForge はあなたの保管庫データを収集しません。任意のアプリ内フィードバックフォームが送信するのは、あなたが選んだものだけです。あなたのメッセージ、データベースを開けなかったことを報告する際に画面に表示されるエラー詳細、そして同意した場合にかぎり、返信用のメールアドレスと添付した写真です。</p>
+
+            <p class="note">この翻訳は理解を助けるためのものです。解釈に相違がある場合は、<a href="/privacy">英語版</a>が優先されます。</p>
+
+            <h2>解析なし</h2>
+            <p>KeeForge には、解析フレームワーク、クラッシュレポート SDK、利用状況トラッキングのたぐいは一切含まれていません。</p>
+
+            <h2>テレメトリなし</h2>
+            <p>KeeForge は、解析データ、利用テレメトリ、クラッシュレポートを送信しません。ネットワーク通信は、あなたが使うことを選んだ機能にかぎられます。Dropbox、OneDrive、WebDAV など設定済みのクラウドプロバイダとのデータベース同期、DuckDuckGo からの任意のウェブサイトのファビコン取得、Apple の StoreKit を通じた任意のチップの読み込みと購入、Buy Me a Coffee などの支援リンクをブラウザで開くこと、そしてあなたが明示的に「送信」をタップしたときのアプリ内フィードバックフォームの送信です。</p>
+
+            <h2>アカウント不要</h2>
+            <p>KeeForge はアカウント作成を必要とせず、提供もしていません。登録するものは何もありません。</p>
+
+            <h2>あなたの保管庫データ</h2>
+            <p>あなたのパスワード、エントリ、添付ファイル、マスターパスワードは端末上で処理され、あなたの端末とあなたが選んだ保存先に留まります。KeeForge の開発者およびフィードバックサービスが、あなたの保管庫、マスターパスワード、キーファイル、復号されたエントリの内容を受け取ることはありません。上記のネットワークを使う機能を選んだ場合を除き、アプリはオフラインで動作します。</p>
+
+            <h2>フィードバックの送信</h2>
+            <p>KeeForge には、アプリ内のフィードバックフォームがあります（設定および一部のエラー画面から利用できます）。このフォームは完全に任意であり、アプリの機能やサービスがその利用に依存することはありません。あなたが「送信」をタップしたとき、そしてそのときにかぎり、アプリは次の情報を HTTPS 経由で <code>https://feedback.keeforge.com/api/feedback</code> のフィードバックエンドポイントへ送信します。</p>
+            <ul>
+                <li>あなたが入力した自由記述のメッセージ。</li>
+                <li>データベースを開けなかったエラー画面からフィードバックを送る場合: アプリに表示されているエラーの詳細（エラーの分類、エラーコード、タイトル、概要、技術的な詳細、および下記の診断情報を含みます）。</li>
+                <li>返信を希望する場合: あなたが入力したメールアドレス（返信のために使います）。明示的に希望した場合にのみ送信・保存されます。</li>
+                <li>写真を添付する場合: 画像そのもの。アプリは送信前に端末上で画像を縮小し、JPEG として再エンコードします。これにより EXIF と GPS のメタデータは取り除かれます。</li>
+            </ul>
+            <p>データベースを開く際の診断情報には、ロック解除の方法、パスワードやキーファイルが指定されたかどうか、失敗回数、ローカルかクラウドか、読み取り専用かどうか、クラウドプロバイダと同期状態、リモートのリビジョン・内容ハッシュ・暗号化ファイルのハッシュの短い先頭部分、暗号化ファイルのサイズ、KDBX ヘッダーの概要、アプリのバージョンとビルド、OS のバージョン、端末の機種が含まれることがあります。これらは送信前にフィードバックフォーム上に表示されます。エントリ、パスワード、キーファイル、データベースファイルそのもの、復号された保管庫の内容が含まれることは決してありません。</p>
+            <p>返信用のメールアドレスと写真の添付は、どちらも任意で、あなたが選ばないかぎりオフのままです。返信を希望しなければ、メールアドレスは送信も保存もされません。写真を添付しなければ、画像は送信されません。メッセージ本文に個人情報を自分で書き込んだ場合、そのテキストはあなたが含めたものとして送信されます。</p>
+            <p>この情報は、あなたのフィードバックを読み、不具合を調べるためにのみ使用します。広告、プロファイリング、解析には使用せず、販売もしません。送信内容は、当方に代わってホスティング事業者が運用するインフラ上に保管されます。そうした事業者は、本ポリシーと同じ水準でデータを保護し、当方の指示にもとづいてのみ処理することを契約上義務づけられています。</p>
+            <p>関連する報告を見返せるよう、フィードバックの送信内容（添付された写真を含みます）は最長 24 か月保管し、その後削除します。削除はいつでも請求できます。<a href="mailto:support@keeforge.com">support@keeforge.com</a> までメールを送るか、<a href="https://github.com/KeeForge/KeeForge">GitHub</a> で issue を立ててください。もちろん、フィードバックフォームを使わないという選択もできます。「送信」をタップしなければ、何も送信されません。</p>
+
+            <h2>お子さまについて</h2>
+            <p>KeeForge はお子さま向けのアプリではなく、フィードバックフォームを通じてお子さまの情報を意図的に収集することはありません。</p>
+
+            <h2>オープンソース</h2>
+            <p>言葉だけを信じる必要はありません。KeeForge は GPLv3 ライセンスのオープンソースです。フィードバックフォームが送信する項目そのものを含め、<a href="https://github.com/KeeForge/KeeForge">コードはご自身で検証できます</a>。</p>
+
+            <h2>本ポリシーの変更</h2>
+            <p>アプリが収集する内容やその利用方法を変更する場合は、その変更が公開ビルドに含まれる前に、このページを更新し、上部の「最終更新」の日付を変更します。</p>
+
+            <h2>お問い合わせ</h2>
+            <p>本ポリシーについてご質問があれば、<a href="mailto:support@keeforge.com">support@keeforge.com</a> までメールを送るか、<a href="https://github.com/KeeForge/KeeForge">GitHub</a> で issue を立ててください。</p>
+        </div>
+    </div>
+</Base>
+
+<style>
+    .privacy {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 60px 24px 80px;
+    }
+
+    .top-links {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .back-link {
+        display: inline-block;
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        margin-bottom: 40px;
+        transition: color 0.2s;
+    }
+
+    .back-link:hover {
+        color: var(--text);
+    }
+
+    h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin-bottom: 8px;
+        background: none;
+        -webkit-text-fill-color: var(--text);
+    }
+
+    .updated {
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        margin-bottom: 40px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .lead {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--green);
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .note {
+        font-size: 0.85rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: -16px;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--text-dim);
+    }
+
+    @media (max-width: 480px) {
+        .privacy {
+            padding: 40px 20px 60px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+    }
+</style>

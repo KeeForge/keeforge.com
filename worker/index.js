@@ -111,7 +111,7 @@ async function ensureSchema(db) {
 // with fetch(request) — same-zone subrequests bypass Worker routes, so this
 // cannot loop. On the feedback host unmatched GETs keep returning 405, so
 // nothing here changes behavior for the feedback endpoint.
-const SUPPORTED_LOCALES = ["en", "de", "fr", "es", "zh-hans", "zh-hant"];
+const SUPPORTED_LOCALES = ["en", "de", "fr", "es", "zh-hans", "zh-hant", "ja"];
 const LOCALE_HOME_PATHS = {
   en: "/",
   de: "/de/",
@@ -119,6 +119,7 @@ const LOCALE_HOME_PATHS = {
   es: "/es/",
   "zh-hans": "/zh-hans/",
   "zh-hant": "/zh-hant/",
+  ja: "/ja/",
 };
 const LANG_COOKIE_NAME = "kf_lang";
 const LANG_COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
@@ -189,10 +190,10 @@ function readCookie(request, name) {
   return null;
 }
 
-// The locale a path belongs to, from its /de/, /fr/, /es/, /zh-hans/, or
-// /zh-hant/ prefix, else "en".
+// The locale a path belongs to, from its /de/, /fr/, /es/, /zh-hans/,
+// /zh-hant/, or /ja/ prefix, else "en".
 function localePrefixFromPath(pathname) {
-  for (const code of ["de", "fr", "es", "zh-hans", "zh-hant"]) {
+  for (const code of ["de", "fr", "es", "zh-hans", "zh-hant", "ja"]) {
     if (pathname === `/${code}` || pathname.startsWith(`/${code}/`)) return code;
   }
   return "en";

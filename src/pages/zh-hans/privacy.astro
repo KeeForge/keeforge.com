@@ -2,10 +2,10 @@
 import Base from '../../layouts/Base.astro';
 import LanguageSwitcher from '../../components/LanguageSwitcher.astro';
 
-const langPaths = { en: '/privacy/', de: '/de/privacy/', fr: '/fr/privacy/', es: '/es/privacy/', 'zh-hans': '/zh-hans/privacy/', 'zh-hant': '/zh-hant/privacy/' };
+const langPaths = { en: '/privacy/', de: '/de/privacy/', fr: '/fr/privacy/', es: '/es/privacy/', 'zh-hans': '/zh-hans/privacy/', 'zh-hant': '/zh-hant/privacy/', ja: '/ja/privacy/' };
 ---
 
-<Base title="隐私政策 — KeeForge" description="KeeForge 不收集你的保险库数据。可选的应用内反馈表单只发送你自己选择的内容：你的留言、报告数据库打开失败时可见的错误详情，以及在你同意的情况下，一个用于回复的电子邮件地址和一张附加的照片。" lang="zh-hans" enPath="/privacy/" dePath="/de/privacy/" frPath="/fr/privacy/" esPath="/es/privacy/" zhHansPath="/zh-hans/privacy/" zhHantPath="/zh-hant/privacy/">
+<Base title="隐私政策 — KeeForge" description="KeeForge 不收集你的保险库数据。可选的应用内反馈表单只发送你自己选择的内容：你的留言、报告数据库打开失败时可见的错误详情，以及在你同意的情况下，一个用于回复的电子邮件地址和一张附加的照片。" lang="zh-hans" enPath="/privacy/" dePath="/de/privacy/" frPath="/fr/privacy/" esPath="/es/privacy/" zhHansPath="/zh-hans/privacy/" zhHantPath="/zh-hant/privacy/" jaPath="/ja/privacy/">
     <div class="privacy">
         <div class="top-links">
             <a href="/zh-hans/" class="back-link">&larr; 返回 KeeForge</a>
@@ -69,6 +69,7 @@ const langPaths = { en: '/privacy/', de: '/de/privacy/', fr: '/fr/privacy/', es:
     .top-links {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         gap: 16px;
     }
 

@@ -883,5 +883,152 @@ const zhHant: typeof en = {
     },
 };
 
-export const home = { en, de, fr, es, 'zh-hans': zhHans, 'zh-hant': zhHant };
+const ja: typeof en = {
+    lang: 'ja',
+    path: '/ja/',
+    title: 'KeeForge — 無料・オープンソースの iOS 向け KeePass',
+    description:
+        'KeeForge は iPhone と iPad のための無料・オープンソースの KeePass パスワードマネージャーです。自動入力、パスキー、TOTP、Dropbox・OneDrive・WebDAV 同期に対応し、サブスクリプションは不要です。',
+    nav: {
+        features: '機能',
+        faq: 'よくある質問',
+        changelog: '変更履歴',
+        audit: 'セキュリティ監査',
+        source: 'ソースコード',
+    },
+    hero: {
+        h1: 'iOS に<em>溶け込む</em><br>KeePass アプリ',
+        lead:
+            'KeeForge は手持ちの <code class="mono">.kdbx</code> 保管庫を Face&nbsp;ID で開き、あらゆるアプリでパスワードを自動入力します。サブスクリプションを求めることは一切ありません。よい道具がそうであるように、ただ静かに iPhone の中にあり続けます。',
+        downloadTiny: 'App Store から',
+        downloadBig: 'ダウンロード',
+        readSource: 'ソースコードを読む',
+        screenshotAlt: 'KeeForge のデータベース一覧画面',
+        meta: ['iOS 18 +', 'iPhone と iPad', 'KDBX 3.1 / 4.x', 'トラッキングは一切なし'],
+    },
+    trustPills: [
+        { k: '01', t: 'オープンソース', d: 'GPL 3.0。すべての行を検証できます。' },
+        { k: '02', t: 'KeePass 互換', d: 'KDBX 4.x は読み書き対応。KDBX 3.1 は読み取り専用。' },
+        { k: '03', t: 'ずっと無料', d: 'サブスクなし、広告なし、アップセルなし。' },
+        { k: '04', t: 'Face ID + 自動入力', d: 'あらゆるアプリでログイン情報を入力します。' },
+    ],
+    features: [
+        {
+            eyebrow: '複数の保管庫',
+            title: '手持ちのデータベースを、ひとつのホーム画面に。',
+            body: '「ファイル」App や iCloud Drive から .kdbx ファイルを追加し、Dropbox や OneDrive を接続したり、自分の WebDAV サーバーを使ったりできます。KeeForge は個人用・仕事用・共有の保管庫を、ひとつのホーム画面にまとめます。',
+            points: [
+                'ローカルでもクラウドでも、好きなだけデータベースを開けます',
+                '保管庫ごとに、愛称・キーファイル・設定を記憶します',
+                'Dropbox、OneDrive、WebDAV のブラウズと同期にネイティブ対応',
+            ],
+            screen: 'screen-01-database-list.png',
+            reverse: false,
+        },
+        {
+            eyebrow: '整理と検索',
+            title: 'グループ、検索、そして期待どおりのエントリ詳細。',
+            body: 'デスクトップで組み立てた保管庫の構成そのままに、フォルダ単位で閲覧できます。すべてのグループを横断して、タイトル・ユーザー名・URL・メモを検索。エントリを開けば、コピーも表示も、URL を開くこともできます。',
+            points: [
+                'KeePassXC と同じ、階層構造のグループ',
+                'グループを作成したり、エントリやグループをゴミ箱へ移動したり',
+                '保管庫を書き出さずに、添付ファイルをプレビュー・共有',
+            ],
+            screen: 'screen-03-vault-groups.png',
+            reverse: true,
+        },
+        {
+            eyebrow: '端末上で編集',
+            title: '端末を離れることなく、エントリを作成・編集。',
+            body: 'タイトル、ユーザー名、パスワード、URL、タグ、メモを編集できます。ワンタップで強力なパスワードを生成し、暗号化された変更をそのまま元の .kdbx ファイルに保存します。',
+            points: [
+                'ローカルにも、接続済みのクラウドフォルダにも、新しい KDBX 4.x 保管庫を作成できます',
+                '競合チェックとタイムスタンプ付きバックアップが、すべての保存を守ります',
+                '変更したくないときは、データベースごとに読み取り専用モードを設定できます',
+            ],
+            screen: 'screen-07-entry-edit.png',
+            reverse: false,
+        },
+    ],
+    safety: {
+        eyebrow: 'データの安全性',
+        h2: '<em>1 バイト</em>も<br>失わないよう、<br>テスト済み。',
+        lead: 'パスワードマネージャーが保管庫を壊したり、その一部を黙って失ったりすることは、決してあってはなりません。変更が出荷される前に、自動テストが次のことを検証します。',
+        items: [
+            {
+                title: '保存しても、何ひとつ失われない。',
+                body: 'あらゆる種類の編集が保存され、ひとつずつ読み戻されます。パスワード、メモ、添付ファイル、エントリ履歴、さらには KeeForge が認識しない他の KeePass アプリのデータまで、すべてが入れたときとまったく同じ形で戻ってこなければなりません。',
+            },
+            {
+                title: '書き込む前に、ファイルを守る。',
+                body: 'KeeForge は、あなたがファイルを開いているあいだに他所から加えられた変更を上書きすることを拒み、保存のたびにタイムスタンプ付きのバックアップを書き出し、壊れたデータベースは中途半端に読み込まず、きっぱり拒否します。',
+            },
+            {
+                title: '独立した別のプログラムが、それを裏づける。',
+                body: 'すべてのリリースは、あるゲートを通過しなければなりません。KeeForge とコードを一切共有しない、広く使われている KeePass アプリ KeePassXC が、KeeForge の書き出したデータベースを開き、パスワードを復号し、添付ファイルがビット単位で一致することを確認します。同様に、他の KeePass ソフトウェアで作られたデータベースは KeeForge で開けなければならず、KeeForge が保存したあとも他のソフトウェアで読めなければなりません。',
+            },
+        ],
+        linkLabel: 'テスト方法を読む',
+        linkHref: 'https://github.com/KeeForge/KeeForge/blob/main/docs/i18n/README.ja.md#データの安全性',
+    },
+    compare: {
+        eyebrow: '他との比較',
+        h2: 'すでにパスワードマネージャーを使っている？<em>KeeForge の立ち位置はこちら。</em>',
+        cards: [
+            {
+                title: 'vs iCloud キーチェーン',
+                bullets: [
+                    'KeePass の <code class="mono">.kdbx</code> 保管庫は、デスクトップのツール（KeePassXC、KeePass 2.x）でも、Apple 以外の端末でも使えます。',
+                    '暗号化されたデータベースは持ち運び自由です。ローカルにバックアップしても、Dropbox・OneDrive・WebDAV で同期しても、オフラインで保管してもかまいません。',
+                    '自分で検証できるオープンソースのコード。テレメトリは一切ありません。',
+                ],
+            },
+            {
+                title: 'vs 1Password・Bitwarden',
+                bullets: [
+                    'サブスクなし、アカウントなし、ベンダーロックインなし。保管庫は、あなたの端末か、あなた自身のクラウドにあるひとつのファイルです。',
+                    'オープンな KeePass エコシステムと互換 — KeePassXC、Strongbox、KeePassium、Keepass2Android。',
+                    'GPLv3 のオープンソース。すべての行が検証可能で、解析もテレメトリもゼロです。',
+                ],
+            },
+            {
+                title: 'vs 他の iOS 向け KeePass クライアント',
+                bullets: [
+                    'ネイティブ Swift 製。iOS 18 以降を対象に、最新のプラットフォーム機能（パスキー、TOTP 自動入力、「ファイル」App 連携）を活かして作られています。',
+                    'ずっと無料で、機能はすべて込み。上位プランも、アプリ内のペイウォールもありません（任意のチップだけです）。',
+                    '保存は競合を検出して自動でバックアップ。クラウド上の保管庫でも、自動入力はオフラインで動きます。',
+                ],
+            },
+        ],
+    },
+    beta: {
+        eyebrow: '公開ベータ',
+        h2: '次のバージョンを、<br>リリース<em>前</em>に。',
+        body: '新しいバージョンは、App Store に届く前に TestFlight で配信されます。',
+        cta: 'TestFlight でベータに参加',
+        href: 'https://testflight.apple.com/join/mPAT4f1a',
+        availability: '定員は 300 名で、新しいバージョンが Apple のベータ審査中のあいだは参加受付が止まります。リンクがテスターを受け付けていないと表示される場合は、しばらくしてからもう一度お試しください。',
+        warningTitle: 'メインの保管庫ではなく、データベースのコピーでテストしてください。',
+        warningBody: 'ベータ版には、リリース版にはない不具合が含まれることがあります。しかも App Store 版を置き換え、同じ本物の .kdbx ファイルを開きます。まずデータベースを複製し、ベータ版にはそのコピーを開かせてください。',
+    },
+    faq: {
+        eyebrow: 'よくある質問',
+        h2: '疑問に、<br>率直にお答え。',
+        items: [
+            { q: 'KeeForge は本当に無料ですか？', a: 'はい。App Store で無料、サブスクも広告も上位プランもありません。開発を応援したい場合は、リポジトリにスターを付けるか、コーヒーをおごってください。' },
+            { q: '手持ちの KeePass データベースで使えますか？', a: 'KeeForge は、AES-256、ChaCha20、Twofish を AES-KDF または Argon2 と組み合わせた KDBX 4.x データベースを読み書きします。KDBX 3.1 のデータベースは読み取り専用で開きます。' },
+            { q: 'パスワードはどこに保存されますか？', a: 'あなたの端末、または iCloud Drive、Dropbox、OneDrive、WebDAV、その他の「ファイル」プロバイダなど、あなたが選んだ保存先にある暗号化データベースの中です。KeeForge が保管庫を預かることはありません。' },
+            { q: '自動入力はどう動きますか？', a: 'KeeForge は iOS の Credential Provider として登録されます。どのアプリでもログイン欄をタップして KeeForge を選び、Face ID で認証すれば、ログイン情報が入力されます。' },
+            { q: '信頼できますか？', a: 'コードを読んでください。自分でビルドしてもかまいません。あるいは、App Store の審査プロセスと、公開されたコミット履歴を信頼してください。それだけでも、たいていのパスワードマネージャーより多くを差し出しています。' },
+        ],
+    },
+    footer: {
+        copy: '© 2026 · GPL 3.0 · ひとりで作っています',
+        privacy: 'プライバシー',
+        privacyHref: '/ja/privacy',
+        support: 'サポート',
+    },
+};
+
+export const home = { en, de, fr, es, 'zh-hans': zhHans, 'zh-hant': zhHant, ja };
 

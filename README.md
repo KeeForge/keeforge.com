@@ -14,7 +14,7 @@ Worker that receives in-app feedback.
 - `/appcast.xml` — Sparkle update feed for the direct-download Mac app (see
   [Sparkle appcast](#sparkle-appcast))
 
-German, French, Spanish, Simplified Chinese, and Traditional Chinese translations of every page except `/security-audit` live under `/de/`, `/fr/`, `/es/`, `/zh-hans/`, and `/zh-hant/`.
+German, French, Spanish, Simplified Chinese, Traditional Chinese, and Japanese translations of every page except `/security-audit` live under `/de/`, `/fr/`, `/es/`, `/zh-hans/`, `/zh-hant/`, and `/ja/`.
 
 ## Local development
 

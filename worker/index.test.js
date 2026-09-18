@@ -204,10 +204,10 @@ test("consent without a contact is rejected", async () => {
 test("detectSupportedLocale respects q-value ordering over header order", () => {
   assert.equal(detectSupportedLocale("en;q=0.5, fr;q=0.9"), "fr");
   assert.equal(detectSupportedLocale("de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7"), "de");
-  assert.equal(detectSupportedLocale("ja;q=0.9, fr;q=0.1"), "fr");
+  assert.equal(detectSupportedLocale("ko;q=0.9, fr;q=0.1"), "fr");
   assert.equal(detectSupportedLocale(null), null);
   assert.equal(detectSupportedLocale(""), null);
-  assert.equal(detectSupportedLocale("ja,ko;q=0.9"), null);
+  assert.equal(detectSupportedLocale("ko,vi;q=0.9"), null);
   assert.equal(detectSupportedLocale("fr;q=0"), null);
 });
 
@@ -225,7 +225,7 @@ test("detectSupportedLocale maps Chinese script and region subtags", () => {
   assert.equal(detectSupportedLocale("zh-TW;q=0.4, en;q=0.9"), "en");
 });
 
-for (const locale of ["de", "fr", "es"]) {
+for (const locale of ["de", "fr", "es", "ja"]) {
   test(`GET / redirects to /${locale}/ when Accept-Language prefers ${locale}`, async () => {
     const response = await worker.fetch(
       siteRequest("/", { acceptLanguage: `${locale}-XX,${locale};q=0.9,en;q=0.1` }),
@@ -276,7 +276,7 @@ test("GET / without an Accept-Language header is not redirected", async () => {
 
 test("GET / with an unsupported Accept-Language is not redirected", async () => {
   const response = await worker.fetch(
-    siteRequest("/", { acceptLanguage: "ja,ko;q=0.9,th;q=0.8" }),
+    siteRequest("/", { acceptLanguage: "ko,vi;q=0.9,th;q=0.8" }),
     {}
   );
 
@@ -349,7 +349,7 @@ test("?setlang=1 on the English root sets the cookie and cleans the URL", async 
   );
 });
 
-for (const locale of ["de", "fr", "es", "zh-hans", "zh-hant"]) {
+for (const locale of ["de", "fr", "es", "zh-hans", "zh-hant", "ja"]) {
   test(`?setlang=1 on /${locale}/ sets the ${locale} cookie and cleans the URL`, async () => {
     const response = await worker.fetch(siteRequest(`/${locale}/?setlang=1`), {});
 

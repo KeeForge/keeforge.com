@@ -8,7 +8,7 @@ interface Props {
     eyebrow?: string;
     heading: string;
     lead?: string;
-    lang?: 'en' | 'de' | 'fr' | 'es' | 'zh-hans' | 'zh-hant';
+    lang?: 'en' | 'de' | 'fr' | 'es' | 'zh-hans' | 'zh-hant' | 'ja';
     // Paths of the localized versions of this page, for the language switcher
     // and hreflang alternates. Omit while no translation exists.
     enPath?: string;
@@ -17,11 +17,12 @@ interface Props {
     esPath?: string;
     zhHansPath?: string;
     zhHantPath?: string;
+    jaPath?: string;
 }
 
-const { title, description, eyebrow, heading, lead, lang = 'en', enPath, dePath, frPath, esPath, zhHansPath, zhHantPath } = Astro.props;
+const { title, description, eyebrow, heading, lead, lang = 'en', enPath, dePath, frPath, esPath, zhHansPath, zhHantPath, jaPath } = Astro.props;
 
-const langPaths = { en: enPath, de: dePath, fr: frPath, es: esPath, 'zh-hans': zhHansPath, 'zh-hant': zhHantPath };
+const langPaths = { en: enPath, de: dePath, fr: frPath, es: esPath, 'zh-hans': zhHansPath, 'zh-hant': zhHantPath, ja: jaPath };
 
 const strings = {
     en: {
@@ -90,10 +91,21 @@ const strings = {
         privacy: '隱私權政策',
         privacyHref: '/zh-hant/privacy',
     },
+    ja: {
+        home: '/ja/',
+        compare: '比較',
+        changelog: '変更履歴',
+        audit: 'セキュリティ監査',
+        faq: 'よくある質問',
+        homeLabel: 'ホーム',
+        tagline: 'iOS 向けの無料・オープンソースの KeePass',
+        privacy: 'プライバシーポリシー',
+        privacyHref: '/ja/privacy',
+    },
 }[lang];
 ---
 
-<Base title={title} description={description} lang={lang} enPath={enPath} dePath={dePath} frPath={frPath} esPath={esPath} zhHansPath={zhHansPath} zhHantPath={zhHantPath}>
+<Base title={title} description={description} lang={lang} enPath={enPath} dePath={dePath} frPath={frPath} esPath={esPath} zhHansPath={zhHansPath} zhHantPath={zhHantPath} jaPath={jaPath}>
     <header class="page-header">
         <div class="page-header-inner">
             <a href={strings.home} class="brand-link">

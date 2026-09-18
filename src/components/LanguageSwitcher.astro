@@ -133,16 +133,21 @@ function withSetLang(path: string): string {
         font-weight: 600;
     }
 
+    /* Wraps between labels, never inside one: with seven locales the row no
+       longer fits one line in the narrow privacy-page column, and a CJK
+       endonym would otherwise be broken mid-word to make it fit. */
     .lang-switch-footer {
         display: inline-flex;
         align-items: center;
-        gap: 16px;
+        flex-wrap: wrap;
+        gap: 8px 16px;
         font-size: inherit;
     }
 
     .lang-switch-footer-item {
         color: var(--kf-ink-mute, var(--text-dim, #6b7280));
         text-decoration: none;
+        white-space: nowrap;
         transition: color 0.2s;
     }
 

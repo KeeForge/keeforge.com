@@ -3,7 +3,7 @@ interface Props {
   title?: string;
   description?: string;
   lang?: string;
-  // Paths of the localized versions of this page, e.g. '/', '/de/', '/fr/', '/es/', '/zh-hans/', '/zh-hant/'.
+  // Paths of the localized versions of this page, e.g. '/', '/de/', '/fr/', '/es/', '/zh-hans/', '/zh-hant/', '/ja/'.
   // Whichever are set are emitted as hreflang alternate links for SEO.
   enPath?: string;
   dePath?: string;
@@ -11,13 +11,14 @@ interface Props {
   esPath?: string;
   zhHansPath?: string;
   zhHantPath?: string;
+  jaPath?: string;
   canonicalPath?: string;
   ogType?: 'website' | 'article';
   publishedTime?: string;
 }
 
 const SITE = 'https://keeforge.com';
-const { title = 'KeeForge — Free, Open-Source KeePass for iOS', description = 'KeeForge is a free, open-source KeePass password manager for iPhone and iPad with AutoFill, passkeys, TOTP, Dropbox, OneDrive and WebDAV sync, and no subscription.', lang = 'en', enPath, dePath, frPath, esPath, zhHansPath, zhHantPath, canonicalPath, ogType = 'website', publishedTime } = Astro.props;
+const { title = 'KeeForge — Free, Open-Source KeePass for iOS', description = 'KeeForge is a free, open-source KeePass password manager for iPhone and iPad with AutoFill, passkeys, TOTP, Dropbox, OneDrive and WebDAV sync, and no subscription.', lang = 'en', enPath, dePath, frPath, esPath, zhHansPath, zhHantPath, jaPath, canonicalPath, ogType = 'website', publishedTime } = Astro.props;
 
 const alternates = [
     ...(enPath ? [{ code: 'en', path: enPath }] : []),
@@ -26,6 +27,7 @@ const alternates = [
     ...(esPath ? [{ code: 'es', path: esPath }] : []),
     ...(zhHansPath ? [{ code: 'zh-Hans', path: zhHansPath }] : []),
     ...(zhHantPath ? [{ code: 'zh-Hant', path: zhHantPath }] : []),
+    ...(jaPath ? [{ code: 'ja', path: jaPath }] : []),
 ];
 ---
 
