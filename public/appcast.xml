@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
   <channel>
     <title>KeeForge for Mac</title>
     <link>https://keeforge.com</link>
     <description>Direct-download updates for KeeForge for Mac.</description>
     <language>en</language>
     <atom:link href="https://keeforge.com/appcast.xml" rel="self" type="application/rss+xml" />
-  </channel>
+  <item><title>1.16.0</title><sparkle:version>51</sparkle:version><sparkle:shortVersionString>1.16.0</sparkle:shortVersionString><sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion><sparkle:releaseNotesLink>https://github.com/KeeForge/KeeForge/releases/tag/v1.16.0</sparkle:releaseNotesLink><enclosure url="https://github.com/KeeForge/KeeForge/releases/download/v1.16.0/KeeForge-1.16.0-b51.zip" type="application/octet-stream" sparkle:edSignature="c/8zLBaO/BjoSCDPH6vQYmdonEJ4p3J0I7mAFYXXJIz+z8sperC0RZUJl+Uhx2B1pPqBRuL52x+k644ILftoCw==" length="9796377" /></item></channel>
 </rss>
