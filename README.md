@@ -25,6 +25,27 @@ npm run build    # outputs to dist/
 npm run preview  # serve the built site
 ```
 
+## Homepage design
+
+`src/components/HomePage.astro` renders every localized homepage from
+`src/i18n/home.ts`. Keep all seven locale objects aligned with the English copy.
+`DownloadLinks.astro` owns the App Store platform links and direct Mac download;
+`ProductScreenshots.astro` pairs real iPhone and Mac captures in the hero and each
+feature section, with both vertically centered. The iPhone overlaps the left in the vault and editor
+sections, and the right in the hero and organization section. iPhone images
+must retain their intrinsic aspect ratio (`height: auto`), including at mobile
+widths. `src/styles/home.css` scopes the cream, serif homepage design to `.kf-home`.
+The existing shared language switcher is used in the desktop header, mobile menu,
+and footer. FAQ items use native `details` controls.
+
+Mac images live in `public/screenshots/mac-entry-detail.png` and
+`mac-entry-edit.jpg`. These are real development captures with sample data.
+Homepage copy distinguishes direct Dropbox/OneDrive integration on iOS from
+synced local folders on Mac. WebDAV is available on both.
+
+Run `npm run build` and `node --test tests/home.test.js` after
+homepage changes. Check desktop and mobile layouts in all seven languages.
+
 ## Feedback Worker
 
 `worker/index.js` is the Cloudflare Worker behind

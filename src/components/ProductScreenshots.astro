@@ -1,0 +1,21 @@
+---
+interface Props {
+    phoneSrc: string;
+    phoneAlt: string;
+    macAlt: string;
+    macSrc?: string;
+    macWidth?: number;
+    macHeight?: number;
+    feature?: boolean;
+    phoneLeft?: boolean;
+}
+const { phoneSrc, phoneAlt, macAlt, macSrc = "/screenshots/mac-entry-detail.png",
+    macWidth = 2160, macHeight = 1400, feature = false, phoneLeft = false } = Astro.props;
+---
+<figure class:list={['device-pair', { 'feature-pair': feature, 'phone-left': phoneLeft }]}>
+    <img class="pair-mac mac-image" src={macSrc}
+        width={macWidth} height={macHeight} alt={macAlt} loading={feature ? 'lazy' : 'eager'} />
+    <img class="pair-phone ios-image" src={phoneSrc}
+        width="1206" height="2622" alt={phoneAlt} loading={feature ? 'lazy' : 'eager'}
+        fetchpriority={feature ? undefined : 'high'} />
+</figure>
