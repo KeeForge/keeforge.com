@@ -530,8 +530,10 @@ function assertValidAppcast(feed) {
 
     const enclosure = item.match(/<enclosure [^>]*>/)?.[0] ?? "";
     assert.ok(
-      enclosure.includes(
-        `url="https://github.com/KeeForge/KeeForge/releases/download/v${version}/KeeForge-${version}-b${build}.zip"`
+      [`v${version}`, `v${version}-mac`].some((tag) =>
+        enclosure.includes(
+          `url="https://github.com/KeeForge/KeeForge/releases/download/${tag}/KeeForge-${version}-b${build}.zip"`
+        )
       ),
       `item ${version} enclosure must use its versioned release asset`
     );
@@ -558,6 +560,16 @@ test("the appcast validator accepts generator output and rejects unpinned enclos
   assertValidAppcast(
     feed(item("https://github.com/KeeForge/KeeForge/releases/download/v9.9.9/KeeForge-9.9.9-b999.zip"))
   );
+  assertValidAppcast(
+    feed(item("https://github.com/KeeForge/KeeForge/releases/download/v9.9.9-mac/KeeForge-9.9.9-b999.zip"))
+  );
+  for (const url of [
+    "https://github.com/KeeForge/KeeForge/releases/download/v9.9.8-mac/KeeForge-9.9.9-b999.zip",
+    "https://github.com/KeeForge/KeeForge/releases/download/v9.9.9-ios/KeeForge-9.9.9-b999.zip",
+    "https://github.com/KeeForge/KeeForge/releases/download/v9.9.9-mac/KeeForge-9.9.9-b998.zip",
+  ]) {
+    assert.throws(() => assertValidAppcast(feed(item(url))));
+  }
   assert.throws(() =>
     assertValidAppcast(feed(item("https://github.com/KeeForge/KeeForge/releases/latest/download/KeeForge.zip")))
   );
