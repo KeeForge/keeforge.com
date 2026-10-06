@@ -1519,4 +1519,221 @@ const ja: typeof en = {
     }
 };
 
-export const home = { en, de, fr, es, 'zh-hans': zhHans, 'zh-hant': zhHant, ja };
+const it: typeof en = {
+    "lang": "it",
+    "path": "/it/",
+    "title": "KeeForge — KeePass gratuito e open source per iOS / macOS",
+    "description": "Gratuito, open source e pensato per i tuoi dispositivi. Apri i tuoi vault .kdbx, sbloccali con Face ID o Touch ID e inserisci automaticamente le password dove ti servono. iOS 18 o successivo. macOS 15 o successivo.",
+    "nav": {
+        "features": "Funzionalità",
+        "faq": "FAQ",
+        "changelog": "Registro delle modifiche",
+        "audit": "Audit di sicurezza",
+        "source": "Codice sorgente",
+        "download": "Scarica",
+        "menu": "Menu",
+        "skip": "Vai al contenuto"
+    },
+    "hero": {
+        "h1": "Un’app KeePass per <span class=\"accent\">iPhone, iPad e Mac.</span>",
+        "lead": "Gratuito, open source e pensato per i tuoi dispositivi. Apri i tuoi vault <code>.kdbx</code>, sbloccali con Face ID o Touch ID e inserisci automaticamente le password dove ti servono."
+    },
+    "trustPills": [
+        {
+            "k": "01",
+            "t": "Open source",
+            "d": "GPL 3.0. Puoi verificare ogni riga."
+        },
+        {
+            "k": "02",
+            "t": "Compatibile con KeePass",
+            "d": "Lettura e scrittura KDBX 4.x. KDBX 3.1 in sola lettura."
+        },
+        {
+            "k": "03",
+            "t": "Gratuito, per sempre",
+            "d": "Nessun abbonamento, pubblicità o offerta premium."
+        },
+        {
+            "k": "04",
+            "t": "Biometria + inserimento automatico",
+            "d": "Face ID o Touch ID. Meno passaggi."
+        }
+    ],
+    "features": [
+        {
+            "eyebrow": "PIÙ VAULT",
+            "title": "Tutti i tuoi database.\nProprio dove ti servono.",
+            "body": "Vault personali, di lavoro e condivisi, insieme in un’unica app. Apri i file KeePass che hai già e conservali nella posizione che preferisci.",
+            "points": [
+                "Apri più database, in locale o tramite WebDAV",
+                "Usa una password principale, un file chiave o entrambi",
+                "Continua a usare gli stessi file con altre app KeePass"
+            ],
+            "iosNote": "Apri i file da File o iCloud Drive. Collegati direttamente a Dropbox, OneDrive o WebDAV.",
+            "macNote": "Apri file locali o cartelle sincronizzate dalla tua app cloud. Collegati direttamente a WebDAV."
+        },
+        {
+            "eyebrow": "ORGANIZZA E TROVA",
+            "title": "Trova la voce\nche stai cercando.",
+            "body": "Sfoglia la struttura di cartelle che conosci già. Cerca titoli, nomi utente, URL e note in tutto il vault, poi apri una voce per copiarla, mostrarla o visitarne il sito web.",
+            "points": [
+                "Organizza le voci in gruppi gerarchici",
+                "Sposta voci e gruppi nel Cestino",
+                "Visualizza e condividi gli allegati senza esportare il vault"
+            ],
+            "iosNote": "Navigazione essenziale su iPhone e un’area di lavoro con vista suddivisa su iPad.",
+            "macNote": "Gruppi, voci e dettagli in un’unica finestra, con menu nativi e scorciatoie da tastiera."
+        },
+        {
+            "eyebrow": "MODIFICA SUL DISPOSITIVO",
+            "title": "Fai una modifica.\nSalvala nel tuo vault.",
+            "body": "Crea e modifica le voci sul telefono, sul tablet o sul Mac. Aggiorna nomi utente, password, URL, tag e note, poi salva le modifiche cifrate nel file .kdbx originale.",
+            "points": [
+                "Genera una password sicura senza uscire dall’editor",
+                "Crea nuovi database KDBX 4.x in locale o tramite WebDAV",
+                "Usa la modalità di sola lettura quando non vuoi apportare modifiche"
+            ],
+            "iosNote": "",
+            "macNote": ""
+        }
+    ],
+    "safety": {
+        "eyebrow": "SICUREZZA DEI DATI",
+        "h2": "Testato per proteggere\nogni parte del tuo vault.",
+        "lead": "Un gestore di password non deve mai danneggiare il tuo vault né perderne in silenzio una parte. Prima che una modifica venga rilasciata, i test automatici verificano che:",
+        "items": [
+            {
+                "title": "Nulla vada perso quando salvi.",
+                "body": "Ogni tipo di modifica viene salvato e riletto elemento per elemento: password, note, allegati, cronologia delle voci e persino dati di altre app KeePass che KeeForge non riconosce devono tornare esattamente come erano."
+            },
+            {
+                "title": "Il tuo file sia protetto prima di modificarlo.",
+                "body": "KeeForge rifiuta di sovrascrivere modifiche apportate altrove mentre il file era aperto, crea una copia di backup con data e ora prima di ogni salvataggio e rifiuta i database danneggiati anziché caricare dati incompleti."
+            },
+            {
+                "title": "Un programma indipendente confermi il risultato.",
+                "body": "Ogni versione deve superare un controllo in cui KeePassXC, un’app KeePass molto diffusa che non condivide codice con KeeForge, apre i database scritti da KeeForge, decifra le password e conferma che gli allegati corrispondano bit per bit. Allo stesso modo, i database creati da altri programmi KeePass devono aprirsi in KeeForge e restare leggibili altrove dopo il salvataggio."
+            }
+        ],
+        "linkLabel": "Leggi come viene testato",
+        "linkHref": "https://github.com/KeeForge/KeeForge/blob/main/ci_scripts/README.md"
+    },
+    "compare": {
+        "eyebrow": "A CONFRONTO",
+        "h2": "Usi già un gestore di password? Ecco cosa offre KeeForge.",
+        "cards": [
+            {
+                "title": "Rispetto al Portachiavi iCloud",
+                "bullets": [
+                    "Conserva le password in file KeePass portabili, utilizzabili anche con app compatibili su dispositivi non Apple.",
+                    "Scegli dove conservare il database cifrato: archiviazione locale, WebDAV o una cartella sincronizzata nel cloud.",
+                    "Leggi il codice sorgente e scopri come l’app gestisce i tuoi dati."
+                ]
+            },
+            {
+                "title": "Rispetto a 1Password e Bitwarden",
+                "bullets": [
+                    "KeeForge non richiede un account di servizio né un abbonamento. Il tuo vault è un file, non un account ospitato da KeeForge.",
+                    "Continua a usare l’ecosistema aperto di KeePass, compresi KeePassXC, Strongbox e KeePassium.",
+                    "Tutte le funzionalità di KeeForge sono incluse, senza un piano premium né telemetria."
+                ]
+            },
+            {
+                "title": "Rispetto ad altri client KeePass",
+                "bullets": [
+                    "App native per iPhone, iPad e Mac, con la navigazione e i controlli di ogni piattaforma.",
+                    "Inserimento automatico delle password, passkey e codici di verifica, tutto incluso.",
+                    "I controlli dei conflitti e i backup automatici proteggono le modifiche al database."
+                ]
+            }
+        ]
+    },
+    "beta": {
+        "eyebrow": "BETA PUBBLICA",
+        "h2": "Prova la prossima versione<br>prima del rilascio.",
+        "body": "Le nuove versioni arrivano su TestFlight prima di essere pubblicate sull’App Store.",
+        "availability": "La disponibilità può variare tra le piattaforme mentre Apple esamina una build. Se una beta non accetta tester, riprova più tardi.",
+        "warningTitle": "Prova la beta con una copia del database, non con il tuo vault principale.",
+        "warningBody": "Le build beta possono contenere errori assenti nell’app pubblicata: sostituiscono l’installazione dell’App Store e aprono gli stessi file .kdbx reali. Duplica prima il database e apri la copia nella beta.",
+        "iosCTA": "Beta per iPhone e iPad",
+        "macCTA": "Beta per Mac"
+    },
+    "faq": {
+        "items": [
+            {
+                "q": "KeeForge è davvero gratuito?",
+                "a": "Sì. Tutte le funzionalità sono gratuite, senza abbonamento, pubblicità o piano premium. Se vuoi aiutare, aggiungi una stella al repository o sostieni lo sviluppo."
+            },
+            {
+                "q": "Quali dispositivi supporta?",
+                "a": "KeeForge supporta iPhone e iPad con iOS 18 o successivo e Mac con macOS 15 o successivo. Ogni piattaforma ha un’app nativa."
+            },
+            {
+                "q": "Funziona con il mio database KeePass esistente?",
+                "a": "KeeForge legge e scrive database KDBX 4.x con AES-256, ChaCha20 o Twofish e AES-KDF o Argon2. I database KDBX 3.1 si aprono in modalità di sola lettura."
+            },
+            {
+                "q": "Posso usare lo stesso database sul telefono e sul Mac?",
+                "a": "Sì. KeeForge legge e scrive file KDBX 4.x su ogni dispositivo. Conserva il database in una posizione accessibile a entrambi, come WebDAV o una cartella sincronizzata. KeeForge non ospita né trasferisce automaticamente il tuo vault."
+            },
+            {
+                "q": "Dove sono conservate le mie password?",
+                "a": "Nel database cifrato, sul tuo dispositivo o nell’archiviazione che scegli. Su iPhone e iPad puoi usare File, iCloud Drive, Dropbox, OneDrive o WebDAV. Su Mac puoi aprire file locali, cartelle sincronizzate nel cloud o database WebDAV. KeeForge non ospita le tue password."
+            },
+            {
+                "q": "Come funziona l’inserimento automatico?",
+                "a": "Attiva KeeForge come provider di password nelle impostazioni di sistema del dispositivo. In un’app o un browser compatibile, scegli una credenziale salvata e sblocca KeeForge con Face ID, Touch ID o le credenziali del database."
+            },
+            {
+                "q": "Come posso ottenere KeeForge per Mac?",
+                "a": "Scaricalo dal Mac App Store o usa il download diretto per Mac. Entrambe le versioni sono gratuite e richiedono macOS 15 o successivo."
+            },
+            {
+                "q": "Posso verificare la sicurezza dell’app?",
+                "a": "Sì. Leggi il codice, compila l’app e consulta il registro pubblico degli audit di sicurezza. Il repository documenta anche i test di compatibilità dei database e i controlli per il rilascio."
+            }
+        ]
+    },
+    "footer": {
+        "copy": "© 2026 · GPL 3.0 · Creato da un piccolo team",
+        "privacy": "Privacy",
+        "privacyHref": "/it/privacy",
+        "support": "Assistenza"
+    },
+    "downloads": {
+        "ios": "Scarica per iPhone e iPad",
+        "mac": "Scarica per Mac",
+        "direct": "Download diretto per Mac",
+        "iosRequirement": "iOS 18 o successivo",
+        "macRequirement": "macOS 15 o successivo"
+    },
+    "screenshots": {
+        "iosAlt": "Elenco dei database di KeeForge su iPhone",
+        "macAlt": "Finestra nativa di KeeForge per Mac con gruppi, voci e dettagli delle password",
+        "groupsAlt": "Gruppi e ricerca di KeeForge su iPhone",
+        "editAlt": "Editor delle voci di KeeForge su Mac",
+        "iosEditAlt": "Editor delle voci di KeeForge su iPhone"
+    },
+    "everyday": {
+        "eyebrow": "Parte della tua giornata",
+        "title": "Meno da digitare.\nLe password restano tue.",
+        "body": "Sblocca il vault, inserisci le credenziali o copia un codice di verifica senza interrompere quello che stai facendo.",
+        "items": [
+            {
+                "title": "Face ID e Touch ID",
+                "body": "Sblocca con la biometria supportata dal dispositivo oppure usa la password principale e il file chiave."
+            },
+            {
+                "title": "Inserimento automatico delle password",
+                "body": "Inserisci le credenziali nelle app e nei browser compatibili tramite l’integrazione con l’inserimento automatico di sistema."
+            },
+            {
+                "title": "Passkey e codici di verifica",
+                "body": "Usa le passkey compatibili con KeePassXC e i codici di verifica a tempo conservati nel database."
+            }
+        ]
+    }
+};
+
+export const home = { en, de, fr, es, 'zh-hans': zhHans, 'zh-hant': zhHant, ja, it };

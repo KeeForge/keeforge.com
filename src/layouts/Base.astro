@@ -3,7 +3,7 @@ interface Props {
   title?: string;
   description?: string;
   lang?: string;
-  // Paths of the localized versions of this page, e.g. '/', '/de/', '/fr/', '/es/', '/zh-hans/', '/zh-hant/', '/ja/'.
+  // Paths of the localized versions of this page, e.g. '/', '/de/', '/fr/', '/es/', '/zh-hans/', '/zh-hant/', '/ja/', '/it/'.
   // Whichever are set are emitted as hreflang alternate links for SEO.
   enPath?: string;
   dePath?: string;
@@ -12,13 +12,14 @@ interface Props {
   zhHansPath?: string;
   zhHantPath?: string;
   jaPath?: string;
+  itPath?: string;
   canonicalPath?: string;
   ogType?: 'website' | 'article';
   publishedTime?: string;
 }
 
 const SITE = 'https://keeforge.com';
-const { title = 'KeeForge — Free, Open-Source KeePass for iPhone, iPad, and Mac', description = 'KeeForge is a free, open-source KeePass password manager for iPhone, iPad, and Mac. Open your KDBX databases with biometric unlock, password AutoFill, passkeys, and no subscription.', lang = 'en', enPath, dePath, frPath, esPath, zhHansPath, zhHantPath, jaPath, canonicalPath, ogType = 'website', publishedTime } = Astro.props;
+const { title = 'KeeForge — Free, Open-Source KeePass for iPhone, iPad, and Mac', description = 'KeeForge is a free, open-source KeePass password manager for iPhone, iPad, and Mac. Open your KDBX databases with biometric unlock, password AutoFill, passkeys, and no subscription.', lang = 'en', enPath, dePath, frPath, esPath, zhHansPath, zhHantPath, jaPath, itPath, canonicalPath, ogType = 'website', publishedTime } = Astro.props;
 
 const alternates = [
     ...(enPath ? [{ code: 'en', path: enPath }] : []),
@@ -28,6 +29,7 @@ const alternates = [
     ...(zhHansPath ? [{ code: 'zh-Hans', path: zhHansPath }] : []),
     ...(zhHantPath ? [{ code: 'zh-Hant', path: zhHantPath }] : []),
     ...(jaPath ? [{ code: 'ja', path: jaPath }] : []),
+    ...(itPath ? [{ code: 'it', path: itPath }] : []),
 ];
 ---
 

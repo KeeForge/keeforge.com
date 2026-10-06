@@ -4,7 +4,7 @@ import test from 'node:test';
 import { home } from '../src/i18n/home.ts';
 
 const siteRoot = new URL('../dist/', import.meta.url);
-const locales = ['en', 'de', 'fr', 'es', 'zh-hans', 'zh-hant', 'ja'];
+const locales = ['en', 'de', 'fr', 'es', 'zh-hans', 'zh-hant', 'ja', 'it'];
 const appStore = 'https://apps.apple.com/us/app/keeforge/id6759309295';
 
 for (const locale of locales) {
@@ -45,8 +45,26 @@ test('new homepage text is present in every shipped locale', () => {
         const english = newText(home.en);
         translated.forEach((value, i) => {
             assert.ok(value.trim(), `${locale}: empty copy at ${i}`);
-            // "Menu" is also French.
+            // "Menu" is also French and Italian.
             if (i !== 6) assert.notEqual(value, english[i], `${locale}: untranslated copy at ${i}`);
         });
+    }
+});
+
+test('every translated page exposes the Italian alternative and keeps Italian navigation local', () => {
+    for (const page of ['', 'privacy/', 'vs/keepassium/', 'vs/strongbox/']) {
+        const italianPath = `/it/${page}`;
+        for (const locale of locales) {
+            const path = `${locale === 'en' ? '' : `${locale}/`}${page}index.html`;
+            const html = readFileSync(new URL(path, siteRoot), 'utf8');
+            assert.ok(html.includes(`hreflang="it" href="https://keeforge.com${italianPath}"`), `${path}: Italian SEO alternative`);
+            if (locale === 'it') {
+                assert.match(html, /<html lang="it">/);
+                assert.match(html, /aria-current="true"[^>]*>Italiano</);
+                assert.ok(html.includes('href="/it/"'), `${path}: Italian homepage`);
+            } else {
+                assert.ok(html.includes(`href="${italianPath}?setlang=1"`), `${path}: Italian language switcher`);
+            }
+        }
     }
 });

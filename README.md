@@ -14,7 +14,7 @@ Worker that receives in-app feedback.
 - `/appcast.xml` — Sparkle update feed for the direct-download Mac app (see
   [Sparkle appcast](#sparkle-appcast))
 
-German, French, Spanish, Simplified Chinese, Traditional Chinese, and Japanese translations of every page except `/security-audit` live under `/de/`, `/fr/`, `/es/`, `/zh-hans/`, `/zh-hant/`, and `/ja/`.
+German, French, Spanish, Simplified Chinese, Traditional Chinese, Japanese, and Italian translations of every page except `/security-audit` live under `/de/`, `/fr/`, `/es/`, `/zh-hans/`, `/zh-hant/`, `/ja/`, and `/it/`.
 
 ## Local development
 
@@ -28,7 +28,7 @@ npm run preview  # serve the built site
 ## Homepage design
 
 `src/components/HomePage.astro` renders every localized homepage from
-`src/i18n/home.ts`. Keep all seven locale objects aligned with the English copy.
+`src/i18n/home.ts`. Keep all eight locale objects aligned with the English copy.
 `DownloadLinks.astro` owns the App Store platform links and direct Mac download;
 `ProductScreenshots.astro` pairs real iPhone and Mac captures in the hero and each
 feature section, with both vertically centered. The iPhone overlaps the left in the vault and editor
@@ -44,7 +44,7 @@ Homepage copy distinguishes direct Dropbox/OneDrive integration on iOS from
 synced local folders on Mac. WebDAV is available on both.
 
 Run `npm run build` and `node --test tests/home.test.js` after
-homepage changes. Check desktop and mobile layouts in all seven languages.
+homepage changes. Check desktop and mobile layouts in all eight languages.
 
 ## Feedback Worker
 

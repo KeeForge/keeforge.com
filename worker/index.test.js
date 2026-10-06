@@ -225,7 +225,7 @@ test("detectSupportedLocale maps Chinese script and region subtags", () => {
   assert.equal(detectSupportedLocale("zh-TW;q=0.4, en;q=0.9"), "en");
 });
 
-for (const locale of ["de", "fr", "es", "ja"]) {
+for (const locale of ["de", "fr", "es", "ja", "it"]) {
   test(`GET / redirects to /${locale}/ when Accept-Language prefers ${locale}`, async () => {
     const response = await worker.fetch(
       siteRequest("/", { acceptLanguage: `${locale}-XX,${locale};q=0.9,en;q=0.1` }),
@@ -349,7 +349,7 @@ test("?setlang=1 on the English root sets the cookie and cleans the URL", async 
   );
 });
 
-for (const locale of ["de", "fr", "es", "zh-hans", "zh-hant", "ja"]) {
+for (const locale of ["de", "fr", "es", "zh-hans", "zh-hant", "ja", "it"]) {
   test(`?setlang=1 on /${locale}/ sets the ${locale} cookie and cleans the URL`, async () => {
     const response = await worker.fetch(siteRequest(`/${locale}/?setlang=1`), {});
 

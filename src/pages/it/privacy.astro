@@ -1,0 +1,140 @@
+---
+import Base from '../../layouts/Base.astro';
+import LanguageSwitcher from '../../components/LanguageSwitcher.astro';
+
+const langPaths = { en: '/privacy/', de: '/de/privacy/', fr: '/fr/privacy/', es: '/es/privacy/', 'zh-hans': '/zh-hans/privacy/', 'zh-hant': '/zh-hant/privacy/', ja: '/ja/privacy/', it: '/it/privacy/' };
+---
+
+<Base title="Informativa sulla privacy — KeeForge" description="KeeForge non raccoglie i dati del tuo vault. Il modulo facoltativo di feedback nell’app invia solo ciò che scegli: il tuo messaggio, i dettagli visibili dell’errore quando segnali un problema di apertura del database e, se acconsenti, un indirizzo email per risponderti e una foto allegata." lang="it" enPath="/privacy/" dePath="/de/privacy/" frPath="/fr/privacy/" esPath="/es/privacy/" zhHansPath="/zh-hans/privacy/" zhHantPath="/zh-hant/privacy/" jaPath="/ja/privacy/" itPath="/it/privacy/">
+    <div class="privacy">
+        <div class="top-links">
+            <a href="/it/" class="back-link">&larr; Torna a KeeForge</a>
+            <LanguageSwitcher current="it" paths={langPaths} variant="footer" />
+        </div>
+        <h1>Informativa sulla privacy</h1>
+        <p class="updated">Ultimo aggiornamento: 31 luglio 2026</p>
+
+        <div class="content">
+            <p class="lead">KeeForge non raccoglie i dati del tuo vault. Il modulo facoltativo di feedback nell’app invia solo ciò che scegli: il tuo messaggio, i dettagli visibili dell’errore quando segnali un problema di apertura del database e, se acconsenti, un indirizzo email per risponderti e una foto allegata.</p>
+
+            <h2>Nessuna analisi dei dati</h2>
+            <p>KeeForge non contiene framework di analisi, SDK per la segnalazione dei crash o sistemi di tracciamento dell’utilizzo di alcun tipo.</p>
+
+            <h2>Nessuna telemetria</h2>
+            <p>KeeForge non invia dati di analisi, telemetria sull’utilizzo o segnalazioni di crash. L’attività di rete è limitata alle funzionalità che scegli di usare: sincronizzazione dei database con provider cloud configurati come Dropbox, OneDrive e WebDAV; download facoltativo delle favicon dei siti web da DuckDuckGo; caricamento o invio di mance facoltative tramite i servizi StoreKit di Apple; apertura nel browser di link per il sostegno, come Buy Me a Coffee; e invio del modulo di feedback nell’app quando tocchi esplicitamente &ldquo;Invia&rdquo;.</p>
+
+            <h2>Nessun account</h2>
+            <p>KeeForge non richiede né offre la creazione di un account. Non è necessaria alcuna registrazione.</p>
+
+            <h2>I dati del tuo vault</h2>
+            <p>Le tue password, le voci, gli allegati e la password principale vengono elaborati localmente e restano sul dispositivo e nelle posizioni di archiviazione che scegli. Lo sviluppatore di KeeForge e il servizio di feedback non ricevono il tuo vault, la password principale, i file chiave o il contenuto decifrato delle voci. L’app può funzionare offline, tranne quando scegli una delle funzionalità di rete descritte sopra.</p>
+
+            <h2>Invio di feedback</h2>
+            <p>KeeForge include un modulo di feedback nell’app, disponibile nelle Impostazioni e in alcune schermate di errore. Il modulo è del tutto facoltativo: le funzionalità e i servizi dell’app non dipendono dal suo utilizzo. Solo quando tocchi &ldquo;Invia&rdquo;, l’app trasmette le seguenti informazioni al nostro endpoint di feedback <code>https://feedback.keeforge.com/api/feedback</code> tramite HTTPS:</p>
+            <ul>
+                <li>Il messaggio di testo libero che hai scritto.</li>
+                <li>Se invii feedback da una schermata di errore di apertura del database: i dettagli visibili dell’errore mostrati nell’app, tra cui categoria, codice, titolo, riepilogo, dettagli tecnici e informazioni diagnostiche descritte di seguito.</li>
+                <li>Se acconsenti a ricevere una risposta: l’indirizzo email che inserisci, per permetterci di risponderti. Viene inviato e conservato solo con il tuo consenso esplicito.</li>
+                <li>Se alleghi una foto: l’immagine stessa. L’app la ridimensiona sul dispositivo e la ricodifica in JPEG prima dell’invio, rimuovendo i metadati EXIF e GPS.</li>
+            </ul>
+            <p>Le informazioni diagnostiche sull’apertura del database possono includere il metodo di sblocco; l’indicazione della presenza di una password o di un file chiave; il numero di tentativi falliti; l’origine locale o cloud; lo stato di sola lettura; il provider cloud e lo stato della sincronizzazione; brevi prefissi della revisione remota e degli hash del contenuto e del file cifrato; le dimensioni del file cifrato; un riepilogo dell’intestazione KDBX; la versione e la build dell’app; la versione del sistema operativo; e il modello del dispositivo. Questi dettagli sono mostrati nel modulo di feedback prima dell’invio. Non includono mai voci, password, file chiave, file di database originali o contenuti decifrati del vault.</p>
+            <p>L’indirizzo email per la risposta e la foto allegata sono entrambi facoltativi e disattivati finché non li scegli. Se non acconsenti a ricevere una risposta, non viene inviato né conservato alcun indirizzo email; se non alleghi una foto, non viene inviata alcuna immagine. Se inserisci informazioni personali nel messaggio, quel testo viene inviato perché lo hai incluso manualmente.</p>
+            <p>Usiamo queste informazioni esclusivamente per leggere il tuo feedback e diagnosticare gli errori. Non le usiamo per pubblicità, profilazione o analisi e non le vendiamo. I messaggi sono conservati su infrastrutture gestite per nostro conto dal provider di hosting; il provider è tenuto per contratto a proteggere i dati secondo gli standard descritti in questa informativa e a elaborarli solo seguendo le nostre istruzioni.</p>
+            <p>Conserviamo i messaggi di feedback, comprese le eventuali foto allegate, per un massimo di 24 mesi per poter esaminare segnalazioni correlate, poi li eliminiamo. Puoi richiedere in qualsiasi momento l’eliminazione di un messaggio scrivendo a <a href="mailto:support@keeforge.com">support@keeforge.com</a> o aprendo un’issue su <a href="https://github.com/KeeForge/KeeForge">GitHub</a>. Puoi anche scegliere di non usare il modulo: se non tocchi mai &ldquo;Invia&rdquo;, non viene trasmesso nulla.</p>
+
+            <h2>Minori</h2>
+            <p>KeeForge non è rivolto ai minori e non raccogliamo consapevolmente informazioni sui minori tramite il modulo di feedback.</p>
+
+            <h2>Open source</h2>
+            <p>Non devi fidarti solo delle nostre parole. KeeForge è open source con licenza GPLv3. Puoi <a href="https://github.com/KeeForge/KeeForge">verificare il codice personalmente</a>, compresi i campi esatti inviati dal modulo di feedback.</p>
+
+            <h2>Modifiche a questa informativa</h2>
+            <p>Se modifichiamo i dati raccolti dall’app o il modo in cui li usiamo, aggiorneremo questa pagina e la data di &ldquo;Ultimo aggiornamento&rdquo; prima di pubblicare la modifica in una build pubblica.</p>
+
+            <h2>Contatti</h2>
+            <p>Per domande su questa informativa, scrivi a <a href="mailto:support@keeforge.com">support@keeforge.com</a> o apri un’issue su <a href="https://github.com/KeeForge/KeeForge">GitHub</a>.</p>
+        </div>
+    </div>
+</Base>
+
+<style>
+    .privacy {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 60px 24px 80px;
+    }
+
+    .top-links {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .back-link {
+        display: inline-block;
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        margin-bottom: 40px;
+        transition: color 0.2s;
+    }
+
+    .back-link:hover {
+        color: var(--text);
+    }
+
+    h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin-bottom: 8px;
+        background: none;
+        -webkit-text-fill-color: var(--text);
+    }
+
+    .updated {
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        margin-bottom: 40px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .lead {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--green);
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: -16px;
+    }
+
+    code {
+        overflow-wrap: anywhere;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--text-dim);
+    }
+
+    @media (max-width: 480px) {
+        .privacy {
+            padding: 40px 20px 60px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+    }
+</style>

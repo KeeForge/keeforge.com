@@ -8,7 +8,7 @@ interface Props {
     eyebrow?: string;
     heading: string;
     lead?: string;
-    lang?: 'en' | 'de' | 'fr' | 'es' | 'zh-hans' | 'zh-hant' | 'ja';
+    lang?: 'en' | 'de' | 'fr' | 'es' | 'zh-hans' | 'zh-hant' | 'ja' | 'it';
     // Paths of the localized versions of this page, for the language switcher
     // and hreflang alternates. Omit while no translation exists.
     enPath?: string;
@@ -18,11 +18,12 @@ interface Props {
     zhHansPath?: string;
     zhHantPath?: string;
     jaPath?: string;
+    itPath?: string;
 }
 
-const { title, description, eyebrow, heading, lead, lang = 'en', enPath, dePath, frPath, esPath, zhHansPath, zhHantPath, jaPath } = Astro.props;
+const { title, description, eyebrow, heading, lead, lang = 'en', enPath, dePath, frPath, esPath, zhHansPath, zhHantPath, jaPath, itPath } = Astro.props;
 
-const langPaths = { en: enPath, de: dePath, fr: frPath, es: esPath, 'zh-hans': zhHansPath, 'zh-hant': zhHantPath, ja: jaPath };
+const langPaths = { en: enPath, de: dePath, fr: frPath, es: esPath, 'zh-hans': zhHansPath, 'zh-hant': zhHantPath, ja: jaPath, it: itPath };
 
 const strings = {
     en: {
@@ -102,10 +103,21 @@ const strings = {
         privacy: 'プライバシーポリシー',
         privacyHref: '/ja/privacy',
     },
+    it: {
+        home: '/it/',
+        compare: 'Confronto',
+        changelog: 'Registro delle modifiche',
+        audit: 'Audit di sicurezza',
+        faq: 'FAQ',
+        homeLabel: 'Home',
+        tagline: 'KeePass gratuito e open source per iOS e macOS',
+        privacy: 'Informativa sulla privacy',
+        privacyHref: '/it/privacy',
+    },
 }[lang];
 ---
 
-<Base title={title} description={description} lang={lang} enPath={enPath} dePath={dePath} frPath={frPath} esPath={esPath} zhHansPath={zhHansPath} zhHantPath={zhHantPath} jaPath={jaPath}>
+<Base title={title} description={description} lang={lang} enPath={enPath} dePath={dePath} frPath={frPath} esPath={esPath} zhHansPath={zhHansPath} zhHantPath={zhHantPath} jaPath={jaPath} itPath={itPath}>
     <header class="page-header">
         <div class="page-header-inner">
             <a href={strings.home} class="brand-link">

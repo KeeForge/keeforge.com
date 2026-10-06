@@ -11,12 +11,12 @@ interface Props { lang: LocaleCode; }
 const { lang } = Astro.props;
 const t = home[lang];
 const paths = { en: home.en.path, de: home.de.path, fr: home.fr.path, es: home.es.path,
-    'zh-hans': home['zh-hans'].path, 'zh-hant': home['zh-hant'].path, ja: home.ja.path };
+    'zh-hans': home['zh-hans'].path, 'zh-hant': home['zh-hant'].path, ja: home.ja.path, it: home.it.path };
 const source = 'https://github.com/KeeForge/KeeForge';
 ---
 <Base title={t.title} description={t.description} lang={lang} canonicalPath={t.path}
     enPath={paths.en} dePath={paths.de} frPath={paths.fr} esPath={paths.es}
-    zhHansPath={paths['zh-hans']} zhHantPath={paths['zh-hant']} jaPath={paths.ja}>
+    zhHansPath={paths['zh-hans']} zhHantPath={paths['zh-hant']} jaPath={paths.ja} itPath={paths.it}>
     <div class="kf-home">
         <a href="#main" class="skip">{t.nav.skip}</a>
         <header class="nav">
