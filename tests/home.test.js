@@ -8,7 +8,7 @@ const locales = ['en', 'de', 'fr', 'es', 'zh-hans', 'zh-hant', 'ja', 'it'];
 const appStore = 'https://apps.apple.com/us/app/keeforge/id6759309295';
 
 for (const locale of locales) {
-    test(`${locale}: homepage exposes both downloads, beta channels, and existing local destinations`, () => {
+    test(`${locale}: homepage exposes both downloads, the shared beta link, and existing local destinations`, () => {
         const copy = home[locale];
         const html = readFileSync(new URL(`${locale === 'en' ? '' : `${locale}/`}index.html`, siteRoot), 'utf8');
         assert.match(html, /<title>[^<]*iOS[^<]*macOS/);
@@ -19,9 +19,10 @@ for (const locale of locales) {
         for (const destination of [
             'https://github.com/KeeForge/KeeForge/releases/latest',
             'https://testflight.apple.com/join/mPAT4f1a',
-            'https://testflight.apple.com/join/ZKQRwPaa',
             'mailto:support@keeforge.com',
         ]) assert.ok(html.includes(`href="${destination}"`), destination);
+        assert.equal((html.match(/href="https:\/\/testflight\.apple\.com\/join\//g) ?? []).length, 1);
+        assert.ok(html.includes(copy.beta.cta.replaceAll('&', '&amp;')));
         assert.equal((html.match(/class="faq-symbol"/g) ?? []).length, 8);
         assert.equal(copy.faq.items.length, 8);
         assert.ok(copy.hero.h1.includes('iPhone') && copy.hero.h1.includes('iPad') && copy.hero.h1.includes('Mac'));

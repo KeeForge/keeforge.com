@@ -137,8 +137,7 @@ const en = {
         "availability": "Availability can differ by platform while Apple reviews a build. If a beta isn’t accepting testers, check back later.",
         "warningTitle": "Test with a copy of your database, not your primary vault.",
         "warningBody": "Beta builds can carry bugs the released app does not — and they replace the App Store install and open the same real .kdbx files. Duplicate a database first and point the beta at the copy.",
-        "iosCTA": "iPhone & iPad beta",
-        "macCTA": "Mac beta"
+        "cta": "Join the iPhone, iPad & Mac beta"
     },
     "faq": {
         "items": [
@@ -354,8 +353,7 @@ const de: typeof en = {
         "availability": "Die Verfügbarkeit kann je nach Plattform abweichen, während Apple einen Build prüft. Nimmt eine Beta keine Tester auf, schau später wieder vorbei.",
         "warningTitle": "Teste mit einer Kopie deiner Datenbank, nicht mit deinem Haupttresor.",
         "warningBody": "Beta-Builds können Fehler enthalten, die es in der veröffentlichten App nicht gibt — und sie ersetzen die App-Store-Installation und öffnen dieselben echten .kdbx-Dateien. Dupliziere deine Datenbank vorher und öffne in der Beta nur die Kopie.",
-        "iosCTA": "iPhone- & iPad-Beta",
-        "macCTA": "Mac-Beta"
+        "cta": "Beta für iPhone, iPad & Mac"
     },
     "faq": {
         "items": [
@@ -571,8 +569,7 @@ const fr: typeof en = {
         "availability": "La disponibilité peut varier selon la plateforme pendant l’examen d’Apple. Si une bêta n’accepte pas de testeurs, réessayez plus tard.",
         "warningTitle": "Testez avec une copie de votre base de données, pas avec votre coffre-fort principal.",
         "warningBody": "Les versions bêta peuvent contenir des bugs absents de l’application publiée — et elles remplacent l’installation de l’App Store tout en ouvrant les mêmes fichiers .kdbx réels. Dupliquez d’abord une base de données, puis pointez la bêta vers la copie.",
-        "iosCTA": "Bêta iPhone et iPad",
-        "macCTA": "Bêta Mac"
+        "cta": "Bêta pour iPhone, iPad et Mac"
     },
     "faq": {
         "items": [
@@ -788,8 +785,7 @@ const es: typeof en = {
         "availability": "La disponibilidad puede variar por plataforma mientras Apple revisa una compilación. Si una beta no acepta participantes, vuelve más tarde.",
         "warningTitle": "Pruebe con una copia de su base de datos, no con su bóveda principal.",
         "warningBody": "Las compilaciones beta pueden tener errores que la app publicada no tiene — y sustituyen la instalación de la App Store, abriendo los mismos archivos .kdbx reales. Duplique primero una base de datos y apunte la beta a la copia.",
-        "iosCTA": "Beta para iPhone y iPad",
-        "macCTA": "Beta para Mac"
+        "cta": "Beta para iPhone, iPad y Mac"
     },
     "faq": {
         "items": [
@@ -1005,8 +1001,7 @@ const zhHans: typeof en = {
         "availability": "Apple 审核期间，各平台的测试版开放时间可能不同。如果暂不接受测试者，请稍后再试。",
         "warningTitle": "请用数据库的副本测试，不要使用你的主保险库。",
         "warningBody": "测试版可能带有正式版没有的问题——它会替换从 App Store 安装的版本，并打开同样的真实 .kdbx 文件。请先复制一份数据库，让测试版只打开副本。",
-        "iosCTA": "iPhone / iPad 测试版",
-        "macCTA": "Mac 测试版"
+        "cta": "加入 iPhone、iPad 和 Mac 测试版"
     },
     "faq": {
         "items": [
@@ -1222,8 +1217,7 @@ const zhHant: typeof en = {
         "availability": "Apple 審核期間，各平台的測試版開放時間可能不同。若暫不接受測試者，請稍後再試。",
         "warningTitle": "請用資料庫的複本測試，不要用你的主要保險庫。",
         "warningBody": "測試版可能帶有正式版沒有的錯誤——而且它會取代 App Store 安裝的版本，並開啟同樣真實的 .kdbx 檔案。請先複製一份資料庫，讓測試版只開啟複本。",
-        "iosCTA": "iPhone / iPad 測試版",
-        "macCTA": "Mac 測試版"
+        "cta": "加入 iPhone、iPad 和 Mac 測試版"
     },
     "faq": {
         "items": [
@@ -1439,8 +1433,7 @@ const ja: typeof en = {
         "availability": "Apple の審査中は、プラットフォームによって参加状況が異なる場合があります。募集が停止している場合は、後で確認してください。",
         "warningTitle": "メインの保管庫ではなく、データベースのコピーでテストしてください。",
         "warningBody": "ベータ版には、リリース版にはない不具合が含まれることがあります。しかも App Store 版を置き換え、同じ本物の .kdbx ファイルを開きます。まずデータベースを複製し、ベータ版にはそのコピーを開かせてください。",
-        "iosCTA": "iPhone・iPad ベータ",
-        "macCTA": "Mac ベータ"
+        "cta": "iPhone・iPad・Mac 向けベータに参加"
     },
     "faq": {
         "items": [
@@ -1656,8 +1649,7 @@ const it: typeof en = {
         "availability": "La disponibilità può variare tra le piattaforme mentre Apple esamina una build. Se una beta non accetta tester, riprova più tardi.",
         "warningTitle": "Prova la beta con una copia del database, non con il tuo vault principale.",
         "warningBody": "Le build beta possono contenere errori assenti nell’app pubblicata: sostituiscono l’installazione dell’App Store e aprono gli stessi file .kdbx reali. Duplica prima il database e apri la copia nella beta.",
-        "iosCTA": "Beta per iPhone e iPad",
-        "macCTA": "Beta per Mac"
+        "cta": "Beta per iPhone, iPad e Mac"
     },
     "faq": {
         "items": [
