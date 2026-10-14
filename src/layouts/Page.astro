@@ -8,7 +8,7 @@ interface Props {
     eyebrow?: string;
     heading: string;
     lead?: string;
-    lang?: 'en' | 'de' | 'fr' | 'es' | 'zh-hans' | 'zh-hant' | 'ja' | 'it';
+    lang?: 'en' | 'de' | 'fr' | 'es' | 'zh-hans' | 'zh-hant' | 'ja' | 'it' | 'ru';
     // Paths of the localized versions of this page, for the language switcher
     // and hreflang alternates. Omit while no translation exists.
     enPath?: string;
@@ -19,11 +19,12 @@ interface Props {
     zhHantPath?: string;
     jaPath?: string;
     itPath?: string;
+    ruPath?: string;
 }
 
-const { title, description, eyebrow, heading, lead, lang = 'en', enPath, dePath, frPath, esPath, zhHansPath, zhHantPath, jaPath, itPath } = Astro.props;
+const { title, description, eyebrow, heading, lead, lang = 'en', enPath, dePath, frPath, esPath, zhHansPath, zhHantPath, jaPath, itPath, ruPath } = Astro.props;
 
-const langPaths = { en: enPath, de: dePath, fr: frPath, es: esPath, 'zh-hans': zhHansPath, 'zh-hant': zhHantPath, ja: jaPath, it: itPath };
+const langPaths = { en: enPath, de: dePath, fr: frPath, es: esPath, 'zh-hans': zhHansPath, 'zh-hant': zhHantPath, ja: jaPath, it: itPath, ru: ruPath };
 
 const strings = {
     en: {
@@ -114,10 +115,21 @@ const strings = {
         privacy: 'Informativa sulla privacy',
         privacyHref: '/it/privacy',
     },
+    ru: {
+        home: '/ru/',
+        compare: 'Сравнение',
+        changelog: 'Изменения',
+        audit: 'Аудит',
+        faq: 'FAQ',
+        homeLabel: 'Главная',
+        tagline: 'Бесплатный KeePass с открытым исходным кодом для iOS и macOS',
+        privacy: 'Политика конфиденциальности',
+        privacyHref: '/ru/privacy',
+    },
 }[lang];
 ---
 
-<Base title={title} description={description} lang={lang} enPath={enPath} dePath={dePath} frPath={frPath} esPath={esPath} zhHansPath={zhHansPath} zhHantPath={zhHantPath} jaPath={jaPath} itPath={itPath}>
+<Base title={title} description={description} lang={lang} enPath={enPath} dePath={dePath} frPath={frPath} esPath={esPath} zhHansPath={zhHansPath} zhHantPath={zhHantPath} jaPath={jaPath} itPath={itPath} ruPath={ruPath}>
     <header class="page-header">
         <div class="page-header-inner">
             <a href={strings.home} class="brand-link">

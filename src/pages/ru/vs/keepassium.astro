@@ -1,0 +1,378 @@
+---
+import Page from '../../../layouts/Page.astro';
+
+const title = 'KeeForge vs KeePassium — сравнение двух нативных клиентов KeePass для iOS';
+const description = 'Честное сравнение KeeForge и KeePassium для iOS: возможности, цены, открытость исходного кода и когда какое приложение подойдёт лучше.';
+---
+
+<Page
+    lang="ru"
+    enPath="/vs/keepassium/"
+    dePath="/de/vs/keepassium/"
+    frPath="/fr/vs/keepassium/"
+    esPath="/es/vs/keepassium/"
+    zhHansPath="/zh-hans/vs/keepassium/"
+    zhHantPath="/zh-hant/vs/keepassium/"
+    jaPath="/ja/vs/keepassium/"
+    itPath="/it/vs/keepassium/"
+    ruPath="/ru/vs/keepassium/"
+    title={title}
+    description={description}
+    eyebrow="Сравнение"
+    heading="KeeForge vs KeePassium"
+    lead="Оба приложения — нативные приложения для iOS, открывающие базы данных KeePass .kdbx. В основном они совпадают, но расходятся в нескольких важных моментах: цена, поддержка аппаратных ключей и набор возможностей. Вот честное сравнение."
+>
+    <section class="vs-section">
+        <h2>Коротко</h2>
+        <p>
+            KeePassium — зрелый и уважаемый клиент KeePass для iOS с хорошей бесплатной версией и необязательным обновлением Premium, которое открывает расширенные возможности (в частности, поддержку аппаратных ключей YubiKey). За ним многолетняя история и внимательная к безопасности команда.
+        </p>
+        <p>
+            KeeForge — более новая и полностью бесплатная альтернатива: все возможности доступны бесплатно, весь код открыт под лицензией GPLv3, премиум-тарифа нет. Приложение рассчитано на iOS 18+ и создано нативно для современных возможностей платформ Apple.
+        </p>
+        <p>
+            Оба приложения читают один и тот же формат файлов <code class="mono">.kdbx</code>, поэтому вы можете оставить своё хранилище и попробовать их параллельно, ни к чему себя не обязывая.
+        </p>
+    </section>
+
+    <section class="vs-section">
+        <h2>Сравнение возможностей</h2>
+        <p class="vs-table-note">На момент написания. Возможности меняются — последние сведения ищите в примечаниях к выпускам обоих разработчиков.</p>
+        <div class="vs-table-wrap">
+            <table class="vs-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>KeeForge</th>
+                        <th>KeePassium</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Открытие баз данных KeePass <code class="mono">.kdbx</code></td>
+                        <td>Да</td>
+                        <td>Да</td>
+                    </tr>
+                    <tr>
+                        <td>Редактирование, создание и удаление записей</td>
+                        <td>Да</td>
+                        <td>Да (без ограничений — в Premium; в бесплатной версии есть ограничения)</td>
+                    </tr>
+                    <tr>
+                        <td>Автозаполнение (пароли + ключи входа + TOTP)</td>
+                        <td>Да</td>
+                        <td>Да</td>
+                    </tr>
+                    <tr>
+                        <td>Разблокировка с Face ID / Touch ID</td>
+                        <td>Да</td>
+                        <td>Да</td>
+                    </tr>
+                    <tr>
+                        <td>Облачная синхронизация (iCloud, Dropbox, OneDrive, WebDAV, «Файлы»)</td>
+                        <td>Да</td>
+                        <td>Да</td>
+                    </tr>
+                    <tr>
+                        <td>Поддержка YubiKey / аппаратных ключей</td>
+                        <td>Пока нет</td>
+                        <td>Да (Premium)</td>
+                    </tr>
+                    <tr>
+                        <td>Подписка / платный тариф</td>
+                        <td>Нет — только необязательные чаевые</td>
+                        <td>Бесплатно + подписка Premium</td>
+                    </tr>
+                    <tr>
+                        <td>Открытый исходный код</td>
+                        <td>GPLv3 (всё приложение)</td>
+                        <td>GPLv3 (бесплатная версия)</td>
+                    </tr>
+                    <tr>
+                        <td>Минимальная версия iOS</td>
+                        <td>iOS 18</td>
+                        <td>Ниже (поддерживает старые устройства)</td>
+                    </tr>
+                    <tr>
+                        <td>Локализация</td>
+                        <td>Английский, немецкий, французский, испанский, итальянский, русский, японский, упрощённый и традиционный китайский</td>
+                        <td>Более 20 языков</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="vs-section">
+        <div class="two-col">
+            <div class="col-card">
+                <h3>Чем хорош KeePassium</h3>
+                <ul>
+                    <li>Многолетняя история и внимательная к безопасности команда.</li>
+                    <li>Тариф Premium поддерживает аппаратные ключи YubiKey — это полезно, если ваша модель угроз предполагает физический ключ как второй фактор.</li>
+                    <li>Переведён более чем на 20 языков.</li>
+                    <li>Поддерживает больше старых версий iOS.</li>
+                    <li>Хорошая репутация и известность в сообществе, ценящем приватность.</li>
+                </ul>
+            </div>
+            <div class="col-card">
+                <h3>Чем отличается KeeForge</h3>
+                <ul>
+                    <li>Полностью бесплатен. Ни подписки, ни тарифа Premium, ни встроенных покупок, кроме добровольных чаевых.</li>
+                    <li>Каждая возможность открыта под GPLv3 — нет платного тарифа с закрытыми компонентами.</li>
+                    <li>Создан нативно для iOS 18+, где современные возможности платформы (автозаполнение TOTP, автозаполнение ключей входа, интеграция с приложением «Файлы») — в приоритете.</li>
+                    <li>Меньший и более сфокусированный набор функций — меньше настроек, быстрее запуск.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="vs-section">
+        <h2>Когда что выбрать</h2>
+        <div class="two-col">
+            <div class="choice-card">
+                <h3>Выберите KeeForge, если&hellip;</h3>
+                <ul>
+                    <li>Вы не хотите никакой подписки — никогда.</li>
+                    <li>Вам (пока) не нужна поддержка аппаратных ключей YubiKey.</li>
+                    <li>Вам нужно приложение с полностью открытым кодом — каждая возможность, а не только бесплатная версия.</li>
+                    <li>У вас iOS 18 или новее.</li>
+                </ul>
+            </div>
+            <div class="choice-card">
+                <h3>Выберите KeePassium, если&hellip;</h3>
+                <ul>
+                    <li>Вам нужен YubiKey или аппаратный ключ как второй фактор.</li>
+                    <li>У вас старое устройство с iOS ниже 18.</li>
+                    <li>Вам нужен самый проверенный вариант с самой большой аудиторией.</li>
+                    <li>Вам нужен язык, которого в KeeForge пока нет.</li>
+                </ul>
+            </div>
+        </div>
+        <p class="closing-note">
+            Выбирать не обязательно. Оба приложения читают стандартные файлы <code class="mono">.kdbx</code>, поэтому можно установить оба, указать им одно и то же поддерживаемое место хранения хранилища и решить, что лучше подходит для вашей повседневной работы.
+        </p>
+    </section>
+
+    <section class="vs-cta">
+        <h2>Попробуйте KeeForge</h2>
+        <p>Бесплатно, с открытым исходным кодом, без учётных записей.</p>
+        <div class="cta-row">
+            <a href="https://apps.apple.com/us/app/keeforge/id6759309295" class="app-store-badge" aria-label="Загрузите в App Store">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ru-ru?size=250x83" alt="Загрузите в App Store" height="52">
+            </a>
+            <a href="/ru/" class="ghost-link">На главную</a>
+        </div>
+    </section>
+</Page>
+
+<style>
+    .vs-section {
+        margin-bottom: 56px;
+    }
+
+    .vs-section h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        margin-bottom: 16px;
+    }
+
+    .vs-section > p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--text-dim);
+        margin-bottom: 14px;
+        max-width: 720px;
+    }
+
+    .vs-section > p:last-child {
+        margin-bottom: 0;
+    }
+
+    .vs-table-note {
+        font-size: 0.8rem !important;
+        color: var(--text-dim);
+        margin-bottom: 16px !important;
+        font-style: italic;
+    }
+
+    .vs-table-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--surface);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .vs-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+    }
+
+    .vs-table thead th {
+        background: #f0f4f8;
+        text-align: left;
+        font-weight: 600;
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.85rem;
+    }
+
+    .vs-table tbody td {
+        padding: 14px 18px;
+        border-top: 1px solid var(--border);
+        line-height: 1.5;
+        color: var(--text-dim);
+    }
+
+    .vs-table tbody td:first-child {
+        color: var(--text);
+        font-weight: 500;
+    }
+
+    .vs-table code.mono {
+        font-size: 0.8rem;
+        background: rgba(15, 23, 42, 0.05);
+        padding: 1px 4px;
+        border-radius: 4px;
+    }
+
+    .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .col-card,
+    .choice-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .col-card h3,
+    .choice-card h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 14px;
+    }
+
+    .col-card ul,
+    .choice-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .col-card li,
+    .choice-card li {
+        position: relative;
+        padding-left: 18px;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--text-dim);
+        margin-bottom: 10px;
+    }
+
+    .col-card li:last-child,
+    .choice-card li:last-child {
+        margin-bottom: 0;
+    }
+
+    .col-card li::before,
+    .choice-card li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--green);
+    }
+
+    .closing-note {
+        margin-top: 24px;
+        font-size: 0.95rem !important;
+        line-height: 1.65;
+        color: var(--text-dim);
+    }
+
+    .closing-note code.mono {
+        font-size: 0.85rem;
+        background: rgba(15, 23, 42, 0.05);
+        padding: 1px 4px;
+        border-radius: 4px;
+    }
+
+    .vs-cta {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        border-radius: 16px;
+        padding: 40px 32px;
+        text-align: center;
+        color: #e2e8f0;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .vs-cta h2 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+        color: #e2e8f0;
+    }
+
+    .vs-cta p {
+        color: #94a3b8;
+        font-size: 0.95rem;
+        margin-bottom: 22px;
+    }
+
+    .cta-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    .app-store-badge {
+        transition: opacity 0.2s;
+    }
+
+    .app-store-badge:hover {
+        opacity: 0.85;
+    }
+
+    .ghost-link {
+        font-size: 0.9rem;
+        color: #cbd5e1 !important;
+        padding: 10px 18px;
+        border: 1px solid #334155;
+        border-radius: 8px;
+        transition: all 0.2s;
+    }
+
+    .ghost-link:hover {
+        border-color: #475569;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    @media (max-width: 640px) {
+        .two-col {
+            grid-template-columns: 1fr;
+        }
+
+        .vs-section {
+            margin-bottom: 40px;
+        }
+
+        .vs-cta {
+            padding: 32px 22px;
+        }
+    }
+</style>

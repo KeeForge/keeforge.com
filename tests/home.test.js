@@ -4,7 +4,7 @@ import test from 'node:test';
 import { home } from '../src/i18n/home.ts';
 
 const siteRoot = new URL('../dist/', import.meta.url);
-const locales = ['en', 'de', 'fr', 'es', 'zh-hans', 'zh-hant', 'ja', 'it'];
+const locales = ['en', 'de', 'fr', 'es', 'zh-hans', 'zh-hant', 'ja', 'it', 'ru'];
 const appStore = 'https://apps.apple.com/us/app/keeforge/id6759309295';
 
 for (const locale of locales) {
@@ -52,20 +52,27 @@ test('new homepage text is present in every shipped locale', () => {
     }
 });
 
-test('every translated page exposes the Italian alternative and keeps Italian navigation local', () => {
-    for (const page of ['', 'privacy/', 'vs/keepassium/', 'vs/strongbox/']) {
-        const italianPath = `/it/${page}`;
-        for (const locale of locales) {
-            const path = `${locale === 'en' ? '' : `${locale}/`}${page}index.html`;
-            const html = readFileSync(new URL(path, siteRoot), 'utf8');
-            assert.ok(html.includes(`hreflang="it" href="https://keeforge.com${italianPath}"`), `${path}: Italian SEO alternative`);
-            if (locale === 'it') {
-                assert.match(html, /<html lang="it">/);
-                assert.match(html, /aria-current="true"[^>]*>Italiano</);
-                assert.ok(html.includes('href="/it/"'), `${path}: Italian homepage`);
-            } else {
-                assert.ok(html.includes(`href="${italianPath}?setlang=1"`), `${path}: Italian language switcher`);
+const addedLocales = [
+    { code: 'it', label: 'Italiano' },
+    { code: 'ru', label: 'Русский' },
+];
+
+for (const { code, label } of addedLocales) {
+    test(`every translated page exposes the ${label} alternative and keeps ${label} navigation local`, () => {
+        for (const page of ['', 'privacy/', 'vs/keepassium/', 'vs/strongbox/']) {
+            const localePath = `/${code}/${page}`;
+            for (const locale of locales) {
+                const path = `${locale === 'en' ? '' : `${locale}/`}${page}index.html`;
+                const html = readFileSync(new URL(path, siteRoot), 'utf8');
+                assert.ok(html.includes(`hreflang="${code}" href="https://keeforge.com${localePath}"`), `${path}: ${label} SEO alternative`);
+                if (locale === code) {
+                    assert.match(html, new RegExp(`<html lang="${code}">`));
+                    assert.match(html, new RegExp(`aria-current="true"[^>]*>${label}<`));
+                    assert.ok(html.includes(`href="/${code}/"`), `${path}: ${label} homepage`);
+                } else {
+                    assert.ok(html.includes(`href="${localePath}?setlang=1"`), `${path}: ${label} language switcher`);
+                }
             }
         }
-    }
-});
+    });
+}

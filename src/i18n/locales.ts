@@ -1,7 +1,7 @@
 // Shared locale metadata for the language switcher (src/components/LanguageSwitcher.astro).
 // Labels are endonyms — each language's name for itself, not translated.
 
-export type LocaleCode = 'en' | 'de' | 'fr' | 'es' | 'zh-hans' | 'zh-hant' | 'ja' | 'it';
+export type LocaleCode = 'en' | 'de' | 'fr' | 'es' | 'zh-hans' | 'zh-hant' | 'ja' | 'it' | 'ru';
 
 export interface LocaleMeta {
     code: LocaleCode;
@@ -18,4 +18,5 @@ export const locales: LocaleMeta[] = [
     { code: 'zh-hant', label: '繁體中文', hrefLang: 'zh-Hant' },
     { code: 'ja', label: '日本語', hrefLang: 'ja' },
     { code: 'it', label: 'Italiano', hrefLang: 'it' },
+    { code: 'ru', label: 'Русский', hrefLang: 'ru' },
 ];

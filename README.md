@@ -14,7 +14,24 @@ Worker that receives in-app feedback.
 - `/appcast.xml` — Sparkle update feed for the direct-download Mac app (see
   [Sparkle appcast](#sparkle-appcast))
 
-German, French, Spanish, Simplified Chinese, Traditional Chinese, Japanese, and Italian translations of every page except `/security-audit` live under `/de/`, `/fr/`, `/es/`, `/zh-hans/`, `/zh-hant/`, `/ja/`, and `/it/`.
+German, French, Spanish, Simplified Chinese, Traditional Chinese, Japanese, Italian, and Russian translations of every page except `/security-audit` live under `/de/`, `/fr/`, `/es/`, `/zh-hans/`, `/zh-hant/`, `/ja/`, `/it/`, and `/ru/`.
+
+### Adding a locale
+
+Ship a new locale here in the same release as the app locale. A locale needs
+all of the following, or its pages build without errors yet stay unreachable:
+
+- An entry in `src/i18n/locales.ts` and a locale object in `src/i18n/home.ts`.
+- `src/pages/<code>/` with `index.astro`, `privacy.astro`, and both `vs/` pages.
+- The locale's prop in `Base.astro`, plus its prop and nav strings in `Page.astro`.
+- The new path added to every existing page's `langPaths` and hreflang props.
+- The new language added to the Localization row of every `vs/keepassium` page.
+- The locale in the Worker's `SUPPORTED_LOCALES`, `LOCALE_HOME_PATHS`, and
+  `localePrefixFromPath`; the Worker deploys separately from the site.
+- The locale in `tests/home.test.js` (`locales` and `addedLocales`) and the
+  Worker locale loops in `worker/index.test.js`.
+
+Long words cannot wrap, so check every page at 375px for horizontal overflow.
 
 ## Local development
 
@@ -28,7 +45,7 @@ npm run preview  # serve the built site
 ## Homepage design
 
 `src/components/HomePage.astro` renders every localized homepage from
-`src/i18n/home.ts`. Keep all eight locale objects aligned with the English copy.
+`src/i18n/home.ts`. Keep all nine locale objects aligned with the English copy.
 `DownloadLinks.astro` owns the App Store platform links and direct Mac download;
 `ProductScreenshots.astro` pairs real iPhone and Mac captures in the hero and each
 feature section, with both vertically centered. The iPhone overlaps the left in the vault and editor
@@ -44,7 +61,7 @@ Homepage copy distinguishes direct Dropbox/OneDrive integration on iOS from
 synced local folders on Mac. WebDAV is available on both.
 
 Run `npm run build` and `node --test tests/home.test.js` after
-homepage changes. Check desktop and mobile layouts in all eight languages.
+homepage changes. Check desktop and mobile layouts in all nine languages.
 
 ## Feedback Worker
 
