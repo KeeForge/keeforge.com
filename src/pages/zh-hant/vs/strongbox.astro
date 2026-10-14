@@ -1,8 +1,8 @@
 ---
 import Page from '../../../layouts/Page.astro';
 
-const title = 'KeeForge vs Strongbox — 兩款 iOS KeePass 用戶端的比較';
-const description = '一份 KeeForge 與 Strongbox 在 iOS 上的公正比較——功能、價格、開源程度，以及各自適合的情況。';
+const title = 'KeeForge vs Strongbox — 兩款 iPhone、iPad 與 Mac KeePass 用戶端的比較';
+const description = '一份 KeeForge 與 Strongbox 在 iPhone、iPad 與 Mac 上的公正比較——功能、價格、開源程度，以及各自適合的情況。';
 ---
 
 <Page
@@ -10,7 +10,7 @@ const description = '一份 KeeForge 與 Strongbox 在 iOS 上的公正比較—
     description={description}
     eyebrow="比較"
     heading="KeeForge vs Strongbox"
-    lead="Strongbox 是一款功能豐富的 iOS 與 macOS 密碼管理員，同時支援 KeePass 與 Password Safe 格式。KeeForge 則是一款專注、完全免費的 iOS KeePass 用戶端。以下是一份誠實的比較，幫你做出選擇。"
+    lead="Strongbox 是一款功能豐富的 iOS 與 macOS 密碼管理員，同時支援 KeePass 與 Password Safe 格式。KeeForge 則是一款專注、完全免費的 iPhone、iPad 與 Mac KeePass 用戶端。以下是一份誠實的比較，幫你做出選擇。"
     lang="zh-hant"
     enPath="/vs/strongbox/"
     dePath="/de/vs/strongbox/"
@@ -28,7 +28,7 @@ const description = '一份 KeeForge 與 Strongbox 在 iOS 上的公正比較—
             Strongbox 是一款歷史悠久、功能深厚的密碼管理員，對 KeePass 和 Password Safe 兩種保險庫都有紮實的支援。其 Pro 層級加入了進階工作流程：硬體金鑰支援、瀏覽器整合、進階自動輸入等等。它是 Apple 平台上功能最強大的原生 KeePass 用戶端之一。
         </p>
         <p>
-            KeeForge 則刻意收窄範圍——專注於 KeePass <code class="mono">.kdbx</code>，帶來精簡、現代的 iOS 體驗。每項功能都在這款免費且完全開源的 App 中。沒有 Pro 層級，也沒有訂閱。
+            KeeForge 則刻意收窄範圍——專注於 KeePass <code class="mono">.kdbx</code>，在 iPhone、iPad 與 Mac 上帶來精簡、現代的體驗。每項功能都在這款免費且完全開源的 App 中。沒有 Pro 層級，也沒有訂閱。
         </p>
         <p>
             兩款 App 讀取的都是標準 <code class="mono">.kdbx</code> 檔案，你可以用同一個保險庫並行試用兩者。
@@ -75,7 +75,7 @@ const description = '一份 KeeForge 與 Strongbox 在 iOS 上的公正比較—
                     </tr>
                     <tr>
                         <td>雲端同步（iCloud、Dropbox、OneDrive、WebDAV、「檔案」）</td>
-                        <td>是</td>
+                        <td>是（iPhone 與 iPad 直接連接 Dropbox 與 OneDrive；Mac 上使用同步資料夾）</td>
                         <td>是（Pro 提供更多服務商）</td>
                     </tr>
                     <tr>
@@ -95,7 +95,7 @@ const description = '一份 KeeForge 與 Strongbox 在 iOS 上的公正比較—
                     </tr>
                     <tr>
                         <td>平台</td>
-                        <td>iOS 和 iPadOS</td>
+                        <td>iOS、iPadOS、macOS</td>
                         <td>iOS、iPadOS、macOS</td>
                     </tr>
                     <tr>
@@ -116,7 +116,7 @@ const description = '一份 KeeForge 與 Strongbox 在 iOS 上的公正比較—
                     <li>同時支援 KeePass 與 Password Safe 格式——如果你有舊的 <code class="mono">.psafe3</code> 保險庫，這很實用。</li>
                     <li>Pro 層級提供 YubiKey 支援、更廣泛的雲端儲存整合，以及進階自動輸入工作流程。</li>
                     <li>長期活躍開發的紀錄，並為進階使用者提供深厚的功能集。</li>
-                    <li>除了 iOS App，還有成熟的 macOS App——適合想從同一家取得桌面用戶端的使用者。</li>
+                    <li>成熟的 macOS App，多年來針對桌面持續打磨。</li>
                 </ul>
             </div>
             <div class="col-card">
@@ -124,7 +124,7 @@ const description = '一份 KeeForge 與 Strongbox 在 iOS 上的公正比較—
                 <ul>
                     <li>完全免費。無 Pro 層級、無訂閱，除了自願性質的打賞外沒有任何 App 內購買。</li>
                     <li>每項功能都以 GPLv3 開源——不存在含封閉元件的付費層級。</li>
-                    <li>原生為 iOS 18+ 打造，把最新平台功能（TOTP 自動填寫、通行金鑰自動填寫、「檔案」App 整合）當作一等公民。</li>
+                    <li>原生為 iOS 18+ 與 macOS 15+ 打造，把最新平台功能（TOTP 自動填寫、通行金鑰自動填寫、「檔案」App 整合）當作一等公民。</li>
                     <li>功能範圍更小、更聚焦——更容易上手，更快投入使用。</li>
                 </ul>
             </div>
@@ -141,7 +141,7 @@ const description = '一份 KeeForge 與 Strongbox 在 iOS 上的公正比較—
                     <li>你不想要訂閱或 Pro 層級。</li>
                     <li>你（目前）不需要 YubiKey 硬體金鑰支援。</li>
                     <li>你偏好完全開源的 App，每項功能都在公開的原始碼裡。</li>
-                    <li>你使用 iOS 18 或之後的版本。</li>
+                    <li>你使用 iOS 18 或 macOS 15 或之後的版本。</li>
                 </ul>
             </div>
             <div class="choice-card">
@@ -150,7 +150,7 @@ const description = '一份 KeeForge 與 Strongbox 在 iOS 上的公正比較—
                     <li>你需要開啟 <code class="mono">.psafe3</code> Password Safe 保險庫。</li>
                     <li>你需要 YubiKey 或其他硬體金鑰支援。</li>
                     <li>你想在 macOS 上使用進階自動輸入工作流程。</li>
-                    <li>你的裝置還在使用較舊的 iOS（iOS 18 之前）。</li>
+                    <li>你的 iPhone、iPad 或 Mac 較舊（iOS 18 或 macOS 15 之前）。</li>
                 </ul>
             </div>
         </div>

@@ -1,8 +1,8 @@
 ---
 import Page from '../../../layouts/Page.astro';
 
-const title = 'KeeForge vs Strongbox — iOS 向け KeePass クライアント 2 本の比較';
-const description = 'iOS 向けの KeeForge と Strongbox を公平に比較します。機能、価格、オープンソースの姿勢、そしてどちらを選ぶべきかの目安。';
+const title = 'KeeForge vs Strongbox — iPhone・iPad・Mac 向け KeePass クライアント 2 本の比較';
+const description = 'iPhone・iPad・Mac 向けの KeeForge と Strongbox を公平に比較します。機能、価格、オープンソースの姿勢、そしてどちらを選ぶべきかの目安。';
 ---
 
 <Page
@@ -10,7 +10,7 @@ const description = 'iOS 向けの KeeForge と Strongbox を公平に比較し�
     description={description}
     eyebrow="比較"
     heading="KeeForge vs Strongbox"
-    lead="Strongbox は KeePass と Password Safe の両形式に対応した、機能豊富な iOS・macOS 向けパスワードマネージャーです。KeeForge は iOS 向けに的を絞った、完全無料の KeePass クライアントです。選ぶ助けになるよう、率直に比較します。"
+    lead="Strongbox は KeePass と Password Safe の両形式に対応した、機能豊富な iOS・macOS 向けパスワードマネージャーです。KeeForge は iPhone・iPad・Mac 向けに的を絞った、完全無料の KeePass クライアントです。選ぶ助けになるよう、率直に比較します。"
     lang="ja"
     enPath="/vs/strongbox/"
     dePath="/de/vs/strongbox/"
@@ -28,7 +28,7 @@ const description = 'iOS 向けの KeeForge と Strongbox を公平に比較し�
             Strongbox は長く開発が続く、機能の深いパスワードマネージャーで、KeePass と Password Safe の両方の保管庫をしっかりサポートしています。Pro プランでは、ハードウェアキー対応、ブラウザ連携、高度な自動入力ワークフローなどが加わります。Apple プラットフォームで利用できる KeePass クライアントのなかでも、とくに高機能な部類です。
         </p>
         <p>
-            KeeForge は設計上、対象を絞っています。KeePass の <code class="mono">.kdbx</code> に集中し、最小限で今風の iOS 体験を提供します。すべての機能が、無料かつ完全にオープンソースのアプリに入っています。Pro プランもサブスクリプションもありません。
+            KeeForge は設計上、対象を絞っています。KeePass の <code class="mono">.kdbx</code> に集中し、iPhone・iPad・Mac で最小限で今風の体験を提供します。すべての機能が、無料かつ完全にオープンソースのアプリに入っています。Pro プランもサブスクリプションもありません。
         </p>
         <p>
             どちらのアプリも標準の <code class="mono">.kdbx</code> ファイルを読むため、同じ保管庫に対して並べて試せます。
@@ -75,7 +75,7 @@ const description = 'iOS 向けの KeeForge と Strongbox を公平に比較し�
                     </tr>
                     <tr>
                         <td>クラウド同期（iCloud、Dropbox、OneDrive、WebDAV、ファイル）</td>
-                        <td>対応</td>
+                        <td>対応（iPhone・iPad では Dropbox と OneDrive に直接接続、Mac では同期フォルダ経由）</td>
                         <td>対応（Pro でより多くのプロバイダ）</td>
                     </tr>
                     <tr>
@@ -95,7 +95,7 @@ const description = 'iOS 向けの KeeForge と Strongbox を公平に比較し�
                     </tr>
                     <tr>
                         <td>対応プラットフォーム</td>
-                        <td>iOS、iPadOS</td>
+                        <td>iOS、iPadOS、macOS</td>
                         <td>iOS、iPadOS、macOS</td>
                     </tr>
                     <tr>
@@ -116,7 +116,7 @@ const description = 'iOS 向けの KeeForge と Strongbox を公平に比較し�
                     <li>KeePass と Password Safe の両形式に対応。古い <code class="mono">.psafe3</code> の保管庫が手元にある場合に役立ちます。</li>
                     <li>Pro では YubiKey 対応、より幅広いクラウドストレージ連携、高度な自動入力ワークフローが使えます。</li>
                     <li>長年にわたる活発な開発の実績と、パワーユーザー向けの厚い機能群。</li>
-                    <li>同じ開発元のデスクトップ版が欲しい人のための、成熟した macOS アプリ。</li>
+                    <li>長年デスクトップ向けに磨かれてきた、成熟した macOS アプリ。</li>
                 </ul>
             </div>
             <div class="col-card">
@@ -124,7 +124,7 @@ const description = 'iOS 向けの KeeForge と Strongbox を公平に比較し�
                 <ul>
                     <li>完全無料。Pro プランもサブスクリプションもなく、アプリ内課金は任意のチップだけです。</li>
                     <li>すべての機能が GPLv3 のオープンソース。クローズドな部品を含む有料プランはありません。</li>
-                    <li>iOS 18 以降に向けてネイティブに構築。最新のプラットフォーム機能（TOTP 自動入力、パスキー自動入力、「ファイル」App 連携）を主役として扱っています。</li>
+                    <li>iOS 18 以降と macOS 15 以降に向けてネイティブに構築。最新のプラットフォーム機能（TOTP 自動入力、パスキー自動入力、「ファイル」App 連携）を主役として扱っています。</li>
                     <li>機能の範囲は小さく、的を絞っています。覚えやすく、すぐに使い始められます。</li>
                 </ul>
             </div>
@@ -141,7 +141,7 @@ const description = 'iOS 向けの KeeForge と Strongbox を公平に比較し�
                     <li>サブスクリプションや Pro プランを使いたくない。</li>
                     <li>YubiKey ハードウェアキー対応が（今のところ）必要ない。</li>
                     <li>すべての機能が公開されたソースに含まれる、完全にオープンソースのアプリがよい。</li>
-                    <li>iOS 18 以降を使っている。</li>
+                    <li>iOS 18 以降または macOS 15 以降を使っている。</li>
                 </ul>
             </div>
             <div class="choice-card">
@@ -150,7 +150,7 @@ const description = 'iOS 向けの KeeForge と Strongbox を公平に比較し�
                     <li>開く必要のある <code class="mono">.psafe3</code> の Password Safe 保管庫がある。</li>
                     <li>YubiKey などのハードウェアキー対応が必要。</li>
                     <li>macOS で高度な自動入力ワークフローを使いたい。</li>
-                    <li>古い iOS 端末（iOS 18 より前）を使っている。</li>
+                    <li>古い iPhone、iPad、Mac（iOS 18 または macOS 15 より前）を使っている。</li>
                 </ul>
             </div>
         </div>

@@ -1,8 +1,8 @@
 ---
 import Page from '../../../layouts/Page.astro';
 
-const title = 'KeeForge vs Strongbox — cómo se comparan estos dos clientes de KeePass para iOS';
-const description = 'Una comparación justa entre KeeForge y Strongbox para iOS — funciones, precios, postura de código abierto, y cuándo elegir cada uno.';
+const title = 'KeeForge vs Strongbox — cómo se comparan estos dos clientes de KeePass para iPhone, iPad y Mac';
+const description = 'Una comparación justa entre KeeForge y Strongbox para iPhone, iPad y Mac — funciones, precios, postura de código abierto, y cuándo elegir cada uno.';
 ---
 
 <Page
@@ -10,7 +10,7 @@ const description = 'Una comparación justa entre KeeForge y Strongbox para iOS 
     description={description}
     eyebrow="Comparación"
     heading="KeeForge vs Strongbox"
-    lead="Strongbox es un gestor de contraseñas repleto de funciones para iOS y macOS que admite los formatos KeePass y Password Safe. KeeForge es un cliente de KeePass para iOS enfocado y totalmente gratuito. Aquí tiene una comparación honesta que le ayudará a elegir."
+    lead="Strongbox es un gestor de contraseñas repleto de funciones para iOS y macOS que admite los formatos KeePass y Password Safe. KeeForge es un cliente de KeePass para iPhone, iPad y Mac enfocado y totalmente gratuito. Aquí tiene una comparación honesta que le ayudará a elegir."
     lang="es"
     enPath="/vs/strongbox/"
     dePath="/de/vs/strongbox/"
@@ -28,7 +28,7 @@ const description = 'Una comparación justa entre KeeForge y Strongbox para iOS 
             Strongbox es un gestor de contraseñas consolidado desde hace tiempo y muy completo, con una sólida compatibilidad tanto con bóvedas de KeePass como de Password Safe. Su nivel Pro añade flujos de trabajo avanzados: compatibilidad con llaves de hardware, integraciones con el navegador, autocompletado avanzado y más. Es uno de los clientes nativos de KeePass más capaces disponibles en las plataformas de Apple.
         </p>
         <p>
-            KeeForge tiene un alcance más reducido de forma intencionada — se centra en KeePass <code class="mono">.kdbx</code> con una experiencia de iOS mínima y moderna. Todas las funciones están en la app gratuita y totalmente de código abierto. No hay nivel Pro ni suscripción.
+            KeeForge tiene un alcance más reducido de forma intencionada — se centra en KeePass <code class="mono">.kdbx</code> con una experiencia mínima y moderna en iPhone, iPad y Mac. Todas las funciones están en la app gratuita y totalmente de código abierto. No hay nivel Pro ni suscripción.
         </p>
         <p>
             Ambas apps leen archivos <code class="mono">.kdbx</code> estándar, así que puede probarlas una junto a la otra con la misma bóveda.
@@ -75,7 +75,7 @@ const description = 'Una comparación justa entre KeeForge y Strongbox para iOS 
                     </tr>
                     <tr>
                         <td>Sincronización en la nube (iCloud, Dropbox, OneDrive, WebDAV, Archivos)</td>
-                        <td>Sí</td>
+                        <td>Sí (Dropbox y OneDrive directamente en iPhone y iPad; carpetas sincronizadas en Mac)</td>
                         <td>Sí (más proveedores en Pro)</td>
                     </tr>
                     <tr>
@@ -95,7 +95,7 @@ const description = 'Una comparación justa entre KeeForge y Strongbox para iOS 
                     </tr>
                     <tr>
                         <td>Plataformas</td>
-                        <td>iOS y iPadOS</td>
+                        <td>iOS, iPadOS, macOS</td>
                         <td>iOS, iPadOS, macOS</td>
                     </tr>
                     <tr>
@@ -116,7 +116,7 @@ const description = 'Una comparación justa entre KeeForge y Strongbox para iOS 
                     <li>Compatibilidad tanto con formatos KeePass como Password Safe — útil si tiene bóvedas <code class="mono">.psafe3</code> heredadas.</li>
                     <li>El nivel Pro ofrece compatibilidad con YubiKey, integraciones más amplias de almacenamiento en la nube y flujos de autocompletado avanzados.</li>
                     <li>Larga trayectoria de desarrollo activo y un conjunto de funciones profundo para usuarios avanzados.</li>
-                    <li>App de macOS madura junto a la app de iOS, para quienes quieran un cliente de escritorio del mismo proveedor.</li>
+                    <li>App de macOS madura, con años de perfeccionamiento en el escritorio.</li>
                 </ul>
             </div>
             <div class="col-card">
@@ -124,7 +124,7 @@ const description = 'Una comparación justa entre KeeForge y Strongbox para iOS 
                 <ul>
                     <li>Completamente gratis. Sin nivel Pro, sin suscripción, sin compras dentro de la app más allá de una propina voluntaria.</li>
                     <li>Todas las funciones son de código abierto bajo GPLv3 — no hay un nivel de pago con componentes cerrados.</li>
-                    <li>Creada de forma nativa para iOS 18+ con las funciones actuales de la plataforma (autorrelleno de TOTP, autorrelleno de llaves de acceso, integración con la app Archivos) como prioridades de primer nivel.</li>
+                    <li>Creada de forma nativa para iOS 18+ y macOS 15+ con las funciones actuales de la plataforma (autorrelleno de TOTP, autorrelleno de llaves de acceso, integración con la app Archivos) como prioridades de primer nivel.</li>
                     <li>Un conjunto de funciones más pequeño y enfocado — más fácil de aprender, más rápido de empezar a usar.</li>
                 </ul>
             </div>
@@ -141,7 +141,7 @@ const description = 'Una comparación justa entre KeeForge y Strongbox para iOS 
                     <li>No quiere una suscripción ni un nivel Pro.</li>
                     <li>No necesita (todavía) compatibilidad con llaves de seguridad YubiKey.</li>
                     <li>Prefiere una app totalmente de código abierto en la que todas las funciones están en el código fuente público.</li>
-                    <li>Usa iOS 18 o posterior.</li>
+                    <li>Usa iOS 18 o macOS 15 o posterior.</li>
                 </ul>
             </div>
             <div class="choice-card">
@@ -150,7 +150,7 @@ const description = 'Una comparación justa entre KeeForge y Strongbox para iOS 
                     <li>Tiene bóvedas Password Safe <code class="mono">.psafe3</code> que necesita abrir.</li>
                     <li>Necesita YubiKey u otra llave de seguridad.</li>
                     <li>Quiere flujos de autocompletado avanzados en macOS.</li>
-                    <li>Tiene un dispositivo iOS más antiguo (anterior a iOS 18).</li>
+                    <li>Tiene un iPhone, iPad o Mac más antiguo (anterior a iOS 18 o macOS 15).</li>
                 </ul>
             </div>
         </div>

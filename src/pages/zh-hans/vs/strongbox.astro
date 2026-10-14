@@ -1,8 +1,8 @@
 ---
 import Page from '../../../layouts/Page.astro';
 
-const title = 'KeeForge vs Strongbox — 两款 iOS KeePass 客户端对比';
-const description = '一份关于 KeeForge 与 Strongbox 在 iOS 上的公正对比——功能、价格、开源程度，以及各自适合的场景。';
+const title = 'KeeForge vs Strongbox — 两款 iPhone、iPad 和 Mac KeePass 客户端对比';
+const description = '一份关于 KeeForge 与 Strongbox 在 iPhone、iPad 和 Mac 上的公正对比——功能、价格、开源程度，以及各自适合的场景。';
 ---
 
 <Page
@@ -10,7 +10,7 @@ const description = '一份关于 KeeForge 与 Strongbox 在 iOS 上的公正对
     description={description}
     eyebrow="对比"
     heading="KeeForge vs Strongbox"
-    lead="Strongbox 是一款功能丰富的 iOS 和 macOS 密码管理器，支持 KeePass 和 Password Safe 两种格式。KeeForge 是一款专注、完全免费的 iOS KeePass 客户端。下面是一份坦诚的对比，帮你做出选择。"
+    lead="Strongbox 是一款功能丰富的 iOS 和 macOS 密码管理器，支持 KeePass 和 Password Safe 两种格式。KeeForge 是一款专注、完全免费的 iPhone、iPad 和 Mac KeePass 客户端。下面是一份坦诚的对比，帮你做出选择。"
     lang="zh-hans"
     enPath="/vs/strongbox/"
     dePath="/de/vs/strongbox/"
@@ -28,7 +28,7 @@ const description = '一份关于 KeeForge 与 Strongbox 在 iOS 上的公正对
             Strongbox 是一款历史悠久、功能深厚的密码管理器，对 KeePass 和 Password Safe 保险库都有扎实的支持。它的 Pro 档位增加了高级工作流：硬件密钥支持、浏览器集成、高级自动输入等等。它是 Apple 平台上功能最强的原生 KeePass 客户端之一。
         </p>
         <p>
-            KeeForge 则有意收窄范围——专注于 KeePass <code class="mono">.kdbx</code>，提供简约、现代的 iOS 体验。所有功能都在这款免费、完全开源的应用中。没有 Pro 档位，也没有订阅。
+            KeeForge 则有意收窄范围——专注于 KeePass <code class="mono">.kdbx</code>，在 iPhone、iPad 和 Mac 上提供简约、现代的体验。所有功能都在这款免费、完全开源的应用中。没有 Pro 档位，也没有订阅。
         </p>
         <p>
             两款应用都读取标准的 <code class="mono">.kdbx</code> 文件，所以你可以用同一个保险库把它们并排试用。
@@ -75,7 +75,7 @@ const description = '一份关于 KeeForge 与 Strongbox 在 iOS 上的公正对
                     </tr>
                     <tr>
                         <td>云同步（iCloud、Dropbox、OneDrive、WebDAV、“文件”）</td>
-                        <td>支持</td>
+                        <td>支持（iPhone 和 iPad 上直接连接 Dropbox 和 OneDrive；Mac 上使用同步文件夹）</td>
                         <td>支持（Pro 提供更多服务商）</td>
                     </tr>
                     <tr>
@@ -95,7 +95,7 @@ const description = '一份关于 KeeForge 与 Strongbox 在 iOS 上的公正对
                     </tr>
                     <tr>
                         <td>平台</td>
-                        <td>iOS 和 iPadOS</td>
+                        <td>iOS、iPadOS、macOS</td>
                         <td>iOS、iPadOS、macOS</td>
                     </tr>
                     <tr>
@@ -116,7 +116,7 @@ const description = '一份关于 KeeForge 与 Strongbox 在 iOS 上的公正对
                     <li>同时支持 KeePass 和 Password Safe 格式——如果你有旧的 <code class="mono">.psafe3</code> 保险库，这很有用。</li>
                     <li>Pro 档位提供 YubiKey 支持、更广泛的云存储集成和高级自动输入工作流。</li>
                     <li>长期活跃开发的记录，为高级用户提供深厚的功能集。</li>
-                    <li>iOS 应用之外还有成熟的 macOS 应用——适合想要同一家桌面客户端的用户。</li>
+                    <li>成熟的 macOS 应用，多年来针对桌面不断打磨。</li>
                 </ul>
             </div>
             <div class="col-card">
@@ -124,7 +124,7 @@ const description = '一份关于 KeeForge 与 Strongbox 在 iOS 上的公正对
                 <ul>
                     <li>完全免费。无 Pro 档位、无订阅，除了自愿的打赏之外没有任何应用内购买。</li>
                     <li>每项功能都以 GPLv3 开源——不存在包含闭源组件的付费档位。</li>
-                    <li>为 iOS 18+ 原生构建，将当前平台功能（TOTP 自动填充、通行密钥自动填充、“文件”App 集成）作为一等公民。</li>
+                    <li>为 iOS 18+ 和 macOS 15+ 原生构建，将当前平台功能（TOTP 自动填充、通行密钥自动填充、“文件”App 集成）作为一等公民。</li>
                     <li>功能面更小、更专注——更容易上手，更快投入使用。</li>
                 </ul>
             </div>
@@ -141,7 +141,7 @@ const description = '一份关于 KeeForge 与 Strongbox 在 iOS 上的公正对
                     <li>你不想要订阅或 Pro 档位。</li>
                     <li>你（暂时）不需要 YubiKey 硬件密钥支持。</li>
                     <li>你偏爱完全开源的应用，每项功能都在公开的源代码里。</li>
-                    <li>你使用 iOS 18 或更高版本。</li>
+                    <li>你使用 iOS 18 或 macOS 15 及更高版本。</li>
                 </ul>
             </div>
             <div class="choice-card">
@@ -150,7 +150,7 @@ const description = '一份关于 KeeForge 与 Strongbox 在 iOS 上的公正对
                     <li>你需要打开 <code class="mono">.psafe3</code> Password Safe 保险库。</li>
                     <li>你需要 YubiKey 或其他硬件密钥支持。</li>
                     <li>你想在 macOS 上使用高级自动输入工作流。</li>
-                    <li>你的设备运行较旧的 iOS（iOS 18 之前）。</li>
+                    <li>你的 iPhone、iPad 或 Mac 较旧（iOS 18 或 macOS 15 之前）。</li>
                 </ul>
             </div>
         </div>
