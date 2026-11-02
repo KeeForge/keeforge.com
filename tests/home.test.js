@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict';
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import test from 'node:test';
 import { home } from '../src/i18n/home.ts';
 
 const siteRoot = new URL('../dist/', import.meta.url);
 const locales = ['en', 'de', 'fr', 'es', 'zh-hans', 'zh-hant', 'ja', 'it', 'ru'];
-const appStore = 'https://apps.apple.com/us/app/keeforge/id6759309295';
+const appStore = 'https://apps.apple.com/app/id6759309295';
 
 for (const locale of locales) {
     test(`${locale}: homepage exposes both downloads, the shared beta link, and existing local destinations`, () => {
@@ -76,3 +76,18 @@ for (const { code, label } of addedLocales) {
         }
     });
 }
+
+test('App Store links never pin a storefront, so visitors land in their own country', () => {
+    const pages = readdirSync(siteRoot, { recursive: true }).filter((path) => path.endsWith('.html'));
+    assert.ok(pages.length > 0);
+    let appStoreLinks = 0;
+    for (const page of pages) {
+        const html = readFileSync(new URL(page, siteRoot), 'utf8');
+        for (const [url] of html.matchAll(/https?:\/\/(?:apps|itunes)\.apple\.com\/[^"'\s<>]*/g)) {
+            appStoreLinks += 1;
+            assert.ok(url.startsWith(`${appStore}`), `${page}: ${url}`);
+            assert.doesNotMatch(url, /apple\.com\/[a-z]{2}(?:-[a-z]+)?\//i, `${page}: ${url}`);
+        }
+    }
+    assert.ok(appStoreLinks > 0);
+});
