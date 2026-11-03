@@ -1,0 +1,11 @@
+{
+  "name": "keeforge-support-mail",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test index.test.js"
+  },
+  "dependencies": {
+    "postal-mime": "4.0.11"
+  }
+}
