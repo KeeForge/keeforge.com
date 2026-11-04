@@ -71,7 +71,7 @@ const en = {
             "title": "Make a change.\nSave it to your vault.",
             "body": "Create and edit entries on your phone, tablet, or Mac. Update usernames, passwords, URLs, tags, and notes, then save encrypted changes back to the source .kdbx file.",
             "points": [
-                "Generate a strong password without leaving the editor",
+                "Generate a strong password or a word-based passphrase without leaving the editor",
                 "Create new KDBX 4.x databases locally or through WebDAV",
                 "Use read-only mode when you don’t want to make changes"
             ],
@@ -202,7 +202,7 @@ const en = {
         "items": [
             {
                 "title": "Face ID & Touch ID",
-                "body": "Unlock with the biometrics supported by your device, or use your master password and key file."
+                "body": "Unlock with the biometrics supported by your device, or use your master password and key file. Choose how often KeeForge asks for your master password again."
             },
             {
                 "title": "Password AutoFill",
@@ -211,6 +211,10 @@ const en = {
             {
                 "title": "Passkeys & verification codes",
                 "body": "Use KeePassXC-compatible passkeys and time-based verification codes stored in your database."
+            },
+            {
+                "title": "SSH agent on Mac",
+                "body": "Let SSH clients on your Mac use keys stored in your database, only while it’s unlocked. Off until you turn it on."
             }
         ]
     }
@@ -287,7 +291,7 @@ const de: typeof en = {
             "title": "Änderung vornehmen.\nIm Tresor speichern.",
             "body": "Erstelle und bearbeite Einträge auf iPhone, iPad oder Mac. Ändere Benutzernamen, Passwörter, URLs, Tags und Notizen und speichere die verschlüsselten Änderungen direkt in der ursprünglichen .kdbx-Datei.",
             "points": [
-                "Starke Passwörter direkt im Editor erzeugen",
+                "Starke Passwörter oder Passphrasen aus Wörtern direkt im Editor erzeugen",
                 "Neue KDBX-4.x-Datenbanken lokal oder über WebDAV erstellen",
                 "Nur-Lese-Modus nutzen, wenn du keine Änderungen möchtest"
             ],
@@ -418,7 +422,7 @@ const de: typeof en = {
         "items": [
             {
                 "title": "Face ID & Touch ID",
-                "body": "Entsperre mit der Biometrie deines Geräts oder mit Master-Passwort und Schlüsseldatei."
+                "body": "Entsperre mit der Biometrie deines Geräts oder mit Master-Passwort und Schlüsseldatei. Lege fest, wie oft KeeForge erneut nach deinem Master-Passwort fragt."
             },
             {
                 "title": "Passwort-AutoFill",
@@ -427,6 +431,10 @@ const de: typeof en = {
             {
                 "title": "Passkeys & Bestätigungscodes",
                 "body": "Nutze KeePassXC-kompatible Passkeys und zeitbasierte Bestätigungscodes aus deiner Datenbank."
+            },
+            {
+                "title": "SSH-Agent auf dem Mac",
+                "body": "SSH-Clients auf deinem Mac können Schlüssel aus deiner Datenbank nutzen, nur solange sie entsperrt ist. Aus, bis du ihn einschaltest."
             }
         ]
     }
@@ -503,7 +511,7 @@ const fr: typeof en = {
             "title": "Modifiez une entrée.\nEnregistrez-la dans votre coffre.",
             "body": "Créez et modifiez des entrées sur iPhone, iPad ou Mac. Mettez à jour les identifiants, mots de passe, URL, tags et notes, puis enregistrez les modifications chiffrées dans le fichier .kdbx d’origine.",
             "points": [
-                "Générez un mot de passe robuste sans quitter l’éditeur",
+                "Générez un mot de passe robuste ou une phrase de passe à base de mots sans quitter l’éditeur",
                 "Créez des bases KDBX 4.x en local ou via WebDAV",
                 "Activez la lecture seule pour éviter les modifications"
             ],
@@ -634,7 +642,7 @@ const fr: typeof en = {
         "items": [
             {
                 "title": "Face ID et Touch ID",
-                "body": "Utilisez la biométrie de votre appareil ou votre mot de passe maître et votre fichier clé."
+                "body": "Utilisez la biométrie de votre appareil ou votre mot de passe maître et votre fichier clé. Choisissez à quelle fréquence KeeForge vous redemande votre mot de passe maître."
             },
             {
                 "title": "Remplissage des mots de passe",
@@ -643,6 +651,10 @@ const fr: typeof en = {
             {
                 "title": "Passkeys et codes de vérification",
                 "body": "Utilisez les passkeys compatibles KeePassXC et les codes de vérification temporaires enregistrés dans votre base."
+            },
+            {
+                "title": "Agent SSH sur Mac",
+                "body": "Permettez aux clients SSH de votre Mac d’utiliser les clés stockées dans votre base, uniquement tant qu’elle est déverrouillée. Désactivé tant que vous ne l’activez pas."
             }
         ]
     }
@@ -719,7 +731,7 @@ const es: typeof en = {
             "title": "Haz un cambio.\nGuárdalo en tu bóveda.",
             "body": "Crea y edita entradas en tu teléfono, tableta o Mac. Actualiza usuarios, contraseñas, URL, etiquetas y notas, y guarda los cambios cifrados en el archivo .kdbx original.",
             "points": [
-                "Genera una contraseña segura sin salir del editor",
+                "Genera una contraseña segura o una frase de contraseña con palabras sin salir del editor",
                 "Crea bases KDBX 4.x en local o mediante WebDAV",
                 "Usa el modo de solo lectura cuando no quieras hacer cambios"
             ],
@@ -850,7 +862,7 @@ const es: typeof en = {
         "items": [
             {
                 "title": "Face ID y Touch ID",
-                "body": "Desbloquea con la biometría de tu dispositivo o con tu contraseña maestra y archivo de clave."
+                "body": "Desbloquea con la biometría de tu dispositivo o con tu contraseña maestra y archivo de clave. Elige cada cuánto KeeForge vuelve a pedirte la contraseña maestra."
             },
             {
                 "title": "Autorrelleno de contraseñas",
@@ -859,6 +871,10 @@ const es: typeof en = {
             {
                 "title": "Passkeys y códigos de verificación",
                 "body": "Usa passkeys compatibles con KeePassXC y códigos de verificación temporales guardados en tu base de datos."
+            },
+            {
+                "title": "Agente SSH en Mac",
+                "body": "Permite que los clientes SSH de tu Mac usen las claves guardadas en tu base de datos, solo mientras esté desbloqueada. Desactivado hasta que lo actives."
             }
         ]
     }
@@ -935,7 +951,7 @@ const zhHans: typeof en = {
             "title": "修改条目，\n保存回数据库。",
             "body": "在手机、平板或 Mac 上创建和编辑条目。更新用户名、密码、网址、标签和备注，再将加密后的修改保存回原始 .kdbx 文件。",
             "points": [
-                "在编辑器内生成高强度密码",
+                "在编辑器内生成高强度密码或由单词组成的密码短语",
                 "在本地或通过 WebDAV 创建 KDBX 4.x 数据库",
                 "不想修改时，可启用只读模式"
             ],
@@ -1066,7 +1082,7 @@ const zhHans: typeof en = {
         "items": [
             {
                 "title": "Face ID 与 Touch ID",
-                "body": "使用设备支持的生物识别方式解锁，也可使用主密码和密钥文件。"
+                "body": "使用设备支持的生物识别方式解锁，也可使用主密码和密钥文件。你还可以选择 KeeForge 多久要求重新输入一次主密码。"
             },
             {
                 "title": "密码自动填充",
@@ -1075,6 +1091,10 @@ const zhHans: typeof en = {
             {
                 "title": "通行密钥与验证码",
                 "body": "使用数据库中保存的 KeePassXC 兼容通行密钥和基于时间的一次性验证码。"
+            },
+            {
+                "title": "Mac 上的 SSH 代理",
+                "body": "让 Mac 上的 SSH 客户端使用数据库中保存的密钥，仅在数据库解锁时可用。默认关闭，需手动开启。"
             }
         ]
     }
@@ -1151,7 +1171,7 @@ const zhHant: typeof en = {
             "title": "修改項目，\n存回資料庫。",
             "body": "在手機、平板或 Mac 上建立與編輯項目。更新使用者名稱、密碼、網址、標籤和備註，再將加密後的變更存回原始 .kdbx 檔案。",
             "points": [
-                "在編輯器中產生高強度密碼",
+                "在編輯器中產生高強度密碼或由單字組成的密碼片語",
                 "在本機或透過 WebDAV 建立 KDBX 4.x 資料庫",
                 "不想修改時，可啟用唯讀模式"
             ],
@@ -1282,7 +1302,7 @@ const zhHant: typeof en = {
         "items": [
             {
                 "title": "Face ID 與 Touch ID",
-                "body": "使用裝置支援的生物辨識方式解鎖，也可使用主密碼和金鑰檔案。"
+                "body": "使用裝置支援的生物辨識方式解鎖，也可使用主密碼和金鑰檔案。你也可以選擇 KeeForge 多久要求重新輸入一次主密碼。"
             },
             {
                 "title": "密碼自動填寫",
@@ -1291,6 +1311,10 @@ const zhHant: typeof en = {
             {
                 "title": "通行密鑰與驗證碼",
                 "body": "使用資料庫中儲存的 KeePassXC 相容通行密鑰與以時間為基礎的一次性驗證碼。"
+            },
+            {
+                "title": "Mac 上的 SSH 代理程式",
+                "body": "讓 Mac 上的 SSH 用戶端使用資料庫中儲存的金鑰，僅在資料庫解鎖時可用。預設關閉，需手動開啟。"
             }
         ]
     }
@@ -1367,7 +1391,7 @@ const ja: typeof en = {
             "title": "変更して、\nデータベースに保存。",
             "body": "iPhone、iPad、Mac でエントリを作成・編集。ユーザー名、パスワード、URL、タグ、メモを更新し、暗号化した変更を元の .kdbx ファイルに保存します。",
             "points": [
-                "エディタを離れずに強力なパスワードを生成",
+                "エディタを離れずに強力なパスワードや単語ベースのパスフレーズを生成",
                 "ローカルや WebDAV に KDBX 4.x データベースを作成",
                 "変更したくないときは読み取り専用モードを使用"
             ],
@@ -1498,7 +1522,7 @@ const ja: typeof en = {
         "items": [
             {
                 "title": "Face ID と Touch ID",
-                "body": "デバイスの生体認証、またはマスターパスワードとキーファイルでロック解除できます。"
+                "body": "デバイスの生体認証、またはマスターパスワードとキーファイルでロック解除できます。マスターパスワードの再入力を求める頻度も選べます。"
             },
             {
                 "title": "パスワードの自動入力",
@@ -1507,6 +1531,10 @@ const ja: typeof en = {
             {
                 "title": "パスキーと確認コード",
                 "body": "データベースに保存された KeePassXC 互換のパスキーと、時間ベースの確認コードを使用できます。"
+            },
+            {
+                "title": "Mac の SSH エージェント",
+                "body": "データベースに保存した鍵を Mac の SSH クライアントで使えます。使えるのはデータベースのロック解除中だけです。オンにするまではオフのままです。"
             }
         ]
     }
@@ -1583,7 +1611,7 @@ const it: typeof en = {
             "title": "Fai una modifica.\nSalvala nel tuo vault.",
             "body": "Crea e modifica le voci sul telefono, sul tablet o sul Mac. Aggiorna nomi utente, password, URL, tag e note, poi salva le modifiche cifrate nel file .kdbx originale.",
             "points": [
-                "Genera una password sicura senza uscire dall’editor",
+                "Genera una password sicura o una passphrase di parole senza uscire dall’editor",
                 "Crea nuovi database KDBX 4.x in locale o tramite WebDAV",
                 "Usa la modalità di sola lettura quando non vuoi apportare modifiche"
             ],
@@ -1714,7 +1742,7 @@ const it: typeof en = {
         "items": [
             {
                 "title": "Face ID e Touch ID",
-                "body": "Sblocca con la biometria supportata dal dispositivo oppure usa la password principale e il file chiave."
+                "body": "Sblocca con la biometria supportata dal dispositivo oppure usa la password principale e il file chiave. Scegli ogni quanto KeeForge ti chiede di nuovo la password principale."
             },
             {
                 "title": "Inserimento automatico delle password",
@@ -1723,6 +1751,10 @@ const it: typeof en = {
             {
                 "title": "Passkey e codici di verifica",
                 "body": "Usa le passkey compatibili con KeePassXC e i codici di verifica a tempo conservati nel database."
+            },
+            {
+                "title": "Agente SSH su Mac",
+                "body": "Consenti ai client SSH del Mac di usare le chiavi salvate nel database, solo finché è sbloccato. Disattivato finché non lo attivi."
             }
         ]
     }
@@ -1799,7 +1831,7 @@ const ru: typeof en = {
             "title": "Внесите изменения.\nСохраните их в хранилище.",
             "body": "Создавайте и редактируйте записи на телефоне, планшете или Mac. Меняйте имена пользователей, пароли, URL, теги и заметки, а затем сохраняйте зашифрованные изменения обратно в исходный файл .kdbx.",
             "points": [
-                "Создавайте надёжный пароль, не выходя из редактора",
+                "Создавайте надёжный пароль или парольную фразу из слов, не выходя из редактора",
                 "Создавайте новые базы данных KDBX 4.x локально или через WebDAV",
                 "Включайте режим только для чтения, когда не хотите ничего менять"
             ],
@@ -1930,7 +1962,7 @@ const ru: typeof en = {
         "items": [
             {
                 "title": "Face ID и Touch ID",
-                "body": "Разблокируйте с помощью биометрии, которую поддерживает ваше устройство, или используйте мастер-пароль и файл ключа."
+                "body": "Разблокируйте с помощью биометрии, которую поддерживает ваше устройство, или используйте мастер-пароль и файл ключа. Выберите, как часто KeeForge будет снова запрашивать мастер-пароль."
             },
             {
                 "title": "Автозаполнение паролей",
@@ -1939,6 +1971,10 @@ const ru: typeof en = {
             {
                 "title": "Ключи входа и коды проверки",
                 "body": "Используйте ключи входа, совместимые с KeePassXC, и коды проверки на основе времени, хранящиеся в вашей базе данных."
+            },
+            {
+                "title": "SSH-агент на Mac",
+                "body": "SSH-клиенты на вашем Mac могут использовать ключи из базы данных, но только пока она разблокирована. Выключен, пока вы его не включите."
             }
         ]
     }
