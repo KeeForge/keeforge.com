@@ -191,7 +191,7 @@ const en = {
     "screenshots": {
         "iosAlt": "KeeForge’s database list on iPhone",
         "macAlt": "KeeForge’s native Mac window with groups, entries, and password details",
-        "groupsAlt": "KeeForge’s groups and search on iPhone",
+        "groupsAlt": "KeeForge’s database overview on iPhone, with tiles for entries, verification codes, tags, and the Recycle Bin above the groups",
         "editAlt": "KeeForge’s entry editor on Mac",
         "iosEditAlt": "KeeForge’s entry editor on iPhone"
     },
@@ -407,7 +407,7 @@ const de: typeof en = {
     "screenshots": {
         "iosAlt": "KeeForge-Datenbankliste auf dem iPhone",
         "macAlt": "Natives KeeForge-Fenster auf dem Mac mit Gruppen, Einträgen und Passwortdetails",
-        "groupsAlt": "Gruppen und Suche in KeeForge auf dem iPhone",
+        "groupsAlt": "Datenbankübersicht von KeeForge auf dem iPhone, mit Kacheln für Einträge, Bestätigungscodes, Tags und Papierkorb über den Gruppen",
         "editAlt": "Eintragseditor von KeeForge auf dem Mac",
         "iosEditAlt": "KeeForges Eintragseditor auf dem iPhone"
     },
@@ -623,7 +623,7 @@ const fr: typeof en = {
     "screenshots": {
         "iosAlt": "Liste des bases KeeForge sur iPhone",
         "macAlt": "Fenêtre native de KeeForge sur Mac avec groupes, entrées et détails du mot de passe",
-        "groupsAlt": "Groupes et recherche de KeeForge sur iPhone",
+        "groupsAlt": "Vue d’ensemble d’une base de données KeeForge sur iPhone, avec des tuiles pour les entrées, les codes de vérification, les tags et la Corbeille au-dessus des groupes",
         "editAlt": "Éditeur d’entrées de KeeForge sur Mac",
         "iosEditAlt": "L’éditeur d’entrées KeeForge sur iPhone"
     },
@@ -839,7 +839,7 @@ const es: typeof en = {
     "screenshots": {
         "iosAlt": "Lista de bases de datos de KeeForge en iPhone",
         "macAlt": "Ventana nativa de KeeForge en Mac con grupos, entradas y detalles de contraseñas",
-        "groupsAlt": "Grupos y búsqueda de KeeForge en iPhone",
+        "groupsAlt": "Vista general de una base de datos de KeeForge en iPhone, con mosaicos de entradas, códigos de verificación, etiquetas y Papelera sobre los grupos",
         "editAlt": "Editor de entradas de KeeForge en Mac",
         "iosEditAlt": "El editor de entradas de KeeForge en iPhone"
     },
@@ -1055,7 +1055,7 @@ const zhHans: typeof en = {
     "screenshots": {
         "iosAlt": "iPhone 上的 KeeForge 数据库列表",
         "macAlt": "Mac 上的 KeeForge 原生窗口，显示分组、条目和密码详情",
-        "groupsAlt": "iPhone 上的 KeeForge 分组和搜索",
+        "groupsAlt": "iPhone 上的 KeeForge 数据库概览，分组上方列出条目、验证码、标签和回收站",
         "editAlt": "Mac 上的 KeeForge 条目编辑器",
         "iosEditAlt": "iPhone 上的 KeeForge 条目编辑器"
     },
@@ -1271,7 +1271,7 @@ const zhHant: typeof en = {
     "screenshots": {
         "iosAlt": "iPhone 上的 KeeForge 資料庫列表",
         "macAlt": "Mac 上的 KeeForge 原生視窗，顯示群組、項目和密碼詳細資訊",
-        "groupsAlt": "iPhone 上的 KeeForge 群組與搜尋",
+        "groupsAlt": "iPhone 上的 KeeForge 資料庫概覽，群組上方列出項目、驗證碼、標籤和資源回收筒",
         "editAlt": "Mac 上的 KeeForge 項目編輯器",
         "iosEditAlt": "iPhone 上的 KeeForge 項目編輯器"
     },
@@ -1487,7 +1487,7 @@ const ja: typeof en = {
     "screenshots": {
         "iosAlt": "iPhone の KeeForge データベース一覧",
         "macAlt": "グループ、エントリ、パスワードの詳細を表示する Mac の KeeForge ウィンドウ",
-        "groupsAlt": "iPhone の KeeForge のグループと検索",
+        "groupsAlt": "iPhone の KeeForge データベース概要。グループの上にエントリ、確認コード、タグ、ごみ箱が並ぶ",
         "editAlt": "Mac の KeeForge エントリエディタ",
         "iosEditAlt": "iPhone の KeeForge エントリー編集画面"
     },
@@ -1703,7 +1703,7 @@ const it: typeof en = {
     "screenshots": {
         "iosAlt": "Elenco dei database di KeeForge su iPhone",
         "macAlt": "Finestra nativa di KeeForge per Mac con gruppi, voci e dettagli delle password",
-        "groupsAlt": "Gruppi e ricerca di KeeForge su iPhone",
+        "groupsAlt": "Panoramica di un database KeeForge su iPhone, con riquadri per voci, codici di verifica, tag e Cestino sopra i gruppi",
         "editAlt": "Editor delle voci di KeeForge su Mac",
         "iosEditAlt": "Editor delle voci di KeeForge su iPhone"
     },
@@ -1919,7 +1919,7 @@ const ru: typeof en = {
     "screenshots": {
         "iosAlt": "Список баз данных KeeForge на iPhone",
         "macAlt": "Нативное окно KeeForge на Mac с группами, записями и подробностями пароля",
-        "groupsAlt": "Группы и поиск KeeForge на iPhone",
+        "groupsAlt": "Обзор базы данных KeeForge на iPhone: плитки записей, кодов проверки, тегов и корзины над группами",
         "editAlt": "Редактор записей KeeForge на Mac",
         "iosEditAlt": "Редактор записей KeeForge на iPhone"
     },
