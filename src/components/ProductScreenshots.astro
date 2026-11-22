@@ -10,7 +10,7 @@ interface Props {
     phoneLeft?: boolean;
 }
 const { phoneSrc, phoneAlt, macAlt, macSrc = "/screenshots/mac-entry-detail.png",
-    macWidth = 2160, macHeight = 1400, feature = false, phoneLeft = false } = Astro.props;
+    macWidth = 2160, macHeight = 1350, feature = false, phoneLeft = false } = Astro.props;
 ---
 <figure class:list={['device-pair', { 'feature-pair': feature, 'phone-left': phoneLeft }]}>
     <img class="pair-mac mac-image" src={macSrc}
