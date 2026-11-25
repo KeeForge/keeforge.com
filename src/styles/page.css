@@ -165,10 +165,6 @@
 .kf-page .details-body h3 { font-size: 28px; margin: 40px 0 16px; }
 .kf-page .details-body h3:first-child { margin-top: 8px; }
 .kf-page .details-body > p { font-size: 15px; max-width: 68ch; margin-bottom: 12px; }
-.kf-page .tradeoffs { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
-.kf-page .tradeoffs li { position: relative; padding-left: 24px; font-size: 15px; line-height: 1.6; color: var(--soft); }
-.kf-page .tradeoffs li::before { position: absolute; content: '—'; left: 0; color: var(--accent); }
-.kf-page .tradeoffs strong { color: var(--ink); font-weight: 600; }
 .kf-page .sources h4 { font: 400 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
 
 @media (max-width: 767px) {
