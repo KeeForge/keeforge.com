@@ -1,140 +1,54 @@
 ---
-import Base from '../layouts/Base.astro';
-import LanguageSwitcher from '../components/LanguageSwitcher.astro';
-
-const langPaths = { en: '/privacy/', de: '/de/privacy/', fr: '/fr/privacy/', es: '/es/privacy/', 'zh-hans': '/zh-hans/privacy/', 'zh-hant': '/zh-hant/privacy/', ja: '/ja/privacy/', it: '/it/privacy/', ru: '/ru/privacy/' };
+import Page from '../layouts/Page.astro';
 ---
 
-<Base title="Privacy Policy — KeeForge" description="KeeForge does not collect your vault data. The optional in-app feedback form only sends what you choose: your message, visible error details when reporting a database-open failure, and, if you opt in, a follow-up email address and an attached photo." lang="en" enPath="/privacy/" dePath="/de/privacy/" frPath="/fr/privacy/" esPath="/es/privacy/" zhHansPath="/zh-hans/privacy/" zhHantPath="/zh-hant/privacy/" jaPath="/ja/privacy/" itPath="/it/privacy/" ruPath="/ru/privacy/">
-    <div class="privacy">
-        <div class="top-links">
-            <a href="/" class="back-link">&larr; Back to KeeForge</a>
-            <LanguageSwitcher current="en" paths={langPaths} variant="footer" />
-        </div>
-        <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: November 3, 2026</p>
+<Page
+    lang="en"
+    enPath="/privacy/" dePath="/de/privacy/" frPath="/fr/privacy/" esPath="/es/privacy/" zhHansPath="/zh-hans/privacy/" zhHantPath="/zh-hant/privacy/" jaPath="/ja/privacy/" itPath="/it/privacy/" ruPath="/ru/privacy/"
+    canonicalPath="/privacy/"
+    title="Privacy Policy — KeeForge"
+    description="KeeForge does not collect your vault data. The optional in-app feedback form only sends what you choose: your message, visible error details when reporting a database-open failure, and, if you opt in, a follow-up email address and an attached photo."
+    eyebrow="Last updated: November 3, 2026"
+    heading="Privacy Policy"
+>
+    <div class="legal">
+        <p class="lead">KeeForge does not collect your vault data. The optional in-app feedback form only sends what you choose: your message, visible error details when reporting a database-open failure, and, if you opt in, a follow-up email address and an attached photo.</p>
 
-        <div class="content">
-            <p class="lead">KeeForge does not collect your vault data. The optional in-app feedback form only sends what you choose: your message, visible error details when reporting a database-open failure, and, if you opt in, a follow-up email address and an attached photo.</p>
+        <h2>No Analytics</h2>
+        <p>KeeForge contains no analytics frameworks, no crash reporting SDKs, and no usage tracking of any kind.</p>
 
-            <h2>No Analytics</h2>
-            <p>KeeForge contains no analytics frameworks, no crash reporting SDKs, and no usage tracking of any kind.</p>
+        <h2>No Telemetry</h2>
+        <p>KeeForge does not send analytics, usage telemetry, or crash reports. Network activity is limited to features you choose to use: syncing databases with configured cloud providers such as Dropbox, OneDrive, and WebDAV; optionally downloading website favicons from DuckDuckGo; loading or completing optional tips through Apple&rsquo;s StoreKit services; checking for updates in the direct-download Mac app (not the App Store version), which fetches the update feed from keeforge.com and downloads updates from GitHub; opening support links such as Buy Me a Coffee in your browser; and submitting the in-app feedback form when you explicitly tap &ldquo;Send.&rdquo;</p>
 
-            <h2>No Telemetry</h2>
-            <p>KeeForge does not send analytics, usage telemetry, or crash reports. Network activity is limited to features you choose to use: syncing databases with configured cloud providers such as Dropbox, OneDrive, and WebDAV; optionally downloading website favicons from DuckDuckGo; loading or completing optional tips through Apple&rsquo;s StoreKit services; checking for updates in the direct-download Mac app (not the App Store version), which fetches the update feed from keeforge.com and downloads updates from GitHub; opening support links such as Buy Me a Coffee in your browser; and submitting the in-app feedback form when you explicitly tap &ldquo;Send.&rdquo;</p>
+        <h2>No Accounts</h2>
+        <p>KeeForge does not require or offer account creation. There is nothing to sign up for.</p>
 
-            <h2>No Accounts</h2>
-            <p>KeeForge does not require or offer account creation. There is nothing to sign up for.</p>
+        <h2>Your Vault Data</h2>
+        <p>Your passwords, entries, attachments, and master password are processed locally and remain on your device and in the storage locations you choose. The KeeForge developer and feedback service do not receive your vault, master password, key files, or decrypted entry contents. The app can operate offline except when you choose a network-backed feature described above.</p>
 
-            <h2>Your Vault Data</h2>
-            <p>Your passwords, entries, attachments, and master password are processed locally and remain on your device and in the storage locations you choose. The KeeForge developer and feedback service do not receive your vault, master password, key files, or decrypted entry contents. The app can operate offline except when you choose a network-backed feature described above.</p>
+        <h2>Feedback Submissions</h2>
+        <p>KeeForge includes an in-app feedback form (available from Settings and from certain error screens). The form is entirely optional &mdash; the app's features and services do not depend on using it. When, and only when, you tap &ldquo;Send,&rdquo; the app submits the following information to our feedback endpoint at <code>https://feedback.keeforge.com/api/feedback</code> over HTTPS:</p>
+        <ul>
+            <li>The free-text message you typed.</li>
+            <li>If you are sending feedback from a database-open error screen: the visible error details shown in the app, including the error category, error code, title, summary, technical details, and the diagnostics described below.</li>
+            <li>If you opt in to a follow-up: the email address you enter, so we can reply to you. It is sent and stored only when you explicitly opt in.</li>
+            <li>If you attach a photo: the image itself. The app downscales it on your device and re-encodes it as JPEG before sending, which strips EXIF and GPS metadata.</li>
+        </ul>
+        <p>Database-open diagnostics can include the unlock method; whether a password or key file was supplied; failed-attempt count; local or cloud source; read-only state; cloud provider and sync status; short remote revision, content-hash, and encrypted-file hash prefixes; encrypted file size; a summary of the KDBX header; app version and build; OS version; and device model. These details are displayed in the feedback form before you send them. They never include entries, passwords, key files, raw database files, or decrypted vault contents.</p>
+        <p>The follow-up email address and the photo attachment are both optional and off unless you choose them. If you do not opt in to a follow-up, no email address is sent or stored; if you do not attach a photo, no image is sent. If you choose to type personal information into the message itself, that text is sent because you included it manually.</p>
+        <p>We use this information solely to read your feedback and diagnose bugs. We do not use it for advertising, profiling, or analytics, and we do not sell it. Submissions are stored on infrastructure operated on our behalf by our hosting provider; any such provider is contractually required to protect the data to the same standard described in this policy and to process it only on our instructions.</p>
+        <p>We retain feedback submissions, including any attached photo, for up to 24 months so we can review related reports, and then delete them. You can request deletion of a feedback submission at any time by emailing <a href="mailto:support@keeforge.com">support@keeforge.com</a> or by opening an issue on <a href="https://github.com/KeeForge/KeeForge">GitHub</a>. You can also simply decline to use the feedback form &mdash; if you never tap &ldquo;Send,&rdquo; nothing is transmitted.</p>
 
-            <h2>Feedback Submissions</h2>
-            <p>KeeForge includes an in-app feedback form (available from Settings and from certain error screens). The form is entirely optional &mdash; the app's features and services do not depend on using it. When, and only when, you tap &ldquo;Send,&rdquo; the app submits the following information to our feedback endpoint at <code>https://feedback.keeforge.com/api/feedback</code> over HTTPS:</p>
-            <ul>
-                <li>The free-text message you typed.</li>
-                <li>If you are sending feedback from a database-open error screen: the visible error details shown in the app, including the error category, error code, title, summary, technical details, and the diagnostics described below.</li>
-                <li>If you opt in to a follow-up: the email address you enter, so we can reply to you. It is sent and stored only when you explicitly opt in.</li>
-                <li>If you attach a photo: the image itself. The app downscales it on your device and re-encodes it as JPEG before sending, which strips EXIF and GPS metadata.</li>
-            </ul>
-            <p>Database-open diagnostics can include the unlock method; whether a password or key file was supplied; failed-attempt count; local or cloud source; read-only state; cloud provider and sync status; short remote revision, content-hash, and encrypted-file hash prefixes; encrypted file size; a summary of the KDBX header; app version and build; OS version; and device model. These details are displayed in the feedback form before you send them. They never include entries, passwords, key files, raw database files, or decrypted vault contents.</p>
-            <p>The follow-up email address and the photo attachment are both optional and off unless you choose them. If you do not opt in to a follow-up, no email address is sent or stored; if you do not attach a photo, no image is sent. If you choose to type personal information into the message itself, that text is sent because you included it manually.</p>
-            <p>We use this information solely to read your feedback and diagnose bugs. We do not use it for advertising, profiling, or analytics, and we do not sell it. Submissions are stored on infrastructure operated on our behalf by our hosting provider; any such provider is contractually required to protect the data to the same standard described in this policy and to process it only on our instructions.</p>
-            <p>We retain feedback submissions, including any attached photo, for up to 24 months so we can review related reports, and then delete them. You can request deletion of a feedback submission at any time by emailing <a href="mailto:support@keeforge.com">support@keeforge.com</a> or by opening an issue on <a href="https://github.com/KeeForge/KeeForge">GitHub</a>. You can also simply decline to use the feedback form &mdash; if you never tap &ldquo;Send,&rdquo; nothing is transmitted.</p>
+        <h2>Children</h2>
+        <p>KeeForge is not directed at children, and we do not knowingly collect information from children through the feedback form.</p>
 
-            <h2>Children</h2>
-            <p>KeeForge is not directed at children, and we do not knowingly collect information from children through the feedback form.</p>
+        <h2>Open Source</h2>
+        <p>Don't take our word for it. KeeForge is open source under the GPLv3 license. You can <a href="https://github.com/KeeForge/KeeForge">audit the code yourself</a>, including the exact fields the feedback form sends.</p>
 
-            <h2>Open Source</h2>
-            <p>Don't take our word for it. KeeForge is open source under the GPLv3 license. You can <a href="https://github.com/KeeForge/KeeForge">audit the code yourself</a>, including the exact fields the feedback form sends.</p>
+        <h2>Changes To This Policy</h2>
+        <p>If we change what the app collects or how we use it, we will update this page and change the &ldquo;Last updated&rdquo; date above before the change ships in a public build.</p>
 
-            <h2>Changes To This Policy</h2>
-            <p>If we change what the app collects or how we use it, we will update this page and change the &ldquo;Last updated&rdquo; date above before the change ships in a public build.</p>
-
-            <h2>Contact</h2>
-            <p>If you have questions about this policy, email <a href="mailto:support@keeforge.com">support@keeforge.com</a> or open an issue on <a href="https://github.com/KeeForge/KeeForge">GitHub</a>.</p>
-        </div>
+        <h2>Contact</h2>
+        <p>If you have questions about this policy, email <a href="mailto:support@keeforge.com">support@keeforge.com</a> or open an issue on <a href="https://github.com/KeeForge/KeeForge">GitHub</a>.</p>
     </div>
-</Base>
-
-<style>
-    .privacy {
-        max-width: 640px;
-        margin: 0 auto;
-        padding: 60px 24px 80px;
-    }
-
-    .top-links {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 16px;
-    }
-
-    .back-link {
-        display: inline-block;
-        font-size: 0.85rem;
-        color: var(--text-dim);
-        margin-bottom: 40px;
-        transition: color 0.2s;
-    }
-
-    .back-link:hover {
-        color: var(--text);
-    }
-
-    h1 {
-        font-size: 2.4rem;
-        font-weight: 700;
-        letter-spacing: -0.03em;
-        margin-bottom: 8px;
-        background: none;
-        -webkit-text-fill-color: var(--text);
-    }
-
-    .updated {
-        font-size: 0.85rem;
-        color: var(--text-dim);
-        margin-bottom: 40px;
-    }
-
-    .content {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-    }
-
-    .lead {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--green);
-        padding-bottom: 24px;
-        border-bottom: 1px solid var(--border);
-    }
-
-    h2 {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: -16px;
-    }
-
-    p {
-        font-size: 0.95rem;
-        line-height: 1.7;
-        color: var(--text-dim);
-    }
-
-    code {
-        overflow-wrap: anywhere;
-    }
-
-    @media (max-width: 480px) {
-        .privacy {
-            padding: 40px 20px 60px;
-        }
-
-        h1 {
-            font-size: 1.8rem;
-        }
-    }
-</style>
+</Page>

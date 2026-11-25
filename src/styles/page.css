@@ -70,6 +70,17 @@
 .kf-page .sources li { font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
 .kf-page .sources li a { color: var(--ink); }
 
+/* Policy text (privacy pages) */
+.kf-page .legal { max-width: 720px; padding-top: 40px; border-top: 1px solid var(--rule); }
+.kf-page .legal .lead { font: 400 24px/1.4 var(--serif); letter-spacing: -.01em; color: var(--ink); padding: 24px 28px; background: var(--paper); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 12px; }
+.kf-page .legal .note { margin-top: 20px; font-size: 14px; }
+.kf-page .legal h2 { font-size: 30px; line-height: 1.2; margin-top: 48px; }
+.kf-page .legal p { margin-top: 14px; font-size: 16px; line-height: 1.7; }
+.kf-page .legal ul { margin-top: 14px; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.kf-page .legal li { position: relative; padding-left: 24px; font-size: 16px; line-height: 1.7; color: var(--soft); }
+.kf-page .legal li::before { position: absolute; content: '—'; left: 0; color: var(--accent); }
+.kf-page .legal code { background: var(--alt); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+
 /* Closing call to action */
 .kf-page .vs-cta { margin-top: 24px; padding: 48px; background: var(--alt); border: 1px solid var(--rule); border-radius: 16px; }
 .kf-page .vs-cta h2 { font-size: clamp(32px, 3.4vw, 44px); }
@@ -108,6 +119,10 @@
     .kf-page .app-notes h3 { font-size: 26px; }
     .kf-page .app-notes p, .kf-page .prose p { font-size: 15px; }
     .kf-page .vs-cta { padding: 28px 24px; }
+    .kf-page .legal { padding-top: 32px; }
+    .kf-page .legal .lead { font-size: 20px; padding: 20px; }
+    .kf-page .legal h2 { font-size: 26px; margin-top: 40px; }
+    .kf-page .legal :is(p, li) { font-size: 15px; }
 }
 
 /* CJK and Russian headings run long; give them a little less size. */

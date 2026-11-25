@@ -62,7 +62,7 @@ Mac images live in `public/screenshots/mac-entry-detail.png` and
 Homepage copy distinguishes direct Dropbox/OneDrive integration on iOS from
 synced local folders on Mac. WebDAV is available on both.
 
-The comparison pages and the iPhone guide use `src/layouts/Page.astro`, which
+The comparison pages, privacy pages, and the iPhone guide use `src/layouts/Page.astro`, which
 reuses the homepage header, footer, and `home.css`; their content styles live in
 `src/styles/page.css`, scoped to `.kf-page`.
 
