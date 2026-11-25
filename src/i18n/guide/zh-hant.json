@@ -1,0 +1,271 @@
+{
+    "title": "iPhone 最佳 KeePass App（2026）：KeeForge、KeePassium、Strongbox 與 PanicVault 比較",
+    "description": "KeeForge 是所有功能都免費的 iPhone KeePass App：開源、無訂閱，Face ID、通行密鑰與驗證碼自動填寫全部包含。看看它與 KeePassium、Strongbox 和 PanicVault 的比較。查核日期：2026 年 11 月 24 日。",
+    "eyebrow": "iPhone 最佳 KeePass App · 查核於 2026 年 11 月 24 日",
+    "heading": "我們的首選：KeeForge。",
+    "headingAccent": "所有功能，全部免費。",
+    "lead": "適用於 iPhone、iPad 和 Mac 的 KeePass App，沒有任何功能鎖在付費牆後。",
+    "strengths": [
+        "所有功能免費。無訂閱、無付費層級、無資料庫數量限制。",
+        "通行密鑰、驗證碼與密碼都能自動填寫，並支援 Face ID。",
+        "以 GPLv3 開源。無需帳號，不追蹤。",
+        "一款 App 涵蓋 iPhone、iPad，另有原生 Mac App。"
+    ],
+    "verdictTitle": "KeeForge 與熱門替代方案比較",
+    "feature": "功能",
+    "yes": "是",
+    "no": "否",
+    "verdict": [
+        {
+            "label": "所有功能免費",
+            "keeforge": "無付費層級、無訂閱",
+            "rivals": [
+                "免費 1 個資料庫",
+                "需付費升級 Pro",
+                "先付 $4.99"
+            ]
+        },
+        {
+            "label": "免費 Face ID 解鎖",
+            "keeforge": "免費，無需帳號",
+            "rivals": [
+                "免費",
+                "僅限 Pro",
+                "需購買 $4.99 的 App"
+            ]
+        },
+        {
+            "label": "完全開源",
+            "keeforge": "GPLv3，整個 App",
+            "rivals": [
+                "GPLv3",
+                "「原始碼可取得」",
+                "封閉原始碼"
+            ]
+        },
+        {
+            "label": "內建 Dropbox 與 OneDrive",
+            "keeforge": "另有 WebDAV、FTP 與 iCloud Drive",
+            "rivals": [
+                "是",
+                "是",
+                "僅 iCloud 與 Google Drive"
+            ]
+        },
+        {
+            "label": "經常更新",
+            "keeforge": "2026 年 11 月發佈 4 個版本",
+            "rivals": [
+                "最後更新 2025 年 11 月",
+                "最後更新 2026 年 9 月",
+                "最後更新 2026 年 11 月 14 日"
+            ]
+        }
+    ],
+    "detailsSummary": "完整比較與資料來源",
+    "fullTableTitle": "五款 App 並列比較",
+    "fullTableLabel": "iPhone KeePass App 比較",
+    "rows": [
+        {
+            "label": "iPhone 價格",
+            "cells": [
+                "免費。可自由打賞。",
+                "免費使用一個資料庫。Premium 每年 €19.99（租購制）或 Pro 一次付清 €79.99。",
+                "非商業用途免費。Pro 每月 $2.99、每年 $24.99，或終身 $124.99（官網價格）。",
+                "一次付清 $4.99（美國 App Store）。無免費版。",
+                "免費。"
+            ]
+        },
+        {
+            "label": "付費功能",
+            "cells": [
+                "無。",
+                "多個資料庫、YubiKey、快速自動填寫、密碼稽核、連結資料庫、企業雲端帳號。",
+                "iPhone 上：Face ID / Touch ID 解鎖、離線編輯、YubiKey、Apple Watch。Mac 上，自動填寫、通行密鑰、SFTP 與 WebDAV 也屬於 Pro。",
+                "購買後無。",
+                "無。"
+            ]
+        },
+        {
+            "label": "原始碼",
+            "cells": [
+                "開源，GPLv3，整個 App。",
+                "開源，GPLv3。",
+                "以 AGPL-3.0 發佈，但專案自稱「原始碼可取得」：沒有建置方式，程式碼釋出也落後於版本發佈。",
+                "封閉原始碼。",
+                "開源，GPLv3。"
+            ]
+        },
+        {
+            "label": "Apple 平台",
+            "cells": [
+                "iPhone、iPad、Mac（原生 Mac App）。",
+                "iPhone、iPad、Mac（Mac Catalyst）、Vision Pro。",
+                "iPhone、iPad、Mac、Apple Watch、Vision Pro。",
+                "iPhone、iPad、Mac、Vision Pro。",
+                "iPhone、iPad。另有 Mac、Windows 與 Linux 桌面版，以及 Android 版。"
+            ]
+        },
+        {
+            "label": "最低 iOS 版本",
+            "cells": [
+                "iOS 18",
+                "iOS 17",
+                "iOS 15",
+                "iOS 17.6",
+                "iOS 15.1"
+            ]
+        },
+        {
+            "label": "資料庫格式",
+            "cells": [
+                "KDBX 4 可讀寫。KDBX 3.1 唯讀。",
+                "KDBX 4、KDBX 3 與 KeePass 1（.kdb）。",
+                "KDBX 4.1、4.0 與 3.1、KeePass 1（.kdb），以及 Password Safe 3。",
+                "僅 KDBX 4。較舊的檔案須先升級。",
+                "KDBX 4。"
+            ]
+        },
+        {
+            "label": "密碼自動填寫",
+            "cells": [
+                "是",
+                "是",
+                "是",
+                "是",
+                "是"
+            ]
+        },
+        {
+            "label": "通行密鑰",
+            "cells": [
+                "是，支援自動填寫。相容 KeePassXC。",
+                "是，支援自動填寫。相容 KeePassXC。",
+                "是（iPhone 上免費，Mac 上需 Pro）。",
+                "可儲存 KeePassXC 格式的通行密鑰。未說明是否支援 iPhone 通行密鑰自動填寫。",
+                "是，iOS 17 或更新版本。"
+            ]
+        },
+        {
+            "label": "驗證碼（TOTP）",
+            "cells": [
+                "是，包括 iOS 18 與 Mac 上的自動填寫。",
+                "是，包括 iOS 18 上的自動填寫。",
+                "是。",
+                "是，在 App 內。Mac 瀏覽器延伸功能可填入。",
+                "是，包括自動填寫。"
+            ]
+        },
+        {
+            "label": "內建同步",
+            "cells": [
+                "iPhone 與 iPad：Dropbox、OneDrive、WebDAV、FTP，以及 iCloud Drive 和其他「檔案」提供者。Mac：WebDAV、FTP 與同步資料夾。",
+                "Dropbox、Google Drive、OneDrive、WebDAV，以及 iCloud Drive 和其他「檔案」提供者。",
+                "iCloud、Dropbox、OneDrive、Google Drive、WebDAV、SFTP，以及「檔案」提供者。SharePoint 需 Pro。",
+                "iCloud Drive 與 Google Drive。",
+                "SFTP、WebDAV，以及「檔案」提供者。"
+            ]
+        },
+        {
+            "label": "金鑰檔案",
+            "cells": [
+                "是，也能建立",
+                "是，也能建立",
+                "是",
+                "是",
+                "是，也能建立"
+            ]
+        },
+        {
+            "label": "YubiKey",
+            "cells": [
+                "唯讀，在 iPhone 上透過 NFC。",
+                "付費。Lightning、iPhone 上的 NFC、Mac 上的 USB。",
+                "Pro。iOS 不支援 USB-C 金鑰。",
+                "iPhone 上的 NFC、Mac 上的 USB。iPad 不支援。",
+                "未說明。"
+            ]
+        },
+        {
+            "label": "獨立安全性稽核",
+            "cells": [
+                "無。",
+                "有：Cure53，2024 年 10 月。",
+                "據 Strongbox 表示，沒有程式碼層級的稽核。每年進行 CASA Tier 2 評估。",
+                "未公布。",
+                "未公布。"
+            ]
+        },
+        {
+            "label": "App 語言數",
+            "cells": [
+                "9",
+                "20",
+                "18",
+                "1（英文）",
+                "1（英文）"
+            ]
+        },
+        {
+            "label": "最近一次 App Store 更新（美國）",
+            "cells": [
+                "1.23.0，2026 年 11 月 22 日",
+                "2.5，2025 年 11 月 19 日",
+                "1.65.2，2026 年 9 月 1 日",
+                "1.1.7，2026 年 11 月 14 日",
+                "0.25.0，2026 年 11 月 18 日"
+            ]
+        }
+    ],
+    "keepassxcTitle": "從 KeePassXC 轉過來？",
+    "keepassxcBody": "KeePassXC 沒有 iPhone App；其 FAQ 建議使用 Strongbox 和 KeePassium。KeeForge 可開啟 KeePassXC 的 KDBX 4 資料庫，並讀取其中的通行密鑰。把檔案放到 iCloud Drive、Dropbox、OneDrive 或 WebDAV 伺服器上，再於 KeeForge 中加入即可。",
+    "sourcesTitle": "資料來源",
+    "sourcesNote": "於 2026 年 11 月 24 日開啟並查核。App 版本與日期取自美國 App Store。",
+    "sources": {
+        "KeeForge": [
+            "README（功能、同步、格式）",
+            "更新記錄（1.23.0 版本、YubiKey 支援）",
+            "GPLv3 授權條款",
+            "App Store 頁面"
+        ],
+        "KeePassium": [
+            "價格與免費版、付費版比較",
+            "安全性稽核（Cure53、CASA）",
+            "Cure53 稽核報告，2024 年 10 月（PDF）",
+            "同步選項",
+            "YubiKey 相容性",
+            "KeePassium 2.0：通行密鑰、Mac App、驗證碼自動填寫",
+            "原始碼",
+            "App Store 頁面"
+        ],
+        "Strongbox": [
+            "Free 與 Pro 比較",
+            "Pro 價格",
+            "支援的 KeePass 版本",
+            "關於安全性稽核的聲明",
+            "Strongbox 加入 Applause（2025 年 3 月）",
+            "原始碼與授權說明",
+            "App Store 頁面"
+        ],
+        "PanicVault": [
+            "首頁",
+            "使用手冊",
+            "PanicVault 自己的 iPhone KeePass 指南",
+            "App Store 頁面"
+        ],
+        "OneKeePass": [
+            "首頁",
+            "行動版原始碼",
+            "App Store 頁面"
+        ],
+        "KeePassXC": [
+            "FAQ：「KeePassXC 能在手機上使用嗎？」"
+        ]
+    },
+    "linkLabel": "iPhone 最佳 KeePass App",
+    "seeAlso": {
+        "before": "想比較兩款以上的 App？請參閱",
+        "link": "iPhone 最佳 KeePass App",
+        "after": "，將 KeePassium、Strongbox、PanicVault 與 OneKeePass 並列比較。"
+    }
+}

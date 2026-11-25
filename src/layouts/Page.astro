@@ -1,12 +1,21 @@
 ---
 import Base from './Base.astro';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import { home } from '../i18n/home';
+import { guide, guidePath } from '../i18n/guide';
+import '../styles/home.css';
+import '../styles/page.css';
 
+// Shared layout for the comparison pages. It reuses the homepage's header,
+// footer, and design system (src/styles/home.css); page content styles live
+// in src/styles/page.css.
 interface Props {
     title?: string;
     description?: string;
     eyebrow?: string;
     heading: string;
+    // Optional second part of the heading, shown in the accent color.
+    headingAccent?: string;
     lead?: string;
     lang?: 'en' | 'de' | 'fr' | 'es' | 'zh-hans' | 'zh-hant' | 'ja' | 'it' | 'ru';
     // Paths of the localized versions of this page, for the language switcher
@@ -20,307 +29,147 @@ interface Props {
     jaPath?: string;
     itPath?: string;
     ruPath?: string;
+    canonicalPath?: string;
+    ogType?: 'website' | 'article';
 }
 
-const { title, description, eyebrow, heading, lead, lang = 'en', enPath, dePath, frPath, esPath, zhHansPath, zhHantPath, jaPath, itPath, ruPath } = Astro.props;
+const { title, description, eyebrow, heading, headingAccent, lead, lang = 'en', enPath, dePath, frPath, esPath, zhHansPath, zhHantPath, jaPath, itPath, ruPath, canonicalPath, ogType } = Astro.props;
 
 const langPaths = { en: enPath, de: dePath, fr: frPath, es: esPath, 'zh-hans': zhHansPath, 'zh-hant': zhHantPath, ja: jaPath, it: itPath, ru: ruPath };
+const hasTranslations = Object.values(langPaths).filter(Boolean).length > 1;
 
 const strings = {
     en: {
         home: '/',
         compare: 'Compare',
-        changelog: 'Changelog',
-        audit: 'Security audit',
-        faq: 'FAQ',
-        homeLabel: 'Home',
-        tagline: 'Free, open-source KeePass for iOS and macOS',
-        privacy: 'Privacy Policy',
         privacyHref: '/privacy',
     },
     de: {
         home: '/de/',
         compare: 'Vergleich',
-        changelog: 'Changelog',
-        audit: 'Sicherheitsaudit',
-        faq: 'FAQ',
-        homeLabel: 'Startseite',
-        tagline: 'Kostenloser Open-Source-KeePass für iOS und macOS',
-        privacy: 'Datenschutz',
         privacyHref: '/de/privacy',
     },
     fr: {
         home: '/fr/',
         compare: 'Comparaison',
-        changelog: 'Journal des modifications',
-        audit: 'Audit de sécurité',
-        faq: 'FAQ',
-        homeLabel: 'Accueil',
-        tagline: 'KeePass gratuit et open source pour iOS et macOS',
-        privacy: 'Politique de confidentialité',
         privacyHref: '/fr/privacy',
     },
     es: {
         home: '/es/',
         compare: 'Comparativa',
-        changelog: 'Historial de cambios',
-        audit: 'Auditoría de seguridad',
-        faq: 'Preguntas frecuentes',
-        homeLabel: 'Inicio',
-        tagline: 'KeePass gratuito y de código abierto para iOS y macOS',
-        privacy: 'Política de privacidad',
         privacyHref: '/es/privacy',
     },
     'zh-hans': {
         home: '/zh-hans/',
         compare: '对比',
-        changelog: '更新日志',
-        audit: '安全审计',
-        faq: '常见问题',
-        homeLabel: '首页',
-        tagline: '免费开源的 iOS 和 macOS KeePass',
-        privacy: '隐私政策',
         privacyHref: '/zh-hans/privacy',
     },
     'zh-hant': {
         home: '/zh-hant/',
         compare: '比較',
-        changelog: '更新記錄',
-        audit: '安全性稽核',
-        faq: '常見問題',
-        homeLabel: '首頁',
-        tagline: '免費開源的 iOS 與 macOS 版 KeePass',
-        privacy: '隱私權政策',
         privacyHref: '/zh-hant/privacy',
     },
     ja: {
         home: '/ja/',
         compare: '比較',
-        changelog: '変更履歴',
-        audit: 'セキュリティ監査',
-        faq: 'よくある質問',
-        homeLabel: 'ホーム',
-        tagline: 'iOS・macOS 向けの無料・オープンソースの KeePass',
-        privacy: 'プライバシーポリシー',
         privacyHref: '/ja/privacy',
     },
     it: {
         home: '/it/',
         compare: 'Confronto',
-        changelog: 'Registro delle modifiche',
-        audit: 'Audit di sicurezza',
-        faq: 'FAQ',
-        homeLabel: 'Home',
-        tagline: 'KeePass gratuito e open source per iOS e macOS',
-        privacy: 'Informativa sulla privacy',
         privacyHref: '/it/privacy',
     },
     ru: {
         home: '/ru/',
         compare: 'Сравнение',
-        changelog: 'Изменения',
-        audit: 'Аудит',
-        faq: 'FAQ',
-        homeLabel: 'Главная',
-        tagline: 'Бесплатный KeePass с открытым исходным кодом для iOS и macOS',
-        privacy: 'Политика конфиденциальности',
         privacyHref: '/ru/privacy',
     },
 }[lang];
+
+// Chinese and Japanese don't put a space between sentences.
+const noSpaceLangs = ['ja', 'zh-hans', 'zh-hant'];
+const t = home[lang];
+const source = 'https://github.com/KeeForge/KeeForge';
+const changelog = `${source}/blob/main/CHANGELOG.md`;
 ---
 
-<Base title={title} description={description} lang={lang} enPath={enPath} dePath={dePath} frPath={frPath} esPath={esPath} zhHansPath={zhHansPath} zhHantPath={zhHantPath} jaPath={jaPath} itPath={itPath} ruPath={ruPath}>
-    <header class="page-header">
-        <div class="page-header-inner">
-            <a href={strings.home} class="brand-link">
-                <span class="brand-name mono">KeeForge</span>
-            </a>
-            <nav class="page-nav">
-                <a href={`${strings.home}#compare`}>{strings.compare}</a>
-                <a href="https://github.com/KeeForge/KeeForge/blob/main/CHANGELOG.md" rel="noopener">{strings.changelog}</a>
-                <a href="/security-audit/">{strings.audit}</a>
-                <a href={`${strings.home}#faq`}>{strings.faq}</a>
-                <a href="https://github.com/KeeForge/KeeForge" rel="noopener">GitHub</a>
-                <LanguageSwitcher current={lang} paths={langPaths} variant="header" />
-            </nav>
-        </div>
-    </header>
-
-    <section class="page-hero">
-        <div class="page-container">
-            {eyebrow && <p class="eyebrow mono">{eyebrow}</p>}
-            <h1>{heading}</h1>
-            {lead && <p class="page-lead">{lead}</p>}
-        </div>
-    </section>
-
-    <main class="page-main">
-        <div class="page-container">
-            <slot />
-        </div>
-    </main>
-
-    <footer class="footer">
-        <div class="page-container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="footer-name mono">KeeForge</span>
-                    <span class="footer-copy">{strings.tagline}</span>
-                </div>
-                <div class="footer-links">
-                    <a href={strings.home}>{strings.homeLabel}</a>
-                    <a href="https://apps.apple.com/app/id6759309295">App Store</a>
-                    <a href="https://github.com/KeeForge/KeeForge">GitHub</a>
-                    <a href="https://github.com/KeeForge/KeeForge/blob/main/CHANGELOG.md" rel="noopener">{strings.changelog}</a>
-                    <a href="/security-audit/">{strings.audit}</a>
-                    <a href={strings.privacyHref}>{strings.privacy}</a>
-                    <LanguageSwitcher current={lang} paths={langPaths} variant="footer" />
+<Base title={title} description={description} lang={lang} canonicalPath={canonicalPath} ogType={ogType} enPath={enPath} dePath={dePath} frPath={frPath} esPath={esPath} zhHansPath={zhHansPath} zhHantPath={zhHantPath} jaPath={jaPath} itPath={itPath} ruPath={ruPath}>
+    <div class="kf-home kf-page">
+        <a href="#main" class="skip">{t.nav.skip}</a>
+        <header class="nav">
+            <div class="wrap nav-inner">
+                <a class="brand" href={strings.home}><span class="key" aria-hidden="true"></span>KeeForge</a>
+                <nav class="navlinks" aria-label={t.nav.menu}>
+                    <a href={`${strings.home}#features`}>{t.nav.features}</a>
+                    <a href={`${strings.home}#compare`}>{strings.compare}</a>
+                    <a href={`${strings.home}#faq`}>{t.nav.faq}</a>
+                    <a href={changelog}>{t.nav.changelog}</a>
+                    <a href="/security-audit/">{t.nav.audit}</a>
+                </nav>
+                <div class="navright">
+                    {hasTranslations && <div class="header-language"><LanguageSwitcher current={lang} paths={langPaths} variant="header" /></div>}
+                    <a class="nav-source" href={source}>{t.nav.source} <span aria-hidden="true">↗</span></a>
+                    <a class="btn small" href={`${strings.home}#download`}>{t.nav.download}</a>
+                    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">{t.nav.menu}</button>
                 </div>
             </div>
-        </div>
-    </footer>
+            <nav id="mobile-nav" class="mobile-nav" aria-label={t.nav.menu} hidden>
+                <a href={`${strings.home}#features`}>{t.nav.features}</a>
+                <a href={`${strings.home}#compare`}>{strings.compare}</a>
+                <a href={`${strings.home}#faq`}>{t.nav.faq}</a>
+                <a href={changelog}>{t.nav.changelog}</a>
+                <a href="/security-audit/">{t.nav.audit}</a>
+                <a href={source}>{t.nav.source} <span aria-hidden="true">↗</span></a>
+                {hasTranslations && <div class="mobile-languages"><LanguageSwitcher current={lang} paths={langPaths} variant="footer" /></div>}
+            </nav>
+        </header>
+
+        <main id="main">
+            <section class="page-hero wrap">
+                {eyebrow && <div class="eyebrow">{eyebrow}</div>}
+                <h1>{heading}{headingAccent && <>{noSpaceLangs.includes(lang) ? '' : ' '}<span class="accent">{headingAccent}</span></>}</h1>
+                {lead && <p class="page-lead">{lead}</p>}
+                <slot name="hero" />
+            </section>
+            <div class="page-body wrap">
+                <slot />
+            </div>
+        </main>
+
+        <footer class="foot">
+            <div class="wrap">
+                <div class="footer-top">
+                    <a href={strings.home} class="brand"><span class="key" aria-hidden="true"></span>KeeForge</a>
+                    <nav>
+                        <a href={guidePath(lang)}>{guide[lang].linkLabel}</a>
+                        <a href={strings.privacyHref}>{t.footer.privacy}</a>
+                        <a href="mailto:support@keeforge.com">{t.footer.support}</a>
+                        <a href="https://apps.apple.com/app/id6759309295">App Store</a>
+                        <a href={source}>{t.nav.source} <span aria-hidden="true">↗</span></a>
+                    </nav>
+                </div>
+                <div class="footer-bottom"><span>{t.footer.copy}</span>{hasTranslations && <LanguageSwitcher current={lang} paths={langPaths} variant="footer" />}</div>
+            </div>
+        </footer>
+    </div>
 </Base>
 
-<style>
-    .page-header {
-        border-bottom: 1px solid var(--border);
-        background: var(--bg);
+<script>
+    const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+    const menu = document.getElementById('mobile-nav');
+    if (toggle && menu) {
+        const closeMenu = () => { toggle.setAttribute('aria-expanded', 'false'); menu.hidden = true; };
+        toggle.addEventListener('click', () => {
+            const expanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', String(!expanded));
+            menu.hidden = expanded;
+        });
+        menu.addEventListener('click', event => {
+            if (event.target instanceof Element && event.target.closest('a')) closeMenu();
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && !menu.hidden) { closeMenu(); toggle.focus(); }
+        });
+        matchMedia('(min-width: 1101px)').addEventListener('change', closeMenu);
     }
-
-    .page-header-inner {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 16px 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        flex-wrap: wrap;
-    }
-
-    .brand-link {
-        color: var(--text);
-    }
-
-    .brand-name {
-        font-size: 0.95rem;
-        font-weight: 700;
-    }
-
-    .page-nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px 20px;
-    }
-
-    .page-nav a {
-        font-size: 0.85rem;
-        color: var(--text-dim);
-        transition: color 0.2s;
-    }
-
-    .page-nav a:hover {
-        color: var(--text);
-    }
-
-    .page-hero {
-        padding: 56px 0 32px;
-        background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 100%);
-    }
-
-    .page-container {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 0 24px;
-    }
-
-    .eyebrow {
-        font-size: 0.75rem;
-        color: var(--accent-dim);
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        margin-bottom: 10px;
-    }
-
-    .page-hero h1 {
-        font-size: 2.6rem;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        line-height: 1.15;
-        margin-bottom: 14px;
-        color: var(--text);
-    }
-
-    .page-lead {
-        font-size: 1.05rem;
-        line-height: 1.65;
-        color: var(--text-dim);
-        max-width: 640px;
-    }
-
-    .page-main {
-        padding: 40px 0 64px;
-    }
-
-    /* Footer (shared) */
-    .footer {
-        border-top: 1px solid var(--border);
-        padding: 32px 0;
-    }
-
-    .footer-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 16px;
-    }
-
-    .footer-brand {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-    }
-
-    .footer-name {
-        font-size: 0.9rem;
-        font-weight: 700;
-        color: var(--text);
-    }
-
-    .footer-copy {
-        font-size: 0.75rem;
-        color: var(--text-dim);
-    }
-
-    .footer-links {
-        display: flex;
-        gap: 24px;
-        flex-wrap: wrap;
-    }
-
-    .footer-links a {
-        font-size: 0.85rem;
-        color: var(--text-dim);
-        transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-        color: var(--text);
-    }
-
-    @media (max-width: 640px) {
-        .page-hero h1 {
-            font-size: 2rem;
-        }
-
-        .page-nav {
-            gap: 8px 14px;
-        }
-
-        .footer-content {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-    }
-</style>
+</script>

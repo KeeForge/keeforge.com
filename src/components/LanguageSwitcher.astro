@@ -1,11 +1,11 @@
 ---
-// Language switcher, shared by HomePage.astro, Page.astro, and the privacy pages.
+// Language switcher, shared by HomePage.astro and Page.astro.
 // Lists every locale from src/i18n/locales.ts that has an entry in `paths`, including the current one (marked active, not a link).
 //
 // variant="header": a no-JS <details> dropdown — globe icon + current language name as
 // the trigger, all locales in the popover. Used in page headers.
-// variant="footer": a flat inline row of endonyms. Used in footers and the privacy
-// pages' secondary link bar.
+// variant="footer": a flat inline row of endonyms. Used in footers and the mobile
+// menu.
 import { locales, type LocaleCode } from '../i18n/locales';
 
 interface Props {

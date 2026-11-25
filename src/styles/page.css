@@ -1,0 +1,184 @@
+/* Content styles for pages that use src/layouts/Page.astro: the comparison
+   pages and the iPhone KeePass guide. Builds on the homepage tokens and
+   components in home.css, so keep it scoped to .kf-page. */
+
+.kf-page .page-hero { padding-block: 72px 48px; }
+.kf-page .page-hero h1 { font-size: clamp(44px, 5.1vw, 72px); line-height: 1.04; max-width: 16ch; }
+.kf-page .page-lead { font-size: 18px; max-width: 60ch; margin-top: 24px; }
+.kf-page .page-body { padding-bottom: 80px; }
+
+/* Links inside running text get an underline; navigation and buttons don't. */
+.kf-page main :is(p, li, td) a { color: var(--accent); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 4px; }
+.kf-page main :is(p, li, td) a:hover { text-decoration-color: currentColor; }
+.kf-page .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Sections */
+.kf-page .vs-section { padding-block: 56px; border-top: 1px solid var(--rule); }
+.kf-page .vs-section > h2, .kf-page .section-heading h2 { font-size: clamp(32px, 3.4vw, 44px); margin-bottom: 20px; }
+.kf-page .vs-section > p { font-size: 16px; max-width: 68ch; margin-bottom: 14px; }
+.kf-page .vs-section > p:last-child { margin-bottom: 0; }
+.kf-page .vs-section code, .kf-page .page-lead code { background: var(--alt); padding: 1px 5px; border-radius: 4px; }
+.kf-page .vs-table-note, .kf-page .section-heading .note { font-size: 13px !important; }
+
+/* Comparison tables */
+.kf-page .vs-table-wrap { overflow-x: auto; background: var(--paper); border: 1px solid var(--rule); border-radius: 16px; margin-top: 8px; }
+.kf-page .vs-table-wrap:focus-visible { outline: 3px solid var(--navy); outline-offset: 4px; }
+.kf-page .vs-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; }
+.kf-page .vs-table :is(th, td) { padding: 16px 18px; text-align: left; vertical-align: top; line-height: 1.55; border-top: 1px solid var(--rule); color: var(--soft); }
+.kf-page .vs-table thead th { border-top: 0; padding-block: 20px; font: 500 22px var(--serif); letter-spacing: -.02em; color: var(--ink); white-space: nowrap; }
+.kf-page .vs-table thead th:nth-child(2) { color: var(--accent); }
+.kf-page .vs-table tbody :is(th, td):first-child { color: var(--ink); font-weight: 500; }
+.kf-page .vs-table code { background: var(--alt); padding: 1px 4px; border-radius: 4px; }
+
+/* The multi-app table keeps its row labels pinned while it scrolls sideways. */
+.kf-page .vs-table.wide { min-width: 900px; }
+.kf-page .vs-table.wide tbody th { font: 400 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--soft); width: 160px; padding-top: 19px; }
+.kf-page .vs-table.wide th:first-child { position: sticky; left: 0; z-index: 1; background: var(--paper); border-right: 1px solid var(--rule); }
+
+/* Cards */
+.kf-page .two-col, .kf-page .picks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.kf-page :is(.col-card, .choice-card, .picks article) { background: var(--paper); border: 1px solid var(--rule); border-radius: 16px; padding: 28px; }
+.kf-page :is(.col-card, .choice-card) h3, .kf-page .picks h3 { font-size: 26px; line-height: 1.15; text-wrap: balance; }
+.kf-page .picks .eyebrow { margin-bottom: 12px; }
+.kf-page .picks p { margin-top: 14px; font-size: 15px; }
+.kf-page .picks strong { color: var(--ink); font-weight: 600; }
+.kf-page :is(.col-card, .choice-card) ul { list-style: none; padding: 0; margin-top: 18px; display: flex; flex-direction: column; gap: 14px; }
+.kf-page :is(.col-card, .choice-card) li { position: relative; padding-left: 18px; font-size: 15px; line-height: 1.6; color: var(--soft); }
+.kf-page :is(.col-card, .choice-card) li::before { position: absolute; content: '·'; left: 0; top: -2px; font-size: 22px; line-height: 1; color: var(--accent); }
+.kf-page .choice-card { background: var(--alt); }
+.kf-page .closing-note, .kf-page .see-also { margin-top: 28px; font-size: 15px; max-width: 68ch; }
+.kf-page .see-also { margin: 0 0 40px; padding-top: 32px; border-top: 1px solid var(--rule); max-width: none; }
+
+/* Guide-specific blocks */
+.kf-page .disclosure { margin-top: 40px; max-width: 760px; padding: 24px 28px; background: var(--paper); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 12px; }
+.kf-page .disclosure .eyebrow { margin-bottom: 10px; }
+.kf-page .disclosure p { font-size: 15px; }
+.kf-page .section-heading { margin-bottom: 32px; }
+.kf-page .section-heading p { max-width: 62ch; }
+/* Full-bleed background without moving the content off the page grid. */
+.kf-page .band { border-top: 0; background: var(--alt); box-shadow: 0 0 0 100vmax var(--alt); clip-path: inset(0 -100vmax); }
+.kf-page .band + .vs-section { border-top: 0; }
+.kf-page .split { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: 80px; }
+.kf-page .app-notes article { padding-block: 28px; border-bottom: 1px solid var(--rule); }
+.kf-page .app-notes article:first-child { padding-top: 0; }
+.kf-page .app-notes h3 { font-size: 28px; }
+.kf-page .app-notes p, .kf-page .prose p { margin-top: 12px; font-size: 16px; }
+.kf-page .prose p:first-child { margin-top: 0; }
+.kf-page .sources { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 48px; }
+.kf-page .sources h3 { font: 400 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+.kf-page .sources ul { list-style: none; padding: 0; margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+.kf-page .sources li { font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
+.kf-page .sources li a { color: var(--ink); }
+
+/* Policy text (privacy pages) */
+.kf-page .legal { max-width: 720px; padding-top: 40px; border-top: 1px solid var(--rule); }
+.kf-page .legal .lead { font: 400 24px/1.4 var(--serif); letter-spacing: -.01em; color: var(--ink); padding: 24px 28px; background: var(--paper); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 12px; }
+.kf-page .legal .note { margin-top: 20px; font-size: 14px; }
+.kf-page .legal h2 { font-size: 30px; line-height: 1.2; margin-top: 48px; }
+.kf-page .legal p { margin-top: 14px; font-size: 16px; line-height: 1.7; }
+.kf-page .legal ul { margin-top: 14px; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.kf-page .legal li { position: relative; padding-left: 24px; font-size: 16px; line-height: 1.7; color: var(--soft); }
+.kf-page .legal li::before { position: absolute; content: '—'; left: 0; color: var(--accent); }
+.kf-page .legal code { background: var(--alt); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+
+/* Closing call to action */
+.kf-page .vs-cta { margin-top: 24px; padding: 48px; background: var(--alt); border: 1px solid var(--rule); border-radius: 16px; }
+.kf-page .vs-cta h2 { font-size: clamp(32px, 3.4vw, 44px); }
+.kf-page .vs-cta > p { margin-top: 12px; max-width: 52ch; }
+.kf-page .vs-cta .downloads { margin-top: 28px; }
+.kf-page .cta-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 28px; }
+.kf-page .app-store-badge img { display: block; height: 52px; width: auto; }
+.kf-page .app-store-badge:hover { opacity: .85; }
+.kf-page .ghost-link { display: inline-flex; align-items: center; min-height: 48px; padding: 12px 22px; border: 1px solid var(--ink); border-radius: 999px; font-size: 15px; font-weight: 500; }
+.kf-page .ghost-link:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
+
+@media (max-width: 1000px) {
+    .kf-page .split { gap: 40px; }
+    .kf-page .sources { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 767px) {
+    .kf-page .page-hero { padding-block: 48px 36px; }
+    .kf-page .page-hero h1 { font-size: 44px; }
+    .kf-page .page-lead { font-size: 17px; }
+    .kf-page .page-body { padding-bottom: 48px; }
+    .kf-page .vs-section { padding-block: 44px; }
+    .kf-page .vs-section > h2, .kf-page .section-heading h2, .kf-page .vs-cta h2 { font-size: 34px; }
+    .kf-page .vs-section > p { font-size: 15px; }
+    .kf-page .two-col, .kf-page .picks, .kf-page .split, .kf-page .sources { grid-template-columns: minmax(0, 1fr); }
+    .kf-page .two-col, .kf-page .picks { gap: 16px; }
+    .kf-page .split { gap: 24px; }
+    .kf-page :is(.col-card, .choice-card, .picks article) { padding: 24px; }
+    .kf-page .vs-table { font-size: 13px; }
+    .kf-page .vs-table :is(th, td) { padding: 14px; }
+    .kf-page .vs-table thead th { font-size: 19px; }
+    .kf-page .vs-table.wide { min-width: 780px; }
+    .kf-page .vs-table.wide tbody th { width: 112px; }
+    .kf-page .band { padding-block: 44px; }
+    .kf-page .disclosure { padding: 20px; }
+    .kf-page .app-notes h3 { font-size: 26px; }
+    .kf-page .app-notes p, .kf-page .prose p { font-size: 15px; }
+    .kf-page .vs-cta { padding: 28px 24px; }
+    .kf-page .legal { padding-top: 32px; }
+    .kf-page .legal .lead { font-size: 20px; padding: 20px; }
+    .kf-page .legal h2 { font-size: 26px; margin-top: 40px; }
+    .kf-page .legal :is(p, li) { font-size: 15px; }
+}
+
+/* CJK and Russian headings run long; give them a little less size. */
+.kf-page:lang(ja) .page-hero h1, .kf-page:lang(zh-Hans) .page-hero h1, .kf-page:lang(zh-Hant) .page-hero h1, .kf-page:lang(ru) .page-hero h1 { font-size: clamp(36px, 4.4vw, 60px); }
+
+/* Verdict layout for the iPhone guide: recommendation, strengths and one
+   at-a-glance table, with everything else folded into <details>. */
+.kf-page .verdict-hero .strengths { list-style: none; padding: 0; margin-top: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 32px; max-width: 900px; }
+.kf-page .verdict-hero .strengths li { position: relative; padding-left: 30px; font-size: 16px; line-height: 1.5; color: var(--ink); font-weight: 500; }
+.kf-page .verdict-hero .strengths li::before { content: '✓'; position: absolute; left: 0; top: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--accent); color: var(--paper); font-size: 12px; line-height: 20px; text-align: center; }
+.kf-page .verdict-hero .downloads { margin-top: 32px; }
+
+.kf-page .verdict { padding-block: 56px; border-top: 1px solid var(--rule); }
+.kf-page .verdict h2 { font-size: clamp(30px, 3.2vw, 40px); margin-bottom: 24px; }
+.kf-page .verdict-wrap { background: var(--paper); border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; }
+.kf-page .verdict-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.kf-page .verdict-table :is(th, td) { padding: 18px 16px; text-align: left; vertical-align: top; border-top: 1px solid var(--rule); }
+.kf-page .verdict-table thead :is(th, td) { border-top: 0; overflow-wrap: normal; font: 500 20px var(--serif); letter-spacing: -.02em; color: var(--ink); padding-block: 20px; }
+.kf-page .verdict-table thead th:first-child { width: 26%; }
+.kf-page .verdict-table tbody th { font-size: 16px; font-weight: 600; color: var(--ink); line-height: 1.35; hyphens: auto; overflow-wrap: break-word; }
+.kf-page .verdict-table .us { background: var(--ink); color: var(--paper); }
+.kf-page .verdict-table thead .us { color: var(--gold); font-size: 22px; }
+.kf-page .verdict-table .mark { display: block; font-size: 22px; line-height: 1; font-weight: 600; }
+.kf-page .verdict-table .mark.yes { color: var(--accent); }
+.kf-page .verdict-table .us .mark.yes { color: var(--gold); }
+.kf-page .verdict-table .mark.no { color: #A39581; }
+.kf-page .verdict-table .note { display: block; margin-top: 6px; font-size: 13px; line-height: 1.4; color: var(--soft); }
+.kf-page .verdict-table .us .note { color: #E9DFC8; }
+.kf-page .verdict-table tbody .us { border-top-color: #3d352c; }
+
+.kf-page .details { border-top: 1px solid var(--rule); }
+.kf-page .details summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-block: 24px; font-size: 16px; font-weight: 500; list-style: none; cursor: pointer; }
+.kf-page .details summary::-webkit-details-marker { display: none; }
+.kf-page .details summary:hover { color: var(--accent); }
+.kf-page .details .faq-symbol { position: relative; width: 12px; height: 12px; flex-shrink: 0; color: var(--accent); }
+.kf-page .details .faq-symbol::before, .kf-page .details .faq-symbol::after { position: absolute; content: ''; background: currentColor; left: 0; top: 5px; width: 12px; height: 1px; }
+.kf-page .details .faq-symbol::after { transform: rotate(90deg); }
+.kf-page .details details[open] .faq-symbol::after { display: none; }
+.kf-page .details-body { padding-bottom: 24px; }
+.kf-page .details-body h3 { font-size: 28px; margin: 40px 0 16px; }
+.kf-page .details-body h3:first-child { margin-top: 8px; }
+.kf-page .details-body > p { font-size: 15px; max-width: 68ch; margin-bottom: 12px; }
+.kf-page .sources h4 { font: 400 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+
+@media (max-width: 767px) {
+    .kf-page .verdict-hero .strengths { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+    .kf-page .verdict-hero .strengths li { font-size: 15px; }
+    .kf-page .verdict { padding-block: 40px; }
+    .kf-page .verdict h2 { font-size: 28px; margin-bottom: 18px; }
+    .kf-page .verdict-table :is(th, td) { padding: 14px 8px; }
+    .kf-page .verdict-table thead :is(th, td) { font-size: 13px; line-height: 1.15; padding: 14px 3px; overflow-wrap: normal; }
+    .kf-page .verdict-table thead .us { font-size: 13px; }
+    .kf-page .verdict-table thead th:first-child { width: 30%; }
+    .kf-page .verdict-table tbody th { font-size: 13px; }
+    .kf-page .verdict-table .mark { font-size: 20px; text-align: center; }
+    .kf-page .verdict-table .note { display: none; }
+    .kf-page .verdict-table .us .note { display: none; }
+    .kf-page .details-body h3 { font-size: 24px; }
+}
