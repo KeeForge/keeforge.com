@@ -134,8 +134,6 @@
 .kf-page .verdict-hero .strengths li { position: relative; padding-left: 30px; font-size: 16px; line-height: 1.5; color: var(--ink); font-weight: 500; }
 .kf-page .verdict-hero .strengths li::before { content: '✓'; position: absolute; left: 0; top: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--accent); color: var(--paper); font-size: 12px; line-height: 20px; text-align: center; }
 .kf-page .verdict-hero .downloads { margin-top: 32px; }
-.kf-page .verdict-hero .byline { margin-top: 24px; font-size: 13px; }
-.kf-page .verdict-hero .byline a { color: var(--soft); }
 
 .kf-page .verdict { padding-block: 56px; border-top: 1px solid var(--rule); }
 .kf-page .verdict h2 { font-size: clamp(30px, 3.2vw, 40px); margin-bottom: 24px; }
