@@ -8,7 +8,7 @@ import Page from '../../layouts/Page.astro';
     canonicalPath="/de/privacy/"
     title="Datenschutzerklärung — KeeForge"
     description="KeeForge sammelt deine Tresordaten nicht. Das optionale In-App-Feedback-Formular sendet nur, was du selbst auswählst: deine Nachricht, sichtbare Fehlerdetails beim Melden eines Datenbank-Öffnungsfehlers und, wenn du zustimmst, eine Rückfrage-E-Mail-Adresse und ein angehängtes Foto."
-    eyebrow="Zuletzt aktualisiert: 3. November 2026"
+    eyebrow="Zuletzt aktualisiert: 24. November 2026"
     heading="Datenschutzerklärung"
 >
     <div class="legal">
@@ -27,6 +27,10 @@ import Page from '../../layouts/Page.astro';
 
         <h2>Deine Tresordaten</h2>
         <p>Deine Passwörter, Einträge, Anhänge und dein Master-Passwort werden lokal verarbeitet und verbleiben auf deinem Gerät und an den von dir gewählten Speicherorten. Der KeeForge-Entwickler und der Feedback-Dienst erhalten weder deinen Tresor noch dein Master-Passwort, deine Schlüsseldateien oder entschlüsselte Eintragsinhalte. Die App funktioniert offline, außer wenn du eine der oben beschriebenen netzwerkgestützten Funktionen nutzt.</p>
+
+        <h2>Browsererweiterung</h2>
+        <p>Die KeeForge-Browsererweiterung für Chrome und Firefox funktioniert nur zusammen mit der KeeForge-App auf demselben Mac. Sie stellt keine Netzwerkanfragen und sendet nichts an den KeeForge-Entwickler oder an Dritte. Wenn du auf ihre Schlüsseltaste, ihre Symbolleistentaste oder ihren Eintrag im Kontextmenü klickst, sendet sie die Adresse (Schema, Host und Port) der geöffneten Seite an die KeeForge-App auf deinem Mac, die mit den Titeln und Benutzernamen passender Anmeldedaten antwortet. Wenn du Anmeldedaten auswählst, gibt die App deren Benutzernamen und Passwort oder deren Bestätigungscode nach Touch ID oder deinem Mac-Passwort frei, und die Erweiterung trägt sie in die Seite ein.</p>
+        <p>Die Erweiterung speichert nur das Schlüsselpaar, mit dem sie mit der App gekoppelt ist. Sie liest Anordnung und Typ von Formularfeldern, um ihre Schlüsseltaste zu platzieren, aber nie, was du eingibst. Einen gekoppelten Browser kannst du jederzeit unter KeeForge &rarr; Einstellungen &rarr; Browser entfernen.</p>
 
         <h2>Feedback-Übermittlungen</h2>
         <p>KeeForge enthält ein In-App-Feedback-Formular (erreichbar über die Einstellungen und bestimmte Fehlerbildschirme). Das Formular ist vollständig optional &mdash; die Funktionen und Dienste der App hängen nicht von seiner Nutzung ab. Nur wenn du auf &bdquo;Senden&ldquo; tippst, übermittelt die App die folgenden Informationen per HTTPS an unseren Feedback-Endpunkt unter <code>https://feedback.keeforge.com/api/feedback</code>:</p>

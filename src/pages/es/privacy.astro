@@ -8,7 +8,7 @@ import Page from '../../layouts/Page.astro';
     canonicalPath="/es/privacy/"
     title="Política de privacidad — KeeForge"
     description="KeeForge no recopila los datos de su bóveda. El formulario de comentarios opcional dentro de la app solo envía lo que usted elija: su mensaje, detalles de error visibles al informar de un fallo al abrir una base de datos y, si lo acepta, una dirección de correo electrónico de seguimiento y una foto adjunta."
-    eyebrow="Última actualización: 3 de noviembre de 2026"
+    eyebrow="Última actualización: 24 de noviembre de 2026"
     heading="Política de privacidad"
 >
     <div class="legal">
@@ -27,6 +27,10 @@ import Page from '../../layouts/Page.astro';
 
         <h2>Los datos de su bóveda</h2>
         <p>Sus contraseñas, entradas, archivos adjuntos y su contraseña maestra se procesan localmente y permanecen en su dispositivo y en las ubicaciones de almacenamiento que usted elija. El desarrollador de KeeForge y el servicio de comentarios no reciben su bóveda, su contraseña maestra, sus archivos de clave ni el contenido descifrado de sus entradas. La app puede funcionar sin conexión, salvo cuando usted elige usar alguna de las funciones basadas en red descritas anteriormente.</p>
+
+        <h2>Extensión del navegador</h2>
+        <p>La extensión del navegador de KeeForge para Chrome y Firefox solo funciona con la app KeeForge en el mismo Mac. No realiza solicitudes de red ni envía nada al desarrollador de KeeForge ni a terceros. Cuando usted hace clic en su botón de llave, en su botón de la barra de herramientas o en su opción del menú contextual, envía la dirección (esquema, host y puerto) de la página abierta a la app KeeForge de su Mac, que responde con los títulos y nombres de usuario de los inicios de sesión coincidentes. Cuando usted elige un inicio de sesión, la app entrega su nombre de usuario y contraseña, o su código de verificación, tras Touch ID o la contraseña de su Mac, y la extensión lo rellena en la página.</p>
+        <p>La extensión solo guarda el par de claves que la enlaza con la app. Lee la disposición y el tipo de los campos de formulario para colocar su botón de llave, nunca lo que usted escribe. Puede quitar un navegador enlazado en cualquier momento en KeeForge &rarr; Ajustes &rarr; Navegadores.</p>
 
         <h2>Envíos de comentarios</h2>
         <p>KeeForge incluye un formulario de comentarios integrado en la app (disponible desde Ajustes y desde ciertas pantallas de error). El formulario es totalmente opcional &mdash; las funciones y servicios de la app no dependen de su uso. Solo cuando, y únicamente cuando, pulsa «Enviar», la app envía la siguiente información a nuestro punto de conexión de comentarios en <code>https://feedback.keeforge.com/api/feedback</code> mediante HTTPS:</p>

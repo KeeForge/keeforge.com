@@ -8,7 +8,7 @@ import Page from '../../layouts/Page.astro';
     canonicalPath="/fr/privacy/"
     title="Politique de confidentialité — KeeForge"
     description="KeeForge ne collecte pas les données de votre coffre-fort. Le formulaire de retour optionnel dans l’application n’envoie que ce que vous choisissez : votre message, les détails d’erreur visibles lors du signalement d’un échec d’ouverture de base de données, et, si vous y consentez, une adresse e-mail de suivi et une photo jointe."
-    eyebrow={'Dernière mise à jour\u00a0: 3 novembre 2026'}
+    eyebrow={'Dernière mise à jour\u00a0: 24 novembre 2026'}
     heading="Politique de confidentialité"
 >
     <div class="legal">
@@ -27,6 +27,10 @@ import Page from '../../layouts/Page.astro';
 
         <h2>Les données de votre coffre-fort</h2>
         <p>Vos mots de passe, entrées, pièces jointes et votre mot de passe principal sont traités localement et restent sur votre appareil et aux emplacements de stockage que vous choisissez. Le développeur de KeeForge et le service de retour ne reçoivent ni votre coffre-fort, ni votre mot de passe principal, ni vos fichiers de clé, ni le contenu déchiffré de vos entrées. L’application peut fonctionner hors ligne, sauf lorsque vous choisissez d’utiliser l’une des fonctionnalités réseau décrites ci-dessus.</p>
+
+        <h2>Extension de navigateur</h2>
+        <p>L'extension de navigateur KeeForge pour Chrome et Firefox fonctionne uniquement avec l'app KeeForge sur le même Mac. Elle n'effectue aucune requête réseau et n'envoie rien au développeur de KeeForge ni à aucun tiers. Lorsque vous cliquez sur son bouton en forme de clé, sur son bouton dans la barre d'outils ou sur son élément du menu contextuel, elle envoie l'adresse (schéma, hôte et port) de la page ouverte à l'app KeeForge sur votre Mac, qui répond avec les titres et les noms d'utilisateur des identifiants correspondants. Lorsque vous choisissez des identifiants, l'app communique leur nom d'utilisateur et leur mot de passe, ou leur code de vérification, après Touch ID ou le mot de passe de votre Mac, et l'extension les saisit dans la page.</p>
+        <p>L'extension conserve uniquement la paire de clés qui la jumelle avec l'app. Elle lit la disposition et le type des champs de formulaire pour placer son bouton en forme de clé, jamais ce que vous tapez. Vous pouvez supprimer un navigateur jumelé à tout moment dans KeeForge &rarr; Réglages &rarr; Navigateurs.</p>
 
         <h2>Envois de retours</h2>
         <p>KeeForge inclut un formulaire de retour intégré (accessible depuis les réglages et depuis certains écrans d’erreur). Ce formulaire est entièrement optionnel &mdash; les fonctionnalités et services de l’application n’en dépendent pas. C’est seulement lorsque vous appuyez sur «&nbsp;Envoyer&nbsp;» que l’application transmet les informations suivantes à notre point de terminaison de retour, à l’adresse <code>https://feedback.keeforge.com/api/feedback</code>, via HTTPS&nbsp;:</p>

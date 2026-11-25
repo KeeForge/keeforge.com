@@ -8,7 +8,7 @@ import Page from '../../layouts/Page.astro';
     canonicalPath="/it/privacy/"
     title="Informativa sulla privacy — KeeForge"
     description="KeeForge non raccoglie i dati del tuo vault. Il modulo facoltativo di feedback nell’app invia solo ciò che scegli: il tuo messaggio, i dettagli visibili dell’errore quando segnali un problema di apertura del database e, se acconsenti, un indirizzo email per risponderti e una foto allegata."
-    eyebrow="Ultimo aggiornamento: 3 novembre 2026"
+    eyebrow="Ultimo aggiornamento: 24 novembre 2026"
     heading="Informativa sulla privacy"
 >
     <div class="legal">
@@ -25,6 +25,10 @@ import Page from '../../layouts/Page.astro';
 
         <h2>I dati del tuo vault</h2>
         <p>Le tue password, le voci, gli allegati e la password principale vengono elaborati localmente e restano sul dispositivo e nelle posizioni di archiviazione che scegli. Lo sviluppatore di KeeForge e il servizio di feedback non ricevono il tuo vault, la password principale, i file chiave o il contenuto decifrato delle voci. L’app può funzionare offline, tranne quando scegli una delle funzionalità di rete descritte sopra.</p>
+
+        <h2>Estensione del browser</h2>
+        <p>L'estensione del browser di KeeForge per Chrome e Firefox funziona solo con l'app KeeForge sullo stesso Mac. Non effettua richieste di rete e non invia nulla allo sviluppatore di KeeForge né a terzi. Quando fai clic sul suo pulsante a forma di chiave, sul suo pulsante nella barra degli strumenti o sulla sua voce nel menu contestuale, invia l'indirizzo (schema, host e porta) della pagina aperta all'app KeeForge sul tuo Mac, che risponde con i titoli e i nomi utente delle credenziali corrispondenti. Quando scegli delle credenziali, l'app ne fornisce il nome utente e la password, o il codice di verifica, dopo Touch ID o la password del Mac, e l'estensione li inserisce nella pagina.</p>
+        <p>L'estensione conserva solo la coppia di chiavi che la abbina all'app. Legge la disposizione e il tipo dei campi dei moduli per posizionare il pulsante a forma di chiave, mai ciò che digiti. Puoi rimuovere un browser abbinato in qualsiasi momento da KeeForge &rarr; Impostazioni &rarr; Browser.</p>
 
         <h2>Invio di feedback</h2>
         <p>KeeForge include un modulo di feedback nell’app, disponibile nelle Impostazioni e in alcune schermate di errore. Il modulo è del tutto facoltativo: le funzionalità e i servizi dell’app non dipendono dal suo utilizzo. Solo quando tocchi &ldquo;Invia&rdquo;, l’app trasmette le seguenti informazioni al nostro endpoint di feedback <code>https://feedback.keeforge.com/api/feedback</code> tramite HTTPS:</p>

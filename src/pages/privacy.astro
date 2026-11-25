@@ -8,7 +8,7 @@ import Page from '../layouts/Page.astro';
     canonicalPath="/privacy/"
     title="Privacy Policy — KeeForge"
     description="KeeForge does not collect your vault data. The optional in-app feedback form only sends what you choose: your message, visible error details when reporting a database-open failure, and, if you opt in, a follow-up email address and an attached photo."
-    eyebrow="Last updated: November 3, 2026"
+    eyebrow="Last updated: November 24, 2026"
     heading="Privacy Policy"
 >
     <div class="legal">
@@ -25,6 +25,10 @@ import Page from '../layouts/Page.astro';
 
         <h2>Your Vault Data</h2>
         <p>Your passwords, entries, attachments, and master password are processed locally and remain on your device and in the storage locations you choose. The KeeForge developer and feedback service do not receive your vault, master password, key files, or decrypted entry contents. The app can operate offline except when you choose a network-backed feature described above.</p>
+
+        <h2>Browser Extension</h2>
+        <p>The KeeForge browser extension for Chrome and Firefox works only with the KeeForge app on the same Mac. It makes no network requests and sends nothing to the KeeForge developer or any third party. When you click its key button, its toolbar button, or its right-click menu item, it sends the address (scheme, host, and port) of the page you are on to the KeeForge app on your Mac, which answers with the titles and usernames of matching logins. When you choose a login, the app releases that login&rsquo;s username and password, or its verification code, after Touch ID or your Mac password, and the extension fills it into the page.</p>
+        <p>The extension stores only the key pair that pairs it with the app. It reads the layout and type of form fields to place its key button, never what you type. You can remove a paired browser at any time in KeeForge &rarr; Settings &rarr; Browsers.</p>
 
         <h2>Feedback Submissions</h2>
         <p>KeeForge includes an in-app feedback form (available from Settings and from certain error screens). The form is entirely optional &mdash; the app's features and services do not depend on using it. When, and only when, you tap &ldquo;Send,&rdquo; the app submits the following information to our feedback endpoint at <code>https://feedback.keeforge.com/api/feedback</code> over HTTPS:</p>
