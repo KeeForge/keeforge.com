@@ -1,5 +1,12 @@
 ---
-import Page from '../layouts/Page.astro';
+import Base from '../layouts/Base.astro';
+import DownloadLinks from '../components/DownloadLinks.astro';
+import { home } from '../i18n/home';
+import '../styles/home.css';
+
+const t = home.en;
+const path = '/best-keepass-app-iphone/';
+const source = 'https://github.com/KeeForge/KeeForge';
 
 const title = 'Best KeePass App for iPhone (2026): 5 Apps Compared';
 const description = 'KeeForge, KeePassium, Strongbox, PanicVault and OneKeePass compared on price, what is paywalled, open source, AutoFill, passkeys, sync, key files, YubiKey and security audits. Every fact is linked and was checked on 24 November 2026.';
@@ -189,442 +196,269 @@ const sources: { group: string; links: { label: string; href: string }[] }[] = [
         ],
     },
 ];
+
+const picks = [
+    { need: 'You want an independently audited app', app: 'KeePassium.', why: 'The only one here with a published third-party code audit (Cure53, 2024). Free for one database.' },
+    { need: 'You want the most features', app: 'Strongbox.', why: 'Password Safe files, Apple Watch, a duress PIN and the widest sync list. Face ID unlock and offline editing need Pro.' },
+    { need: 'You want everything free and open source', app: 'KeeForge or OneKeePass.', why: 'KeeForge covers iPhone, iPad and Mac; OneKeePass also runs on Android, Windows and Linux. No paid tier and no database limit in either.' },
+    { need: 'You’d rather pay once', app: 'PanicVault.', why: 'A single $4.99 purchase covers iPhone, iPad and Mac. Closed source, KDBX 4 only.' },
+];
+
+const notes = [
+    { app: 'KeePassium', body: 'The established choice. KeePassium is open source under GPLv3, and it is the only app here that has had an independent audit: Cure53 reviewed the iOS app and its cryptography in October 2024, and the developer says every finding was fixed in the next update. The free version is capable (sync, AutoFill, Face ID, 2FA codes) but limited to one database; YubiKey and Quick AutoFill are paid. Its Mac app is built with Mac Catalyst. Its App Store build was last updated in November 2025, though newer 2.6 versions are tagged in its source repository.' },
+    { app: 'Strongbox', body: 'The most feature-rich. Strongbox also opens Password Safe files, runs on Apple Watch and Vision Pro, and connects directly to the longest list of storage services, including SFTP. The free version includes AutoFill, passkeys, 2FA codes and key files on iPhone, but Face ID / Touch ID unlock and offline editing are Pro features, which many people will want. Strongbox was acquired by Applause in March 2025. Its code is published under AGPL-3.0, but the project itself calls it “source available” rather than open source, and the published code trails the App Store releases. Strongbox says it has not had an independent code-level audit.' },
+    { app: 'PanicVault', body: 'The simple one-time purchase. PanicVault costs $4.99 once on the US App Store, with no subscription or in-app purchases, and covers iPhone, iPad, Mac and Vision Pro. It supports key files and YubiKey over NFC on iPhone and USB on Mac. It is closed source, opens KDBX 4 databases only, syncs directly with iCloud Drive and Google Drive, and is available in English only. PanicVault publishes its own KeePass-for-iPhone guide, which is worth reading alongside this one.' },
+    { app: 'OneKeePass', body: 'The cross-platform open-source option. OneKeePass is free and GPLv3, with apps for iPhone, iPad and Android and desktop apps for Mac, Windows and Linux, so it suits you if your devices aren’t all Apple. On iPhone it AutoFills passwords, 2FA codes and passkeys, and connects directly to SFTP and WebDAV. It is still pre-1.0 (version 0.25), English only, and doesn’t document YubiKey support.' },
+    { app: 'KeeForge', body: 'Our app. KeeForge is free, open source under GPLv3, and has no account, subscription, paid tier or database limit. It runs on iPhone, iPad and Mac, where 1.23 rebuilt it as a native Mac app. It reads and writes KDBX 4, opens KDBX 3.1 read-only, and AutoFills passwords, passkeys and 2FA codes. On iPhone and iPad it connects directly to Dropbox, OneDrive, WebDAV and FTP and opens files from iCloud Drive and other Files providers; on Mac it uses WebDAV, FTP and synced folders. Where it falls short: it needs iOS 18, YubiKey databases open read-only and only on iPhone over NFC, it has no Google Drive connection yet, it is newer and smaller than KeePassium or Strongbox, and it has not had an independent security audit.' },
+];
+
 ---
 
-<Page
-    lang="en"
-    enPath="/best-keepass-app-iphone/"
-    canonicalPath="/best-keepass-app-iphone/"
-    title={title}
-    description={description}
-    eyebrow="Buyer's guide"
-    heading="The best KeePass app for iPhone"
-    lead="There is no official KeePass app for iPhone, so you pick a compatible client. We compared five current apps on what you pay for, whether you can read the code, and what works in AutoFill."
->
-    <aside class="disclosure">
-        <p>
-            <strong>Who wrote this:</strong> we make KeeForge, one of the apps below. To keep it useful anyway, every fact comes from the vendor’s own pages, linked under Sources, we list where each app beats ours, and we left out claims we couldn’t check. Facts checked on {checked}. If something is wrong or out of date, <a href="mailto:support@keeforge.com">tell us</a> and we’ll fix it.
-        </p>
-    </aside>
-
-    <section class="vs-section">
-        <h2>The short answer</h2>
-        <p>The right app depends on what you care about most. All five open the same KeePass <code class="mono">.kdbx</code> files, so you can try more than one on the same database.</p>
-        <div class="pick-grid">
-            <div class="pick-card">
-                <h3>You want an independently audited app</h3>
-                <p><strong>KeePassium.</strong> The only one here with a published third-party code audit (Cure53, 2024). Free for one database.</p>
-            </div>
-            <div class="pick-card">
-                <h3>You want the most features</h3>
-                <p><strong>Strongbox.</strong> Password Safe files, Apple Watch, a duress PIN and the widest sync list. Face ID unlock and offline editing need Pro.</p>
-            </div>
-            <div class="pick-card">
-                <h3>You want everything free and open source</h3>
-                <p><strong>KeeForge</strong> (iPhone, iPad and Mac) or <strong>OneKeePass</strong> (also Android, Windows and Linux). No paid tier and no database limit in either.</p>
-            </div>
-            <div class="pick-card">
-                <h3>You’d rather pay once</h3>
-                <p><strong>PanicVault.</strong> A single $4.99 purchase covers iPhone, iPad and Mac. Closed source, KDBX 4 only.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="vs-section">
-        <h2>Side-by-side comparison</h2>
-        <p class="vs-table-note">Checked {checked} against each vendor’s website, App Store listing and source repository. Prices are US App Store or vendor website prices and can differ by country. Swipe sideways on a phone.</p>
-        <div class="vs-table-wrap" tabindex="0" role="region" aria-label="KeePass apps for iPhone compared">
-            <table class="vs-table">
-                <thead>
-                    <tr>
-                        <th scope="col"><span class="visually-hidden">Feature</span></th>
-                        {apps.map((app) => <th scope="col">{app}</th>)}
-                    </tr>
-                </thead>
-                <tbody>
-                    {rows.map((row) => (
-                        <tr>
-                            <th scope="row">{row.label}</th>
-                            {row.cells.map((cell) => <td>{cell}</td>)}
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section class="vs-section apps">
-        <h2>Each app in a paragraph</h2>
-
-        <article class="app-note">
-            <h3>KeePassium</h3>
-            <p>
-                The established choice. KeePassium is open source under GPLv3, and it is the only app here that has paid for an independent audit: Cure53 reviewed the iOS app and its cryptography in October 2024, and the developer says every finding was fixed in the next update. The free version is capable (sync, AutoFill, Face ID, 2FA codes) but limited to one database; YubiKey and Quick AutoFill are paid. Its Mac app is built with Mac Catalyst. Its App Store build was last updated in November 2025, though newer 2.6 versions are tagged in its source repository.
-            </p>
-        </article>
-
-        <article class="app-note">
-            <h3>Strongbox</h3>
-            <p>
-                The most feature-rich. Strongbox also opens Password Safe files, runs on Apple Watch and Vision Pro, and connects directly to the longest list of storage services, including SFTP. The free version includes AutoFill, passkeys, 2FA codes and key files on iPhone, but Face ID / Touch ID unlock and offline editing are Pro features, which many people will want. Strongbox was acquired by Applause in March 2025. Its code is published under AGPL-3.0, but the project itself calls it “source available” rather than open source, and the published code trails the App Store releases. Strongbox says it has not had an independent code-level audit.
-            </p>
-        </article>
-
-        <article class="app-note">
-            <h3>PanicVault</h3>
-            <p>
-                The simple one-time purchase. PanicVault costs $4.99 once on the US App Store, with no subscription or in-app purchases, and covers iPhone, iPad, Mac and Vision Pro. It supports key files and YubiKey over NFC on iPhone and USB on Mac. It is closed source, opens KDBX 4 databases only, syncs directly with iCloud Drive and Google Drive, and is available in English only. PanicVault publishes its own KeePass-for-iPhone guide, which is worth reading alongside this one.
-            </p>
-        </article>
-
-        <article class="app-note">
-            <h3>OneKeePass</h3>
-            <p>
-                The cross-platform open-source option. OneKeePass is free and GPLv3, with apps for iPhone, iPad and Android and desktop apps for Mac, Windows and Linux, so it suits you if your devices aren’t all Apple. On iPhone it AutoFills passwords, 2FA codes and passkeys, and connects directly to SFTP and WebDAV. It is still pre-1.0 (version 0.25), English only, and doesn’t document YubiKey support.
-            </p>
-        </article>
-
-        <article class="app-note">
-            <h3>KeeForge</h3>
-            <p>
-                Our app. KeeForge is free, open source under GPLv3, and has no account, subscription, paid tier or database limit. It runs on iPhone, iPad and Mac, where 1.23 rebuilt it as a native Mac app. It reads and writes KDBX 4, opens KDBX 3.1 read-only, and AutoFills passwords, passkeys and 2FA codes. On iPhone and iPad it connects directly to Dropbox, OneDrive, WebDAV and FTP and opens files from iCloud Drive and other Files providers; on Mac it uses WebDAV, FTP and synced folders. Where it falls short: it needs iOS 18, YubiKey databases open read-only and only on iPhone over NFC, it has no Google Drive connection yet, it is newer and smaller than KeePassium or Strongbox, and it has not had an independent security audit.
-            </p>
-        </article>
-    </section>
-
-    <section class="vs-section">
-        <h2>Coming from KeePassXC?</h2>
-        <p>
-            KeePassXC has no iPhone app. Its FAQ says the team doesn’t make a mobile app and suggests Strongbox and KeePassium on iOS. Any app in this guide opens a KeePassXC database, as long as it is KDBX 4 (KeePassXC’s default). If you store passkeys in KeePassXC, KeeForge, KeePassium and PanicVault all read KeePassXC’s passkey format.
-        </p>
-        <p>
-            To use the same database on your computer and your iPhone, put the file somewhere both can reach, such as iCloud Drive, Dropbox, OneDrive or a WebDAV server, then add it in the iPhone app. Check that the app you choose connects to the service you already use.
-        </p>
-    </section>
-
-    <section class="vs-section">
-        <h2>Head-to-head comparisons</h2>
-        <p>Want more detail on KeeForge against a single app?</p>
-        <ul class="link-list">
-            <li><a href="/vs/keepassium/">KeeForge vs KeePassium</a></li>
-            <li><a href="/vs/strongbox/">KeeForge vs Strongbox</a></li>
-        </ul>
-    </section>
-
-    <section class="vs-section">
-        <h2>Sources</h2>
-        <p>Opened and checked on {checked}. App versions and dates are from the US App Store.</p>
-        <div class="sources">
-            {sources.map((source) => (
-                <div class="source-group">
-                    <h3>{source.group}</h3>
-                    <ul>
-                        {source.links.map((link) => <li><a href={link.href} rel="noopener">{link.label}</a></li>)}
-                    </ul>
+<Base title={title} description={description} lang="en" canonicalPath={path} ogType="article">
+    <div class="kf-home kf-guide">
+        <a href="#main" class="skip">{t.nav.skip}</a>
+        <header class="nav">
+            <div class="wrap nav-inner">
+                <a class="brand" href="/"><span class="key" aria-hidden="true"></span>KeeForge</a>
+                <nav class="navlinks" aria-label={t.nav.menu}>
+                    <a href="/#features">{t.nav.features}</a>
+                    <a href="/#compare">Compare</a>
+                    <a href="/#faq">{t.nav.faq}</a>
+                    <a href={`${source}/blob/main/CHANGELOG.md`}>{t.nav.changelog}</a>
+                    <a href="/security-audit/">{t.nav.audit}</a>
+                </nav>
+                <div class="navright">
+                    <a class="nav-source" href={source}>{t.nav.source} <span aria-hidden="true">↗</span></a>
+                    <a class="btn small" href="#download">{t.nav.download}</a>
+                    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">{t.nav.menu}</button>
                 </div>
-            ))}
-        </div>
-    </section>
+            </div>
+            <nav id="mobile-nav" class="mobile-nav" aria-label={t.nav.menu} hidden>
+                <a href="/#features">{t.nav.features}</a>
+                <a href="/#compare">Compare</a>
+                <a href="/#faq">{t.nav.faq}</a>
+                <a href={`${source}/blob/main/CHANGELOG.md`}>{t.nav.changelog}</a>
+                <a href="/security-audit/">{t.nav.audit}</a>
+                <a href={source}>{t.nav.source} <span aria-hidden="true">↗</span></a>
+            </nav>
+        </header>
 
-    <section class="vs-cta">
-        <h2>Try KeeForge</h2>
-        <p>Free, open source, no account.</p>
-        <div class="cta-row">
-            <a href="https://apps.apple.com/app/id6759309295" class="app-store-badge" aria-label="Download on the App Store">
-                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" height="52">
-            </a>
-            <a href="/" class="ghost-link">Back to homepage</a>
-        </div>
-    </section>
-</Page>
+        <main id="main">
+            <section class="guide-hero wrap">
+                <div class="eyebrow">Buyer’s guide · Checked {checked}</div>
+                <h1>The best KeePass app <span class="accent">for iPhone.</span></h1>
+                <p class="lead">There is no official KeePass app for iPhone, so you pick a compatible client. We compared five current apps on what you pay for, whether you can read the code, and what works in AutoFill.</p>
+                <aside class="disclosure">
+                    <div class="eyebrow">Who wrote this</div>
+                    <p>We make KeeForge, one of the apps below. To keep this useful anyway, every fact comes from the vendor’s own pages, linked under <a href="#sources">Sources</a>, we say where each app beats ours, and we left out claims we couldn’t check. If something is wrong or out of date, <a href="mailto:support@keeforge.com">tell us</a> and we’ll fix it.</p>
+                </aside>
+            </section>
+
+            <section class="guide-section wrap" id="short-answer">
+                <div class="section-heading">
+                    <div class="eyebrow">01 · The short answer</div>
+                    <h2>It depends on what you care about most.</h2>
+                    <p>All five open the same KeePass <code>.kdbx</code> files, so you can try more than one on the same database.</p>
+                </div>
+                <div class="compare-grid picks">
+                    {picks.map((pick, i) => (
+                        <article>
+                            <div class="eyebrow">{String(i + 1).padStart(2, '0')} / {String(picks.length).padStart(2, '0')}</div>
+                            <h3>{pick.need}</h3>
+                            <p><strong>{pick.app}</strong> {pick.why}</p>
+                        </article>
+                    ))}
+                </div>
+            </section>
+
+            <section class="guide-band" id="comparison">
+                <div class="wrap">
+                    <div class="section-heading">
+                        <div class="eyebrow">02 · Side by side</div>
+                        <h2>Five KeePass apps for iPhone, compared.</h2>
+                        <p class="note">Checked {checked} against each vendor’s website, App Store listing and source repository. Prices are US App Store or vendor website prices and can differ by country. On a phone, swipe the table sideways.</p>
+                    </div>
+                    <div class="table-wrap" tabindex="0" role="region" aria-label="KeePass apps for iPhone compared">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col"><span class="visually-hidden">Feature</span></th>
+                                    {apps.map((app) => <th scope="col">{app}</th>)}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {rows.map((row) => (
+                                    <tr>
+                                        <th scope="row">{row.label}</th>
+                                        {row.cells.map((cell) => <td>{cell}</td>)}
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section class="guide-section split wrap" id="apps">
+                <div>
+                    <div class="eyebrow">03 · Each app</div>
+                    <h2>Strengths and trade-offs, in a paragraph each.</h2>
+                </div>
+                <div class="app-notes">
+                    {notes.map((note) => (
+                        <article>
+                            <h3>{note.app}</h3>
+                            <p>{note.body}</p>
+                        </article>
+                    ))}
+                </div>
+            </section>
+
+            <section class="guide-section split wrap" id="keepassxc">
+                <div>
+                    <div class="eyebrow">04 · KeePassXC users</div>
+                    <h2>Coming from KeePassXC?</h2>
+                </div>
+                <div class="prose">
+                    <p>KeePassXC has no iPhone app. Its FAQ says the team doesn’t make a mobile app and suggests Strongbox and KeePassium on iOS. Any app in this guide opens a KeePassXC database, as long as it is KDBX 4 (KeePassXC’s default). If you store passkeys in KeePassXC, KeeForge, KeePassium and PanicVault all read KeePassXC’s passkey format.</p>
+                    <p>To use the same database on your computer and your iPhone, put the file somewhere both can reach, such as iCloud Drive, Dropbox, OneDrive or a WebDAV server, then add it in the iPhone app. Check that the app you choose connects to the service you already use.</p>
+                    <div class="compare-links">
+                        <a href="/vs/keepassium/">KeeForge / KeePassium <span aria-hidden="true">↗</span></a>
+                        <a href="/vs/strongbox/">KeeForge / Strongbox <span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="guide-section wrap" id="sources">
+                <div class="section-heading">
+                    <div class="eyebrow">05 · Sources</div>
+                    <h2>Where every fact comes from.</h2>
+                    <p>Opened and checked on {checked}. App versions and dates are from the US App Store.</p>
+                </div>
+                <div class="sources">
+                    {sources.map((group) => (
+                        <div>
+                            <h3>{group.group}</h3>
+                            <ul>
+                                {group.links.map((link) => <li><a href={link.href} rel="noopener">{link.label}</a></li>)}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section class="beta">
+                <div class="wrap beta-grid">
+                    <div>
+                        <div class="eyebrow">Try KeeForge</div>
+                        <h2>Free, open source, <span class="accent">no account.</span></h2>
+                        <p>Open the KeePass database you already have. There is no paid tier, subscription or database limit.</p>
+                        <DownloadLinks labels={t.downloads} id="download" />
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="foot">
+            <div class="wrap">
+                <div class="footer-top">
+                    <a href="/" class="brand"><span class="key" aria-hidden="true"></span>KeeForge</a>
+                    <nav><a href={t.footer.privacyHref}>{t.footer.privacy}</a>
+                        <a href="mailto:support@keeforge.com">{t.footer.support}</a><a href={source}>{t.nav.source} <span aria-hidden="true">↗</span></a></nav>
+                </div>
+                <div class="footer-bottom"><span>{t.footer.copy}</span></div>
+            </div>
+        </footer>
+    </div>
+</Base>
+
+<script>
+    const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+    const menu = document.getElementById('mobile-nav');
+    if (toggle && menu) {
+        const closeMenu = () => { toggle.setAttribute('aria-expanded', 'false'); menu.hidden = true; };
+        toggle.addEventListener('click', () => {
+            const expanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', String(!expanded));
+            menu.hidden = expanded;
+        });
+        menu.addEventListener('click', event => {
+            if (event.target instanceof Element && event.target.closest('a')) closeMenu();
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && !menu.hidden) { closeMenu(); toggle.focus(); }
+        });
+        matchMedia('(min-width: 1101px)').addEventListener('change', closeMenu);
+    }
+</script>
 
 <style>
-    .disclosure {
-        background: #fffbeb;
-        border: 1px solid #fde68a;
-        border-radius: 12px;
-        padding: 18px 22px;
-        margin-bottom: 48px;
-    }
+    /* Builds on the homepage design system in src/styles/home.css. */
+    .kf-guide .guide-hero { padding-block: 72px 56px; max-width: 1280px; }
+    .kf-guide .guide-hero h1 { font-size: clamp(44px, 5.1vw, 74px); line-height: 1.04; max-width: 14ch; }
+    .kf-guide .guide-hero .lead { font-size: 18px; max-width: 58ch; margin-top: 24px; }
+    .kf-guide .disclosure { margin-top: 40px; max-width: 760px; padding: 24px 28px; background: var(--paper); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 12px; }
+    .kf-guide .disclosure .eyebrow { margin-bottom: 10px; }
+    .kf-guide .disclosure p { font-size: 15px; }
+    .kf-guide a:not(.btn, .brand, .direct) { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--rule); }
+    .kf-guide a:not(.btn, .brand, .direct):hover { text-decoration-color: currentColor; }
+    .kf-guide .nav a, .kf-guide .foot a, .kf-guide .skip { text-decoration: none !important; }
+    .kf-guide .nav a:hover, .kf-guide .foot a:hover { text-decoration: underline !important; }
+    .kf-guide main p a { color: var(--accent); }
 
-    .disclosure p {
-        font-size: 0.92rem;
-        line-height: 1.65;
-        color: #78350f;
-    }
+    .kf-guide .guide-section { padding-block: 72px; border-top: 1px solid var(--rule); }
+    .kf-guide .section-heading p { margin-top: 16px; max-width: 62ch; }
+    .kf-guide .section-heading .note { font-size: 13px; }
+    .kf-guide .picks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .kf-guide .picks h3 { min-height: 0; }
+    .kf-guide .picks p { margin-top: 14px; font-size: 15px; }
+    .kf-guide .picks strong { color: var(--ink); font-weight: 600; }
 
-    .disclosure a {
-        color: #92400e;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-    }
-
-    .vs-section {
-        margin-bottom: 56px;
-    }
-
-    .vs-section h2 {
-        font-size: 1.4rem;
-        font-weight: 600;
-        letter-spacing: -0.01em;
-        margin-bottom: 16px;
-    }
-
-    .vs-section > p {
-        font-size: 1rem;
-        line-height: 1.7;
-        color: var(--text-dim);
-        margin-bottom: 14px;
-        max-width: 720px;
-    }
-
-    .vs-section code.mono {
-        font-size: 0.85rem;
-        background: rgba(15, 23, 42, 0.05);
-        padding: 1px 4px;
-        border-radius: 4px;
-    }
-
-    .vs-table-note {
-        font-size: 0.8rem !important;
-        font-style: italic;
-        margin-bottom: 16px !important;
-    }
-
-    .pick-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-        margin-top: 20px;
-    }
-
-    .pick-card,
-    .source-group {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 22px 24px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-    }
-
-    .pick-card h3 {
-        font-size: 0.8rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        color: var(--accent-dim);
-        margin-bottom: 10px;
-    }
-
-    .pick-card p {
-        font-size: 0.92rem;
-        line-height: 1.6;
-        color: var(--text-dim);
-    }
-
-    .pick-card strong {
-        color: var(--text);
-    }
-
-    .vs-table-wrap {
-        overflow-x: auto;
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        background: var(--surface);
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-    }
-
-    .vs-table-wrap:focus-visible {
-        outline: 2px solid var(--accent);
-        outline-offset: 2px;
-    }
-
-    .vs-table {
-        width: 100%;
-        min-width: 880px;
-        border-collapse: separate;
-        border-spacing: 0;
-        font-size: 0.85rem;
-    }
-
-    .vs-table thead th {
-        background: #f0f4f8;
-        text-align: left;
-        font-weight: 600;
-        padding: 12px 14px;
-        border-bottom: 1px solid var(--border);
-        white-space: nowrap;
-    }
-
-    .vs-table td,
-    .vs-table tbody th {
-        padding: 12px 14px;
-        border-top: 1px solid var(--border);
-        line-height: 1.5;
-        vertical-align: top;
-        text-align: left;
-    }
-
-    .vs-table tbody tr:first-child td,
-    .vs-table tbody tr:first-child th {
-        border-top: 0;
-    }
-
-    .vs-table td {
-        color: var(--text-dim);
-    }
-
-    .vs-table tbody th {
-        color: var(--text);
-        font-weight: 600;
-        width: 150px;
-    }
-
+    .kf-guide .guide-band { background: var(--alt); border-block: 1px solid var(--rule); padding-block: 72px; }
+    .kf-guide .table-wrap { overflow-x: auto; background: var(--paper); border: 1px solid var(--rule); border-radius: 16px; }
+    .kf-guide .table-wrap:focus-visible { outline: 3px solid var(--navy); outline-offset: 4px; }
+    .kf-guide table { width: 100%; min-width: 900px; border-collapse: separate; border-spacing: 0; font-size: 14px; }
+    .kf-guide th, .kf-guide td { padding: 16px 18px; text-align: left; vertical-align: top; line-height: 1.55; border-top: 1px solid var(--rule); }
+    .kf-guide thead th { border-top: 0; font: 500 22px var(--serif); letter-spacing: -.02em; color: var(--ink); white-space: nowrap; padding-block: 20px; }
+    .kf-guide thead th:nth-child(2) { color: var(--accent); }
+    .kf-guide tbody th { font: 400 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--soft); width: 160px; padding-top: 19px; }
+    .kf-guide td { color: var(--soft); }
     /* Keep the row labels in view while the table scrolls sideways. */
-    .vs-table th:first-child {
-        position: sticky;
-        left: 0;
-        z-index: 1;
-        background: var(--surface);
-        border-right: 1px solid var(--border);
+    .kf-guide th:first-child { position: sticky; left: 0; z-index: 1; background: var(--paper); border-right: 1px solid var(--rule); }
+    .kf-guide .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+    .kf-guide .split { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: 80px; }
+    .kf-guide .split h2 { font-size: 44px; }
+    .kf-guide .app-notes article { padding-block: 28px; border-bottom: 1px solid var(--rule); }
+    .kf-guide .app-notes article:first-child { padding-top: 0; }
+    .kf-guide .app-notes h3 { font-size: 28px; }
+    .kf-guide .app-notes p, .kf-guide .prose p { margin-top: 12px; font-size: 16px; }
+    .kf-guide .prose p:first-child { margin-top: 0; }
+
+    .kf-guide .sources { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 48px; }
+    .kf-guide .sources h3 { font: 400 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+    .kf-guide .sources ul { list-style: none; padding: 0; margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+    .kf-guide .sources li { font-size: 14px; line-height: 1.5; color: var(--ink); overflow-wrap: anywhere; }
+
+    .kf-guide .beta-grid { grid-template-columns: minmax(0, 1fr); }
+
+    @media (max-width: 1000px) {
+        .kf-guide .split { gap: 40px; }
+        .kf-guide .sources { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
-
-    .vs-table thead th:first-child {
-        background: #f0f4f8;
-    }
-
-    .visually-hidden {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        clip: rect(0 0 0 0);
-        white-space: nowrap;
-    }
-
-    .app-note {
-        margin-bottom: 24px;
-        max-width: 720px;
-    }
-
-    .app-note h3 {
-        font-size: 1.05rem;
-        font-weight: 600;
-        margin-bottom: 8px;
-    }
-
-    .app-note p {
-        font-size: 0.98rem;
-        line-height: 1.7;
-        color: var(--text-dim);
-    }
-
-    .link-list {
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px 24px;
-    }
-
-    .link-list a {
-        font-weight: 500;
-    }
-
-    .sources {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 16px;
-        margin-top: 8px;
-    }
-
-    .source-group h3 {
-        font-size: 0.95rem;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-
-    .source-group ul {
-        list-style: none;
-    }
-
-    .source-group li {
-        font-size: 0.85rem;
-        line-height: 1.5;
-        margin-bottom: 8px;
-        overflow-wrap: anywhere;
-    }
-
-    .source-group li:last-child {
-        margin-bottom: 0;
-    }
-
-    .vs-cta {
-        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-        border-radius: 16px;
-        padding: 40px 32px;
-        text-align: center;
-        color: #e2e8f0;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-    }
-
-    .vs-cta h2 {
-        font-size: 1.6rem;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        margin-bottom: 8px;
-        color: #e2e8f0;
-    }
-
-    .vs-cta p {
-        color: #94a3b8;
-        font-size: 0.95rem;
-        margin-bottom: 22px;
-    }
-
-    .cta-row {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 18px;
-        flex-wrap: wrap;
-    }
-
-    .app-store-badge:hover {
-        opacity: 0.85;
-    }
-
-    .ghost-link {
-        font-size: 0.9rem;
-        color: #cbd5e1 !important;
-        padding: 10px 18px;
-        border: 1px solid #334155;
-        border-radius: 8px;
-    }
-
-    .ghost-link:hover {
-        border-color: #475569;
-        background: rgba(255, 255, 255, 0.05);
-    }
-
-    @media (max-width: 640px) {
-        .pick-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .vs-section {
-            margin-bottom: 40px;
-        }
-
-        .vs-table {
-            min-width: 760px;
-        }
-
-        .vs-table tbody th {
-            width: 112px;
-        }
-
-        .vs-cta {
-            padding: 32px 22px;
-        }
+    @media (max-width: 767px) {
+        .kf-guide .guide-hero { padding-block: 48px 40px; }
+        .kf-guide .guide-hero .lead { font-size: 17px; }
+        .kf-guide .disclosure { padding: 20px; }
+        .kf-guide .guide-section, .kf-guide .guide-band { padding-block: 48px; }
+        .kf-guide .picks, .kf-guide .split, .kf-guide .sources { grid-template-columns: minmax(0, 1fr); }
+        .kf-guide .split { gap: 28px; }
+        .kf-guide .split h2 { font-size: 38px; }
+        .kf-guide table { min-width: 780px; font-size: 13px; }
+        .kf-guide th, .kf-guide td { padding: 14px; }
+        .kf-guide tbody th { width: 112px; }
+        .kf-guide thead th { font-size: 20px; }
+        .kf-guide .app-notes h3 { font-size: 26px; }
+        .kf-guide .app-notes p, .kf-guide .prose p { font-size: 15px; }
     }
 </style>
