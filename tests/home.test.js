@@ -84,8 +84,11 @@ test('App Store links never pin a storefront, so visitors land in their own coun
     for (const page of pages) {
         const html = readFileSync(new URL(page, siteRoot), 'utf8');
         for (const [url] of html.matchAll(/https?:\/\/(?:apps|itunes)\.apple\.com\/[^"'\s<>]*/g)) {
-            appStoreLinks += 1;
-            assert.ok(url.startsWith(`${appStore}`), `${page}: ${url}`);
+            // The comparison guide also cites other apps' listings, which must stay unpinned too.
+            if (url.includes('id6759309295')) {
+                appStoreLinks += 1;
+                assert.ok(url.startsWith(`${appStore}`), `${page}: ${url}`);
+            }
             assert.doesNotMatch(url, /apple\.com\/[a-z]{2}(?:-[a-z]+)?\//i, `${page}: ${url}`);
         }
     }

@@ -20,9 +20,10 @@ interface Props {
     jaPath?: string;
     itPath?: string;
     ruPath?: string;
+    canonicalPath?: string;
 }
 
-const { title, description, eyebrow, heading, lead, lang = 'en', enPath, dePath, frPath, esPath, zhHansPath, zhHantPath, jaPath, itPath, ruPath } = Astro.props;
+const { title, description, eyebrow, heading, lead, lang = 'en', enPath, dePath, frPath, esPath, zhHansPath, zhHantPath, jaPath, itPath, ruPath, canonicalPath } = Astro.props;
 
 const langPaths = { en: enPath, de: dePath, fr: frPath, es: esPath, 'zh-hans': zhHansPath, 'zh-hant': zhHantPath, ja: jaPath, it: itPath, ru: ruPath };
 
@@ -129,7 +130,7 @@ const strings = {
 }[lang];
 ---
 
-<Base title={title} description={description} lang={lang} enPath={enPath} dePath={dePath} frPath={frPath} esPath={esPath} zhHansPath={zhHansPath} zhHantPath={zhHantPath} jaPath={jaPath} itPath={itPath} ruPath={ruPath}>
+<Base title={title} description={description} lang={lang} enPath={enPath} dePath={dePath} frPath={frPath} esPath={esPath} zhHansPath={zhHansPath} zhHantPath={zhHantPath} jaPath={jaPath} itPath={itPath} ruPath={ruPath} canonicalPath={canonicalPath}>
     <header class="page-header">
         <div class="page-header-inner">
             <a href={strings.home} class="brand-link">
@@ -173,6 +174,7 @@ const strings = {
                     <a href="https://github.com/KeeForge/KeeForge">GitHub</a>
                     <a href="https://github.com/KeeForge/KeeForge/blob/main/CHANGELOG.md" rel="noopener">{strings.changelog}</a>
                     <a href="/security-audit/">{strings.audit}</a>
+                    {lang === 'en' && <a href="/best-keepass-app-iphone/">Best KeePass apps for iPhone</a>}
                     <a href={strings.privacyHref}>{strings.privacy}</a>
                     <LanguageSwitcher current={lang} paths={langPaths} variant="footer" />
                 </div>
