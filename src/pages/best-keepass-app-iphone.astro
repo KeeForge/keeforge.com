@@ -5,9 +5,69 @@ import { home } from '../i18n/home';
 
 const path = '/best-keepass-app-iphone/';
 
-const title = 'Best KeePass App for iPhone (2026): 5 Apps Compared';
-const description = 'KeeForge, KeePassium, Strongbox, PanicVault and OneKeePass compared on price, what is paywalled, open source, AutoFill, passkeys, sync, key files, YubiKey and security audits. Every fact is linked and was checked on 24 November 2026.';
+const title = 'Best KeePass App for iPhone (2026): KeeForge vs KeePassium, Strongbox and PanicVault';
+const description = 'KeeForge is the KeePass app for iPhone with every feature free: open source, no subscription, Face ID, passkeys and 2FA AutoFill included. See how it compares with KeePassium, Strongbox and PanicVault. Checked 24 November 2026.';
 const checked = '24 November 2026';
+
+// The at-a-glance list. Every claim here must also be backed by the full
+// table and the vendor pages listed under Sources.
+const rivals = ['KeePassium', 'Strongbox', 'PanicVault'];
+// Lets narrow screens wrap app names between their words, never mid-word.
+const wrapName = (name: string) => name.replace(/([a-z])([A-Z])/g, '$1<wbr>$2').replace('Strongbox', 'Strong<wbr>box');
+const verdict: { label: string; keeforge: string; rivals: { ok: boolean; note: string }[] }[] = [
+    {
+        label: 'Every feature free',
+        keeforge: 'No paid tier, no subscription',
+        rivals: [
+            { ok: false, note: '1 database free' },
+            { ok: false, note: 'Paid Pro upgrade' },
+            { ok: false, note: '$4.99 upfront' },
+        ],
+    },
+    {
+        label: 'Face ID unlock at no cost',
+        keeforge: 'Free, with no account',
+        rivals: [
+            { ok: true, note: 'Free' },
+            { ok: false, note: 'Pro only' },
+            { ok: false, note: 'Needs the $4.99 app' },
+        ],
+    },
+    {
+        label: 'Fully open source',
+        keeforge: 'GPLv3, the whole app',
+        rivals: [
+            { ok: true, note: 'GPLv3' },
+            { ok: false, note: '“Source available”' },
+            { ok: false, note: 'Closed source' },
+        ],
+    },
+    {
+        label: 'Dropbox & OneDrive built in',
+        keeforge: 'Plus WebDAV, FTP and iCloud Drive',
+        rivals: [
+            { ok: true, note: 'Yes' },
+            { ok: true, note: 'Yes' },
+            { ok: false, note: 'iCloud & Google Drive only' },
+        ],
+    },
+    {
+        label: 'Updated in the last month',
+        keeforge: '22 Nov 2026',
+        rivals: [
+            { ok: false, note: '19 Nov 2025' },
+            { ok: false, note: '1 Sep 2026' },
+            { ok: true, note: '14 Nov 2026' },
+        ],
+    },
+];
+
+const strengths = [
+    'Every feature free. No subscription, no paid tier, no database limit.',
+    'Passkeys, 2FA codes and passwords in AutoFill, with Face ID.',
+    'Open source under GPLv3. No account, no tracking.',
+    'One app for iPhone, iPad and a native Mac app.',
+];
 
 // Each cell is plain text; links to the sources live in the Sources section.
 const apps = ['KeeForge', 'KeePassium', 'Strongbox', 'PanicVault', 'OneKeePass'];
@@ -193,22 +253,6 @@ const sources: { group: string; links: { label: string; href: string }[] }[] = [
         ],
     },
 ];
-
-const picks = [
-    { need: 'You want an independently audited app', app: 'KeePassium.', why: 'The only one here with a published third-party code audit (Cure53, 2024). Free for one database.' },
-    { need: 'You want the most features', app: 'Strongbox.', why: 'Password Safe files, Apple Watch, a duress PIN and the widest sync list. Face ID unlock and offline editing need Pro.' },
-    { need: 'You want everything free and open source', app: 'KeeForge or OneKeePass.', why: 'KeeForge covers iPhone, iPad and Mac; OneKeePass also runs on Android, Windows and Linux. No paid tier and no database limit in either.' },
-    { need: 'You’d rather pay once', app: 'PanicVault.', why: 'A single $4.99 purchase covers iPhone, iPad and Mac. Closed source, KDBX 4 only.' },
-];
-
-const notes = [
-    { app: 'KeePassium', body: 'The established choice. KeePassium is open source under GPLv3, and it is the only app here that has had an independent audit: Cure53 reviewed the iOS app and its cryptography in October 2024, and the developer says every finding was fixed in the next update. The free version is capable (sync, AutoFill, Face ID, 2FA codes) but limited to one database; YubiKey and Quick AutoFill are paid. Its Mac app is built with Mac Catalyst. Its App Store build was last updated in November 2025, though newer 2.6 versions are tagged in its source repository.' },
-    { app: 'Strongbox', body: 'The most feature-rich. Strongbox also opens Password Safe files, runs on Apple Watch and Vision Pro, and connects directly to the longest list of storage services, including SFTP. The free version includes AutoFill, passkeys, 2FA codes and key files on iPhone, but Face ID / Touch ID unlock and offline editing are Pro features, which many people will want. Strongbox was acquired by Applause in March 2025. Its code is published under AGPL-3.0, but the project itself calls it “source available” rather than open source, and the published code trails the App Store releases. Strongbox says it has not had an independent code-level audit.' },
-    { app: 'PanicVault', body: 'The simple one-time purchase. PanicVault costs $4.99 once on the US App Store, with no subscription or in-app purchases, and covers iPhone, iPad, Mac and Vision Pro. It supports key files and YubiKey over NFC on iPhone and USB on Mac. It is closed source, opens KDBX 4 databases only, syncs directly with iCloud Drive and Google Drive, and is available in English only. PanicVault publishes its own KeePass-for-iPhone guide, which is worth reading alongside this one.' },
-    { app: 'OneKeePass', body: 'The cross-platform open-source option. OneKeePass is free and GPLv3, with apps for iPhone, iPad and Android and desktop apps for Mac, Windows and Linux, so it suits you if your devices aren’t all Apple. On iPhone it AutoFills passwords, 2FA codes and passkeys, and connects directly to SFTP and WebDAV. It is still pre-1.0 (version 0.25), English only, and doesn’t document YubiKey support.' },
-    { app: 'KeeForge', body: 'Our app. KeeForge is free, open source under GPLv3, and has no account, subscription, paid tier or database limit. It runs on iPhone, iPad and Mac, where 1.23 rebuilt it as a native Mac app. It reads and writes KDBX 4, opens KDBX 3.1 read-only, and AutoFills passwords, passkeys and 2FA codes. On iPhone and iPad it connects directly to Dropbox, OneDrive, WebDAV and FTP and opens files from iCloud Drive and other Files providers; on Mac it uses WebDAV, FTP and synced folders. Where it falls short: it needs iOS 18, YubiKey databases open read-only and only on iPhone over NFC, it has no Google Drive connection yet, it is newer and smaller than KeePassium or Strongbox, and it has not had an independent security audit.' },
-];
-
 ---
 
 <Page
@@ -218,111 +262,98 @@ const notes = [
     ogType="article"
     title={title}
     description={description}
-    eyebrow={`Buyer’s guide · Checked ${checked}`}
-    heading="The best KeePass app"
-    headingAccent="for iPhone."
-    lead="There is no official KeePass app for iPhone, so you pick a compatible client. We compared five current apps on what you pay for, whether you can read the code, and what works in AutoFill."
+    eyebrow={`Best KeePass app for iPhone · Checked ${checked}`}
+    heading="Our pick: KeeForge."
+    headingAccent="Every feature, free."
+    lead="The KeePass app for iPhone, iPad and Mac with nothing locked behind a paywall."
 >
-    <aside class="disclosure" slot="hero">
-        <div class="eyebrow">Who wrote this</div>
-        <p>We make KeeForge, one of the apps below. To keep this useful anyway, every fact comes from the vendor’s own pages, linked under <a href="#sources">Sources</a>, we say where each app beats ours, and we left out claims we couldn’t check. If something is wrong or out of date, <a href="mailto:support@keeforge.com">tell us</a> and we’ll fix it.</p>
-    </aside>
+    <div class="verdict-hero" slot="hero">
+        <ul class="strengths">
+            {strengths.map((item) => <li>{item}</li>)}
+        </ul>
+        <DownloadLinks labels={home.en.downloads} id="download" />
+        <p class="byline">We make KeeForge. Every fact on this page comes from the vendors’ own pages, <a href="#details">linked below</a>.</p>
+    </div>
 
-    <section class="vs-section" id="short-answer">
-        <div class="section-heading">
-            <div class="eyebrow">01 · The short answer</div>
-            <h2>It depends on what you care about most.</h2>
-            <p>All five open the same KeePass <code>.kdbx</code> files, so you can try more than one on the same database.</p>
-        </div>
-        <div class="picks">
-            {picks.map((pick, i) => (
-                <article>
-                    <div class="eyebrow">{String(i + 1).padStart(2, '0')} / {String(picks.length).padStart(2, '0')}</div>
-                    <h3>{pick.need}</h3>
-                    <p><strong>{pick.app}</strong> {pick.why}</p>
-                </article>
-            ))}
-        </div>
-    </section>
-
-    <section class="vs-section band" id="comparison">
-        <div class="section-heading">
-            <div class="eyebrow">02 · Side by side</div>
-            <h2>Five KeePass apps for iPhone, compared.</h2>
-            <p class="note">Checked {checked} against each vendor’s website, App Store listing and source repository. Prices are US App Store or vendor website prices and can differ by country. On a phone, swipe the table sideways.</p>
-        </div>
-        <div class="vs-table-wrap" tabindex="0" role="region" aria-label="KeePass apps for iPhone compared">
-            <table class="vs-table wide">
+    <section class="verdict" aria-labelledby="verdict-title">
+        <h2 id="verdict-title">KeeForge vs the popular alternatives</h2>
+        <div class="verdict-wrap">
+            <table class="verdict-table">
                 <thead>
                     <tr>
                         <th scope="col"><span class="visually-hidden">Feature</span></th>
-                        {apps.map((app) => <th scope="col">{app}</th>)}
+                        <th scope="col" class="us"><Fragment set:html={wrapName('KeeForge')} /></th>
+                        {rivals.map((rival) => <th scope="col"><Fragment set:html={wrapName(rival)} /></th>)}
                     </tr>
                 </thead>
                 <tbody>
-                    {rows.map((row) => (
+                    {verdict.map((row) => (
                         <tr>
                             <th scope="row">{row.label}</th>
-                            {row.cells.map((cell) => <td>{cell}</td>)}
+                            <td class="us"><span class="mark yes" aria-label="Yes">✓</span><span class="note">{row.keeforge}</span></td>
+                            {row.rivals.map((cell) => (
+                                <td><span class={`mark ${cell.ok ? 'yes' : 'no'}`} aria-label={cell.ok ? 'Yes' : 'No'}>{cell.ok ? '✓' : '✕'}</span><span class="note">{cell.note}</span></td>
+                            ))}
                         </tr>
                     ))}
                 </tbody>
             </table>
         </div>
+        <p class="verdict-note">Checked {checked} against each app’s website, App Store listing (US) and source code.</p>
     </section>
 
-    <section class="vs-section split" id="apps">
-        <div>
-            <div class="eyebrow">03 · Each app</div>
-            <h2>Strengths and trade-offs, in a paragraph each.</h2>
-        </div>
-        <div class="app-notes">
-            {notes.map((note) => (
-                <article>
-                    <h3>{note.app}</h3>
-                    <p>{note.body}</p>
-                </article>
-            ))}
-        </div>
-    </section>
+    <section class="details" id="details">
+        <details>
+            <summary>Full comparison, the honest trade-offs, and sources <span aria-hidden="true" class="faq-symbol"></span></summary>
+            <div class="details-body">
+                <h3>When another app may suit you better</h3>
+                <ul class="tradeoffs">
+                    <li><strong>You need an independent security audit:</strong> KeePassium was audited by Cure53 in October 2024. KeeForge hasn’t had an independent audit.</li>
+                    <li><strong>You need Password Safe files, Apple Watch, or older iOS:</strong> Strongbox supports all three. KeeForge needs iOS 18.</li>
+                    <li><strong>You edit YubiKey-protected databases:</strong> KeeForge opens them read-only, on iPhone over NFC.</li>
+                    <li><strong>You also use Android, Windows or Linux:</strong> OneKeePass is free and open source on all of them.</li>
+                </ul>
 
-    <section class="vs-section split" id="keepassxc">
-        <div>
-            <div class="eyebrow">04 · KeePassXC users</div>
-            <h2>Coming from KeePassXC?</h2>
-        </div>
-        <div class="prose">
-            <p>KeePassXC has no iPhone app. Its FAQ says the team doesn’t make a mobile app and suggests Strongbox and KeePassium on iOS. Any app in this guide opens a KeePassXC database, as long as it is KDBX 4 (KeePassXC’s default). If you store passkeys in KeePassXC, KeeForge, KeePassium and PanicVault all read KeePassXC’s passkey format.</p>
-            <p>To use the same database on your computer and your iPhone, put the file somewhere both can reach, such as iCloud Drive, Dropbox, OneDrive or a WebDAV server, then add it in the iPhone app. Check that the app you choose connects to the service you already use.</p>
-            <div class="compare-links">
-                <a href="/vs/keepassium/">KeeForge / KeePassium <span aria-hidden="true">↗</span></a>
-                <a href="/vs/strongbox/">KeeForge / Strongbox <span aria-hidden="true">↗</span></a>
-            </div>
-        </div>
-    </section>
-
-    <section class="vs-section" id="sources">
-        <div class="section-heading">
-            <div class="eyebrow">05 · Sources</div>
-            <h2>Where every fact comes from.</h2>
-            <p>Opened and checked on {checked}. App versions and dates are from the US App Store.</p>
-        </div>
-        <div class="sources">
-            {sources.map((group) => (
-                <div>
-                    <h3>{group.group}</h3>
-                    <ul>
-                        {group.links.map((link) => <li><a href={link.href} rel="noopener">{link.label}</a></li>)}
-                    </ul>
+                <h3>All five apps, side by side</h3>
+                <div class="vs-table-wrap" tabindex="0" role="region" aria-label="KeePass apps for iPhone compared">
+                    <table class="vs-table wide">
+                        <thead>
+                            <tr>
+                                <th scope="col"><span class="visually-hidden">Feature</span></th>
+                                {apps.map((app) => <th scope="col">{app}</th>)}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {rows.map((row) => (
+                                <tr>
+                                    <th scope="row">{row.label}</th>
+                                    {row.cells.map((cell) => <td>{cell}</td>)}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
-            ))}
-        </div>
-    </section>
 
-    <section class="vs-cta">
-        <div class="eyebrow">Try KeeForge</div>
-        <h2>Free, open source, <span class="accent">no account.</span></h2>
-        <p>Open the KeePass database you already have. There is no paid tier, subscription or database limit.</p>
-        <DownloadLinks labels={home.en.downloads} id="download" />
+                <h3>Coming from KeePassXC?</h3>
+                <p>KeePassXC has no iPhone app; its FAQ suggests Strongbox and KeePassium. KeeForge opens KeePassXC’s KDBX 4 databases and reads its passkeys. Put the file in iCloud Drive, Dropbox, OneDrive or on a WebDAV server and add it in KeeForge.</p>
+
+                <h3 id="sources">Sources</h3>
+                <p>Opened and checked on {checked}. App versions and dates are from the US App Store.</p>
+                <div class="sources">
+                    {sources.map((group) => (
+                        <div>
+                            <h4>{group.group}</h4>
+                            <ul>
+                                {group.links.map((link) => <li><a href={link.href} rel="noopener">{link.label}</a></li>)}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+                <p class="compare-links">
+                    <a href="/vs/keepassium/">KeeForge / KeePassium <span aria-hidden="true">↗</span></a>
+                    <a href="/vs/strongbox/">KeeForge / Strongbox <span aria-hidden="true">↗</span></a>
+                </p>
+            </div>
+        </details>
     </section>
 </Page>

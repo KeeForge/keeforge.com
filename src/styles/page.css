@@ -127,3 +127,65 @@
 
 /* CJK and Russian headings run long; give them a little less size. */
 .kf-page:lang(ja) .page-hero h1, .kf-page:lang(zh-Hans) .page-hero h1, .kf-page:lang(zh-Hant) .page-hero h1, .kf-page:lang(ru) .page-hero h1 { font-size: clamp(36px, 4.4vw, 60px); }
+
+/* Verdict layout for the iPhone guide: recommendation, strengths and one
+   at-a-glance table, with everything else folded into <details>. */
+.kf-page .verdict-hero .strengths { list-style: none; padding: 0; margin-top: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 32px; max-width: 900px; }
+.kf-page .verdict-hero .strengths li { position: relative; padding-left: 30px; font-size: 16px; line-height: 1.5; color: var(--ink); font-weight: 500; }
+.kf-page .verdict-hero .strengths li::before { content: '✓'; position: absolute; left: 0; top: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--accent); color: var(--paper); font-size: 12px; line-height: 20px; text-align: center; }
+.kf-page .verdict-hero .downloads { margin-top: 32px; }
+.kf-page .verdict-hero .byline { margin-top: 24px; font-size: 13px; }
+.kf-page .verdict-hero .byline a { color: var(--soft); }
+
+.kf-page .verdict { padding-block: 56px; border-top: 1px solid var(--rule); }
+.kf-page .verdict h2 { font-size: clamp(30px, 3.2vw, 40px); margin-bottom: 24px; }
+.kf-page .verdict-wrap { background: var(--paper); border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; }
+.kf-page .verdict-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.kf-page .verdict-table :is(th, td) { padding: 18px 16px; text-align: left; vertical-align: top; border-top: 1px solid var(--rule); }
+.kf-page .verdict-table thead :is(th, td) { border-top: 0; overflow-wrap: normal; font: 500 20px var(--serif); letter-spacing: -.02em; color: var(--ink); padding-block: 20px; }
+.kf-page .verdict-table thead th:first-child { width: 26%; }
+.kf-page .verdict-table tbody th { font-size: 16px; font-weight: 600; color: var(--ink); line-height: 1.35; }
+.kf-page .verdict-table .us { background: var(--ink); color: var(--paper); }
+.kf-page .verdict-table thead .us { color: var(--gold); font-size: 22px; }
+.kf-page .verdict-table .mark { display: block; font-size: 22px; line-height: 1; font-weight: 600; }
+.kf-page .verdict-table .mark.yes { color: var(--accent); }
+.kf-page .verdict-table .us .mark.yes { color: var(--gold); }
+.kf-page .verdict-table .mark.no { color: #A39581; }
+.kf-page .verdict-table .note { display: block; margin-top: 6px; font-size: 13px; line-height: 1.4; color: var(--soft); }
+.kf-page .verdict-table .us .note { color: #E9DFC8; }
+.kf-page .verdict-table tbody .us { border-top-color: #3d352c; }
+.kf-page .verdict-note { margin-top: 14px; font-size: 13px; }
+
+.kf-page .details { border-top: 1px solid var(--rule); }
+.kf-page .details summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-block: 24px; font-size: 16px; font-weight: 500; list-style: none; cursor: pointer; }
+.kf-page .details summary::-webkit-details-marker { display: none; }
+.kf-page .details summary:hover { color: var(--accent); }
+.kf-page .details .faq-symbol { position: relative; width: 12px; height: 12px; flex-shrink: 0; color: var(--accent); }
+.kf-page .details .faq-symbol::before, .kf-page .details .faq-symbol::after { position: absolute; content: ''; background: currentColor; left: 0; top: 5px; width: 12px; height: 1px; }
+.kf-page .details .faq-symbol::after { transform: rotate(90deg); }
+.kf-page .details details[open] .faq-symbol::after { display: none; }
+.kf-page .details-body { padding-bottom: 24px; }
+.kf-page .details-body h3 { font-size: 28px; margin: 40px 0 16px; }
+.kf-page .details-body h3:first-child { margin-top: 8px; }
+.kf-page .details-body > p { font-size: 15px; max-width: 68ch; margin-bottom: 12px; }
+.kf-page .tradeoffs { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
+.kf-page .tradeoffs li { position: relative; padding-left: 24px; font-size: 15px; line-height: 1.6; color: var(--soft); }
+.kf-page .tradeoffs li::before { position: absolute; content: '—'; left: 0; color: var(--accent); }
+.kf-page .tradeoffs strong { color: var(--ink); font-weight: 600; }
+.kf-page .sources h4 { font: 400 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+
+@media (max-width: 767px) {
+    .kf-page .verdict-hero .strengths { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+    .kf-page .verdict-hero .strengths li { font-size: 15px; }
+    .kf-page .verdict { padding-block: 40px; }
+    .kf-page .verdict h2 { font-size: 28px; margin-bottom: 18px; }
+    .kf-page .verdict-table :is(th, td) { padding: 14px 8px; }
+    .kf-page .verdict-table thead :is(th, td) { font-size: 14px; line-height: 1.15; padding: 14px 4px; overflow-wrap: normal; }
+    .kf-page .verdict-table thead .us { font-size: 14px; }
+    .kf-page .verdict-table thead th:first-child { width: 30%; }
+    .kf-page .verdict-table tbody th { font-size: 13px; }
+    .kf-page .verdict-table .mark { font-size: 20px; text-align: center; }
+    .kf-page .verdict-table .note { display: none; }
+    .kf-page .verdict-table .us .note { display: none; }
+    .kf-page .details-body h3 { font-size: 24px; }
+}
