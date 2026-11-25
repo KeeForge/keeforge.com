@@ -2,6 +2,7 @@
 import Base from './Base.astro';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import { home } from '../i18n/home';
+import { guide, guidePath } from '../i18n/guide';
 import '../styles/home.css';
 import '../styles/page.css';
 
@@ -85,6 +86,8 @@ const strings = {
     },
 }[lang];
 
+// Chinese and Japanese don't put a space between sentences.
+const noSpaceLangs = ['ja', 'zh-hans', 'zh-hant'];
 const t = home[lang];
 const source = 'https://github.com/KeeForge/KeeForge';
 const changelog = `${source}/blob/main/CHANGELOG.md`;
@@ -124,7 +127,7 @@ const changelog = `${source}/blob/main/CHANGELOG.md`;
         <main id="main">
             <section class="page-hero wrap">
                 {eyebrow && <div class="eyebrow">{eyebrow}</div>}
-                <h1>{heading}{headingAccent && <> <span class="accent">{headingAccent}</span></>}</h1>
+                <h1>{heading}{headingAccent && <>{noSpaceLangs.includes(lang) ? '' : ' '}<span class="accent">{headingAccent}</span></>}</h1>
                 {lead && <p class="page-lead">{lead}</p>}
                 <slot name="hero" />
             </section>
@@ -138,7 +141,7 @@ const changelog = `${source}/blob/main/CHANGELOG.md`;
                 <div class="footer-top">
                     <a href={strings.home} class="brand"><span class="key" aria-hidden="true"></span>KeeForge</a>
                     <nav>
-                        {lang === 'en' && <a href="/best-keepass-app-iphone/">Best KeePass apps for iPhone</a>}
+                        <a href={guidePath(lang)}>{guide[lang].linkLabel}</a>
                         <a href={strings.privacyHref}>{t.footer.privacy}</a>
                         <a href="mailto:support@keeforge.com">{t.footer.support}</a>
                         <a href="https://apps.apple.com/app/id6759309295">App Store</a>

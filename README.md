@@ -9,7 +9,7 @@ Worker that receives in-app feedback.
 - `/` — homepage (hero, screenshots, features, comparison, FAQ)
 - `/vs/keepassium` — KeeForge vs KeePassium comparison
 - `/vs/strongbox` — KeeForge vs Strongbox comparison
-- `/best-keepass-app-iphone` — guide comparing five KeePass apps for iPhone (English only)
+- `/best-keepass-app-iphone` — guide recommending KeeForge against other KeePass apps for iPhone, rendered by `GuidePage.astro` from `src/i18n/guide/<code>.json`
 - `/sitemap.xml` — generated from every page under `src/pages`
 - `/privacy` — privacy policy
 - `/security-audit` — public security audit record (English only)
@@ -24,7 +24,9 @@ Ship a new locale here in the same release as the app locale. A locale needs
 all of the following, or its pages build without errors yet stay unreachable:
 
 - An entry in `src/i18n/locales.ts` and a locale object in `src/i18n/home.ts`.
-- `src/pages/<code>/` with `index.astro`, `privacy.astro`, and both `vs/` pages.
+- `src/pages/<code>/` with `index.astro`, `privacy.astro`, both `vs/` pages, and
+  `best-keepass-app-iphone.astro`, plus `src/i18n/guide/<code>.json` (the guide's copy,
+  same shape as `en.json`).
 - The locale's prop in `Base.astro`, plus its prop and nav strings in `Page.astro`.
 - The new path added to every existing page's `langPaths` and hreflang props.
 - The new language added to the Localization row of every `vs/keepassium` page.

@@ -1,0 +1,271 @@
+{
+    "title": "iPhone 向けおすすめ KeePass アプリ（2026 年）：KeeForge と KeePassium、Strongbox、PanicVault を比較",
+    "description": "KeeForge は全機能が無料の iPhone 向け KeePass アプリです。オープンソースでサブスクリプションなし、Face ID、パスキー、2FA コードの自動入力にも対応。KeePassium、Strongbox、PanicVault との違いを比較します。2026 年 11 月 24 日確認。",
+    "eyebrow": "iPhone 向けおすすめ KeePass アプリ · 2026 年 11 月 24 日確認",
+    "heading": "おすすめは KeeForge。",
+    "headingAccent": "全機能が無料。",
+    "lead": "有料の壁の向こうに隠れた機能が一切ない、iPhone・iPad・Mac 向けの KeePass アプリです。",
+    "strengths": [
+        "全機能が無料。サブスクリプションも有料プランもなく、データベース数の制限もありません。",
+        "パスキー、2FA コード、パスワードを自動入力。Face ID にも対応。",
+        "GPLv3 のオープンソース。アカウント不要、トラッキングなし。",
+        "iPhone と iPad にひとつのアプリ、さらにネイティブの Mac アプリ。"
+    ],
+    "verdictTitle": "KeeForge と人気の代替アプリの比較",
+    "feature": "機能",
+    "yes": "対応",
+    "no": "非対応",
+    "verdict": [
+        {
+            "label": "全機能が無料",
+            "keeforge": "有料プランもサブスクもなし",
+            "rivals": [
+                "無料は 1 データベース",
+                "有料の Pro が必要",
+                "最初に $4.99"
+            ]
+        },
+        {
+            "label": "Face ID ロック解除が無料",
+            "keeforge": "無料、アカウント不要",
+            "rivals": [
+                "無料",
+                "Pro のみ",
+                "$4.99 のアプリが必要"
+            ]
+        },
+        {
+            "label": "完全なオープンソース",
+            "keeforge": "GPLv3、アプリ全体",
+            "rivals": [
+                "GPLv3",
+                "「ソース公開」",
+                "クローズドソース"
+            ]
+        },
+        {
+            "label": "Dropbox と OneDrive を内蔵",
+            "keeforge": "WebDAV、FTP、iCloud Drive も",
+            "rivals": [
+                "対応",
+                "対応",
+                "iCloud と Google Drive のみ"
+            ]
+        },
+        {
+            "label": "頻繁な更新",
+            "keeforge": "2026 年 11 月に 4 回リリース",
+            "rivals": [
+                "最終更新 2025 年 11 月",
+                "最終更新 2026 年 9 月",
+                "最終更新 2026 年 11 月 14 日"
+            ]
+        }
+    ],
+    "detailsSummary": "詳しい比較と出典",
+    "fullTableTitle": "5 つのアプリを並べて比較",
+    "fullTableLabel": "iPhone 向け KeePass アプリの比較",
+    "rows": [
+        {
+            "label": "iPhone での価格",
+            "cells": [
+                "無料。任意のチップあり。",
+                "1 データベースまで無料。Premium は年 €19.99（継続で買い切りに移行）、Pro は €79.99 の買い切り。",
+                "非商用利用は無料。Pro は月 $2.99、年 $24.99、または永久 $124.99（Web サイト価格）。",
+                "$4.99 の買い切り（米国 App Store）。無料版なし。",
+                "無料。"
+            ]
+        },
+        {
+            "label": "有料の機能",
+            "cells": [
+                "なし。",
+                "2 つ以上のデータベース、YubiKey、クイック自動入力、パスワード監査、リンクされたデータベース、ビジネス向けクラウドアカウント。",
+                "iPhone では Face ID / Touch ID でのロック解除、オフライン編集、YubiKey、Apple Watch。Mac では自動入力、パスキー、SFTP、WebDAV も Pro。",
+                "購入後はなし。",
+                "なし。"
+            ]
+        },
+        {
+            "label": "ソースコード",
+            "cells": [
+                "オープンソース、GPLv3、アプリ全体。",
+                "オープンソース、GPLv3。",
+                "AGPL-3.0 で公開されているが、プロジェクト自身は「ソース公開」と称している。ビルド手順がなく、コードの公開はリリースより遅れる。",
+                "クローズドソース。",
+                "オープンソース、GPLv3。"
+            ]
+        },
+        {
+            "label": "Apple プラットフォーム",
+            "cells": [
+                "iPhone、iPad、Mac（ネイティブの Mac アプリ）。",
+                "iPhone、iPad、Mac（Mac Catalyst）、Vision Pro。",
+                "iPhone、iPad、Mac、Apple Watch、Vision Pro。",
+                "iPhone、iPad、Mac、Vision Pro。",
+                "iPhone、iPad。Mac、Windows、Linux 向けのデスクトップアプリと Android 版もあり。"
+            ]
+        },
+        {
+            "label": "最小 iOS",
+            "cells": [
+                "iOS 18",
+                "iOS 17",
+                "iOS 15",
+                "iOS 17.6",
+                "iOS 15.1"
+            ]
+        },
+        {
+            "label": "データベース形式",
+            "cells": [
+                "KDBX 4 は読み書き対応。KDBX 3.1 は読み取り専用。",
+                "KDBX 4、KDBX 3、KeePass 1（.kdb）。",
+                "KDBX 4.1、4.0、3.1、KeePass 1（.kdb）、Password Safe 3。",
+                "KDBX 4 のみ。古いファイルは先にアップグレードが必要。",
+                "KDBX 4。"
+            ]
+        },
+        {
+            "label": "パスワード自動入力",
+            "cells": [
+                "対応",
+                "対応",
+                "対応",
+                "対応",
+                "対応"
+            ]
+        },
+        {
+            "label": "パスキー",
+            "cells": [
+                "対応、自動入力で使用可。KeePassXC 互換。",
+                "対応、自動入力で使用可。KeePassXC 互換。",
+                "対応（iPhone では無料、Mac では Pro）。",
+                "KeePassXC 形式のパスキーを保存。iPhone でのパスキー自動入力は記載なし。",
+                "対応、iOS 17 以降。"
+            ]
+        },
+        {
+            "label": "2FA（TOTP）コード",
+            "cells": [
+                "対応。iOS 18 と Mac では自動入力も可。",
+                "対応。iOS 18 では自動入力も可。",
+                "対応。",
+                "対応（アプリ内）。Mac のブラウザ拡張機能が入力。",
+                "対応。自動入力も可。"
+            ]
+        },
+        {
+            "label": "内蔵の同期",
+            "cells": [
+                "iPhone・iPad：Dropbox、OneDrive、WebDAV、FTP、さらに iCloud Drive などの「ファイル」プロバイダ。Mac：WebDAV、FTP、同期フォルダ。",
+                "Dropbox、Google Drive、OneDrive、WebDAV、さらに iCloud Drive などの「ファイル」プロバイダ。",
+                "iCloud、Dropbox、OneDrive、Google Drive、WebDAV、SFTP、さらに「ファイル」プロバイダ。SharePoint は Pro。",
+                "iCloud Drive と Google Drive。",
+                "SFTP、WebDAV、さらに「ファイル」プロバイダ。"
+            ]
+        },
+        {
+            "label": "キーファイル",
+            "cells": [
+                "対応、作成も可",
+                "対応、作成も可",
+                "対応",
+                "対応",
+                "対応、作成も可"
+            ]
+        },
+        {
+            "label": "YubiKey",
+            "cells": [
+                "読み取り専用、iPhone の NFC で。",
+                "有料。Lightning、iPhone では NFC、Mac では USB。",
+                "Pro。iOS では USB-C キーに非対応。",
+                "iPhone では NFC、Mac では USB。iPad は非対応。",
+                "記載なし。"
+            ]
+        },
+        {
+            "label": "第三者によるセキュリティ監査",
+            "cells": [
+                "なし。",
+                "あり：Cure53、2024 年 10 月。",
+                "Strongbox によるとコードレベルの監査はなし。年 1 回の CASA Tier 2 評価。",
+                "公開されたものはなし。",
+                "公開されたものはなし。"
+            ]
+        },
+        {
+            "label": "アプリの対応言語",
+            "cells": [
+                "9",
+                "20",
+                "18",
+                "1（英語）",
+                "1（英語）"
+            ]
+        },
+        {
+            "label": "App Store の最終更新（米国）",
+            "cells": [
+                "1.23.0、2026 年 11 月 22 日",
+                "2.5、2025 年 11 月 19 日",
+                "1.65.2、2026 年 9 月 1 日",
+                "1.1.7、2026 年 11 月 14 日",
+                "0.25.0、2026 年 11 月 18 日"
+            ]
+        }
+    ],
+    "keepassxcTitle": "KeePassXC から移る方へ",
+    "keepassxcBody": "KeePassXC には iPhone アプリがなく、その FAQ では Strongbox と KeePassium を勧めています。KeeForge は KeePassXC の KDBX 4 データベースを開き、そのパスキーも読み込めます。ファイルを iCloud Drive、Dropbox、OneDrive、または WebDAV サーバーに置き、KeeForge で追加してください。",
+    "sourcesTitle": "出典",
+    "sourcesNote": "2026 年 11 月 24 日に閲覧・確認。アプリのバージョンと日付は米国 App Store のものです。",
+    "sources": {
+        "KeeForge": [
+            "README（機能、同期、形式）",
+            "変更履歴（1.23.0 リリース、YubiKey 対応）",
+            "GPLv3 ライセンス",
+            "App Store のページ"
+        ],
+        "KeePassium": [
+            "価格と無料版・有料版の比較",
+            "セキュリティ監査（Cure53、CASA）",
+            "Cure53 監査レポート、2024 年 10 月（PDF）",
+            "同期オプション",
+            "YubiKey の互換性",
+            "KeePassium 2.0：パスキー、Mac アプリ、2FA 自動入力",
+            "ソースコード",
+            "App Store のページ"
+        ],
+        "Strongbox": [
+            "無料版と Pro の比較",
+            "Pro の価格",
+            "対応する KeePass バージョン",
+            "セキュリティ監査に関する声明",
+            "Strongbox が Applause に参加（2025 年 3 月）",
+            "ソースコードとライセンスに関する注記",
+            "App Store のページ"
+        ],
+        "PanicVault": [
+            "ホームページ",
+            "ユーザーマニュアル",
+            "PanicVault 自身による iPhone 向け KeePass ガイド",
+            "App Store のページ"
+        ],
+        "OneKeePass": [
+            "ホームページ",
+            "モバイル版のソースコード",
+            "App Store のページ"
+        ],
+        "KeePassXC": [
+            "FAQ：「KeePassXC は携帯電話で使えますか？」"
+        ]
+    },
+    "linkLabel": "iPhone 向けおすすめ KeePass アプリ",
+    "seeAlso": {
+        "before": "3 つ以上のアプリを比べたい場合は、",
+        "link": "iPhone 向けおすすめ KeePass アプリ",
+        "after": "で KeePassium、Strongbox、PanicVault、OneKeePass を並べて比較しています。"
+    }
+}

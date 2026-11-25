@@ -1,0 +1,10 @@
+---
+// "See the full guide" sentence for the end of the vs pages.
+import { guide, guidePath } from '../i18n/guide';
+import type { LocaleCode } from '../i18n/locales';
+
+interface Props { lang: LocaleCode; }
+const { lang } = Astro.props;
+const s = guide[lang].seeAlso;
+---
+<p class="see-also">{s.before}<a href={guidePath(lang)}>{s.link}</a>{s.after}</p>

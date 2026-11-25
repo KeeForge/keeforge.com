@@ -59,7 +59,7 @@ const addedLocales = [
 
 for (const { code, label } of addedLocales) {
     test(`every translated page exposes the ${label} alternative and keeps ${label} navigation local`, () => {
-        for (const page of ['', 'privacy/', 'vs/keepassium/', 'vs/strongbox/']) {
+        for (const page of ['', 'privacy/', 'vs/keepassium/', 'vs/strongbox/', 'best-keepass-app-iphone/']) {
             const localePath = `/${code}/${page}`;
             for (const locale of locales) {
                 const path = `${locale === 'en' ? '' : `${locale}/`}${page}index.html`;
@@ -93,4 +93,34 @@ test('App Store links never pin a storefront, so visitors land in their own coun
         }
     }
     assert.ok(appStoreLinks > 0);
+});
+
+test('the iPhone guide is translated for every locale, with the same shape as English', () => {
+    const load = (code) => JSON.parse(readFileSync(new URL(`../src/i18n/guide/${code}.json`, import.meta.url), 'utf8'));
+    const en = load('en');
+    const compare = (a, b, path) => {
+        assert.equal(Array.isArray(b), Array.isArray(a), `${path}: type`);
+        if (typeof a === 'string') {
+            assert.equal(typeof b, 'string', `${path}: type`);
+            assert.ok(b.trim(), `${path}: empty`);
+        } else if (Array.isArray(a)) {
+            assert.equal(b.length, a.length, `${path}: length`);
+            a.forEach((item, i) => compare(item, b[i], `${path}[${i}]`));
+        } else {
+            assert.deepEqual(Object.keys(b).sort(), Object.keys(a).sort(), `${path}: keys`);
+            for (const key of Object.keys(a)) compare(a[key], b[key], `${path}.${key}`);
+        }
+    };
+    for (const locale of locales.slice(1)) {
+        const copy = load(locale);
+        compare(en, copy, locale);
+        assert.notEqual(copy.heading, en.heading, `${locale}: untranslated heading`);
+        const html = readFileSync(new URL(`${locale}/best-keepass-app-iphone/index.html`, siteRoot), 'utf8');
+        assert.match(html, new RegExp(`<html lang="${locale}">`));
+        assert.ok(html.includes(`rel="canonical" href="https://keeforge.com/${locale}/best-keepass-app-iphone/"`), `${locale}: canonical`);
+        for (const page of ['', 'vs/keepassium/', 'vs/strongbox/']) {
+            const linking = readFileSync(new URL(`${locale}/${page}index.html`, siteRoot), 'utf8');
+            assert.ok(linking.includes(`href="/${locale}/best-keepass-app-iphone/"`), `${locale}/${page}: links the guide`);
+        }
+    }
 });

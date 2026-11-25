@@ -142,7 +142,7 @@
 .kf-page .verdict-table :is(th, td) { padding: 18px 16px; text-align: left; vertical-align: top; border-top: 1px solid var(--rule); }
 .kf-page .verdict-table thead :is(th, td) { border-top: 0; overflow-wrap: normal; font: 500 20px var(--serif); letter-spacing: -.02em; color: var(--ink); padding-block: 20px; }
 .kf-page .verdict-table thead th:first-child { width: 26%; }
-.kf-page .verdict-table tbody th { font-size: 16px; font-weight: 600; color: var(--ink); line-height: 1.35; }
+.kf-page .verdict-table tbody th { font-size: 16px; font-weight: 600; color: var(--ink); line-height: 1.35; hyphens: auto; overflow-wrap: break-word; }
 .kf-page .verdict-table .us { background: var(--ink); color: var(--paper); }
 .kf-page .verdict-table thead .us { color: var(--gold); font-size: 22px; }
 .kf-page .verdict-table .mark { display: block; font-size: 22px; line-height: 1; font-weight: 600; }
@@ -173,8 +173,8 @@
     .kf-page .verdict { padding-block: 40px; }
     .kf-page .verdict h2 { font-size: 28px; margin-bottom: 18px; }
     .kf-page .verdict-table :is(th, td) { padding: 14px 8px; }
-    .kf-page .verdict-table thead :is(th, td) { font-size: 14px; line-height: 1.15; padding: 14px 4px; overflow-wrap: normal; }
-    .kf-page .verdict-table thead .us { font-size: 14px; }
+    .kf-page .verdict-table thead :is(th, td) { font-size: 13px; line-height: 1.15; padding: 14px 3px; overflow-wrap: normal; }
+    .kf-page .verdict-table thead .us { font-size: 13px; }
     .kf-page .verdict-table thead th:first-child { width: 30%; }
     .kf-page .verdict-table tbody th { font-size: 13px; }
     .kf-page .verdict-table .mark { font-size: 20px; text-align: center; }

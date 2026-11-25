@@ -1,0 +1,271 @@
+{
+    "title": "Meilleure app KeePass pour iPhone (2026) : KeeForge vs KeePassium, Strongbox et PanicVault",
+    "description": "KeeForge est l’app KeePass pour iPhone dont toutes les fonctionnalités sont gratuites : open source, sans abonnement, avec Face ID, clés d’accès et remplissage automatique des codes 2FA. Comparez-la à KeePassium, Strongbox et PanicVault. Vérifié le 24 novembre 2026.",
+    "eyebrow": "Meilleure app KeePass pour iPhone · Vérifié le 24 novembre 2026",
+    "heading": "Notre choix : KeeForge.",
+    "headingAccent": "Toutes les fonctionnalités, gratuites.",
+    "lead": "L’app KeePass pour iPhone, iPad et Mac où rien n’est réservé à une offre payante.",
+    "strengths": [
+        "Toutes les fonctionnalités sont gratuites. Pas d’abonnement, pas d’offre payante, pas de limite de bases.",
+        "Clés d’accès, codes 2FA et mots de passe en remplissage automatique, avec Face ID.",
+        "Open source sous licence GPLv3. Sans compte, sans pistage.",
+        "Une seule app pour iPhone et iPad, plus une app Mac native."
+    ],
+    "verdictTitle": "KeeForge face aux alternatives populaires",
+    "feature": "Fonctionnalité",
+    "yes": "Oui",
+    "no": "Non",
+    "verdict": [
+        {
+            "label": "Tout est gratuit",
+            "keeforge": "Ni offre payante, ni abonnement",
+            "rivals": [
+                "1 base gratuite",
+                "Mise à niveau Pro payante",
+                "$4.99 à l’achat"
+            ]
+        },
+        {
+            "label": "Face ID sans frais",
+            "keeforge": "Gratuit, sans compte",
+            "rivals": [
+                "Gratuit",
+                "Pro uniquement",
+                "App à $4.99 requise"
+            ]
+        },
+        {
+            "label": "Entièrement open source",
+            "keeforge": "GPLv3, toute l’app",
+            "rivals": [
+                "GPLv3",
+                "« Source available »",
+                "Code fermé"
+            ]
+        },
+        {
+            "label": "Dropbox et OneDrive intégrés",
+            "keeforge": "Plus WebDAV, FTP et iCloud Drive",
+            "rivals": [
+                "Oui",
+                "Oui",
+                "iCloud et Google Drive seulement"
+            ]
+        },
+        {
+            "label": "Mises à jour fréquentes",
+            "keeforge": "4 versions en novembre 2026",
+            "rivals": [
+                "Dernière MAJ nov. 2025",
+                "Dernière MAJ sept. 2026",
+                "Dernière MAJ 14 nov. 2026"
+            ]
+        }
+    ],
+    "detailsSummary": "Comparaison complète et sources",
+    "fullTableTitle": "Les cinq apps, côte à côte",
+    "fullTableLabel": "Comparatif des apps KeePass pour iPhone",
+    "rows": [
+        {
+            "label": "Prix sur iPhone",
+            "cells": [
+                "Gratuit. Pourboire facultatif.",
+                "Gratuit pour une base. Premium €19.99/an (location-accession) ou Pro €79.99 en une fois.",
+                "Gratuit pour un usage non commercial. Pro $2.99/mois, $24.99/an ou $124.99 à vie (prix du site web).",
+                "$4.99 en une fois (App Store américain). Pas de version gratuite.",
+                "Gratuit."
+            ]
+        },
+        {
+            "label": "Fonctionnalités payantes",
+            "cells": [
+                "Aucune.",
+                "Plus d’une base, YubiKey, remplissage automatique rapide, audit des mots de passe, bases liées, comptes cloud professionnels.",
+                "Sur iPhone : déverrouillage Face ID / Touch ID, modification hors ligne, YubiKey, Apple Watch. Sur Mac, le remplissage automatique, les clés d’accès, SFTP et WebDAV sont aussi en Pro.",
+                "Aucune après l’achat.",
+                "Aucune."
+            ]
+        },
+        {
+            "label": "Code source",
+            "cells": [
+                "Open source, GPLv3, toute l’app.",
+                "Open source, GPLv3.",
+                "Publié sous AGPL-3.0, mais le projet se dit « source available » : aucune procédure de compilation, et le code publié est en retard sur les versions.",
+                "Code fermé.",
+                "Open source, GPLv3."
+            ]
+        },
+        {
+            "label": "Plateformes Apple",
+            "cells": [
+                "iPhone, iPad, Mac (app Mac native).",
+                "iPhone, iPad, Mac (Mac Catalyst), Vision Pro.",
+                "iPhone, iPad, Mac, Apple Watch, Vision Pro.",
+                "iPhone, iPad, Mac, Vision Pro.",
+                "iPhone, iPad. Apps de bureau pour Mac, Windows et Linux, plus Android."
+            ]
+        },
+        {
+            "label": "iOS minimum",
+            "cells": [
+                "iOS 18",
+                "iOS 17",
+                "iOS 15",
+                "iOS 17.6",
+                "iOS 15.1"
+            ]
+        },
+        {
+            "label": "Formats de base",
+            "cells": [
+                "KDBX 4 en lecture/écriture. KDBX 3.1 en lecture seule.",
+                "KDBX 4, KDBX 3 et KeePass 1 (.kdb).",
+                "KDBX 4.1, 4.0 et 3.1, KeePass 1 (.kdb) et Password Safe 3.",
+                "KDBX 4 uniquement. Les fichiers plus anciens doivent d’abord être mis à niveau.",
+                "KDBX 4."
+            ]
+        },
+        {
+            "label": "Remplissage automatique des mots de passe",
+            "cells": [
+                "Oui",
+                "Oui",
+                "Oui",
+                "Oui",
+                "Oui"
+            ]
+        },
+        {
+            "label": "Clés d’accès",
+            "cells": [
+                "Oui, en remplissage automatique. Compatible KeePassXC.",
+                "Oui, en remplissage automatique. Compatible KeePassXC.",
+                "Oui (gratuit sur iPhone, Pro sur Mac).",
+                "Stocke les clés d’accès au format KeePassXC. Remplissage automatique des clés d’accès sur iPhone non documenté.",
+                "Oui, sur iOS 17 et ultérieur."
+            ]
+        },
+        {
+            "label": "Codes 2FA (TOTP)",
+            "cells": [
+                "Oui, y compris en remplissage automatique sur iOS 18 et Mac.",
+                "Oui, y compris en remplissage automatique sur iOS 18.",
+                "Oui.",
+                "Oui, dans l’app. L’extension de navigateur Mac les remplit.",
+                "Oui, y compris en remplissage automatique."
+            ]
+        },
+        {
+            "label": "Synchronisation intégrée",
+            "cells": [
+                "iPhone et iPad : Dropbox, OneDrive, WebDAV, FTP, plus iCloud Drive et les autres fournisseurs de l’app Fichiers. Mac : WebDAV, FTP et dossiers synchronisés.",
+                "Dropbox, Google Drive, OneDrive, WebDAV, plus iCloud Drive et les autres fournisseurs de l’app Fichiers.",
+                "iCloud, Dropbox, OneDrive, Google Drive, WebDAV, SFTP, plus les fournisseurs de l’app Fichiers. SharePoint est en Pro.",
+                "iCloud Drive et Google Drive.",
+                "SFTP, WebDAV, plus les fournisseurs de l’app Fichiers."
+            ]
+        },
+        {
+            "label": "Fichiers clés",
+            "cells": [
+                "Oui, et peut en créer",
+                "Oui, et peut en créer",
+                "Oui",
+                "Oui",
+                "Oui, et peut en créer"
+            ]
+        },
+        {
+            "label": "YubiKey",
+            "cells": [
+                "Lecture seule, sur iPhone via NFC.",
+                "Payant. Lightning, NFC sur iPhone, USB sur Mac.",
+                "Pro. Clés USB-C non prises en charge sur iOS.",
+                "NFC sur iPhone, USB sur Mac. Pas sur iPad.",
+                "Non documenté."
+            ]
+        },
+        {
+            "label": "Audit de sécurité indépendant",
+            "cells": [
+                "Aucun.",
+                "Oui : Cure53, octobre 2024.",
+                "Pas d’audit du code, selon Strongbox. Évaluation CASA Tier 2 annuelle.",
+                "Aucun publié.",
+                "Aucun publié."
+            ]
+        },
+        {
+            "label": "Langues de l’app",
+            "cells": [
+                "9",
+                "20",
+                "18",
+                "1 (anglais)",
+                "1 (anglais)"
+            ]
+        },
+        {
+            "label": "Dernière mise à jour App Store (US)",
+            "cells": [
+                "1.23.0, 22 nov. 2026",
+                "2.5, 19 nov. 2025",
+                "1.65.2, 1er sept. 2026",
+                "1.1.7, 14 nov. 2026",
+                "0.25.0, 18 nov. 2026"
+            ]
+        }
+    ],
+    "keepassxcTitle": "Vous venez de KeePassXC ?",
+    "keepassxcBody": "KeePassXC n’a pas d’app iPhone ; sa FAQ recommande Strongbox et KeePassium. KeeForge ouvre les bases KDBX 4 de KeePassXC et lit ses clés d’accès. Placez le fichier dans iCloud Drive, Dropbox, OneDrive ou sur un serveur WebDAV, puis ajoutez-le dans KeeForge.",
+    "sourcesTitle": "Sources",
+    "sourcesNote": "Consultées et vérifiées le 24 novembre 2026. Les versions et dates des apps proviennent de l’App Store américain.",
+    "sources": {
+        "KeeForge": [
+            "README (fonctionnalités, synchronisation, formats)",
+            "Journal des modifications (version 1.23.0, prise en charge de YubiKey)",
+            "Licence GPLv3",
+            "Fiche App Store"
+        ],
+        "KeePassium": [
+            "Tarifs et comparaison gratuit / payant",
+            "Audits de sécurité (Cure53, CASA)",
+            "Rapport d’audit Cure53, octobre 2024 (PDF)",
+            "Options de synchronisation",
+            "Compatibilité YubiKey",
+            "KeePassium 2.0 : clés d’accès, app Mac, remplissage automatique 2FA",
+            "Code source",
+            "Fiche App Store"
+        ],
+        "Strongbox": [
+            "Comparaison gratuit / Pro",
+            "Tarifs Pro",
+            "Versions de KeePass prises en charge",
+            "Déclaration sur les audits de sécurité",
+            "Strongbox rejoint Applause (mars 2025)",
+            "Code source et notes de licence",
+            "Fiche App Store"
+        ],
+        "PanicVault": [
+            "Page d’accueil",
+            "Manuel d’utilisation",
+            "Le guide KeePass pour iPhone de PanicVault",
+            "Fiche App Store"
+        ],
+        "OneKeePass": [
+            "Page d’accueil",
+            "Code source mobile",
+            "Fiche App Store"
+        ],
+        "KeePassXC": [
+            "FAQ : « Does KeePassXC work on mobile phones? »"
+        ]
+    },
+    "linkLabel": "Meilleures apps KeePass pour iPhone",
+    "seeAlso": {
+        "before": "Vous comparez plus de deux apps ? Consultez ",
+        "link": "les meilleures apps KeePass pour iPhone",
+        "after": ", avec KeePassium, Strongbox, PanicVault et OneKeePass côte à côte."
+    }
+}
