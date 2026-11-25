@@ -9,6 +9,8 @@ Worker that receives in-app feedback.
 - `/` — homepage (hero, screenshots, features, comparison, FAQ)
 - `/vs/keepassium` — KeeForge vs KeePassium comparison
 - `/vs/strongbox` — KeeForge vs Strongbox comparison
+- `/best-keepass-app-iphone` — guide comparing five KeePass apps for iPhone (English only)
+- `/sitemap.xml` — generated from every page under `src/pages`
 - `/privacy` — privacy policy
 - `/security-audit` — public security audit record (English only)
 - `/appcast.xml` — Sparkle update feed for the direct-download Mac app (see
@@ -59,6 +61,10 @@ Mac images live in `public/screenshots/mac-entry-detail.png` and
 `mac-entry-edit.jpg`. These are real development captures with sample data.
 Homepage copy distinguishes direct Dropbox/OneDrive integration on iOS from
 synced local folders on Mac. WebDAV is available on both.
+
+The comparison pages and the iPhone guide use `src/layouts/Page.astro`, which
+reuses the homepage header, footer, and `home.css`; their content styles live in
+`src/styles/page.css`, scoped to `.kf-page`.
 
 Run `npm run build` and `node --test tests/home.test.js` after
 homepage changes. Check desktop and mobile layouts in all nine languages.
