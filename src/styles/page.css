@@ -152,7 +152,6 @@
 .kf-page .verdict-table .note { display: block; margin-top: 6px; font-size: 13px; line-height: 1.4; color: var(--soft); }
 .kf-page .verdict-table .us .note { color: #E9DFC8; }
 .kf-page .verdict-table tbody .us { border-top-color: #3d352c; }
-.kf-page .verdict-note { margin-top: 14px; font-size: 13px; }
 
 .kf-page .details { border-top: 1px solid var(--rule); }
 .kf-page .details summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-block: 24px; font-size: 16px; font-weight: 500; list-style: none; cursor: pointer; }
